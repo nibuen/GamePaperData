@@ -1,0 +1,53 @@
+name: Game Data Fix
+description: Report incorrect, missing, or outdated game rules, components, or card text
+title: "[Fix]: "
+labels: ["game-data-fix"]
+body:
+  - type: input
+    id: game-name
+    attributes:
+      label: Game Name
+      description: Which game has the issue?
+      placeholder: e.g. Grand Austria Hotel
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: What area of the game data needs fixing?
+      options:
+        - Rules / Turn Structure
+        - Setup
+        - Components
+        - Cards
+        - Victory Conditions / Scoring
+        - Glossary
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be fixed?
+      description: Describe what is incorrect, missing, or outdated. Include the specific text if possible.
+      placeholder: |
+        The setup instructions say to place 5 market tiles, but the rulebook says 4 for a 2-player game.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say?
+      description: If you know the correct text, paste or describe it here.
+      placeholder: |
+        Per the rulebook (page 3): "In a 2-player game, place 4 market tiles."
+    validations:
+      required: false
+  - type: input
+    id: rulebook-reference
+    attributes:
+      label: Rulebook Reference
+      description: Page number, section, or link to the official rulebook if available.
+      placeholder: e.g. Rulebook page 12, "Setup" section
+    validations:
+      required: false
