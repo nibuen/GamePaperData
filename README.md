@@ -1,6 +1,6 @@
-# GamePaperData
+# GamersPaperData
 
-Community-maintained board game rule models for [GamePaper](https://gamepaper.iterary.com).
+Community-maintained board game rule models for [GamersPaper](https://gamerspaper.com).
 
 ## Structure
 
