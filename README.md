@@ -1,29 +1,37 @@
 # GamersPaperData
 
-Community-maintained board game rule models for [GamersPaper](https://gamerspaper.com).
+Community-maintained board game rule data for [GamersPaper](https://gamerspaper.com).
 
-## Structure
+This repository contains structured JSON files describing board game rules, components, setup instructions, and card data. The GamersPaper app fetches this data to display game references.
+
+## Repository Structure
 
 ```
-files/
+files/                        # Game data (one folder per game)
 └── <game_id>/
-    ├── <game_id>_rules.json      # Main rules file
-    ├── <game_id>_<cards>.json    # Card data files (referenced by rules)
+    ├── <game_id>_rules.json  # Main rules file
+    ├── <game_id>_cards.json  # Card data (optional)
     └── ...
-registry.json                      # Game index consumed by the app
+icons/                        # SVG icons for game components
+registry.json                 # Game index consumed by the app
 ```
-
-## Registry
-
-The `registry.json` file lists all available games. The GamePaper app fetches this file to discover remotely-hosted games.
 
 ## Contributing
 
-To add a new game:
+We welcome contributions! To add a new game or improve existing data, see the **[Contributing Guide](CONTRIBUTING.md)** for:
 
-1. Create a directory under `files/` named with the game's snake_case ID
-2. Add the rules JSON and any card data files
+- Full JSON schema reference for rules, cards, components, and more
+- Step-by-step instructions for adding a game
+- Available icons for components (see [icons/README.md](icons/README.md))
+- Validation checklist and PR process
+
+## Quick Start
+
+1. Fork this repo
+2. Create `files/<game_id>/<game_id>_rules.json` following the [schema](CONTRIBUTING.md#rules-file-game_id_rulesjson)
 3. Add an entry to `registry.json`
 4. Open a pull request
 
-See the [GamePaper model documentation](https://github.com/nibuen/GamePaper/blob/main/model.md) for the JSON schema.
+## License
+
+Game data is contributed by the community for use with the GamersPaper app.
