@@ -1,6 +1,6 @@
 # GamePaperData
 
-Community-maintained board game rule models for [GamePaper](https://github.com/nibuen/GamePaper).
+Community-maintained board game rule models for [GamePaper](https://gamepaper.iterary.com).
 
 ## Structure
 
