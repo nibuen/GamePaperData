@@ -1,0 +1,122 @@
+{
+  "call_in_a_favor": {
+    "id": "call_in_a_favor",
+    "name": "Call in a Favor",
+    "body": "Take 1 adventurer of each type (1 Fighter, 1 Rogue, 1 Wizard, 1 Cleric) from the supply.",
+    "summary": "Utility - Gain 4 adventurers",
+    "details": "One of the most powerful Utility cards. Provides one of each adventurer type.",
+    "extra": "Type: Utility"
+  },
+  "bidding_war": {
+    "id": "bidding_war",
+    "name": "Bidding War",
+    "body": "Each opponent must give you 4 Gold or 2 adventurers of their choice.",
+    "summary": "Attack - Opponents pay you",
+    "details": "Forces each opponent to make a difficult choice.",
+    "extra": "Type: Attack"
+  },
+  "ambush": {
+    "id": "ambush",
+    "name": "Ambush",
+    "body": "Choose an opponent. That player must give you 1 adventurer of your choice from their tavern.",
+    "summary": "Attack - Steal 1 adventurer",
+    "details": "Direct theft from an opponent. Choose carefully.",
+    "extra": "Type: Attack"
+  },
+  "arcane_mishap": {
+    "id": "arcane_mishap",
+    "name": "Arcane Mishap",
+    "body": "Each opponent must remove 1 Wizard (purple) from their tavern and return it to the supply.",
+    "summary": "Attack - Remove Wizards",
+    "details": "Targets Wizard-heavy strategies.",
+    "extra": "Type: Attack"
+  },
+  "bribe_agent": {
+    "id": "bribe_agent",
+    "name": "Bribe Agent",
+    "body": "Choose an opponent. Take 2 Gold from that player.",
+    "summary": "Attack - Steal 2 Gold",
+    "details": "Simple gold theft. Good against wealthy opponents.",
+    "extra": "Type: Attack"
+  },
+  "change_of_plans": {
+    "id": "change_of_plans",
+    "name": "Change of Plans",
+    "body": "Discard 1 of your active Quests. Gain 2 VP plus adventurers equal to the Quest's requirements.",
+    "summary": "Utility - Discard Quest for VP + resources",
+    "details": "Good for abandoning a Quest you can't complete while gaining value.",
+    "extra": "Type: Utility"
+  },
+  "free_drinks": {
+    "id": "free_drinks",
+    "name": "Free Drinks",
+    "body": "Each player (including you) takes 2 adventurers of their choice from the supply.",
+    "summary": "Utility - Everyone gains 2 adventurers",
+    "details": "Helps everyone, but you choose first and can time it strategically.",
+    "extra": "Type: Utility"
+  },
+  "graduation_day": {
+    "id": "graduation_day",
+    "name": "Graduation Day",
+    "body": "Take 2 Wizards (purple) from the supply.",
+    "summary": "Utility - Gain 2 Wizards",
+    "details": "Simple but effective for Arcana quests.",
+    "extra": "Type: Utility"
+  },
+  "lack_of_faith": {
+    "id": "lack_of_faith",
+    "name": "Lack of Faith",
+    "body": "Choose an opponent and a Quest type. That opponent must discard all active Quests of that type.",
+    "summary": "Attack - Discard opponent's Quests",
+    "details": "Devastating if you can identify an opponent's strategy.",
+    "extra": "Type: Attack"
+  },
+  "recover_the_magister": {
+    "id": "recover_the_magister",
+    "name": "Recover the Magister",
+    "body": "MANDATORY QUEST: Give to an opponent. Requires 1 Fighter, 1 Cleric. Reward: 2 VP. Must complete before other Quests.",
+    "summary": "Mandatory Quest - Disrupt opponent",
+    "details": "Forces opponent to waste turns completing a low-value Quest.",
+    "extra": "Type: Mandatory Quest"
+  },
+  "stamp_out_cultists": {
+    "id": "stamp_out_cultists",
+    "name": "Stamp Out Cultists",
+    "body": "MANDATORY QUEST: Give to an opponent. Requires 1 Rogue, 1 Wizard. Reward: 2 VP. Must complete before other Quests.",
+    "summary": "Mandatory Quest - Disrupt opponent",
+    "details": "Forces opponent to collect specific adventurers before continuing.",
+    "extra": "Type: Mandatory Quest"
+  },
+  "spread_the_wealth": {
+    "id": "spread_the_wealth",
+    "name": "Spread the Wealth",
+    "body": "Each player (including you) takes 4 Gold from the supply.",
+    "summary": "Utility - Everyone gains 4 Gold",
+    "details": "Helps everyone equally. Good when you need gold and don't mind helping others.",
+    "extra": "Type: Utility"
+  },
+  "good_faith": {
+    "id": "good_faith",
+    "name": "Good Faith",
+    "body": "Take 2 Clerics (white) from the supply.",
+    "summary": "Utility - Gain 2 Clerics",
+    "details": "Simple but effective for Piety quests.",
+    "extra": "Type: Utility"
+  },
+  "sample_wares": {
+    "id": "sample_wares",
+    "name": "Sample Wares",
+    "body": "Take 1 adventurer of any type and 2 Gold from the supply.",
+    "summary": "Utility - Gain 1 adventurer + 2 Gold",
+    "details": "Flexible utility card providing both resources.",
+    "extra": "Type: Utility"
+  },
+  "real_estate_deal": {
+    "id": "real_estate_deal",
+    "name": "Real Estate Deal",
+    "body": "Purchase a Building. Pay 4 Gold less than the normal cost (minimum 0).",
+    "summary": "Utility - Discounted Building",
+    "details": "Great for getting expensive buildings cheaply.",
+    "extra": "Type: Utility"
+  }
+}

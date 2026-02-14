@@ -1,0 +1,194 @@
+{
+  "caravan_court": {
+    "id": "caravan_court",
+    "name": "Caravan Court",
+    "body": "Cost: 4 Gold. Action: Take all Fighters from this space. Owner: +1 Fighter. (Fighters accumulate here each round)",
+    "summary": "4 Gold - Accumulating Fighters",
+    "details": "At the start of each round, 1 Fighter is placed here. When used, take all accumulated Fighters.",
+    "extra": "Owner Benefit: 1 Fighter"
+  },
+  "dragon_tower": {
+    "id": "dragon_tower",
+    "name": "Dragon Tower",
+    "body": "Cost: 3 Gold. Action: Take 1 Wizard + draw 1 Intrigue card. Owner: Draw 1 Intrigue card.",
+    "summary": "3 Gold - Wizard + Intrigue",
+    "details": "Good value building that provides both an adventurer and an Intrigue card.",
+    "extra": "Owner Benefit: 1 Intrigue card"
+  },
+  "fetlock_court": {
+    "id": "fetlock_court",
+    "name": "Fetlock Court",
+    "body": "Cost: 8 Gold. Action: Take 2 Fighters + 1 Wizard. Owner: +1 Fighter or Wizard.",
+    "summary": "8 Gold - 2 Fighters + 1 Wizard",
+    "details": "Expensive but powerful building providing 3 adventurers.",
+    "extra": "Owner Benefit: 1 Fighter or Wizard"
+  },
+  "the_golden_horn": {
+    "id": "the_golden_horn",
+    "name": "The Golden Horn",
+    "body": "Cost: 4 Gold. Action: Take all Gold from this space. Owner: +2 Gold. (Gold accumulates here each round)",
+    "summary": "4 Gold - Accumulating Gold",
+    "details": "At the start of each round, 2 Gold is placed here. When used, take all accumulated Gold.",
+    "extra": "Owner Benefit: 2 Gold"
+  },
+  "helmstar_warehouse": {
+    "id": "helmstar_warehouse",
+    "name": "Helmstar Warehouse",
+    "body": "Cost: 3 Gold. Action: Take 2 Rogues + 2 Gold. Owner: +1 Rogue.",
+    "summary": "3 Gold - 2 Rogues + 2 Gold",
+    "details": "Excellent value building providing both adventurers and gold.",
+    "extra": "Owner Benefit: 1 Rogue"
+  },
+  "heroes_garden": {
+    "id": "heroes_garden",
+    "name": "Heroes' Garden",
+    "body": "Cost: 4 Gold. Action: Take 1 face-up Quest; if you complete it this turn, score +4 VP. Owner: +2 VP.",
+    "summary": "4 Gold - Quest + 4 bonus VP",
+    "details": "Powerful building that rewards completing a Quest immediately after taking it.",
+    "extra": "Owner Benefit: 2 VP"
+  },
+  "house_of_good_spirits": {
+    "id": "house_of_good_spirits",
+    "name": "House of Good Spirits",
+    "body": "Cost: 3 Gold. Action: Take 1 Fighter + 1 adventurer of any type. Owner: +1 Fighter.",
+    "summary": "3 Gold - 1 Fighter + 1 any",
+    "details": "Flexible building providing a Fighter plus your choice of adventurer.",
+    "extra": "Owner Benefit: 1 Fighter"
+  },
+  "house_of_heroes": {
+    "id": "house_of_heroes",
+    "name": "House of Heroes",
+    "body": "Cost: 8 Gold. Action: Take 1 Cleric + 2 Fighters. Owner: +1 Cleric or Fighter.",
+    "summary": "8 Gold - 1 Cleric + 2 Fighters",
+    "details": "Expensive building good for Piety and Warfare quests.",
+    "extra": "Owner Benefit: 1 Cleric or Fighter"
+  },
+  "house_of_the_moon": {
+    "id": "house_of_the_moon",
+    "name": "House of the Moon",
+    "body": "Cost: 3 Gold. Action: Take 1 Cleric + take 1 face-up Quest. Owner: +2 Gold.",
+    "summary": "3 Gold - 1 Cleric + Quest",
+    "details": "Combines adventurer collection with Quest acquisition.",
+    "extra": "Owner Benefit: 2 Gold"
+  },
+  "house_of_wonder": {
+    "id": "house_of_wonder",
+    "name": "House of Wonder",
+    "body": "Cost: 4 Gold. Action: Pay 2 Gold to take 2 Clerics or Wizards (any combination). Owner: +2 Gold.",
+    "summary": "4 Gold - Pay 2 for 2 Clerics/Wizards",
+    "details": "Flexible but requires payment. Good for Arcana and Piety quests.",
+    "extra": "Owner Benefit: 2 Gold"
+  },
+  "jesters_court": {
+    "id": "jesters_court",
+    "name": "Jesters' Court",
+    "body": "Cost: 4 Gold. Action: Take all Rogues from this space. Owner: +1 Rogue. (Rogues accumulate here each round)",
+    "summary": "4 Gold - Accumulating Rogues",
+    "details": "At the start of each round, 2 Rogues are placed here. When used, take all accumulated Rogues.",
+    "extra": "Owner Benefit: 1 Rogue"
+  },
+  "new_olamn": {
+    "id": "new_olamn",
+    "name": "New Olamn",
+    "body": "Cost: 8 Gold. Action: Take 2 Rogues + 1 Wizard. Owner: +1 Rogue or Wizard.",
+    "summary": "8 Gold - 2 Rogues + 1 Wizard",
+    "details": "Expensive building for Skullduggery and Arcana quests.",
+    "extra": "Owner Benefit: 1 Rogue or Wizard"
+  },
+  "northgate": {
+    "id": "northgate",
+    "name": "Northgate",
+    "body": "Cost: 3 Gold. Action: Take 1 adventurer of any type + 2 Gold. Owner: +2 VP.",
+    "summary": "3 Gold - 1 any + 2 Gold",
+    "details": "Flexible and inexpensive. Good early purchase.",
+    "extra": "Owner Benefit: 2 VP"
+  },
+  "the_palace_of_waterdeep": {
+    "id": "the_palace_of_waterdeep",
+    "name": "The Palace of Waterdeep",
+    "body": "Cost: 4 Gold. Action: Take the Ambassador (extra Agent for this round only). Owner: +2 VP.",
+    "summary": "4 Gold - Ambassador token",
+    "details": "The Ambassador returns to this space at end of round. Only one player can have it per round.",
+    "extra": "Owner Benefit: 2 VP"
+  },
+  "the_skulkway": {
+    "id": "the_skulkway",
+    "name": "The Skulkway",
+    "body": "Cost: 4 Gold. Action: Take 1 Fighter + 1 Rogue + 2 Gold. Owner: +1 Fighter or Rogue.",
+    "summary": "4 Gold - 1 Fighter + 1 Rogue + 2 Gold",
+    "details": "Versatile building providing multiple resource types.",
+    "extra": "Owner Benefit: 1 Fighter or Rogue"
+  },
+  "smugglers_dock": {
+    "id": "smugglers_dock",
+    "name": "Smuggler's Dock",
+    "body": "Cost: 4 Gold. Action: Pay 2 Gold to take 4 Fighters or Rogues (any combination). Owner: +2 Gold.",
+    "summary": "4 Gold - Pay 2 for 4 Fighters/Rogues",
+    "details": "High volume but requires payment. Excellent for Warfare/Skullduggery.",
+    "extra": "Owner Benefit: 2 Gold"
+  },
+  "spires_of_the_morning": {
+    "id": "spires_of_the_morning",
+    "name": "Spires of the Morning",
+    "body": "Cost: 4 Gold. Action: Take all Clerics from this space. Owner: +2 VP. (Clerics accumulate here each round)",
+    "summary": "4 Gold - Accumulating Clerics",
+    "details": "At the start of each round, 1 Cleric is placed here. When used, take all accumulated Clerics.",
+    "extra": "Owner Benefit: 2 VP"
+  },
+  "the_stone_house": {
+    "id": "the_stone_house",
+    "name": "The Stone House",
+    "body": "Cost: 4 Gold. Action: Take 1 Gold for each Building tile in play (including this one). Owner: +2 Gold.",
+    "summary": "4 Gold - Gold per Building",
+    "details": "Scales with game progress. Better in late game with many buildings in play.",
+    "extra": "Owner Benefit: 2 Gold"
+  },
+  "the_three_pearls": {
+    "id": "the_three_pearls",
+    "name": "The Three Pearls",
+    "body": "Cost: 4 Gold. Action: Return 2 adventurers to supply, then take 3 adventurers of any type. Owner: +2 Gold.",
+    "summary": "4 Gold - Trade 2 for 3 any",
+    "details": "Converts unwanted adventurers into ones you need. Net gain of 1 adventurer.",
+    "extra": "Owner Benefit: 2 Gold"
+  },
+  "the_tower_of_luck": {
+    "id": "the_tower_of_luck",
+    "name": "The Tower of Luck",
+    "body": "Cost: 8 Gold. Action: Take 1 Cleric + 2 Rogues. Owner: +1 Cleric or Rogue.",
+    "summary": "8 Gold - 1 Cleric + 2 Rogues",
+    "details": "Expensive building for Piety and Skullduggery quests.",
+    "extra": "Owner Benefit: 1 Cleric or Rogue"
+  },
+  "tower_of_the_order": {
+    "id": "tower_of_the_order",
+    "name": "Tower of the Order",
+    "body": "Cost: 4 Gold. Action: Take all Wizards from this space. Owner: Draw 1 Intrigue card. (Wizards accumulate here each round)",
+    "summary": "4 Gold - Accumulating Wizards",
+    "details": "At the start of each round, 1 Wizard is placed here. When used, take all accumulated Wizards.",
+    "extra": "Owner Benefit: 1 Intrigue card"
+  },
+  "the_waymoot": {
+    "id": "the_waymoot",
+    "name": "The Waymoot",
+    "body": "Cost: 4 Gold. Action: Score all VP tokens on this space + take 1 face-up Quest. Owner: +2 VP.",
+    "summary": "4 Gold - VP tokens + Quest",
+    "details": "VP tokens accumulate here each round. Good value if left unused for several rounds.",
+    "extra": "Owner Benefit: 2 VP"
+  },
+  "the_yawning_portal": {
+    "id": "the_yawning_portal",
+    "name": "The Yawning Portal",
+    "body": "Cost: 4 Gold. Action: Take 2 adventurers of any type from the supply. Owner: +1 adventurer of any type.",
+    "summary": "4 Gold - 2 any adventurers",
+    "details": "Maximum flexibility. One of the most versatile buildings.",
+    "extra": "Owner Benefit: 1 any adventurer"
+  },
+  "the_zoarstar": {
+    "id": "the_zoarstar",
+    "name": "The Zoarstar",
+    "body": "Cost: 8 Gold. Action: Choose any action space with an opponent's Agent and use that action. Owner: +2 VP.",
+    "summary": "8 Gold - Copy opponent's space",
+    "details": "Expensive but powerful. Lets you use an action space that's already occupied.",
+    "extra": "Owner Benefit: 2 VP"
+  }
+}

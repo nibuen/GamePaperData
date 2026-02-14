@@ -1,0 +1,98 @@
+{
+  "arcana_sample_1": {
+    "id": "arcana_sample_1",
+    "name": "Bolster Griffon Cavalry",
+    "body": "Requires: 2 Fighters (orange), 2 Wizards (purple), 2 Gold. Reward: 6 VP.",
+    "summary": "Arcana Quest - 6 VP",
+    "details": "Typical Arcana quest requiring Wizards plus support.",
+    "extra": "Type: Arcana (blue) | Difficulty: Medium"
+  },
+  "arcana_sample_2": {
+    "id": "arcana_sample_2",
+    "name": "Establish Harper Safe House",
+    "body": "Requires: 3 Wizards (purple), 1 Fighter (orange). Reward: 8 VP.",
+    "summary": "Arcana Quest - 8 VP",
+    "details": "Higher VP Arcana quest with heavy Wizard requirement.",
+    "extra": "Type: Arcana (blue) | Difficulty: Medium"
+  },
+  "commerce_sample_1": {
+    "id": "commerce_sample_1",
+    "name": "Place a Sleeper Agent in Skullport",
+    "body": "Requires: 2 Rogues (black), 4 Gold. Reward: 7 VP + 2 Intrigue cards.",
+    "summary": "Commerce Quest - 7 VP + cards",
+    "details": "Commerce quests often require gold and provide extra resources.",
+    "extra": "Type: Commerce (yellow) | Difficulty: Medium"
+  },
+  "commerce_sample_2": {
+    "id": "commerce_sample_2",
+    "name": "Produce a Miracle for the Masses",
+    "body": "Requires: 1 Cleric (white), 1 Rogue (black), 2 Gold. Reward: 4 VP + 6 Gold.",
+    "summary": "Commerce Quest - 4 VP + 6 Gold",
+    "details": "Lower VP but provides significant gold return.",
+    "extra": "Type: Commerce (yellow) | Difficulty: Easy"
+  },
+  "piety_sample_1": {
+    "id": "piety_sample_1",
+    "name": "Convert a Noble to Lathander",
+    "body": "Requires: 2 Clerics (white), 1 Fighter (orange). Reward: 5 VP + 2 Gold.",
+    "summary": "Piety Quest - 5 VP",
+    "details": "Typical Piety quest with Cleric focus.",
+    "extra": "Type: Piety (silver) | Difficulty: Easy"
+  },
+  "piety_sample_2": {
+    "id": "piety_sample_2",
+    "name": "Safeguard Eltorchul Mage",
+    "body": "Requires: 3 Clerics (white), 2 Fighters (orange). Reward: 11 VP.",
+    "summary": "Piety Quest - 11 VP",
+    "details": "High VP Piety quest requiring significant Cleric investment.",
+    "extra": "Type: Piety (silver) | Difficulty: Hard"
+  },
+  "skullduggery_sample_1": {
+    "id": "skullduggery_sample_1",
+    "name": "Steal Spellbook from Silverhand",
+    "body": "Requires: 3 Rogues (black), 1 Wizard (purple). Reward: 9 VP.",
+    "summary": "Skullduggery Quest - 9 VP",
+    "details": "Typical Skullduggery quest with heavy Rogue requirement.",
+    "extra": "Type: Skullduggery (green) | Difficulty: Medium"
+  },
+  "skullduggery_sample_2": {
+    "id": "skullduggery_sample_2",
+    "name": "Infiltrate Builder's Hall",
+    "body": "Requires: 2 Rogues (black), 2 Gold. Reward: 6 VP + free Building purchase.",
+    "summary": "Skullduggery Quest - 6 VP + Building",
+    "details": "Provides VP plus ability to claim a Building.",
+    "extra": "Type: Skullduggery (green) | Difficulty: Medium"
+  },
+  "warfare_sample_1": {
+    "id": "warfare_sample_1",
+    "name": "Defend the Tower of Luck",
+    "body": "Requires: 3 Fighters (orange), 1 Cleric (white). Reward: 8 VP.",
+    "summary": "Warfare Quest - 8 VP",
+    "details": "Typical Warfare quest with Fighter focus.",
+    "extra": "Type: Warfare (red) | Difficulty: Medium"
+  },
+  "warfare_sample_2": {
+    "id": "warfare_sample_2",
+    "name": "Recruit Lieutenant",
+    "body": "Requires: 2 Fighters (orange), 2 Gold. Reward: 4 VP + Lieutenant token (permanent extra Agent).",
+    "summary": "Warfare Quest - 4 VP + Agent",
+    "details": "PLOT QUEST: Provides a permanent extra Agent for the rest of the game.",
+    "extra": "Type: Warfare (red) | PLOT QUEST | Difficulty: Easy"
+  },
+  "plot_quest_sample": {
+    "id": "plot_quest_sample",
+    "name": "Research Chronomancy",
+    "body": "Requires: 2 Wizards (purple), 2 Gold. Reward: 3 VP. ONGOING: Once per round, you may take 1 Wizard from the supply.",
+    "summary": "Arcana Plot Quest - 3 VP + ongoing",
+    "details": "PLOT QUEST: Low VP but provides ongoing Wizard income for the rest of the game.",
+    "extra": "Type: Arcana (blue) | PLOT QUEST | Difficulty: Easy"
+  },
+  "mandatory_quest_sample": {
+    "id": "mandatory_quest_sample",
+    "name": "Repel Seawraith Invaders",
+    "body": "Requires: 1 Fighter (orange), 1 Cleric (white). Reward: 2 VP. MANDATORY: Must complete before any other Quest.",
+    "summary": "Mandatory Quest - 2 VP",
+    "details": "MANDATORY QUEST: Given via Intrigue card. Blocks other quest completion until done.",
+    "extra": "Type: Warfare (red) | MANDATORY | Difficulty: Easy but disruptive"
+  }
+}

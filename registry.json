@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "base_url": "https://raw.githubusercontent.com/nibuen/GamePaperData/main/files",
+  "games": [
+    {
+      "id": "lords_of_waterdeep",
+      "game_name": "Lords of Waterdeep",
+      "designer": "Peter Lee, Rodney Thompson",
+      "publisher": "Wizards of the Coast"
+    }
+  ]
+}

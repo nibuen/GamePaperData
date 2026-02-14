@@ -1,0 +1,90 @@
+{
+  "brianne_byndraeth": {
+    "id": "brianne_byndraeth",
+    "name": "Brianne Byndraeth",
+    "body": "Score 4 bonus VP for each Arcana Quest and each Skullduggery Quest you completed.",
+    "summary": "+4 VP: Arcana, Skullduggery",
+    "details": "Focus on purple Wizards and black Rogues to complete these quest types.",
+    "extra": "Quest Types: Arcana (blue), Skullduggery (green)"
+  },
+  "caladorn_cassalanter": {
+    "id": "caladorn_cassalanter",
+    "name": "Caladorn Cassalanter",
+    "body": "Score 4 bonus VP for each Piety Quest and each Skullduggery Quest you completed.",
+    "summary": "+4 VP: Piety, Skullduggery",
+    "details": "Focus on white Clerics and black Rogues to complete these quest types.",
+    "extra": "Quest Types: Piety (silver), Skullduggery (green)"
+  },
+  "durnan_the_wanderer": {
+    "id": "durnan_the_wanderer",
+    "name": "Durnan the Wanderer",
+    "body": "Score 4 bonus VP for each Commerce Quest and each Warfare Quest you completed.",
+    "summary": "+4 VP: Commerce, Warfare",
+    "details": "Focus on gold and orange Fighters. Commerce quests often need gold.",
+    "extra": "Quest Types: Commerce (yellow), Warfare (red)"
+  },
+  "khelben_arunsun": {
+    "id": "khelben_arunsun",
+    "name": "Khelben Arunsun",
+    "body": "Score 4 bonus VP for each Arcana Quest and each Warfare Quest you completed.",
+    "summary": "+4 VP: Arcana, Warfare",
+    "details": "Focus on purple Wizards and orange Fighters to complete these quest types.",
+    "extra": "Quest Types: Arcana (blue), Warfare (red)"
+  },
+  "kyriani_agrivar": {
+    "id": "kyriani_agrivar",
+    "name": "Kyriani Agrivar",
+    "body": "Score 4 bonus VP for each Arcana Quest and each Piety Quest you completed.",
+    "summary": "+4 VP: Arcana, Piety",
+    "details": "Focus on purple Wizards and white Clerics to complete these quest types.",
+    "extra": "Quest Types: Arcana (blue), Piety (silver)"
+  },
+  "larissa_neathal": {
+    "id": "larissa_neathal",
+    "name": "Larissa Neathal",
+    "body": "Score 6 bonus VP for each Building you control.",
+    "summary": "+6 VP per Building",
+    "details": "Focus on purchasing Buildings from Builder's Hall. Each Building also earns you bonuses when others use it.",
+    "extra": "Strategy: Buy buildings early and often"
+  },
+  "mirt_the_moneylender": {
+    "id": "mirt_the_moneylender",
+    "name": "Mirt the Moneylender",
+    "body": "Score 4 bonus VP for each Commerce Quest and each Piety Quest you completed.",
+    "summary": "+4 VP: Commerce, Piety",
+    "details": "Focus on gold and white Clerics to complete these quest types.",
+    "extra": "Quest Types: Commerce (yellow), Piety (silver)"
+  },
+  "nindil_jalbuck": {
+    "id": "nindil_jalbuck",
+    "name": "Nindil Jalbuck",
+    "body": "Score 4 bonus VP for each Piety Quest and each Warfare Quest you completed.",
+    "summary": "+4 VP: Piety, Warfare",
+    "details": "Focus on white Clerics and orange Fighters to complete these quest types.",
+    "extra": "Quest Types: Piety (silver), Warfare (red)"
+  },
+  "nymara_scheiron": {
+    "id": "nymara_scheiron",
+    "name": "Nymara Scheiron",
+    "body": "Score 4 bonus VP for each Commerce Quest and each Skullduggery Quest you completed.",
+    "summary": "+4 VP: Commerce, Skullduggery",
+    "details": "Focus on gold and black Rogues to complete these quest types.",
+    "extra": "Quest Types: Commerce (yellow), Skullduggery (green)"
+  },
+  "piergeiron_the_paladinson": {
+    "id": "piergeiron_the_paladinson",
+    "name": "Piergeiron the Paladinson",
+    "body": "Score 4 bonus VP for each Piety Quest and each Warfare Quest you completed.",
+    "summary": "+4 VP: Piety, Warfare",
+    "details": "Focus on white Clerics and orange Fighters to complete these quest types.",
+    "extra": "Quest Types: Piety (silver), Warfare (red)"
+  },
+  "sammereza_sulphontis": {
+    "id": "sammereza_sulphontis",
+    "name": "Sammereza Sulphontis",
+    "body": "Score 4 bonus VP for each Arcana Quest and each Commerce Quest you completed.",
+    "summary": "+4 VP: Arcana, Commerce",
+    "details": "Focus on purple Wizards and gold to complete these quest types.",
+    "extra": "Quest Types: Arcana (blue), Commerce (yellow)"
+  }
+}

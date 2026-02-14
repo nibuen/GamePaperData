@@ -1,0 +1,383 @@
+{
+  "game_name": "Lords of Waterdeep",
+  "designer": "Peter Lee, Rodney Thompson",
+  "publisher": "Wizards of the Coast",
+  "game_overview": "Lords of Waterdeep is a strategy board game set in the Dungeons & Dragons universe. Players take on the roles of secret Lords vying for control of Waterdeep, the City of Splendors. You recruit adventurers to complete quests, build new establishments, and use intrigue to gain the upper hand against your rivals. Your Lord identity is secret, granting bonus points for completing certain types of quests.",
+  "objective": "Score the most Victory Points (VP) by completing Quests, constructing Buildings, playing Intrigue cards, and fulfilling your Lord's secret bonus conditions.",
+  "min_players": 2,
+  "max_players": 5,
+  "bgg_link": "https://boardgamegeek.com/boardgame/110327/lords-of-waterdeep",
+  "play_time_minutes": 60,
+  "expansions": [
+    {"id": "scoundrels", "name": "Scoundrels of Skullport"}
+  ],
+  "components_overview": [
+    {
+      "name": "Game Board",
+      "type": "Board",
+      "description": "The city of Waterdeep with various action spaces: Cliffwatch Inn, Aurora's Realms Shop, The Grinning Lion Tavern, Castle Waterdeep, Waterdeep Harbor, Builder's Hall, and Field of Triumph. Also shows the round track (1-8) and building spaces."
+    },
+    {
+      "name": "Agents",
+      "type": "Meeple",
+      "description": "Wooden agent tokens in each player color. Start with 4 agents. You do not gain an additional agent in round 5.",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "name": "Agents",
+      "type": "Meeple",
+      "description": "Wooden agent tokens in each player color. Start with 2 agents. Gain an additional agent in round 5.",
+      "condition": {"min_count_variant": 3}
+    },
+    {
+      "name": "Adventurer Cubes",
+      "type": "Resource",
+      "description": "Four types of adventurers: Fighters (orange), Rogues (black), Wizards (purple), Clerics (white). Used to complete quests. Referred to by color in the rules."
+    },
+    {
+      "name": "Quest Cards",
+      "type": "Card",
+      "description": "Show adventurer requirements, gold cost, rewards, and quest type (Arcana, Commerce, Piety, Skullduggery, Warfare). Completed quests score VP.",
+      "action": {
+        "name": "CardList",
+        "value": "lords_of_waterdeep_quests.json"
+      }
+    },
+    {
+      "name": "Intrigue Cards",
+      "type": "Card",
+      "description": "Special action cards played at Waterdeep Harbor. Three types: Attack (harm opponents), Utility (help yourself), Mandatory Quests (force opponents to complete before their own quests).",
+      "action": {
+        "name": "CardList",
+        "value": "lords_of_waterdeep_intrigue.json"
+      }
+    },
+    {
+      "name": "Lord Cards",
+      "type": "Card",
+      "description": "11 secret identity cards. Each Lord scores bonus VP at game end for completing specific quest types or controlling buildings.",
+      "action": {
+        "name": "CardList",
+        "value": "lords_of_waterdeep_lords.json"
+      }
+    },
+    {
+      "name": "Building Tiles",
+      "type": "Tile",
+      "description": "24 purchasable buildings that add new action spaces. Cost 3-8 Gold. Owner gains a bonus when anyone uses their building. Buildings score 4 VP at game end.",
+      "action": {
+        "name": "CardList",
+        "value": "lords_of_waterdeep_buildings.json"
+      }
+    },
+    {
+      "name": "Building Control Markers",
+      "type": "Marker",
+      "description": "Placed on buildings you own to track ownership. You receive benefits when others use your buildings."
+    },
+    {
+      "name": "Gold Tokens",
+      "type": "Resource",
+      "description": "Currency used to buy buildings, pay quest costs, and activate certain actions. Denominations of 1 and 5."
+    },
+    {
+      "name": "Victory Point Tokens",
+      "type": "Token",
+      "description": "Tokens for tracking VP beyond 100 on the score track. 100 VP tokens are used when you lap the track."
+    },
+    {
+      "name": "Ambassador Token",
+      "type": "Marker",
+      "description": "Neutral gray agent that can be recruited from Castle Waterdeep. Returns to Castle Waterdeep at the end of each round."
+    },
+    {
+      "name": "Lieutenant Token",
+      "type": "Marker",
+      "description": "Neutral gray agent that can be recruited from Castle Waterdeep. Once recruited, stays with you permanently."
+    },
+    {
+      "name": "First Player Marker",
+      "type": "Marker",
+      "description": "Passed clockwise at the end of each round to indicate who goes first."
+    },
+    {
+      "name": "Corruption Track",
+      "type": "Board",
+      "description": "Tracks Corruption tokens taken by players. At game end, players lose VP based on total Corruption in play.",
+      "condition": {"expansion": "scoundrels"}
+    },
+    {
+      "name": "Corruption Tokens",
+      "type": "Token",
+      "description": "Negative VP tokens gained from certain powerful actions. The more Corruption in play, the more VP each token costs at game end.",
+      "condition": {"expansion": "scoundrels"}
+    },
+    {
+      "name": "Skullport Board",
+      "type": "Board",
+      "description": "Expansion board with powerful action spaces that often give Corruption as a cost.",
+      "condition": {"expansion": "scoundrels"}
+    },
+    {
+      "name": "Undermountain Board",
+      "type": "Board",
+      "description": "Expansion board with high-reward action spaces for experienced players.",
+      "condition": {"expansion": "scoundrels"}
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place the game board in the center of the table.",
+      "short_description": "Place Board"
+    },
+    {
+      "description": "Sort the adventurer cubes by color (orange Fighters, black Rogues, purple Wizards, white Clerics) and place them in the supply near the board.",
+      "short_description": "Adventurer Supply"
+    },
+    {
+      "description": "Create separate supplies for gold tokens and VP tokens near the board.",
+      "short_description": "Gold & VP Supply"
+    },
+    {
+      "description": "Shuffle the Quest cards and place them face-down as a draw deck. Draw 4 Quest cards and place them face-up at Cliffwatch Inn.",
+      "short_description": "Quest Deck Setup"
+    },
+    {
+      "description": "Shuffle the Intrigue cards and place them face-down as a draw deck near Waterdeep Harbor.",
+      "short_description": "Intrigue Deck Setup"
+    },
+    {
+      "description": "Shuffle the Building tiles (basic game: use only tiles with no expansion symbol) and draw 3. Place them face-up in Builder's Hall.",
+      "short_description": "Building Stack Setup"
+    },
+    {
+      "description": "Place the round marker on space 1 of the round track.",
+      "short_description": "Round Marker"
+    },
+    {
+      "description": "Each player chooses a color and takes: the corresponding tavern card, all agents of that color, the score marker, and building control markers.",
+      "short_description": "Player Components"
+    },
+    {
+      "description": "Place each player's score marker on space 0 of the VP track.",
+      "short_description": "Score Markers"
+    },
+    {
+      "description": "Shuffle the Lord cards and deal 1 face-down to each player. Look at your Lord secretly and keep it hidden until end of game scoring.",
+      "short_description": "Deal Lord Cards"
+    },
+    {
+      "description": "Give each player 4 gold from the supply.",
+      "short_description": "Starting Gold"
+    },
+    {
+      "description": "Deal 2 Quest cards face-down to each player. These go in your active quest area (tavern card).",
+      "short_description": "Starting Quests"
+    },
+    {
+      "description": "Deal 2 Intrigue cards face-down to each player. Keep these hidden in your hand.",
+      "short_description": "Starting Intrigue"
+    },
+    {
+      "description": "Determine the first player randomly. That player takes the First Player marker.",
+      "short_description": "First Player"
+    },
+    {
+      "description": "Give starting resources based on player order: 1st player gets nothing extra, 2nd player gets 1 gold, 3rd player gets 1 gold, 4th player gets 1 gold + 1 adventurer of their choice, 5th player gets 1 gold + 1 adventurer of their choice.",
+      "short_description": "Starting Resources by Turn Order"
+    },
+    {
+      "description": "Each player starts with 4 agents instead of 2. Skip gaining the extra agent in round 5.",
+      "short_description": "Agent Adjustment",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "description": "Each player starts with 2 agents. You will gain an additional agent in round 5.",
+      "short_description": "Starting Agents",
+      "condition": {"min_count_variant": 3}
+    },
+    {
+      "description": "Place the Corruption Track near the board. Fill all spaces with Corruption tokens from the supply.",
+      "short_description": "Corruption Setup",
+      "condition": {"expansion": "scoundrels"}
+    },
+    {
+      "description": "Place the Skullport and/or Undermountain expansion boards next to the main board.",
+      "short_description": "Expansion Boards",
+      "condition": {"expansion": "scoundrels"}
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "The game is played over 8 rounds. Each round, players take turns placing one Agent at a time on an available action space and taking that action. After all agents are placed, there is a cleanup phase before the next round.",
+    "actions": [
+      {
+        "name": "Place an Agent",
+        "description": "On your turn, place one of your available Agents on an unoccupied action space and immediately take that action.",
+        "steps": [
+          {"description": "Choose one of your unassigned Agents."},
+          {"description": "Place it on any unoccupied action space on the board (including player-owned Buildings)."},
+          {"description": "Immediately take the action shown on that space."},
+          {"description": "If the space is a player-owned Building, the owner gains the bonus shown in the Owner box."}
+        ],
+        "notes": [
+          {"description": "Each action space can only hold one Agent (exception: Waterdeep Harbor has 3 spaces)."},
+          {"description": "You MUST take the action when you place an Agent - you cannot skip it."},
+          {"description": "If you have no Agents left, you pass for the rest of the round."}
+        ]
+      },
+      {
+        "name": "Complete a Quest",
+        "description": "You may complete one Quest on your turn AFTER placing your Agent, if you have the required adventurers and gold.",
+        "steps": [
+          {"description": "Choose an active Quest card from your tavern."},
+          {"description": "Pay the required adventurer cubes (return them to the supply)."},
+          {"description": "Pay any required gold (return to the supply)."},
+          {"description": "Gain the rewards shown on the Quest card (VP, resources, etc.)."},
+          {"description": "Move the completed Quest face-up to your completed quest pile."},
+          {"description": "If it's a Plot Quest, keep it face-up for its ongoing effect."}
+        ],
+        "notes": [
+          {"description": "You may complete only ONE Quest per turn."},
+          {"description": "You can complete a Quest you just obtained this turn."},
+          {"description": "Mandatory Quests must be completed before any other Quests."}
+        ]
+      },
+      {
+        "name": "Waterdeep Harbor - Reassign Agent",
+        "description": "At the end of the round, Agents placed at Waterdeep Harbor are reassigned in order (1, 2, 3).",
+        "steps": [
+          {"description": "Starting with space 1, each Agent is moved to a different action space."},
+          {"description": "The owner takes the action at the new space."},
+          {"description": "The Harbor agent is then returned to its owner."}
+        ],
+        "notes": [
+          {"description": "Harbor is the only action that lets you effectively take 2 actions with one Agent."},
+          {"description": "The Intrigue card is played immediately, but the reassignment happens at end of round."}
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Action Spaces",
+        "description": "Cliffwatch Inn (3 spaces): Space 1: Take 1 Quest + 2 Gold. Space 2: Take 1 Quest + 1 Intrigue card. Space 3: Discard all face-up Quests, draw new ones, take 1 Quest. Aurora's Realms Shop: Take 4 Gold. The Grinning Lion Tavern: Take 2 Rogues. The Plinth: Take 1 Cleric. Blackstaff Tower: Take 1 Wizard. Castle Waterdeep: Take First Player marker + draw 1 Intrigue card. Builder's Hall: Purchase a Building tile (VP tokens accumulate on tiles each round). Field of Triumph: Take 2 Fighters. Waterdeep Harbor (3 spaces): Play 1 Intrigue card, then reassign your Agent to another space at end of round."
+      },
+      {
+        "name": "Adventurer Types",
+        "description": "Fighters (Orange): Often needed for Warfare quests. Rogues (Black): Often needed for Skullduggery quests. Wizards (Purple): Often needed for Arcana quests. Clerics (White): Often needed for Piety quests. Commerce quests often need gold or a mix. Cubes are limited - if supply runs out, you cannot gain more of that type."
+      },
+      {
+        "name": "Quest Types",
+        "description": "Arcana (blue): Magic-focused, often need Wizards. Commerce (yellow): Trade-focused, often need gold/mix. Piety (silver): Religious, often need Clerics. Skullduggery (green): Thievery, often need Rogues. Warfare (red): Military, often need Fighters. Your Lord card grants bonus VP for completing certain quest types."
+      },
+      {
+        "name": "Plot Quests",
+        "description": "Plot Quests have a scroll symbol. When completed, they provide an ongoing benefit for the rest of the game rather than just VP. Keep completed Plot Quests face-up as a reminder of their ongoing effect."
+      },
+      {
+        "name": "Mandatory Quests",
+        "description": "Intrigue cards can force opponents to take Mandatory Quests (orange border). A player with a Mandatory Quest MUST complete it before completing any other Quest. They award few VP and distract from your strategy."
+      },
+      {
+        "name": "Buildings",
+        "description": "Purchase Buildings from Builder's Hall for gold. Place them on an empty Building space on the board. You place a control marker on it. When ANY player (including you) uses your Building, you gain the Owner bonus shown on the tile. Buildings score 4 VP at game end."
+      },
+      {
+        "name": "Lord Bonuses",
+        "description": "Your secret Lord card provides end-game bonus VP. Most Lords score +4 VP for each completed Quest of 2 specific types. Example: Durnan the Wanderer scores +4 VP per Commerce Quest and +4 VP per Warfare Quest. Keep your Lord secret to avoid telegraphing your strategy."
+      },
+      {
+        "name": "Intrigue Cards",
+        "description": "Attack cards: Harm opponents or force choices on them. Utility cards: Provide resources, VP, or other benefits to you. Mandatory Quests: Force an opponent to complete a small Quest before their other Quests. Play Intrigue cards at Waterdeep Harbor."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends after 8 rounds.",
+    "procedure": [
+      "Complete round 8 including final reassignments from Waterdeep Harbor.",
+      "All players reveal their Lord cards.",
+      "Calculate final scores."
+    ],
+    "final_scoring": [
+      {
+        "source": "Quest VP",
+        "description": "Already scored during the game as you completed Quests."
+      },
+      {
+        "source": "Lord Bonus",
+        "description": "Score the bonus shown on your Lord card. Most Lords give +4 VP per Quest of 2 specific types."
+      },
+      {
+        "source": "Buildings Owned",
+        "description": "Score 4 VP for each Building you control."
+      },
+      {
+        "source": "Leftover Adventurers",
+        "description": "Score 1 VP for each adventurer cube remaining in your tavern."
+      },
+      {
+        "source": "Leftover Gold",
+        "description": "Score 1 VP for every 2 gold remaining (rounded down)."
+      }
+    ]
+  },
+  "winning_condition": "The player with the most Victory Points wins. In case of a tie, the tied player with the most gold remaining wins. If still tied, players share the victory.",
+  "tips_for_new_players": [
+    {
+      "tip": "Remember your Lord",
+      "description": "Check your Lord card early and focus on quests that match your bonus. +4 VP per matching quest adds up quickly."
+    },
+    {
+      "tip": "Balance resources",
+      "description": "Don't stockpile too many adventurers of one color. Take quests that use what you have."
+    },
+    {
+      "tip": "Use Waterdeep Harbor",
+      "description": "It's powerful because you play an Intrigue card AND get to place your Agent again at end of round."
+    },
+    {
+      "tip": "Build early",
+      "description": "Buildings generate VP and ongoing benefits when others use them. Early buildings pay off more."
+    },
+    {
+      "tip": "Complete Plot Quests first",
+      "description": "Their ongoing benefits compound over the game."
+    },
+    {
+      "tip": "Watch opponent colors",
+      "description": "If someone is collecting lots of one adventurer type, they're likely going for quests needing that type."
+    },
+    {
+      "tip": "Don't hoard Quests",
+      "description": "Active Quests don't score until completed. Keep 2-3 active and focus on completing them."
+    },
+    {
+      "tip": "Round 5 Agent",
+      "description": "In round 5, everyone gains an extra Agent. Plan for the extra action economy."
+    },
+    {
+      "tip": "Must take actions",
+      "description": "You MUST be able to complete an action to place an Agent there. You cannot block spaces you can't use (e.g., Builder's Hall without gold)."
+    },
+    {
+      "tip": "Quest immediately",
+      "description": "You can complete a Quest immediately after taking it from Cliffwatch Inn on the same turn."
+    },
+    {
+      "tip": "Plot Quest timing",
+      "description": "Plot Quest VP bonuses only apply to Quests completed AFTER the Plot Quest itself. They don't count themselves."
+    },
+    {
+      "tip": "No limits",
+      "description": "There are no maximum limits on active Quests, completed Quests, or Intrigue cards in hand."
+    },
+    {
+      "tip": "Harbor reassignment",
+      "description": "When reassigning from Waterdeep Harbor, you can NEVER place to another Harbor space."
+    },
+    {
+      "tip": "Building VP tokens",
+      "description": "At the start of each round, place 1 VP token on each Building tile in Builder's Hall. These accumulate and are gained when purchased."
+    }
+  ]
+}
