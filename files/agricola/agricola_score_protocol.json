@@ -1,0 +1,228 @@
+{
+  "game_id": "agricola",
+  "rounds": 1,
+  "round_label": "Game",
+  "categories": [
+    {
+      "id": "fields",
+      "name": "Fields",
+      "description": "Plowed fields (empty or sown): 0-1 = -1 VP, 2 = 1, 3 = 2, 4 = 3, 5+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 15,
+      "stepper_label": "Fields",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 1, "vp": -1},
+          {"min": 2, "max": 2, "vp": 1},
+          {"min": 3, "max": 3, "vp": 2},
+          {"min": 4, "max": 4, "vp": 3},
+          {"min": 5, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "pastures",
+      "name": "Pastures",
+      "description": "Fenced pastures (enclosed areas): 0 = -1 VP, 1 = 1, 2 = 2, 3 = 3, 4+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 15,
+      "stepper_label": "Pastures",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 0, "vp": -1},
+          {"min": 1, "max": 1, "vp": 1},
+          {"min": 2, "max": 2, "vp": 2},
+          {"min": 3, "max": 3, "vp": 3},
+          {"min": 4, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "grain",
+      "name": "Grain",
+      "description": "Total Grain (supply + fields): 0 = -1 VP, 1-3 = 1, 4-5 = 2, 6-7 = 3, 8+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 30,
+      "stepper_label": "Grain",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 0, "vp": -1},
+          {"min": 1, "max": 3, "vp": 1},
+          {"min": 4, "max": 5, "vp": 2},
+          {"min": 6, "max": 7, "vp": 3},
+          {"min": 8, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "vegetables",
+      "name": "Vegetables",
+      "description": "Total Vegetables (supply + fields): 0 = -1 VP, 1 = 1, 2 = 2, 3 = 3, 4+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 20,
+      "stepper_label": "Vegetables",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 0, "vp": -1},
+          {"min": 1, "max": 1, "vp": 1},
+          {"min": 2, "max": 2, "vp": 2},
+          {"min": 3, "max": 3, "vp": 3},
+          {"min": 4, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "sheep",
+      "name": "Sheep",
+      "description": "Total Sheep: 0 = -1 VP, 1-3 = 1, 4-5 = 2, 6-7 = 3, 8+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 21,
+      "stepper_label": "Sheep",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 0, "vp": -1},
+          {"min": 1, "max": 3, "vp": 1},
+          {"min": 4, "max": 5, "vp": 2},
+          {"min": 6, "max": 7, "vp": 3},
+          {"min": 8, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "wild_boar",
+      "name": "Wild Boar",
+      "description": "Total Wild boar: 0 = -1 VP, 1-2 = 1, 3-4 = 2, 5-6 = 3, 7+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 18,
+      "stepper_label": "Wild boar",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 0, "vp": -1},
+          {"min": 1, "max": 2, "vp": 1},
+          {"min": 3, "max": 4, "vp": 2},
+          {"min": 5, "max": 6, "vp": 3},
+          {"min": 7, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "cattle",
+      "name": "Cattle",
+      "description": "Total Cattle: 0 = -1 VP, 1 = 1, 2-3 = 2, 4-5 = 3, 6+ = 4 VP",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 15,
+      "stepper_label": "Cattle",
+      "scoring_rule": {
+        "type": "threshold",
+        "thresholds": [
+          {"min": 0, "max": 0, "vp": -1},
+          {"min": 1, "max": 1, "vp": 1},
+          {"min": 2, "max": 3, "vp": 2},
+          {"min": 4, "max": 5, "vp": 3},
+          {"min": 6, "max": null, "vp": 4}
+        ]
+      }
+    },
+    {
+      "id": "unused_spaces",
+      "name": "Unused Spaces",
+      "description": "Empty farmyard spaces without rooms, fields, stables, or fencing: -1 VP each",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 15,
+      "stepper_label": "Unused spaces",
+      "scoring_rule": {
+        "type": "multiplier",
+        "factor": -1
+      }
+    },
+    {
+      "id": "fenced_stables",
+      "name": "Fenced Stables",
+      "description": "Stables inside fenced pastures: +1 VP each",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 4,
+      "stepper_label": "Fenced stables",
+      "scoring_rule": {
+        "type": "direct"
+      }
+    },
+    {
+      "id": "rooms",
+      "name": "Rooms",
+      "description": "Room material: Wood = 0 VP, Clay = 1 VP, Stone = 2 VP per room. Enter total room VP.",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 10,
+      "stepper_label": "Room VP total",
+      "scoring_rule": {
+        "type": "direct"
+      }
+    },
+    {
+      "id": "family_members",
+      "name": "Family Members",
+      "description": "Each Family member = 3 VP (2 to 5 members possible)",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 2,
+      "max_value": 5,
+      "stepper_label": "Family members",
+      "scoring_rule": {
+        "type": "multiplier",
+        "factor": 3
+      }
+    },
+    {
+      "id": "cards",
+      "name": "Cards",
+      "description": "Total VP from played Occupation and Improvement card point values plus any Bonus points",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 50,
+      "stepper_label": "Card VP",
+      "scoring_rule": {
+        "type": "direct"
+      }
+    },
+    {
+      "id": "begging_cards",
+      "name": "Begging Cards",
+      "description": "Each Begging card = -3 VP penalty",
+      "input_type": "count",
+      "end_game_only": true,
+      "min_value": 0,
+      "max_value": 10,
+      "stepper_label": "Begging cards",
+      "scoring_rule": {
+        "type": "multiplier",
+        "factor": -3
+      }
+    }
+  ]
+}

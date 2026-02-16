@@ -32,6 +32,23 @@ We welcome contributions! To add a new game or improve existing data, see the **
 3. Add an entry to `registry.json`
 4. Open a pull request
 
+## Scoring Walkthrough Protocol
+
+Games can include a `_score_protocol.json` file that enables an interactive scoring walkthrough in the app. Each scoring category can include a `scoring_rule` object that tells the app how to calculate VP from the player's input — no app code changes needed.
+
+See the [Contributing Guide](CONTRIBUTING.md) for the full `scoring_rule` field reference, or look at `files/agricola/agricola_score_protocol.json` for a complete example.
+
+### Supported Rule Types
+
+| Type | Description | Example |
+|------|-------------|---------|
+| `threshold` | Lookup VP from count ranges | Agricola fields: 0-1→-1, 2→1, 3→2, ... |
+| `multiplier` | Count × fixed factor | Family members × 3 VP |
+| `direct` | VP = count entered | Total card VP |
+| `standing` | Most/middle/least → fixed VP | Ra pharaohs: most→+5, least→-2 |
+| `toggle_gate` | If toggle ON → count, else 0 | Ra nile (needs flood) |
+| `multi_threshold` | Sum per-item threshold lookups | Ra monuments quantity |
+
 ## License
 
 Game data is contributed by the community for use with the GamersPaper app.
