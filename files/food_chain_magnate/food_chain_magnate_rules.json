@@ -268,7 +268,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 5
+                "max_count_variant": 2
             }
         },
         {
@@ -276,7 +276,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 5
+                "max_count_variant": 3
             }
         },
         {
@@ -284,7 +284,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 5
+                "max_count_variant": 4
             }
         },
         {
@@ -300,7 +300,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 5
+                "max_count_variant": 2
             }
         },
         {
@@ -308,7 +308,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 5
+                "max_count_variant": 3
             }
         },
         {
@@ -316,7 +316,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 5
+                "max_count_variant": 4
             }
         },
         {
