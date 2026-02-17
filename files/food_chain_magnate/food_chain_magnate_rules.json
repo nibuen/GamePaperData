@@ -1,0 +1,637 @@
+{
+    "game_name": "Food Chain Magnate",
+    "designer": "Jeroen Doumen, Joris Wiersinga",
+    "publisher": "Splotter Spellen",
+    "game_overview": "Food Chain Magnate is a heavy strategy game about building a fast food chain. Players compete on a variable city map through purchasing, marketing and sales, and on a job market for key staff members. The focus is on building your company using a card-driven (human) resource management system. Each player starts as a single entrepreneur and builds up a fast food chain by hiring and training staff, represented by cards, and by running the operations of their company, which is done on a variable board. The game continues until the bank runs out of money twice. The richest player then wins.",
+    "objective": "Accumulate the most cash by the time the bank breaks for the second time.",
+    "min_players": 2,
+    "max_players": 5,
+    "bgg_link": "https://boardgamegeek.com/boardgame/175914/food-chain-magnate",
+    "play_time_minutes": 180,
+    "components_overview": [
+        {
+            "name": "Turn Order Track",
+            "type": "Board",
+            "subTypes": [
+                "Track"
+            ],
+            "description": "Track for determining player order each turn",
+            "count": 1
+        },
+        {
+            "name": "Map Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "Map"
+            ],
+            "description": "Map elements that create the variable city board. Each tile is 5x5 squares and can contain roads, drinks, houses, or empty space.",
+            "detailed_description": "Map tiles are physical tile components consisting of 5x5 squares. Initially, a square can contain a road, drinks, part of a house, or empty space.",
+            "count": 20
+        },
+        {
+            "name": "House Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "House"
+            ],
+            "description": "Tiles representing houses where customers live",
+            "count": 8
+        },
+        {
+            "name": "Garden Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "Garden"
+            ],
+            "description": "Tiles that can be added to houses to increase their value",
+            "detailed_description": "Gardens are placed adjacent to houses over 2 squares to form a 2x3 rectangle. Houses with gardens double the unit price received for each item sold.",
+            "count": 8
+        },
+        {
+            "name": "Billboard Marketing Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "Marketing"
+            ],
+            "description": "Marketing campaigns placed adjacent to roads",
+            "detailed_description": "Billboards reach all houses orthogonally adjacent to them. Must be placed adjacent to roads.",
+            "count": 6
+        },
+        {
+            "name": "Mailbox Marketing Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "Marketing"
+            ],
+            "description": "Marketing campaigns that reach entire blocks",
+            "detailed_description": "Mailboxes reach all houses in the same block (area enclosed by roads). Must be placed adjacent to roads.",
+            "count": 4
+        },
+        {
+            "name": "Airplane Marketing Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "Marketing"
+            ],
+            "description": "Marketing campaigns placed on board edges",
+            "detailed_description": "Airplanes reach every house in a line of 1, 3, or 5 rows or columns. Must be placed on the side of the board.",
+            "count": 3
+        },
+        {
+            "name": "Radio Marketing Tiles",
+            "type": "Tile",
+            "subTypes": [
+                "Marketing"
+            ],
+            "description": "Marketing campaigns that reach multiple tiles",
+            "detailed_description": "Radio campaigns reach every house on the tile where placed and all 8 surrounding tiles. Must be placed adjacent to roads.",
+            "count": 3
+        },
+        {
+            "name": "Numbered Busy Chips",
+            "type": "Token",
+            "subTypes": [
+                "Status"
+            ],
+            "description": "Tokens indicating how long a marketeer will be busy",
+            "detailed_description": "Placed on marketeer cards when they initiate campaigns. The number corresponds to campaign duration.",
+            "count": 16
+        },
+        {
+            "name": "Restaurants",
+            "type": "Meeple",
+            "subTypes": [
+                "Building"
+            ],
+            "description": "Restaurant buildings for each player chain (2x2 squares with entrance marked)",
+            "detailed_description": "Restaurants must be placed on empty squares with entrance adjacent to a road. Regional/Local managers give restaurants drive-in capability (entrances in each corner).",
+            "count": 15
+        },
+        {
+            "name": "Employee Cards",
+            "type": "Card",
+            "subTypes": [
+                "Employee"
+            ],
+            "description": "Cards depicting people who work in the company with various abilities",
+            "detailed_description": "Employee cards show a person and their abilities. Cards with \u25cf in top left can be hired by recruiters. Cards with $ require salary. Training options shown in bottom left. Cards marked \u25c6 are top positions (only one per player). Some cards show range on top right.",
+            "count": 222
+        },
+        {
+            "name": "Milestone Cards",
+            "type": "Card",
+            "subTypes": [
+                "Milestone"
+            ],
+            "description": "Achievement cards that provide permanent bonuses",
+            "detailed_description": "Awarded when specific achievements are met. Provide various bonuses for the rest of the game. Multiple players can claim the same milestone in the same turn.",
+            "count": 84
+        },
+        {
+            "name": "Bank Reserve Cards",
+            "type": "Card",
+            "subTypes": [
+                "Reserve"
+            ],
+            "description": "Cards showing money to be added when bank breaks",
+            "detailed_description": "Players choose one at setup (face down). When bank breaks first time, these are revealed and money added to bank. Also determines CEO slot count.",
+            "count": 18
+        },
+        {
+            "name": "CEO Cards",
+            "type": "Card",
+            "subTypes": [
+                "Employee",
+                "Special"
+            ],
+            "description": "The CEO card that leads each company",
+            "detailed_description": "Always at work. Can have 3 subordinates (or 2-10 based on reserve cards). Provides one free recruitment action. Can become CFO with milestone.",
+            "count": 6
+        },
+        {
+            "name": "Paper Money Bills",
+            "type": "Token",
+            "subTypes": [
+                "Currency"
+            ],
+            "description": "Money used for transactions and victory",
+            "detailed_description": "Bank starts with $50 per player. Additional money added when reserve cards opened."
+        },
+        {
+            "name": "Soft drinks",
+            "type": "Token",
+            "subTypes": [
+                "Product",
+                "Drink"
+            ],
+            "description": "Wooden drink tokens representing soft drinks",
+            "detailed_description": "Used as demand markers on houses, advertising markers on campaigns, and stock in player areas.",
+            "count": 40
+        },
+        {
+            "name": "Beers",
+            "type": "Token",
+            "subTypes": [
+                "Product",
+                "Drink"
+            ],
+            "description": "Wooden drink tokens representing beer",
+            "detailed_description": "Used as demand markers on houses, advertising markers on campaigns, and stock in player areas.",
+            "count": 40
+        },
+        {
+            "name": "Lemonade",
+            "type": "Token",
+            "subTypes": [
+                "Product",
+                "Drink"
+            ],
+            "description": "Wooden drink tokens representing lemonade",
+            "detailed_description": "Used as demand markers on houses, advertising markers on campaigns, and stock in player areas.",
+            "count": 40
+        },
+        {
+            "name": "Pizzas",
+            "type": "Token",
+            "subTypes": [
+                "Product",
+                "Food"
+            ],
+            "description": "Wooden food tokens representing pizzas",
+            "detailed_description": "Used as demand markers on houses, advertising markers on campaigns, and stock in player areas.",
+            "count": 40
+        },
+        {
+            "name": "Burgers",
+            "type": "Token",
+            "subTypes": [
+                "Product",
+                "Food"
+            ],
+            "description": "Wooden food tokens representing burgers",
+            "detailed_description": "Used as demand markers on houses, advertising markers on campaigns, and stock in player areas.",
+            "count": 40
+        },
+        {
+            "name": "Turn Order Markers",
+            "type": "Meeple",
+            "subTypes": [
+                "Marker"
+            ],
+            "description": "One marker per player to indicate turn order",
+            "count": 6
+        },
+        {
+            "name": "Player Menus (English)",
+            "type": "Card",
+            "subTypes": [
+                "Reference"
+            ],
+            "description": "English language player reference cards",
+            "count": 5
+        },
+        {
+            "name": "Player Menus (German)",
+            "type": "Card",
+            "subTypes": [
+                "Reference"
+            ],
+            "description": "German language player reference cards",
+            "count": 5
+        },
+        {
+            "name": "Rulebook",
+            "type": "Book",
+            "subTypes": [
+                "Rules"
+            ],
+            "description": "Game rulebook",
+            "count": 1
+        },
+        {
+            "name": "Game Box",
+            "type": "Box",
+            "subTypes": [
+                "Container"
+            ],
+            "description": "Container for game components",
+            "count": 1
+        }
+    ],
+    "setup": [
+        {
+            "description": "Lay out the employee and milestone cards according to the reference image. For each employee card marked with \u25cf, remove cards based on player count.",
+            "short_description": "Lay out cards"
+        },
+        {
+            "description": "Remove employee cards #12, #15, and #16.",
+            "short_description": "Remove specific cards",
+            "condition": {
+                "min_count_variant": 2,
+                "max_count_variant": 2
+            }
+        },
+        {
+            "description": "Remove 1 copy of each \u25cf employee card. Remove employee cards #15 and #16.",
+            "short_description": "Remove specific cards",
+            "condition": {
+                "min_count_variant": 3,
+                "max_count_variant": 3
+            }
+        },
+        {
+            "description": "Remove 2 copies of each \u25cf employee card. Remove employee card #16.",
+            "short_description": "Remove specific cards",
+            "condition": {
+                "min_count_variant": 4,
+                "max_count_variant": 4
+            }
+        },
+        {
+            "description": "Remove 3 copies of each \u25cf employee card.",
+            "short_description": "Remove specific cards",
+            "condition": {
+                "min_count_variant": 5,
+                "max_count_variant": 5
+            }
+        },
+        {
+            "description": "Put billboards #12, #15, and #16 back in the box.",
+            "short_description": "Remove billboards",
+            "condition": {
+                "min_count_variant": 2,
+                "max_count_variant": 2
+            }
+        },
+        {
+            "description": "Put billboards #15 and #16 back in the box.",
+            "short_description": "Remove billboards",
+            "condition": {
+                "min_count_variant": 3,
+                "max_count_variant": 3
+            }
+        },
+        {
+            "description": "Put billboard #16 back in the box.",
+            "short_description": "Remove billboards",
+            "condition": {
+                "min_count_variant": 4,
+                "max_count_variant": 4
+            }
+        },
+        {
+            "description": "Create a 3x3 map by randomly selecting 9 map tiles. Rotate each tile randomly before placing in a grid.",
+            "short_description": "Create map",
+            "condition": {
+                "min_count_variant": 2,
+                "max_count_variant": 2
+            }
+        },
+        {
+            "description": "Create a 3x4 map by randomly selecting 12 map tiles. Rotate each tile randomly before placing in a grid.",
+            "short_description": "Create map",
+            "condition": {
+                "min_count_variant": 3,
+                "max_count_variant": 3
+            }
+        },
+        {
+            "description": "Create a 4x4 map by randomly selecting 16 map tiles. Rotate each tile randomly before placing in a grid.",
+            "short_description": "Create map",
+            "condition": {
+                "min_count_variant": 4,
+                "max_count_variant": 4
+            }
+        },
+        {
+            "description": "Create a 5x4 map by randomly selecting 20 map tiles. Rotate each tile randomly before placing in a grid.",
+            "short_description": "Create map",
+            "condition": {
+                "min_count_variant": 5,
+                "max_count_variant": 5
+            }
+        },
+        {
+            "description": "Place $50 per player into the bank pool using practical (small) bills. Put the rest back in the box.",
+            "short_description": "Fill the bank"
+        },
+        {
+            "description": "Each player chooses a restaurant chain and receives a CEO card, 3 restaurants, and a set of 3 bank reserve cards.",
+            "short_description": "Choose chains"
+        },
+        {
+            "description": "Collect turn order markers of chosen chains, shuffle them, and randomly place them on the turn order track in drawn order.",
+            "short_description": "Determine initial turn order"
+        },
+        {
+            "description": "Starting with the last player in turn order and ending with the first, each player may either place a restaurant or pass. If anyone passed, do a second round in turn order where remaining players must place.",
+            "short_description": "Place first restaurants"
+        },
+        {
+            "description": "Each player chooses one of their three bank reserve cards and places it face down next to the bank. Discard the other two unseen.",
+            "short_description": "Set reserve goals"
+        }
+    ],
+    "gameplay": {
+        "turn_structure": "The game is played in 7 phases, some simultaneous and some in turn order. Phases are: 1) Restructuring (simultaneous), 2) Order of Business (based on open slots), 3) Working 9:00-5:00 (turn order), 4) Dinnertime (house number order), 5) Payday (simultaneous), 6) Marketing Campaigns (campaign number order), 7) Clean Up (simultaneous).",
+        "actions": [
+            {
+                "name": "Phase 1: Restructuring",
+                "description": "Players choose which employees to use this turn and arrange them into a company structure with the CEO at the top.",
+                "steps": [
+                    {
+                        "description": "Each player simultaneously chooses which employee cards to use this turn and places them face down. All other cards are placed face down in a separate pile.",
+                        "short_description": "Choose cards secretly"
+                    },
+                    {
+                        "description": "All players simultaneously reveal the pile of cards to be used this turn. These employees are 'at work'. The rest are 'on the beach'.",
+                        "short_description": "Reveal cards"
+                    },
+                    {
+                        "description": "Place the cards at work into a pyramid company structure. CEO at top, managers below CEO (up to 3), and normal employees below managers (2-10 per manager).",
+                        "short_description": "Build company structure"
+                    },
+                    {
+                        "description": "If too many cards were played to fit the structure, all cards except CEO go on the beach and the player plays with only the CEO.",
+                        "short_description": "Validate structure"
+                    }
+                ],
+                "notes": [
+                    {
+                        "description": "The CEO is always at work and always the top of the pyramid",
+                        "short_description": "CEO always active"
+                    },
+                    {
+                        "description": "During all other phases, players can request to see another player's cards (both at work and on beach)",
+                        "short_description": "Cards are open information"
+                    }
+                ]
+            },
+            {
+                "name": "Phase 2: Order of Business",
+                "description": "Players choose their position on the turn order track based on open slots in their company structure.",
+                "steps": [
+                    {
+                        "description": "Count open slots (unused slots on CEO and managers). Player with 'First airplane campaign' milestone adds 2 extra open slots.",
+                        "short_description": "Count open slots"
+                    },
+                    {
+                        "description": "Player with most open slots chooses turn order position first. Ties broken by previous turn order (earlier player chooses first).",
+                        "short_description": "Choose turn order"
+                    },
+                    {
+                        "description": "Continue in descending order of open slots until all players have chosen positions.",
+                        "short_description": "Complete turn order"
+                    }
+                ],
+                "notes": []
+            },
+            {
+                "name": "Phase 3: Working 9:00-5:00",
+                "description": "Players take turns performing actions for each card in their company structure. Actions must be performed in the order listed in the rules.",
+                "steps": [
+                    {
+                        "description": "Players take turns in turn order. Each player completes all their actions before the next player begins.",
+                        "short_description": "Take turns"
+                    },
+                    {
+                        "description": "Recruit: CEO provides 1 free recruitment. Additional recruitments from recruiting girl (1x), recruiting manager (2x), or HR director (4x). Hire entry-level (\u25cf) employees to the beach. Can hire if immediately training to higher level.",
+                        "short_description": "Recruit employees"
+                    },
+                    {
+                        "description": "Train: For each training action (trainer, coach, guru), train one employee on the beach one step. Cannot train cards at work or busy marketeers. Coach can train same card 2 steps, guru 3 steps. With milestone, multiple trainers can train same card.",
+                        "short_description": "Train employees"
+                    },
+                    {
+                        "description": "Initiate Marketing Campaigns: For each marketeer at work, place a campaign (billboard/mailbox/airplane/radio) within range (if applicable). Choose what to advertise (pizza/burger/drink type). Place wooden pieces equal to duration on campaign. Place busy chip on marketeer card.",
+                        "short_description": "Place marketing campaigns"
+                    },
+                    {
+                        "description": "Get Food & Drinks: Kitchen staff and buyers collect food/drinks per their card abilities. Kitchen trainee: 1 burger or pizza. Burger cook: 3 burgers. Burger chef: 8 burgers. Pizza cook: 3 pizzas. Pizza chef: 8 pizzas. Errand boy: 1 drink of any type. Cart operator: 2 drinks per source, range 2. Truck driver: 3 drinks per source, range 3. Zeppelin pilot: 2 drinks per source, range 4, ignore roads.",
+                        "short_description": "Produce goods"
+                    },
+                    {
+                        "description": "Place New Houses/Gardens: New business developer can place a new house connected to a road anywhere on the map, or add a garden (2x3 rectangle) to an existing house on empty squares.",
+                        "short_description": "Add houses/gardens"
+                    },
+                    {
+                        "description": "Place/Move Restaurants: Local manager places new restaurant within range 3 by road, entrance connects to road, placed 'COMING SOON'. Regional manager places restaurant anywhere entrance connects to road, or moves existing restaurant, active immediately. Both provide drive-in (entrances in all corners).",
+                        "short_description": "Place/move restaurants"
+                    }
+                ],
+                "notes": [
+                    {
+                        "description": "Actions of pricing manager, discount manager, luxury manager, CFO, recruiting manager, HR director, and waitress are mandatory",
+                        "short_description": "Some actions mandatory"
+                    },
+                    {
+                        "description": "Actions must be performed in the order listed, regardless of organizational chart position",
+                        "short_description": "Action order fixed"
+                    },
+                    {
+                        "description": "Only one copy of each \u25c6 card allowed per player",
+                        "short_description": "Unique positions limited"
+                    }
+                ]
+            },
+            {
+                "name": "Phase 4: Dinnertime",
+                "description": "Houses eat based on demand tokens, choosing restaurants by price and distance. Players earn money for sales.",
+                "steps": [
+                    {
+                        "description": "Process houses in order of printed house numbers (lowest first).",
+                        "short_description": "Process houses in order"
+                    },
+                    {
+                        "description": "For each house with demand tokens: find chains with restaurants connected by road that can provide ALL demanded goods. If none, inhabitants stay home.",
+                        "short_description": "Check supply"
+                    },
+                    {
+                        "description": "If multiple chains can supply: calculate unit price (base $10, +/- price managers). Calculate distance (range from house to nearest restaurant entrance). Add (unit price + distance). Lowest sum wins. Ties broken by most waitresses, then turn order.",
+                        "short_description": "Determine winner"
+                    },
+                    {
+                        "description": "Winning chain serves food: remove demand tokens and matching goods from stock. Earn unit price + milestone bonuses per item. Houses with gardens: earn 2x unit price (bonuses not doubled). Then add bonuses.",
+                        "short_description": "Serve and earn money"
+                    },
+                    {
+                        "description": "After all houses processed: each chain earns $3 per waitress ($5 with milestone).",
+                        "short_description": "Waitress tips"
+                    },
+                    {
+                        "description": "Chains with CFO (or milestone): earn +50% bonus on all cash earned this turn (including waitress tips), rounded up.",
+                        "short_description": "CFO bonus"
+                    },
+                    {
+                        "description": "If bank has insufficient funds, break the bank (first time: open reserve cards, add money, adjust CEO slots; second time: game ends, finish phase 4, most cash wins).",
+                        "short_description": "Check bank break"
+                    }
+                ],
+                "notes": [
+                    {
+                        "description": "Bonuses from milestones (e.g., +$5 for burgers) do not affect unit price for competition calculation",
+                        "short_description": "Bonuses don't affect price"
+                    },
+                    {
+                        "description": "Standard unit price is $10 before any modifiers",
+                        "short_description": "Base price $10"
+                    }
+                ]
+            },
+            {
+                "name": "Phase 5: Payday",
+                "description": "Players may fire employees and must pay salaries for cards with $ symbol.",
+                "steps": [
+                    {
+                        "description": "Each player may fire any employees in company structure or on the beach. Return fired cards to general stock. Busy marketeers normally cannot be fired.",
+                        "short_description": "Fire employees"
+                    },
+                    {
+                        "description": "Pay $5 for each card with $ symbol in structure or on beach, including busy marketeers. Unused recruiting manager/HR director actions give $5 discount each. Apply all discounts. Minimum payment $0.",
+                        "short_description": "Pay salaries"
+                    },
+                    {
+                        "description": "If a player has no money but must pay a busy marketeer, that marketeer must be fired (only if all other salaried employees already fired). Campaign remains on board.",
+                        "short_description": "Handle broke players"
+                    }
+                ],
+                "notes": [
+                    {
+                        "description": "First billboard placed milestone: marketeers require no salary",
+                        "short_description": "Marketeer salary exemption"
+                    },
+                    {
+                        "description": "First to train someone milestone: $15 salary discount",
+                        "short_description": "Training salary discount"
+                    }
+                ]
+            },
+            {
+                "name": "Phase 6: Marketing Campaigns",
+                "description": "Marketing campaigns run in number order, placing demand tokens on houses they reach.",
+                "steps": [
+                    {
+                        "description": "Process campaigns in order of printed campaign numbers (lowest first).",
+                        "short_description": "Process campaigns in order"
+                    },
+                    {
+                        "description": "Billboard: place 1 demand token of advertised type on each house orthogonally adjacent (including garden-only adjacency).",
+                        "short_description": "Billboard reach"
+                    },
+                    {
+                        "description": "Mailbox: place 1 demand token on each house in the same block (area enclosed by roads and board edge).",
+                        "short_description": "Mailbox reach"
+                    },
+                    {
+                        "description": "Airplane: place 1 demand token on each house in a line of 1/3/5 rows or columns from the airplane.",
+                        "short_description": "Airplane reach"
+                    },
+                    {
+                        "description": "Radio: place 1 demand token on each house on the radio's tile and all 8 surrounding tiles (2 tokens with milestone).",
+                        "short_description": "Radio reach"
+                    },
+                    {
+                        "description": "Houses have maximum 3 demand tokens (5 with garden). Campaigns have no effect on full houses.",
+                        "short_description": "House capacity limits"
+                    },
+                    {
+                        "description": "After campaign runs: remove 1 advertising token from campaign. If no tokens remain, return campaign to stock and return marketeer to player (unless eternal campaign).",
+                        "short_description": "Update campaigns"
+                    }
+                ],
+                "notes": [
+                    {
+                        "description": "First billboard placed milestone: campaigns are eternal (never end, marketeer unavailable forever)",
+                        "short_description": "Eternal campaigns"
+                    },
+                    {
+                        "description": "First radio campaign milestone: radios place 2 demand tokens instead of 1",
+                        "short_description": "Double radio effect"
+                    }
+                ]
+            },
+            {
+                "name": "Phase 7: Clean Up",
+                "description": "Discard unused goods, collect cards, flip new restaurants, and remove claimed milestones.",
+                "steps": [
+                    {
+                        "description": "All players without 'First to throw away drink/food' milestone discard all food and drinks they own. With milestone, keep up to 10 in freezer.",
+                        "short_description": "Discard goods"
+                    },
+                    {
+                        "description": "All cards from company structure and beach are taken back into hand. Other players may request to see them.",
+                        "short_description": "Collect cards"
+                    },
+                    {
+                        "description": "Flip all 'COMING SOON' restaurants to 'WELCOME' side (they become active).",
+                        "short_description": "Open new restaurants"
+                    },
+                    {
+                        "description": "If any milestones were awarded this turn, turn all remaining milestone cards of the same type upside down (no longer available).",
+                        "short_description": "Remove claimed milestones"
+                    },
+                    {
+                        "description": "Advertising tokens on campaigns and demand tokens on houses remain on the board.",
+                        "short_description": "Persistent tokens"
+                    }
+                ],
+                "notes": []
+            }
+        ]
+    },
+    "end_game": {
+        "trigger": "The game ends when the bank breaks for the second time (cannot pay all income in Phase 4).",
+        "procedure": [
+            "Finish Phase 4 (Dinnertime) completely, paying all earnings even if bank is insufficient (write down IOUs if needed).",
+            "Do not proceed to Phase 5 (Payday) - no salaries are paid this turn.",
+            "Count each player's total cash."
+        ],
+        "final_scoring": [
+            {
+                "source": "Cash in hand",
+                "description": "All money earned throughout the game, including final turn"
+            }
+        ]
+    },
+    "winning_condition": "The player with the most cash wins. In case of a tie, the tied player who is earlier in turn order wins."
+}

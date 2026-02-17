@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "base_url": "https://raw.githubusercontent.com/nibuen/GamePaperData/main/files",
   "games": [
     {
@@ -9,10 +9,16 @@
       "publisher": "Lookout Games"
     },
     {
+      "id": "food_chain_magnate",
+      "game_name": "Food Chain Magnate",
+      "designer": "Jeroen Doumen, Joris Wiersinga",
+      "publisher": "Lucky Duck Games, Splotter Spellen"
+    },    
+    {
       "id": "lords_of_waterdeep",
       "game_name": "Lords of Waterdeep",
       "designer": "Peter Lee, Rodney Thompson",
       "publisher": "Wizards of the Coast"
-    }
+    }  
   ]
 }
