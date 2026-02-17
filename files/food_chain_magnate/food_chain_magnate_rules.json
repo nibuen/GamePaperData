@@ -302,8 +302,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 2,
-                "expansion": null
+                "max_count_variant": 2
             }
         },
         {
@@ -311,8 +310,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 3,
-                "expansion": null
+                "max_count_variant": 3
             }
         },
         {
@@ -320,8 +318,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 4,
-                "expansion": null
+                "max_count_variant": 4
             }
         },
         {
@@ -329,8 +326,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 5,
-                "max_count_variant": 5,
-                "expansion": null
+                "max_count_variant": 5
             }
         },
         {
@@ -338,8 +334,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 2,
-                "expansion": null
+                "max_count_variant": 2
             }
         },
         {
@@ -347,8 +342,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 3,
-                "expansion": null
+                "max_count_variant": 3
             }
         },
         {
@@ -356,8 +350,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 4,
-                "expansion": null
+                "max_count_variant": 4
             }
         },
         {
@@ -365,8 +358,7 @@
             "short_description": "Create map",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 2,
-                "expansion": null
+                "max_count_variant": 2
             }
         },
         {
@@ -374,8 +366,7 @@
             "short_description": "Create map",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 3,
-                "expansion": null
+                "max_count_variant": 3
             }
         },
         {
@@ -383,8 +374,7 @@
             "short_description": "Create map",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 4,
-                "expansion": null
+                "max_count_variant": 4
             }
         },
         {
@@ -392,8 +382,7 @@
             "short_description": "Create map",
             "condition": {
                 "min_count_variant": 5,
-                "max_count_variant": 5,
-                "expansion": null
+                "max_count_variant": 5
             }
         },
         {
