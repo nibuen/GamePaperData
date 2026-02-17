@@ -27,7 +27,7 @@
                 "Map"
             ],
             "description": "Map elements that create the variable city board. Each tile is 5x5 squares and can contain roads, drinks, houses, or empty space.",
-            "detailed_description": "Map tiles are picked up elements consisting of 5x5 squares. Initially, a square can contain a road, drinks, part of a house, or empty space.",
+            "detailed_description": "Map tiles are physical tile components consisting of 5x5 squares. Initially, a square can contain a road, drinks, part of a house, or empty space.",
             "count": 20,
             "condition": null
         },
