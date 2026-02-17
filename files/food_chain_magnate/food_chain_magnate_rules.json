@@ -6,6 +6,7 @@
     "objective": "Accumulate the most cash by the time the bank breaks for the second time.",
     "min_players": 2,
     "max_players": 5,
+    "bgg_link": "https://boardgamegeek.com/boardgame/175914/food-chain-magnate",
     "play_time_minutes": 180,
     "components_overview": [
         {
@@ -267,7 +268,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 2
+                "max_count_variant": 5
             }
         },
         {
@@ -275,7 +276,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 3
+                "max_count_variant": 5
             }
         },
         {
@@ -283,7 +284,7 @@
             "short_description": "Remove specific cards",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 4
+                "max_count_variant": 5
             }
         },
         {
@@ -299,7 +300,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 2,
-                "max_count_variant": 2
+                "max_count_variant": 5
             }
         },
         {
@@ -307,7 +308,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 3,
-                "max_count_variant": 3
+                "max_count_variant": 5
             }
         },
         {
@@ -315,7 +316,7 @@
             "short_description": "Remove billboards",
             "condition": {
                 "min_count_variant": 4,
-                "max_count_variant": 4
+                "max_count_variant": 5
             }
         },
         {
