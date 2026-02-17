@@ -176,13 +176,13 @@
             "condition": null
         },
         {
-            "name": "Softdrinks",
+            "name": "Soft drinks",
             "type": "Token",
             "subTypes": [
                 "Product",
                 "Drink"
             ],
-            "description": "Wooden drink tokens representing softdrinks",
+            "description": "Wooden drink tokens representing soft drinks",
             "detailed_description": "Used as demand markers on houses, advertising markers on campaigns, and stock in player areas.",
             "count": 40,
             "condition": null
