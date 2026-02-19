@@ -370,47 +370,65 @@ Describes the turn structure and available actions.
 
 ---
 
-## Language Editions
+## Language Support
 
-Some games have official releases in multiple languages. To support translated editions:
+Games with official translations in multiple languages should use **language subfolders** to organize translated files.
 
-### Option 1: Language Field in Registry (Recommended)
+### Folder Structure
 
-Add a `languages` array to the game's registry entry:
+The default language (English) lives in the root game folder. Translations go into language-specific subfolders using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes):
 
-```json
-{
-  "id": "twilight_struggle",
-  "game_name": "Twilight Struggle",
-  "designer": "Ananda Gupta, Jason Matthews",
-  "publisher": "GMT Games",
-  "languages": ["en", "de", "fr", "es"]
-}
+```
+files/<game_id>/
+├── <game_id>_rules.json        # English (default)
+├── <game_id>_cards.json
+├── <game_id>_glossary.json
+├── de/                          # German translation
+│   ├── <game_id>_rules.json    # Same filename, different language
+│   ├── <game_id>_cards.json
+│   └── <game_id>_glossary.json
+├── fr/                          # French translation
+│   └── <game_id>_rules.json
+└── es/                          # Spanish translation
+    └── <game_id>_rules.json
 ```
 
-Language-specific files use the suffix `_<lang_code>`:
-- `twilight_struggle_rules_de.json` (German rules)
-- `twilight_struggle_rules_fr.json` (French rules)
-- `twilight_struggle_cards_es.json` (Spanish cards)
+**Key points:**
+- Language subfolders use ISO 639-1 codes: `de`, `fr`, `es`, `it`, `ja`, `zh`, etc.
+- Translated files use the **exact same filename** as the English version
+- You can translate any combination of files (rules, cards, glossary)
+- The app will automatically detect available languages from the folder structure
 
-Use standard [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes): `en`, `de`, `fr`, `es`, `it`, `ja`, `zh`, etc.
+### Example: Faiyum
 
-### Option 2: Separate Registry Entries
-
-For major localization differences (different components, different rules), create separate game entries:
-
-```json
-{
-  "id": "twilight_struggle_de",
-  "game_name": "Twilight Struggle (Deutsch)",
-  "language": "de",
-  "original_id": "twilight_struggle",
-  "designer": "Ananda Gupta, Jason Matthews",
-  "publisher": "Pegasus Spiele"
-}
+```
+files/faiyum/
+├── faiyum_rules.json           # English rules
+├── faiyum_cards.json           # English cards
+├── faiyum_glossary.json        # English glossary
+└── de/
+    └── faiyum_rules.json       # German rules translation
 ```
 
-**Recommendation**: Use Option 1 for simple translations. Use Option 2 only if the localized edition has significantly different content or publisher-specific changes.
+### Contributing Translations
+
+When adding a translation:
+
+1. Create the language subfolder if it doesn't exist: `files/<game_id>/<lang_code>/`
+2. Copy the file(s) you're translating into the subfolder
+3. Translate the content while preserving the JSON structure
+4. Keep all field names in English (only translate values like `description`, `game_overview`, etc.)
+5. Maintain the same `id` values for cards, components, and other referenced items
+
+**What to translate:**
+- User-facing text: `description`, `game_overview`, `objective`, `game_name`, etc.
+- Card content, glossary definitions, setup steps, action descriptions
+
+**What NOT to translate:**
+- Field names (keep as `"description"`, not `"beschreibung"`)
+- ID values (`"id": "worker"` stays the same in all languages)
+- Icon references (`"icon": "Pawn"` stays the same)
+- File references in `action.value` fields
 
 ---
 

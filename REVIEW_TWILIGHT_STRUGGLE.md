@@ -46,12 +46,13 @@ This was a **critical error** that would have confused players about legal actio
 ## CONTRIBUTING.md Improvements ✅
 
 ### Added Sections
-**Status**: ✅ **ADDED** in commit `919c511`
+**Status**: ✅ **UPDATED** in commits `919c511` and current
 
-1. **Language Editions** (after Expansion Object)
-   - How to support translated games
+1. **Language Support** (updated to match main branch pattern)
+   - Uses subfolder structure: `files/<game_id>/<lang_code>/`
    - ISO 639-1 language code conventions
-   - File naming: `<game_id>_rules_<lang>.json`
+   - Same filenames in subfolders (no suffixes)
+   - Clear guidance on what to translate vs. what not to translate
 
 2. **Glossary File Schema** (after Expansion Object)
    - Schema definition for `<game_id>_glossary.json`
