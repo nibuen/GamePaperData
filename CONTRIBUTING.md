@@ -370,6 +370,102 @@ Describes the turn structure and available actions.
 
 ---
 
+## Language Support
+
+Games with official translations in multiple languages should use **language subfolders** to organize translated files.
+
+### Folder Structure
+
+The default language (English) lives in the root game folder. Translations go into language-specific subfolders using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes):
+
+```
+files/<game_id>/
+├── <game_id>_rules.json        # English (default)
+├── <game_id>_cards.json
+├── <game_id>_glossary.json
+├── de/                          # German translation
+│   ├── <game_id>_rules.json    # Same filename, different language
+│   ├── <game_id>_cards.json
+│   └── <game_id>_glossary.json
+├── fr/                          # French translation
+│   └── <game_id>_rules.json
+└── es/                          # Spanish translation
+    └── <game_id>_rules.json
+```
+
+**Key points:**
+- Language subfolders use ISO 639-1 codes: `de`, `fr`, `es`, `it`, `ja`, `zh`, etc.
+- Translated files use the **exact same filename** as the English version
+- You can translate any combination of files (rules, cards, glossary)
+- The app will automatically detect available languages from the folder structure
+
+### Example: Faiyum
+
+```
+files/faiyum/
+├── faiyum_rules.json           # English rules
+├── faiyum_cards.json           # English cards
+├── faiyum_glossary.json        # English glossary
+└── de/
+    └── faiyum_rules.json       # German rules translation
+```
+
+### Contributing Translations
+
+When adding a translation:
+
+1. Create the language subfolder if it doesn't exist: `files/<game_id>/<lang_code>/`
+2. Copy the file(s) you're translating into the subfolder
+3. Translate the content while preserving the JSON structure
+4. Keep all field names in English (only translate values like `description`, `game_overview`, etc.)
+5. Maintain the same `id` values for cards, components, and other referenced items
+
+**What to translate:**
+- User-facing text: `description`, `game_overview`, `objective`, `game_name`, etc.
+- Card content, glossary definitions, setup steps, action descriptions
+
+**What NOT to translate:**
+- Field names (keep as `"description"`, not `"beschreibung"`)
+- ID values (`"id": "worker"` stays the same in all languages)
+- Icon references (`"icon": "Pawn"` stays the same)
+- File references in `action.value` fields
+
+---
+
+## Glossary File Schema (`<game_id>_glossary.json`)
+
+Optional glossary files define game-specific terminology. Useful for games with complex or thematic vocabulary.
+
+**File structure**: Flat JSON object where keys are term IDs.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | **Yes** | Unique identifier (must match the object key) |
+| `name` | string | **Yes** | The term or phrase |
+| `definition` | string | **Yes** | Clear explanation of the term |
+| `related_terms` | array of strings | No | IDs of related glossary terms |
+| `condition` | [Condition](#condition-object) | No | Player count / expansion filter |
+
+**Example:**
+```json
+{
+  "realignment": {
+    "id": "realignment",
+    "name": "Realignment",
+    "definition": "An action where both players roll dice to attempt to remove opponent influence from a country. The higher roller (with modifiers) removes 1 opponent influence.",
+    "related_terms": ["coup", "influence"]
+  },
+  "battleground": {
+    "id": "battleground",
+    "name": "Battleground Country",
+    "definition": "A country marked with a star. Coups in battleground countries degrade DEFCON by 1. These countries are critical for regional Domination and Control.",
+    "related_terms": ["defcon", "scoring"]
+  }
+}
+```
+
+---
+
 ## Card File Schema (`<game_id>_<cards>.json`)
 
 Card files are flat JSON objects where keys are card IDs.
@@ -437,6 +533,82 @@ See [icons/README.md](icons/README.md) for:
 - Full list of all available icons
 - How to reference icons in your JSON
 - How to contribute new icons
+
+---
+
+## Best Practices
+
+### Large Card Sets (100+ Cards)
+
+For games with extensive card lists (e.g., *Twilight Struggle* with 110 event cards, *Dominion* with 500+ kingdom cards):
+
+**1. Split cards by category or deck:**
+```
+files/twilight_struggle/
+  ├── twilight_struggle_rules.json
+  ├── twilight_struggle_early_war.json    (35 cards)
+  ├── twilight_struggle_mid_war.json      (42 cards)
+  └── twilight_struggle_late_war.json     (23 cards)
+```
+
+**2. Reference multiple card files from components:**
+```json
+{
+  "components_overview": [
+    {
+      "name": "Early War Cards",
+      "type": "Card",
+      "action": { "name": "CardList", "value": "twilight_struggle_early_war.json" }
+    },
+    {
+      "name": "Mid War Cards",
+      "type": "Card",
+      "action": { "name": "CardList", "value": "twilight_struggle_mid_war.json" }
+    }
+  ]
+}
+```
+
+**3. Include search-friendly fields:**
+- `summary`: Short version for list views
+- `category`, `type`, or `subType`: For filtering
+- `tags`: Array of searchable keywords
+
+**Example:**
+```json
+{
+  "card_id": {
+    "id": "card_id",
+    "name": "Card Name",
+    "body": "Full card text...",
+    "summary": "Brief one-liner",
+    "category": "Action",
+    "tags": ["attack", "military", "one-time"]
+  }
+}
+```
+
+### Card-Driven Games
+
+For card-driven games (where cards are the primary mechanism), **prioritize creating card data files**. Players reference cards more than rules during play.
+
+**Minimum for card-driven games:**
+1. Rules file with core mechanics
+2. Card files with all playable cards
+3. Component linking to card files
+
+### Player Count Variants
+
+**Do:**
+- Use `condition` objects with `min_count_variant` / `max_count_variant`
+- Create separate component entries for count-specific items
+- Keep descriptions generic (no "2-player:" prefixes)
+
+**Don't:**
+- Put player count text in descriptions ("For 3-5 players:")
+- Use inline conditionals ("If 2 players, X; otherwise Y")
+
+Let the app filter by player count — your descriptions should read naturally for any applicable count.
 
 ---
 

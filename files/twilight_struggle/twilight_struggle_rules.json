@@ -154,7 +154,7 @@
         "notes": [
           {"description": "Control: You control a country if your influence exceeds your opponent's influence by at least the country's stability number."},
           {"description": "You may split Operations Points among multiple eligible countries."},
-          {"description": "DEFCON restrictions: At DEFCON 2, no influence may be placed in Europe. At DEFCON 3, no influence may be placed in Europe or Asia. At DEFCON 4, no influence may be placed in Europe, Asia, or the Middle East."}
+          {"description": "DEFCON restrictions: At DEFCON 4, no influence may be placed in Europe. At DEFCON 3, also no influence in Asia. At DEFCON 2, also no influence in the Middle East."}
         ]
       },
       {
@@ -170,7 +170,7 @@
         "notes": [
           {"description": "Coups in Battleground countries degrade DEFCON by 1."},
           {"description": "A coup counts as a Military Operation equal to the card's Operations value."},
-          {"description": "DEFCON restrictions apply: at DEFCON 2, no coups in Europe; at DEFCON 3, no coups in Europe or Asia; at DEFCON 4, no coups in Europe, Asia, or Middle East."},
+          {"description": "DEFCON restrictions apply: at DEFCON 4, no coups in Europe; at DEFCON 3, also no coups in Asia; at DEFCON 2, also no coups in the Middle East."},
           {"description": "If DEFCON reaches 1 due to a coup, the player who performed the coup (the phasing player) LOSES the game — nuclear war."}
         ]
       },
