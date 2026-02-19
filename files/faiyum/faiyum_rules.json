@@ -1,0 +1,324 @@
+{
+  "game_name": "Faiyum",
+  "designer": "Friedemann Friese",
+  "publisher": "2F-Spiele",
+  "game_overview": "Players are advisors to Pharaoh Amenemhet III, tasked with developing the Faiyum region. They play cards to build infrastructure, harvest resources, attract settlers, and gain prestige. The game features a unique card market and a mechanism where played cards go into a personal discard pile, only retrievable through an 'Administration' action which also determines turn order for the next round.",
+  "objective": "To have the most Prestige Points (PP) at the end of the game.",
+  "min_players": 1,
+  "max_players": 5,
+  "bgg_link": "https://boardgamegeek.com/boardgame/318983/faiyum",
+  "play_time_minutes": 120,
+  "components_overview": [
+    {
+      "name": "Game Board",
+      "type": "Board",
+      "description": "Depicts the Faiyum region with hex spaces, card market, Pharaoh track, disaster track, and scoring track."
+    },
+    {
+      "name": "Cards",
+      "type": "Card",
+      "description": "Various types: starting cards, market cards (numbered 1-60+), disaster cards. Each card has a cost, effect, and often prestige points.",
+      "action": {
+        "name": "CardList",
+        "value": "faiyum_cards.json"
+      }
+    },
+    {
+      "name": "Player Boards",
+      "type": "Board",
+      "description": "Used to store resources and workers."
+    },
+    {
+      "name": "Grapes",
+      "type": "Resource",
+      "icon": "ResourceGrapes",
+      "description": "Purple."
+    },
+    {
+      "name": "Wheat",
+      "type": "Resource",
+      "icon": "ResourceWheat",
+      "description": "Yellow."
+    },
+    {
+      "name": "Stone",
+      "type": "Resource",
+      "icon": "ResourceStone",
+      "description": "Gray."
+    },
+    {
+      "name": "Fish",
+      "type": "Resource",
+      "icon": "ResourceFish",
+      "description": "Blue."
+    },
+    {
+      "name": "Roses",
+      "type": "Resource",
+      "icon": "ResourceRose",
+      "description": "Pink. Can be used as wild to pay instead of Grape, Wheat, Stone, or Fish."
+    },
+    {
+      "name": "Deban (Money)",
+      "type": "Money",
+      "description": "Denominations of 1, 3, 5, 10."
+    },
+    {
+      "name": "Discount Tokens",
+      "type": "Marker",
+      "description": "-1 tokens used to mark discount on card offerings."
+    },
+    {
+      "name": "Workers",
+      "type": "Meeple",
+      "description": "Wooden meeples in player colors. The game has a limited supply."
+    },
+    {
+      "name": "Settlements",
+      "type": "Building",
+      "description": "Placed on empty spots"
+    },
+    {
+      "name": "Towns",
+      "type": "Building",
+      "description": "Places on top of a settlement"
+    },
+    {
+      "name": "Roads",
+      "type": "Building",
+      "description": "Connect locations, extending reach."
+    },
+    {
+      "name": "Bridges",
+      "type": "Building",
+      "description": "Placed across water to connect two adjacent land hexes."
+    },
+    {
+      "name": "Grand Bridges",
+      "type": "Building",
+      "description": "Larger bridges that span wider water crossings, connecting hexes separated by two water spaces."
+    },
+    {
+      "name": "Crocodile",
+      "type": "Meeple",
+      "description": "An obstacle to be removed. Gain $1 when removed."
+    },
+    {
+      "name": "Reputation Tokens",
+      "type": "Marker",
+      "description": "To track score.",
+      "detailed_description": "Used to track score, both Reputation Discs and Token's help track your total score.  As you wrap the scoring, put your reputation token underneath for the first time at 50, and second time at 100."
+    },
+    {
+      "name": "Workshops",
+      "type": "Building",
+      "description": "Production buildings that transform resources into prestige points or other goods."
+    },
+    {
+      "name": "Extensions",
+      "type": "Building",
+      "description": "Can only be placed at a Workshop with no extension."
+    },
+    {
+      "name": "Palaces",
+      "type": "Building",
+      "description": "Grand structures that provide significant prestige points when built."
+    },
+    {
+      "name": "Building Blocks",
+      "type": "Building",
+      "description": "Can only be placed on building sites."
+    },
+    {
+      "name": "Turn Order Markers",
+      "type": "Marker",
+      "description": "Determine player order after Administration."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place a settlement on the red space and a road on the dam between the two peninsulas.",
+      "short_description": "Place Initial Settlement and Road"
+    },
+    {
+      "description": "Place a crocodile on every wheat (yellow) space and grape (purple) space.",
+      "short_description": "Place Initial Crocodiles"
+    },
+    {
+      "description": "Remove 102, 104, 106 yellow cards.",
+      "short_description": "Remove Yellow Cards for 2 Players",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "description": "Shuffle market cards and place them face down to form a draw pile. Draw the top 8 cards and place them face-up in the market slots.",
+      "short_description": "Shuffle and Place market cards"
+    },
+    {
+      "description": "Place resource tokens, money, building tiles, road segments, and bonus tokens in a general supply.",
+      "short_description": "Sort resources"
+    },
+    {
+      "description": "Each player chooses a color and takes: 1 Player Board, starting workers (typically 5, 1 active, 4 in reserve), 10 Deben, 1 PP marker (place on '0' of score track), and their 3 starting cards (Farmer, Mason, Road Builder)."
+    },
+    {
+      "description": "Players shuffle their starting cards and draw them into their hand."
+    },
+    {
+      "description": "Randomly select a starting player.",
+      "short_description": "First Player",
+      "action": {
+        "type": "dice_roll",
+        "use_player_count": true,
+        "label": "Player"
+      }
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "On your turn, you MUST perform one of the following three actions",
+    "actions": [
+      {
+        "name": "Play a Card",
+        "description": "Choose a card from your hand.",
+        "steps": [
+          {
+            "description": "Either pay the cards cost (the red section), to the bank or take $2 from the bank."
+          },
+          {
+            "description": "If action is paid for, perform the card's action (the green section)."
+          },
+          {
+            "description": "Place the played card face-up on top of your discard pile."
+          }
+        ],
+        "notes": [
+          {
+            "description": "When placing a worker, the hex must be clear of crocodiles and workers"
+          },
+          {
+            "description": "Some cards don't require worker placement"
+          },
+          {
+            "description": "Developed Spaces can no longer be targeted for Harvest Action."
+          },
+          {
+            "description": "Score 1VP when first time connecting two settlements / building sites."
+          },
+          {
+            "description": "A card can be played as long as you can do at least part of it (e.g., pay the cost)."
+          },
+          {
+            "description": "You cannot play a card if you cannot perform any part of its action or pay its cost."
+          }
+        ]
+      },
+      {
+        "name": "Buy a Card",
+        "description": "Purchase one of the four cards from the market.",
+        "steps": [
+          {
+            "description": "Pay the cost indicated by the market slot to the bank.  If the -1 marker is on the card, pay 1 less and move the marker off the board."
+          },
+          {
+            "description": "Take the card and place it into your hand."
+          },
+          {
+            "description": "Draw a new card and sort it between the 8 cards on the market, from lowest to highest."
+          }
+        ],
+        "notes": [
+          {
+            "description": "When the four yellow cards are in the top half of the market, that triggers game end."
+          }
+        ]
+      },
+      {
+        "name": "Perform an Administration",
+        "description": "Retrieve played cards, gain income, and determine turn order for the next 'round'.",
+        "steps": [
+          {
+            "description": "Gain $3 minus the number of cards in your hand. If the result is negative, do not pay any money."
+          },
+          {
+            "description": "Remove 0 to 2 upright workers from any spaces on the game board and return them to the supply. Gain $1 for each removed worker."
+          },
+          {
+            "description": "Take the top 3 cards from your discard stack into your hand. If less than 3 cards are on your discard stack, take them all."
+          },
+          {
+            "description": "Pay $1 per card you would like to buy back additionally from the top of your discard stack."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Never change the order of the cards in your discard stack, unless the specific card action says to do it."
+          }
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Workers",
+        "description": "Start with some active, some in reserve. Playing certain cards moves workers from reserve to active. When a worker is placed on the board, it remains there until removed by specific card effects (e.g., 'Removal of a Worker' card) or at game end. If you need to place a worker but have none active, you cannot play that card."
+      },
+      {
+        "name": "Resources & Money",
+        "description": "Used to pay for cards, card actions, or converted into other goods/PP. Stored on your player board or as coins."
+      },
+      {
+        "name": "Buildings",
+        "description": "Farms (Grapes/Grain), Quarries (Stone), Workshops (transform resources, e.g., Grapes to Wine for PP), Settlements (give PP, allow building on adjacent hexes occupied by other players' workers/buildings, may provide income or workers)."
+      },
+      {
+        "name": "Roads & Bridges",
+        "description": "Extend your building reach. Workers can only be placed on hexes adjacent to your existing workers/buildings or connected by your roads."
+      },
+      {
+        "name": "Pharaoh",
+        "description": "Certain cards move the Pharaoh. When the Pharaoh lands on or passes specific spaces on its track, it may trigger benefits or activate disaster cards."
+      },
+      {
+        "name": "Disasters",
+        "description": "When a disaster card is drawn (e.g., from the market refill or Pharaoh movement), its effect is resolved immediately. Disasters can remove workers, buildings, or place crocodiles. The player who triggered the disaster often bears the brunt or makes choices."
+      },
+      {
+        "name": "Crocodile",
+        "description": "Placed by some disaster cards or card effects. If a player has the most crocodiles on hexes where they have workers/buildings at game end, they lose PP."
+      },
+      {
+        "name": "Card Market Replenishment",
+        "description": "If the market draw pile runs out, shuffle the market discard pile to form a new draw pile. If specific 'reshuffle' cards (like 'Inspection') are drawn this way, they trigger the end game."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends when all four yellow end-game cards appear in the top half of the market (slots 5-8). This signals the final round.",
+    "procedure": [
+      "The current round is completed (all players perform an action until they all choose Administration).",
+      "One final round is played. Players who took Administration early in the trigger round might get more turns in this final round.",
+      "After the final round, proceed to final scoring."
+    ],
+    "final_scoring": [
+      {
+        "source": "Prestige Points from Cards",
+        "description": "Sum the PP values printed on all cards you own (in hand, discard, market if bought by you but not yet played)."
+      },
+      {
+        "source": "Prestige Points from Settlements",
+        "description": "Score PP for settlements built on the board."
+      },
+      {
+        "source": "Prestige Points from Resources/Money",
+        "description": "Convert remaining resources and money into PP: every 3 resources of one type = 1 PP, every 10 Deben = 1 PP."
+      },
+      {
+        "source": "Bonus Tokens",
+        "description": "Score any end-game PP from bonus tokens."
+      },
+      {
+        "source": "Crocodile Penalty",
+        "description": "The player(s) with the most workers/buildings on hexes containing crocodile tokens lose a specified amount of PP (e.g., -5 PP)."
+      }
+    ]
+  },
+  "winning_condition": "The player with the most Prestige Points wins. Ties are broken by the player with the most remaining Deben. If still tied, players share the victory."
+}
