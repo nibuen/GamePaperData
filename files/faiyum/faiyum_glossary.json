@@ -1,0 +1,52 @@
+{
+  "remove_crocodile": {
+    "term": "Remove Crocodile",
+    "definition": "Remove crocodile from this space, gain $1.",
+    "context": "Card Actions"
+  },
+  "remove_pay_discard": {
+    "term": "Remove, Pay, or Discard (Symbol \u2611)",
+    "definition": "Symbol indicates a cost to remove, pay, or discard.",
+    "context": "Card Symbols"
+  },
+  "gain_take_obtain": {
+    "term": "Gain, Take, or Obtain (Symbol \u2192)",
+    "definition": "Symbol indicates a gain, item taken, or effect obtained.",
+    "context": "Card Symbols"
+  },
+  "roses": {
+    "term": "Roses",
+    "definition": "Roses are wild, and can be used in place of grape, stone, wheat, or fish (multiple roses may be used, even when \u2260 resources are required).",
+    "context": "Resources"
+  },
+  "paying_resources_with_money": {
+    "term": "Paying Resources with Money",
+    "definition": "When paying resources, in place of a single grape, stone, or wheat, you may instead pay $3.",
+    "context": "Economy"
+  },
+  "channel_adjacency": {
+    "term": "Channel Adjacency",
+    "definition": "Spaces separated by the channel are not considered adjacent; Bridges connect these spaces but do not make them adjacent.",
+    "context": "Map / Spatial"
+  },
+  "card_play_bonus": {
+    "term": "Card Play Bonus",
+    "definition": "When playing a card you may gain $2 instead of doing its action.",
+    "context": "Card Actions"
+  },
+  "space_types": {
+    "term": "Space Types",
+    "definition": "Spaces on the map can be developed (built on), undeveloped (unbuilt, and/or with crocodile), and crocodile-free (ready for development).",
+    "context": "Map / Spatial"
+  },
+  "towns_and_workshops": {
+    "term": "Towns and Workshops",
+    "definition": "Towns count as settlements for actions, but not for scoring; likewise expanded workshops count as workshops.",
+    "context": "Buildings"
+  },
+  "placing_roads_settlements_bonus": {
+    "term": "Placing Roads/Settlements Bonus",
+    "definition": "When placing roads or settlements, gain 1 rep for each first direct connection made.",
+    "context": "Building Actions"
+  }
+}

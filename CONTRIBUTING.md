@@ -508,6 +508,101 @@ Card files are flat JSON objects where keys are card IDs.
 
 ---
 
+## Language Support
+
+Games with official translations in multiple languages should use **language subfolders** to organize translated files.
+
+### Folder Structure
+
+The default language (English) lives in the root game folder. Translations go into language-specific subfolders using [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes):
+
+```
+files/<game_id>/
+├── <game_id>_rules.json        # English (default)
+├── <game_id>_cards.json
+├── <game_id>_glossary.json
+├── de/                          # German translation
+│   ├── <game_id>_rules.json    # Same filename, different language
+│   ├── <game_id>_cards.json
+│   └── <game_id>_glossary.json
+├── fr/                          # French translation
+│   └── <game_id>_rules.json
+└── es/                          # Spanish translation
+    └── <game_id>_rules.json
+```
+
+**Key points:**
+- Language subfolders use ISO 639-1 codes: `de`, `fr`, `es`, `it`, `ja`, `zh`, etc.
+- Translated files use the **exact same filename** as the English version
+- You can translate any combination of files (rules, cards, glossary)
+- The app will automatically detect available languages from the folder structure
+
+### Example: Faiyum
+
+```
+files/faiyum/
+├── faiyum_rules.json           # English rules
+├── faiyum_cards.json           # English cards
+├── faiyum_glossary.json        # English glossary
+└── de/
+    └── faiyum_rules.json       # German rules translation
+```
+
+### Contributing Translations
+
+When adding a translation:
+
+1. Create the language subfolder if it doesn't exist: `files/<game_id>/<lang_code>/`
+2. Copy the file(s) you're translating into the subfolder
+3. Translate the content while preserving the JSON structure
+4. Keep all field names in English (only translate values like `description`, `game_overview`, etc.)
+5. Maintain the same `id` values for cards, components, and other referenced items
+
+**What to translate:**
+- User-facing text: `description`, `game_overview`, `objective`, `game_name`, etc.
+- Card content, glossary definitions, setup steps, action descriptions
+
+**What NOT to translate:**
+- Field names (keep as `"description"`, not `"beschreibung"`)
+- ID values (`"id": "worker"` stays the same in all languages)
+- Icon references (`"icon": "Pawn"` stays the same)
+- File references in `action.value` fields
+
+---
+
+## Glossary File Schema (`<game_id>_glossary.json`)
+
+Optional glossary files define game-specific terminology. Useful for games with complex or thematic vocabulary.
+
+**File structure:** Flat JSON object where keys are term IDs.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | **Yes** | Unique identifier (must match the object key) |
+| `name` | string | **Yes** | The term or phrase |
+| `definition` | string | **Yes** | Clear explanation of the term |
+| `related_terms` | array of strings | No | IDs of related glossary terms |
+| `condition` | [Condition](#condition-object) | No | Player count / expansion filter |
+
+**Example:**
+```json
+{
+  "administration": {
+    "id": "administration",
+    "name": "Administration",
+    "definition": "An action that retrieves all cards from your personal discard pile back to your hand. Also determines turn order for the next round.",
+    "related_terms": ["turn_order", "discard_pile"]
+  },
+  "pharaoh_track": {
+    "id": "pharaoh_track",
+    "name": "Pharaoh Track",
+    "definition": "A track showing how much influence each player has with Pharaoh. Higher position grants benefits during gameplay and end-game scoring."
+  }
+}
+```
+
+---
+
 ## Registry (`registry.json`)
 
 After creating your game files, add an entry to `registry.json`:
@@ -696,6 +791,9 @@ Before submitting a pull request:
 - [ ] Component `type` values are consistent
 - [ ] No placeholder or TODO text remains
 - [ ] Game is registered in `registry.json` with matching `id`
+- [ ] If adding translations, language subfolders use ISO 639-1 codes (`de/`, `fr/`, not `_de.json` suffixes)
+- [ ] Translated files use the same filenames as English originals (in language subfolders)
+- [ ] Field names remain in English; only translate user-facing content values
 
 ---
 
