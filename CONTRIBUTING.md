@@ -370,6 +370,84 @@ Describes the turn structure and available actions.
 
 ---
 
+## Language Editions
+
+Some games have official releases in multiple languages. To support translated editions:
+
+### Option 1: Language Field in Registry (Recommended)
+
+Add a `languages` array to the game's registry entry:
+
+```json
+{
+  "id": "twilight_struggle",
+  "game_name": "Twilight Struggle",
+  "designer": "Ananda Gupta, Jason Matthews",
+  "publisher": "GMT Games",
+  "languages": ["en", "de", "fr", "es"]
+}
+```
+
+Language-specific files use the suffix `_<lang_code>`:
+- `twilight_struggle_rules_de.json` (German rules)
+- `twilight_struggle_rules_fr.json` (French rules)
+- `twilight_struggle_cards_es.json` (Spanish cards)
+
+Use standard [ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes): `en`, `de`, `fr`, `es`, `it`, `ja`, `zh`, etc.
+
+### Option 2: Separate Registry Entries
+
+For major localization differences (different components, different rules), create separate game entries:
+
+```json
+{
+  "id": "twilight_struggle_de",
+  "game_name": "Twilight Struggle (Deutsch)",
+  "language": "de",
+  "original_id": "twilight_struggle",
+  "designer": "Ananda Gupta, Jason Matthews",
+  "publisher": "Pegasus Spiele"
+}
+```
+
+**Recommendation**: Use Option 1 for simple translations. Use Option 2 only if the localized edition has significantly different content or publisher-specific changes.
+
+---
+
+## Glossary File Schema (`<game_id>_glossary.json`)
+
+Optional glossary files define game-specific terminology. Useful for games with complex or thematic vocabulary.
+
+**File structure**: Flat JSON object where keys are term IDs.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | **Yes** | Unique identifier (must match the object key) |
+| `name` | string | **Yes** | The term or phrase |
+| `definition` | string | **Yes** | Clear explanation of the term |
+| `related_terms` | array of strings | No | IDs of related glossary terms |
+| `condition` | [Condition](#condition-object) | No | Player count / expansion filter |
+
+**Example:**
+```json
+{
+  "realignment": {
+    "id": "realignment",
+    "name": "Realignment",
+    "definition": "An action where both players roll dice to attempt to remove opponent influence from a country. The higher roller (with modifiers) removes 1 opponent influence.",
+    "related_terms": ["coup", "influence"]
+  },
+  "battleground": {
+    "id": "battleground",
+    "name": "Battleground Country",
+    "definition": "A country marked with a star. Coups in battleground countries degrade DEFCON by 1. These countries are critical for regional Domination and Control.",
+    "related_terms": ["defcon", "scoring"]
+  }
+}
+```
+
+---
+
 ## Card File Schema (`<game_id>_<cards>.json`)
 
 Card files are flat JSON objects where keys are card IDs.
@@ -437,6 +515,82 @@ See [icons/README.md](icons/README.md) for:
 - Full list of all available icons
 - How to reference icons in your JSON
 - How to contribute new icons
+
+---
+
+## Best Practices
+
+### Large Card Sets (100+ Cards)
+
+For games with extensive card lists (e.g., *Twilight Struggle* with 110 event cards, *Dominion* with 500+ kingdom cards):
+
+**1. Split cards by category or deck:**
+```
+files/twilight_struggle/
+  ├── twilight_struggle_rules.json
+  ├── twilight_struggle_early_war.json    (35 cards)
+  ├── twilight_struggle_mid_war.json      (42 cards)
+  └── twilight_struggle_late_war.json     (23 cards)
+```
+
+**2. Reference multiple card files from components:**
+```json
+{
+  "components_overview": [
+    {
+      "name": "Early War Cards",
+      "type": "Card",
+      "action": { "name": "CardList", "value": "twilight_struggle_early_war.json" }
+    },
+    {
+      "name": "Mid War Cards",
+      "type": "Card",
+      "action": { "name": "CardList", "value": "twilight_struggle_mid_war.json" }
+    }
+  ]
+}
+```
+
+**3. Include search-friendly fields:**
+- `summary`: Short version for list views
+- `category`, `type`, or `subType`: For filtering
+- `tags`: Array of searchable keywords
+
+**Example:**
+```json
+{
+  "card_id": {
+    "id": "card_id",
+    "name": "Card Name",
+    "body": "Full card text...",
+    "summary": "Brief one-liner",
+    "category": "Action",
+    "tags": ["attack", "military", "one-time"]
+  }
+}
+```
+
+### Card-Driven Games
+
+For card-driven games (where cards are the primary mechanism), **prioritize creating card data files**. Players reference cards more than rules during play.
+
+**Minimum for card-driven games:**
+1. Rules file with core mechanics
+2. Card files with all playable cards
+3. Component linking to card files
+
+### Player Count Variants
+
+**Do:**
+- Use `condition` objects with `min_count_variant` / `max_count_variant`
+- Create separate component entries for count-specific items
+- Keep descriptions generic (no "2-player:" prefixes)
+
+**Don't:**
+- Put player count text in descriptions ("For 3-5 players:")
+- Use inline conditionals ("If 2 players, X; otherwise Y")
+
+Let the app filter by player count — your descriptions should read naturally for any applicable count.
 
 ---
 
