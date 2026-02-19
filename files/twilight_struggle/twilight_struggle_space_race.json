@@ -1,0 +1,66 @@
+{
+  "space_1": {
+    "id": "space_1",
+    "name": "1 — Earth Satellite",
+    "body": "Requires 2+ Ops. Roll 1-3 to succeed. First player: +2 VP.",
+    "summary": "2 Ops, Roll 1-3, +2 VP (first)",
+    "details": "No special ability gained.",
+    "extra": "Second player: +1 VP"
+  },
+  "space_2": {
+    "id": "space_2",
+    "name": "2 — Animal in Space",
+    "body": "Requires 2+ Ops. Roll 1-4 to succeed. First player: +0 VP.",
+    "summary": "2 Ops, Roll 1-4, no VP",
+    "details": "No special ability gained.",
+    "extra": "Second player: +0 VP"
+  },
+  "space_3": {
+    "id": "space_3",
+    "name": "3 — Man in Space",
+    "body": "Requires 2+ Ops. Roll 1-3 to succeed. First player: +2 VP.",
+    "summary": "2 Ops, Roll 1-3, +2 VP (first)",
+    "details": "Ability: You may play 2 cards to the Space Race per turn (instead of 1).",
+    "extra": "Second player: +0 VP"
+  },
+  "space_4": {
+    "id": "space_4",
+    "name": "4 — Man in Earth Orbit",
+    "body": "Requires 2+ Ops. Roll 1-4 to succeed. First player: +0 VP.",
+    "summary": "2 Ops, Roll 1-4, no VP",
+    "details": "Ability: Your opponent shows you their headline card before you choose yours.",
+    "extra": "Second player: +0 VP"
+  },
+  "space_5": {
+    "id": "space_5",
+    "name": "5 — Lunar Orbit",
+    "body": "Requires 3+ Ops. Roll 1-3 to succeed. First player: +3 VP.",
+    "summary": "3 Ops, Roll 1-3, +3 VP (first)",
+    "details": "No additional ability gained beyond previous spaces.",
+    "extra": "Second player: +1 VP"
+  },
+  "space_6": {
+    "id": "space_6",
+    "name": "6 — Eagle/Bear Has Landed",
+    "body": "Requires 3+ Ops. Roll 1-4 to succeed. First player: +0 VP.",
+    "summary": "3 Ops, Roll 1-4, no VP",
+    "details": "Ability: You may discard one held card when you receive your new hand. You draw a replacement immediately.",
+    "extra": "Second player: +0 VP"
+  },
+  "space_7": {
+    "id": "space_7",
+    "name": "7 — Space Station",
+    "body": "Requires 3+ Ops. Roll 1-3 to succeed. First player: +4 VP.",
+    "summary": "3 Ops, Roll 1-3, +4 VP (first)",
+    "details": "No additional ability gained beyond previous spaces.",
+    "extra": "Second player: +2 VP"
+  },
+  "space_8": {
+    "id": "space_8",
+    "name": "8 — Space Shuttle / SEI",
+    "body": "Requires 4+ Ops. Roll 1-2 to succeed. First player: +2 VP.",
+    "summary": "4 Ops, Roll 1-2, +2 VP (first)",
+    "details": "Ability: May take 8 action rounds per turn (instead of the normal 6 or 7).",
+    "extra": "Second player: +0 VP"
+  }
+}
