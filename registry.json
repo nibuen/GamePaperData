@@ -19,6 +19,12 @@
       "game_name": "Lords of Waterdeep",
       "designer": "Peter Lee, Rodney Thompson",
       "publisher": "Wizards of the Coast"
-    }  
+    },
+    {
+      "id": "faiyum",
+      "game_name": "Faiyum",
+      "designer": "Friedemann Friese",
+      "publisher": "2F-Spiele"
+    }
   ]
 }

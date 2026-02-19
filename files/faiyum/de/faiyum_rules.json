@@ -1,0 +1,323 @@
+{
+  "game_name": "Faiyum",
+  "designer": "Friedemann Friese",
+  "publisher": "2F-Spiele",
+  "game_overview": "Die Spieler sind Berater von Pharao Amenemhet III und haben die Aufgabe, die Region Faiyum zu entwickeln. Sie spielen Karten, um Infrastruktur aufzubauen, Ressourcen zu ernten, Siedler anzulocken und Prestige zu gewinnen. Das Spiel bietet einen einzigartigen Kartenmarkt und einen Mechanismus, bei dem gespielte Karten auf einen persoenlichen Ablagestapel gelegt werden, der nur durch eine 'Verwaltungs'-Aktion zurueckgeholt werden kann, die auch die Spielreihenfolge fuer die naechste Runde bestimmt.",
+  "objective": "Am Ende des Spiels die meisten Prestigepunkte (PP) zu haben.",
+  "min_players": 1,
+  "max_players": 5,
+  "bgg_link": "https://boardgamegeek.com/boardgame/318983/faiyum",
+  "play_time_minutes": 120,
+  "components_overview": [
+    {
+      "name": "Spielplan",
+      "type": "Board",
+      "description": "Zeigt die Region Faiyum mit Hexfeldern, Kartenmarkt, Pharao-Leiste, Katastrophen-Leiste und Wertungsleiste."
+    },
+    {
+      "name": "Karten",
+      "type": "Card",
+      "description": "Verschiedene Typen: Startkarten, Marktkarten (nummeriert 1-60+), Katastrophenkarten. Jede Karte hat Kosten, einen Effekt und oft Prestigepunkte.",
+      "action": {
+        "name": "CardList",
+        "value": "faiyum_cards.json"
+      }
+    },
+    {
+      "name": "Spielertableaus",
+      "type": "Board",
+      "description": "Zum Aufbewahren von Ressourcen und Arbeitern."
+    },
+    {
+      "name": "Trauben",
+      "type": "Resource",
+      "icon": "ResourceGrapes",
+      "description": "Lila."
+    },
+    {
+      "name": "Weizen",
+      "type": "Resource",
+      "icon": "ResourceWheat",
+      "description": "Gelb."
+    },
+    {
+      "name": "Stein",
+      "type": "Resource",
+      "icon": "ResourceStone",
+      "description": "Grau."
+    },
+    {
+      "name": "Fisch",
+      "type": "Resource",
+      "icon": "ResourceFish",
+      "description": "Blau."
+    },
+    {
+      "name": "Rosen",
+      "type": "Resource",
+      "icon": "ResourceRose",
+      "description": "Rosa. Kann als Joker anstelle von Trauben, Weizen, Stein oder Fisch verwendet werden."
+    },
+    {
+      "name": "Deben (Geld)",
+      "type": "Money",
+      "description": "In Stueckelungen von 1, 3, 5, 10."
+    },
+    {
+      "name": "Rabattmarker",
+      "type": "Marker",
+      "description": "-1 Marker zur Kennzeichnung von Rabatten auf Kartenangeboten."
+    },
+    {
+      "name": "Arbeiter",
+      "type": "Meeple",
+      "description": "Holzmeeple in Spielerfarben. Das Spiel hat einen begrenzten Vorrat."
+    },
+    {
+      "name": "Siedlungen",
+      "type": "Building",
+      "description": "Werden auf leere Felder gesetzt."
+    },
+    {
+      "name": "Staedte",
+      "type": "Building",
+      "description": "Werden auf Siedlungen gesetzt."
+    },
+    {
+      "name": "Strassen",
+      "type": "Building",
+      "description": "Verbinden Orte und erweitern die Reichweite."
+    },
+    {
+      "name": "Bruecken",
+      "type": "Building",
+      "description": "Werden ueber Wasser gelegt, um zwei benachbarte Landhexe zu verbinden."
+    },
+    {
+      "name": "Grosse Bruecken",
+      "type": "Building",
+      "description": "Groessere Bruecken, die breitere Wasseruebergaenge ueberspannen und Hexe verbinden, die durch zwei Wasserfelder getrennt sind."
+    },
+    {
+      "name": "Krokodil",
+      "type": "Meeple",
+      "description": "Ein Hindernis, das entfernt werden muss. Erhalte $1 beim Entfernen."
+    },
+    {
+      "name": "Reputationsmarker",
+      "type": "Marker",
+      "description": "Zur Punkteverfolgung."
+    },
+    {
+      "name": "Werkstaetten",
+      "type": "Building",
+      "description": "Produktionsgebaeude, die Ressourcen in Prestigepunkte oder andere Gueter umwandeln."
+    },
+    {
+      "name": "Erweiterungen",
+      "type": "Building",
+      "description": "Koennen nur an einer Werkstatt ohne Erweiterung platziert werden."
+    },
+    {
+      "name": "Palaeste",
+      "type": "Building",
+      "description": "Prachtbauten, die beim Bau erhebliche Prestigepunkte bringen."
+    },
+    {
+      "name": "Bausteine",
+      "type": "Building",
+      "description": "Koennen nur auf Baustellen platziert werden."
+    },
+    {
+      "name": "Spielreihenfolge-Marker",
+      "type": "Marker",
+      "description": "Bestimmen die Spielreihenfolge nach der Verwaltung."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Platziere eine Siedlung auf dem roten Feld und eine Strasse auf dem Damm zwischen den beiden Halbinseln.",
+      "short_description": "Erste Siedlung und Strasse platzieren"
+    },
+    {
+      "description": "Platziere ein Krokodil auf jedem Weizen- (gelb) und Traubenfeld (lila).",
+      "short_description": "Krokodile platzieren"
+    },
+    {
+      "description": "Entferne die gelben Karten 102, 104, 106.",
+      "short_description": "Gelbe Karten fuer 2 Spieler entfernen",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "description": "Mische die Marktkarten und lege sie verdeckt als Nachziehstapel ab. Ziehe die obersten 8 Karten und lege sie offen in die Marktplaetze.",
+      "short_description": "Marktkarten mischen und auslegen"
+    },
+    {
+      "description": "Lege Ressourcenmarker, Geld, Gebaeudeplattchen, Strassensegmente und Bonusmarker als allgemeinen Vorrat bereit.",
+      "short_description": "Ressourcen sortieren"
+    },
+    {
+      "description": "Jeder Spieler waehlt eine Farbe und nimmt: 1 Spielertableau, Startarbeiter (typischerweise 5, 1 aktiv, 4 in Reserve), 10 Deben, 1 PP-Marker (auf '0' der Wertungsleiste) und seine 3 Startkarten (Bauer, Maurer, Strassenbauer)."
+    },
+    {
+      "description": "Die Spieler mischen ihre Startkarten und nehmen sie auf die Hand."
+    },
+    {
+      "description": "Bestimmt zufaellig einen Startspieler.",
+      "short_description": "Erster Spieler",
+      "action": {
+        "type": "dice_roll",
+        "use_player_count": true,
+        "label": "Spieler"
+      }
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "In deinem Zug MUSST du eine der folgenden drei Aktionen ausfuehren",
+    "actions": [
+      {
+        "name": "Karte spielen",
+        "description": "Waehle eine Karte aus deiner Hand.",
+        "steps": [
+          {
+            "description": "Bezahle entweder die Kosten der Karte (der rote Abschnitt) an die Bank oder nimm $2 von der Bank."
+          },
+          {
+            "description": "Wenn die Aktion bezahlt wurde, fuehre die Kartenaktion aus (der gruene Abschnitt)."
+          },
+          {
+            "description": "Lege die gespielte Karte offen auf deinen Ablagestapel."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Beim Platzieren eines Arbeiters muss das Hexfeld frei von Krokodilen und Arbeitern sein."
+          },
+          {
+            "description": "Einige Karten erfordern keine Arbeiterplatzierung."
+          },
+          {
+            "description": "Entwickelte Felder koennen nicht mehr fuer Ernteaktionen genutzt werden."
+          },
+          {
+            "description": "Erhalte 1 SP beim erstmaligen Verbinden zweier Siedlungen / Baustellen."
+          },
+          {
+            "description": "Eine Karte kann gespielt werden, solange du mindestens einen Teil davon ausfuehren kannst (z.B. die Kosten bezahlen)."
+          },
+          {
+            "description": "Du kannst eine Karte nicht spielen, wenn du keinen Teil ihrer Aktion ausfuehren oder ihre Kosten bezahlen kannst."
+          }
+        ]
+      },
+      {
+        "name": "Karte kaufen",
+        "description": "Kaufe eine der vier Karten vom Markt.",
+        "steps": [
+          {
+            "description": "Bezahle die Kosten, die durch den Marktplatz angegeben werden, an die Bank. Wenn der -1 Marker auf der Karte liegt, zahle 1 weniger und entferne den Marker vom Spielplan."
+          },
+          {
+            "description": "Nimm die Karte und lege sie auf deine Hand."
+          },
+          {
+            "description": "Ziehe eine neue Karte und sortiere sie zwischen den 8 Karten auf dem Markt ein, von niedrig nach hoch."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Wenn die vier gelben Karten in der oberen Haelfte des Marktes liegen, wird das Spielende ausgeloest."
+          }
+        ]
+      },
+      {
+        "name": "Verwaltung durchfuehren",
+        "description": "Gespielte Karten zurueckholen, Einkommen erhalten und Spielreihenfolge fuer die naechste 'Runde' bestimmen.",
+        "steps": [
+          {
+            "description": "Erhalte $3 minus der Anzahl der Karten auf deiner Hand. Wenn das Ergebnis negativ ist, zahle kein Geld."
+          },
+          {
+            "description": "Entferne 0 bis 2 aufrechte Arbeiter von beliebigen Feldern auf dem Spielplan und gib sie in den Vorrat zurueck. Erhalte $1 fuer jeden entfernten Arbeiter."
+          },
+          {
+            "description": "Nimm die obersten 3 Karten von deinem Ablagestapel auf deine Hand. Wenn weniger als 3 Karten auf deinem Ablagestapel liegen, nimm alle."
+          },
+          {
+            "description": "Zahle $1 pro Karte, die du zusaetzlich von der Oberseite deines Ablagestapels zurueckkaufen moechtest."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Aendere niemals die Reihenfolge der Karten auf deinem Ablagestapel, es sei denn, die spezifische Kartenaktion sagt es."
+          }
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Arbeiter",
+        "description": "Starte mit einigen aktiven, einige in Reserve. Das Spielen bestimmter Karten verschiebt Arbeiter von der Reserve zu aktiv. Wenn ein Arbeiter auf dem Spielplan platziert wird, bleibt er dort, bis er durch bestimmte Karteneffekte entfernt wird oder am Spielende. Wenn du einen Arbeiter platzieren musst, aber keinen aktiven hast, kannst du diese Karte nicht spielen."
+      },
+      {
+        "name": "Ressourcen & Geld",
+        "description": "Werden verwendet, um Karten, Kartenaktionen zu bezahlen oder in andere Gueter/PP umzuwandeln. Werden auf deinem Spielertableau oder als Muenzen aufbewahrt."
+      },
+      {
+        "name": "Gebaeude",
+        "description": "Farmen (Trauben/Getreide), Steinbrueche (Stein), Werkstaetten (Ressourcen umwandeln), Siedlungen (geben PP, erlauben Bauen auf benachbarten Hexen)."
+      },
+      {
+        "name": "Strassen & Bruecken",
+        "description": "Erweitern deine Baureichweite. Arbeiter koennen nur auf Hexfelder gesetzt werden, die an deine bestehenden Arbeiter/Gebaeude angrenzen oder durch deine Strassen verbunden sind."
+      },
+      {
+        "name": "Pharao",
+        "description": "Bestimmte Karten bewegen den Pharao. Wenn der Pharao auf bestimmten Feldern seiner Leiste landet oder sie passiert, kann er Vorteile ausloesen oder Katastrophenkarten aktivieren."
+      },
+      {
+        "name": "Katastrophen",
+        "description": "Wenn eine Katastrophenkarte gezogen wird, wird ihr Effekt sofort aufgeloest. Katastrophen koennen Arbeiter, Gebaeude entfernen oder Krokodile platzieren."
+      },
+      {
+        "name": "Krokodil",
+        "description": "Wird durch einige Katastrophenkarten oder Karteneffekte platziert. Wenn ein Spieler am Spielende die meisten Krokodile auf Hexfeldern hat, wo er Arbeiter/Gebaeude hat, verliert er PP."
+      },
+      {
+        "name": "Kartenmarkt-Auffuellung",
+        "description": "Wenn der Markt-Nachziehstapel leer ist, mische den Markt-Ablagestapel zu einem neuen Nachziehstapel. Wenn bestimmte 'Neuziehen'-Karten auf diese Weise gezogen werden, loesen sie das Spielende aus."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "Das Spiel endet, wenn alle vier gelben Spielende-Karten in der oberen Haelfte des Marktes (Plaetze 5-8) erscheinen. Dies signalisiert die letzte Runde.",
+    "procedure": [
+      "Die aktuelle Runde wird abgeschlossen (alle Spieler fuehren eine Aktion aus, bis sie alle die Verwaltung waehlen).",
+      "Eine letzte Runde wird gespielt. Spieler, die die Verwaltung frueh in der Ausloeserunde gewahlt haben, bekommen moeglicherweise mehr Zuege in dieser letzten Runde.",
+      "Nach der letzten Runde folgt die Endwertung."
+    ],
+    "final_scoring": [
+      {
+        "source": "Prestigepunkte aus Karten",
+        "description": "Summiere die PP-Werte auf allen deinen Karten (auf der Hand, Ablagestapel, Markt falls von dir gekauft aber noch nicht gespielt)."
+      },
+      {
+        "source": "Prestigepunkte aus Siedlungen",
+        "description": "Werte PP fuer auf dem Spielplan gebaute Siedlungen."
+      },
+      {
+        "source": "Prestigepunkte aus Ressourcen/Geld",
+        "description": "Wandle verbleibende Ressourcen und Geld in PP um: je 3 Ressourcen eines Typs = 1 PP, je 10 Deben = 1 PP."
+      },
+      {
+        "source": "Bonusmarker",
+        "description": "Werte alle Spielende-PP aus Bonusmarkern."
+      },
+      {
+        "source": "Krokodil-Strafe",
+        "description": "Der/die Spieler mit den meisten Arbeitern/Gebaeuden auf Hexfeldern mit Krokodilmarkern verlieren eine festgelegte Menge PP (z.B. -5 PP)."
+      }
+    ]
+  },
+  "winning_condition": "Der Spieler mit den meisten Prestigepunkten gewinnt. Gleichstaende werden durch den Spieler mit den meisten verbleibenden Deben gebrochen. Bei weiterem Gleichstand teilen sich die Spieler den Sieg."
+}
