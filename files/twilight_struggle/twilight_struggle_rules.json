@@ -1,0 +1,333 @@
+{
+  "game_name": "Twilight Struggle",
+  "designer": "Ananda Gupta, Jason Matthews",
+  "publisher": "GMT Games",
+  "game_overview": "Twilight Struggle is a two-player card-driven strategy game simulating the Cold War from 1945 to 1989. One player controls the United States (US) and the other the Soviet Union (USSR). Players use cards representing historical events to spread influence, conduct coups, realign governments, and advance in the Space Race. The game covers the entire Cold War era through three periods: Early War (Turns 1-3), Mid War (Turns 4-7), and Late War (Turns 8-10).",
+  "objective": "Score 20 Victory Points (VP) in your favor, control Europe when the Europe Scoring card is played, or have the most VP at the end of Turn 10.",
+  "min_players": 2,
+  "max_players": 2,
+  "bgg_link": "https://boardgamegeek.com/boardgame/12333/twilight-struggle",
+  "play_time_minutes": 180,
+  "components_overview": [
+    {
+      "name": "Game Board",
+      "type": "Board",
+      "description": "World map divided into 6 scoring regions (Europe, Middle East, Asia, Central America, South America, Africa) plus Southeast Asia. Countries are connected by adjacency lines. Battleground countries are marked with a purple/red star. Each country has a stability number."
+    },
+    {
+      "name": "VP Track",
+      "type": "Board",
+      "description": "Track running from -20 (USSR auto-victory) to +20 (US auto-victory). Starts at 0."
+    },
+    {
+      "name": "DEFCON Track",
+      "type": "Board",
+      "description": "Track from 1 (Nuclear War) to 5 (Peace). Starts at 5. Improves by 1 each turn. Degrades from coups in battleground countries."
+    },
+    {
+      "name": "Action Round Track",
+      "type": "Board",
+      "description": "Tracks current action round within a turn. Turns 1-3: 6 action rounds each. Turns 4-10: 7 action rounds each."
+    },
+    {
+      "name": "Military Operations Track",
+      "type": "Board",
+      "description": "Each player has a track from 0-5. Must reach the required Military Operations level (equal to current DEFCON) by end of turn or lose VP."
+    },
+    {
+      "name": "Space Race Track",
+      "type": "Board",
+      "description": "Track with 8 spaces. First player to reach certain spaces gains VP and/or special abilities. Advancing requires discarding a card and rolling equal to or under the success number.",
+      "action": {
+        "name": "CardList",
+        "value": "twilight_struggle_space_race.json"
+      }
+    },
+    {
+      "name": "Influence Markers",
+      "type": "Token",
+      "description": "Blue markers for US influence, red markers for USSR influence. Placed in countries to establish control."
+    },
+    {
+      "name": "Early War Cards",
+      "type": "Card",
+      "count": 35,
+      "description": "Cards used from Turn 1. Include US events (blue stars), USSR events (red stars), and neutral events (split stars). Each card has an Operations value (1-4) and an event."
+    },
+    {
+      "name": "Mid War Cards",
+      "type": "Card",
+      "count": 46,
+      "description": "Shuffled into the deck at the start of Turn 4. Generally more powerful events."
+    },
+    {
+      "name": "Late War Cards",
+      "type": "Card",
+      "count": 23,
+      "description": "Shuffled into the deck at the start of Turn 8. The most dramatic events of the Cold War."
+    },
+    {
+      "name": "China Card",
+      "type": "Card",
+      "count": 1,
+      "description": "Special card that starts with the USSR face down. Worth 4 Ops (5 if all used in Asia). After play, passed face down to opponent. Cannot be held during scoring."
+    },
+    {
+      "name": "Turn Track Marker",
+      "type": "Marker",
+      "count": 1,
+      "description": "Tracks the current turn (1-10)."
+    },
+    {
+      "name": "Required Military Operations Marker",
+      "type": "Marker",
+      "count": 1,
+      "description": "Placed on the DEFCON track to show required Military Operations level."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place the Turn marker on Turn 1 and the DEFCON marker at 5.",
+      "short_description": "Turn & DEFCON"
+    },
+    {
+      "description": "Place VP marker at 0 on the VP track.",
+      "short_description": "VP Track"
+    },
+    {
+      "description": "Place both Military Operations markers at 0.",
+      "short_description": "Mil Ops"
+    },
+    {
+      "description": "Place USSR influence: 1 in Syria, 1 in Iraq, 3 in North Korea, 3 in East Germany, 1 in Finland.",
+      "short_description": "USSR Starting Influence"
+    },
+    {
+      "description": "Place US influence: 2 in Canada, 1 in Iran, 1 in Israel, 1 in Japan, 4 in Australia, 1 in Philippines, 5 in UK, 1 in Panama, 1 in South Africa, 1 in South Korea.",
+      "short_description": "US Starting Influence"
+    },
+    {
+      "description": "USSR receives additional 6 influence to place in Eastern Europe (East Germany, Poland, Czechoslovakia, Austria, Yugoslavia, Bulgaria, Romania, Hungary, Finland).",
+      "short_description": "USSR Bonus Influence"
+    },
+    {
+      "description": "US receives additional 7 influence to place in Western Europe (UK, France, West Germany, Spain/Portugal, Italy, Greece, Turkey, Benelux, Norway, Denmark, Canada).",
+      "short_description": "US Bonus Influence"
+    },
+    {
+      "description": "Shuffle only the Early War cards. Deal 8 cards to each player.",
+      "short_description": "Deal Cards"
+    },
+    {
+      "description": "Give the China Card to the USSR player, face up.",
+      "short_description": "China Card"
+    },
+    {
+      "description": "The headline phase begins — both players simultaneously select and reveal one card to play for its event.",
+      "short_description": "First Headline"
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "Each turn consists of a Headline Phase followed by Action Rounds. During the Headline Phase, both players simultaneously select a card and reveal them; events are resolved in order of Operations value (higher first, USSR breaks ties). Then players alternate Action Rounds starting with the USSR. Turns 1-3 have 6 Action Rounds each; Turns 4-10 have 7 Action Rounds each. At the end of each turn, check Military Operations penalties, advance DEFCON status by 1, flip China Card face up if applicable, advance the Turn marker, and deal cards.",
+    "actions": [
+      {
+        "name": "Play Card for Event",
+        "description": "Play a card and resolve its event text. The card is removed from the game if it has an asterisk (*) after its name; otherwise it is discarded.",
+        "steps": [
+          {"description": "Play the card face up."},
+          {"description": "Resolve the event as described on the card."},
+          {"description": "If the card is marked with *, remove it from the game permanently. Otherwise, discard it."}
+        ],
+        "notes": [
+          {"description": "If you play your opponent's event card for Operations, the event STILL triggers (your opponent's event fires, then you get Operations, or vice versa — you choose the order)."},
+          {"description": "Scoring cards MUST be played during the turn they are held. You may not hold a scoring card at the end of a turn."}
+        ]
+      },
+      {
+        "name": "Place Influence",
+        "description": "Spend Operations Points to place influence markers in countries. Each Ops point places 1 influence in a country where you already have influence or adjacent to one where you do. Placing in enemy-controlled countries costs 2 Ops per influence.",
+        "steps": [
+          {"description": "Select a country where you have influence or one adjacent to a country where you have influence."},
+          {"description": "Place 1 influence marker per Operations Point spent."},
+          {"description": "If the target country is controlled by your opponent, it costs 2 Operations Points per influence instead of 1."}
+        ],
+        "notes": [
+          {"description": "Control: You control a country if your influence exceeds your opponent's influence by at least the country's stability number."},
+          {"description": "You may split Operations Points among multiple eligible countries."},
+          {"description": "DEFCON restrictions: At DEFCON 2, no influence may be placed in Europe. At DEFCON 3, no influence may be placed in Europe or Asia. At DEFCON 4, no influence may be placed in Europe, Asia, or the Middle East."}
+        ]
+      },
+      {
+        "name": "Attempt a Coup",
+        "description": "Target any country where your opponent has influence. Roll a die, add your Operations value, and subtract double the country's stability number. If the result is positive, remove that many opponent influence and/or add your own.",
+        "steps": [
+          {"description": "Choose a target country where your opponent has influence."},
+          {"description": "Roll one die and add the card's Operations value."},
+          {"description": "Subtract double the target country's stability number: Result = Die Roll + Ops - (2 x Stability)."},
+          {"description": "If the result is positive, remove opponent influence first, then place your own influence with any remainder."},
+          {"description": "If the result is zero or negative, the coup fails — nothing happens."}
+        ],
+        "notes": [
+          {"description": "Coups in Battleground countries degrade DEFCON by 1."},
+          {"description": "A coup counts as a Military Operation equal to the card's Operations value."},
+          {"description": "DEFCON restrictions apply: at DEFCON 2, no coups in Europe; at DEFCON 3, no coups in Europe or Asia; at DEFCON 4, no coups in Europe, Asia, or Middle East."},
+          {"description": "If DEFCON reaches 1 due to a coup, the player who performed the coup (the phasing player) LOSES the game — nuclear war."}
+        ]
+      },
+      {
+        "name": "Realignment Roll",
+        "description": "Attempt to remove opponent influence from a country without placing your own. Both players roll a die; the higher roller removes 1 of the opponent's influence from the target country.",
+        "steps": [
+          {"description": "Choose a target country where your opponent has influence (you do NOT need to have influence there)."},
+          {"description": "Each player rolls one die."},
+          {"description": "+1 modifier for each adjacent controlled country you have."},
+          {"description": "+1 modifier if you have more influence in the target country than your opponent."},
+          {"description": "The player with the higher modified roll removes 1 opponent influence. Ties result in nothing."},
+          {"description": "You may make multiple realignment rolls with one card, spending 1 Ops per attempt."}
+        ],
+        "notes": [
+          {"description": "Realignment does NOT count as a Military Operation."},
+          {"description": "DEFCON restrictions apply the same as for coups."},
+          {"description": "You do not need influence in or adjacent to the target country to attempt realignment."}
+        ]
+      },
+      {
+        "name": "Space Race",
+        "description": "Discard a card to attempt to advance on the Space Race track. The card's event does NOT trigger, making this useful for discarding opponent events safely.",
+        "steps": [
+          {"description": "Discard a card with sufficient Operations value (shown on the Space Race track for each space)."},
+          {"description": "Roll one die. If the result is equal to or less than the success number for the next space, advance your marker."},
+          {"description": "If the roll fails, nothing happens — the card is still discarded."}
+        ],
+        "notes": [
+          {"description": "You may only attempt the Space Race once per turn (twice per turn if you reach the space that grants this ability)."},
+          {"description": "The opponent's event on a card played to the Space Race is NOT triggered."},
+          {"description": "The China Card may be played to the Space Race."}
+        ]
+      },
+      {
+        "name": "Play Scoring Card",
+        "description": "Play a regional scoring card to score that region. Check Presence, Domination, or Control for each superpower, plus battleground country bonuses and adjacency.",
+        "steps": [
+          {"description": "Determine each player's status in the region: Presence (at least 1 country controlled), Domination (more countries AND more battleground countries controlled than opponent, plus at least 1 non-battleground), or Control (all battleground countries AND more total countries than opponent)."},
+          {"description": "Award VP based on the scoring card's table for each player's status level."},
+          {"description": "Award +1 VP per battleground country controlled in the region."},
+          {"description": "Award +1 VP for controlling a country adjacent to the enemy superpower (only for some regions)."}
+        ],
+        "notes": [
+          {"description": "Scoring cards MUST be played during the turn they are drawn. Holding one at end of turn loses the game."},
+          {"description": "Southeast Asia Scoring (if using optional card) is removed after Turn 1 play and only scores countries in that sub-region."}
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Country Control",
+        "description": "You control a country if your influence exceeds your opponent's by at least the country's stability number. Example: A stability 2 country with 3 US influence and 1 USSR influence is US-controlled (3 - 1 = 2, which equals stability)."
+      },
+      {
+        "name": "Battleground Countries",
+        "description": "Key countries in each region marked with a star. Coups in battleground countries degrade DEFCON. These countries provide bonus VP during scoring and are crucial for Domination/Control. Europe: East Germany, West Germany, France, Italy, Poland, UK. Middle East: Iran, Iraq, Israel, Libya, Saudi Arabia, Egypt. Asia: North Korea, South Korea, Japan, India, Pakistan, Thailand. Africa: Nigeria, Zaire, Angola, South Africa, Algeria. Central America: Cuba, Panama, Mexico. South America: Brazil, Argentina, Venezuela, Chile."
+      },
+      {
+        "name": "DEFCON Status",
+        "description": "Level 5: Peace — no restrictions. Level 4: No coups or realignment in Europe. Level 3: Also no coups or realignment in Asia. Level 2: Also no coups or realignment in the Middle East. Level 1: Nuclear War — the phasing player loses the game. DEFCON improves by 1 at the end of each turn (never above 5). Coups in battleground countries degrade DEFCON by 1."
+      },
+      {
+        "name": "Military Operations",
+        "description": "Each player must conduct Military Operations equal to the current DEFCON level by end of turn. Coups count (value = card's Ops). War events count. For each point short, lose 1 VP. Example: DEFCON is at 4, you have 2 Mil Ops — you lose 2 VP."
+      },
+      {
+        "name": "Operations Points",
+        "description": "Cards have Ops values from 1 to 4. Ops are used for influence placement, coups, realignment, or Space Race. When playing an opponent's event for Ops, the event still triggers."
+      },
+      {
+        "name": "Headline Phase",
+        "description": "At the start of each turn, both players simultaneously select a card and reveal. Both events occur (higher Ops value resolves first; USSR breaks ties). The China Card cannot be played during the headline phase."
+      },
+      {
+        "name": "China Card",
+        "description": "Starts with USSR face up. Worth 4 Ops (5 if ALL Ops are used in Asia or Southeast Asia). After use, passed face down to opponent (cannot be used until next turn when it flips face up). Counts as held card for hand limit. Cannot be played during headline phase."
+      },
+      {
+        "name": "Scoring Regions",
+        "description": "Europe: Presence 3/1, Domination 7/3, Control automatic victory. Middle East: Presence 3/1, Domination 5/3, Control 7/5. Asia: Presence 3/1, Domination 7/4, Control 9/6. Africa: Presence 1/1, Domination 4/4, Control 6/6. Central America: Presence 1/1, Domination 3/3, Control 5/5. South America: Presence 2/2, Domination 5/3, Control 6/4. (Format: US VP / USSR VP)"
+      },
+      {
+        "name": "Presence / Domination / Control",
+        "description": "Presence: Control at least 1 country in the region. Domination: Control more countries AND more battleground countries than opponent, plus at least 1 non-battleground country. Control: Control ALL battleground countries in the region AND more total countries than opponent."
+      },
+      {
+        "name": "DEFCON Coup Restrictions",
+        "description": "DEFCON 5: No restrictions. DEFCON 4: Cannot coup or realign in Europe. DEFCON 3: Cannot coup or realign in Europe or Asia. DEFCON 2: Cannot coup or realign in Europe, Asia, or Middle East. These restrictions also apply to influence placement from card events."
+      },
+      {
+        "name": "Card Periods",
+        "description": "Early War (Turns 1-3): 35 cards. At start of Turn 4, shuffle Mid War cards (46) into the deck. At start of Turn 8, shuffle Late War cards (23) into the deck. The deck grows over time but is never reshuffled — discard pile is reshuffled when the draw deck runs out."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends immediately upon any of the following: a player reaches +20 or -20 VP, Europe Scoring with one side controlling Europe, DEFCON reaches 1, or at the end of Turn 10.",
+    "procedure": [
+      "Check for automatic victory: +20 VP (US wins) or -20 VP (USSR wins) at any time.",
+      "Check for Europe Control victory: If Europe Scoring is played and one side has Control of Europe, that side wins immediately.",
+      "Check for DEFCON 1: The phasing player (the player whose action caused DEFCON to reach 1) loses the game.",
+      "If no winner by end of Turn 10: Score all regions as if each scoring card were played, then the player with the VP advantage wins.",
+      "Final scoring awards VP for controlling countries in every region."
+    ],
+    "final_scoring": [
+      {
+        "source": "VP Track",
+        "description": "The player whose side the VP marker favors wins. Positive VP = US advantage, Negative VP = USSR advantage."
+      },
+      {
+        "source": "End of Turn 10 Scoring",
+        "description": "If neither player has won by the end of Turn 10, every region is scored (as if all scoring cards were played). Chinese influence in Taiwan/etc. is also counted. The VP total determines the winner."
+      }
+    ]
+  },
+  "winning_condition": "Immediate victory if VP reaches 20 in your favor, if you control Europe when scored, or if your opponent triggers DEFCON 1. Otherwise, highest VP total after final scoring at end of Turn 10.",
+  "tips_for_new_players": [
+    {
+      "tip": "Opponent events still fire",
+      "description": "When you play your opponent's event card for Operations, the event STILL happens. You choose whether the event or your Operations resolve first. Plan around this — sometimes it's better to headline an opponent's card or Space Race it."
+    },
+    {
+      "tip": "Scoring cards must be played",
+      "description": "You MUST play every scoring card you hold before the end of the turn. Holding a scoring card at the end of a turn loses you the game immediately. Plan your hand around this."
+    },
+    {
+      "tip": "Space Race discards safely",
+      "description": "The Space Race lets you discard a card WITHOUT triggering its event. Use it to safely get rid of dangerous opponent events when you can't afford to play them."
+    },
+    {
+      "tip": "DEFCON is a weapon",
+      "description": "The phasing player loses if DEFCON hits 1. You can play events that lower DEFCON during your opponent's action round (via headline timing or triggered events) to win. Be very careful about DEFCON at level 2."
+    },
+    {
+      "tip": "Coups in battleground countries matter",
+      "description": "Coups in battleground countries degrade DEFCON AND count as Military Operations. Early game USSR often coups a battleground on the first action round to satisfy Mil Ops and degrade DEFCON to restrict regions."
+    },
+    {
+      "tip": "Control the DEFCON level",
+      "description": "Lowering DEFCON locks out regions (Europe at 4, Asia at 3, Middle East at 2). This can protect your position by preventing opponent coups in those regions. USSR often benefits from lower DEFCON early."
+    },
+    {
+      "tip": "Realignment doesn't degrade DEFCON",
+      "description": "Unlike coups, realignment rolls in battleground countries do NOT lower DEFCON and do NOT count as Military Operations. Use realignment when you want to attack without DEFCON consequences."
+    },
+    {
+      "tip": "China Card gives 5 Ops in Asia",
+      "description": "The China Card is worth 4 Ops normally, but 5 Ops if ALL Operations Points are spent in Asia or Southeast Asia. This makes it extremely powerful for Asian influence or coups."
+    },
+    {
+      "tip": "Watch Military Operations",
+      "description": "You lose VP for each Military Operations point below the current DEFCON level at end of turn. A coup in a battleground country is the most common way to satisfy this requirement."
+    },
+    {
+      "tip": "Europe Control is instant win",
+      "description": "If either side achieves Control of Europe when the Europe Scoring card is played, that side wins immediately — regardless of VP totals. Protect European battlegrounds carefully."
+    }
+  ]
+}
