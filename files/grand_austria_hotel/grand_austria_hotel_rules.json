@@ -1,0 +1,310 @@
+{
+  "game_name": "Grand Austria Hotel",
+  "designer": "Virginio Gigli, Simone Luciani",
+  "publisher": "Lookout Games",
+  "game_overview": "In the thick of the Viennese modern age, exquisite cafés are competing for customers. Inspiring artists, important politicians, and tourists from all over the world are populating Vienna and in need of a hotel room. This is your opportunity to turn your little café into a world famous hotel. Hire staff, fulfill the wishes of your guests, and gain the emperor's favor. Only then will your café become the Grand Austria Hotel.",
+  "objective": "The player with the most VP is the winner. If tied, the player with the most dishes, drinks, and krone left is the winner.",
+  "min_players": 2,
+  "max_players": 4,
+  "bgg_link": "https://boardgamegeek.com/boardgame/182874/grand-austria-hotel",
+  "play_time_minutes": 120,
+  "components_overview": [
+    {
+      "name": "Game Board",
+      "type": "Board",
+      "description": "Central board with action spaces for dice (1-6), Guest track, Emperor track, and round track."
+    },
+    {
+      "name": "Action Board",
+      "type": "Board",
+      "description": "Shows the 6 action spaces where dice are sorted each round. The number of dice on a space determines action strength."
+    },
+    {
+      "name": "Hotel Boards",
+      "type": "Board",
+      "description": "Each player's personal board with room spaces (red, yellow, blue organized in rows), Kitchen for resources, Café for waiting Guests, and Money track."
+    },
+    {
+      "name": "Dice",
+      "type": "Dice",
+      "description": "10 dice. Rolled each round and sorted by value onto action spaces.",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "name": "Dice",
+      "type": "Dice",
+      "description": "12 dice. Rolled each round and sorted by value onto action spaces.",
+      "condition": {"min_count_variant": 3, "max_count_variant": 3}
+    },
+    {
+      "name": "Dice",
+      "type": "Dice",
+      "description": "14 dice. Rolled each round and sorted by value onto action spaces.",
+      "condition": {"min_count_variant": 4, "max_count_variant": 4}
+    },
+    {
+      "name": "Guest Cards",
+      "type": "Card",
+      "description": "Guests waiting to check in. Show required dishes/drinks orders, preferred room color, and a reward received when checked in."
+    },
+    {
+      "name": "Staff Cards",
+      "type": "Card",
+      "description": "Provide special abilities when played via the die-5 action. Have a krone cost and various ongoing or once-per-round effects."
+    },
+    {
+      "name": "Politics Cards",
+      "type": "Card",
+      "description": "Three Politics cards (A, B, C) each show a requirement. When met during your turn, place a wooden disk to claim VP immediately."
+    },
+    {
+      "name": "Emperor Tiles",
+      "type": "Token",
+      "description": "Three tiles (A, B, C) each showing a bonus and a penalty applied based on Emperor track position at Emperor Scoring (end of rounds 3, 5, and 7)."
+    },
+    {
+      "name": "Room Tiles",
+      "type": "Token",
+      "description": "Red, yellow, and blue room tiles placed on Hotel boards. Guests must check into a room matching their color."
+    },
+    {
+      "name": "Resource Cubes",
+      "type": "Resource",
+      "description": "Four types: Coffee, Wine, Cake, and Strudel. Stored in the Kitchen and placed on Guest orders to fulfill them."
+    },
+    {
+      "name": "Wooden Disks",
+      "type": "Marker",
+      "description": "6 per player. One for Emperor track, one for VP track, one for Money track; the remaining three are reserved for claiming Politics cards."
+    },
+    {
+      "name": "Turn Order Tiles",
+      "type": "Marker",
+      "description": "2 tiles (one per player). Each tile shows two numbers. As you take die actions, dice are placed on these numbers — the lowest uncovered number determines player order.",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "name": "Turn Order Tiles",
+      "type": "Marker",
+      "description": "3 tiles (one per player). Each tile shows two numbers. As you take die actions, dice are placed on these numbers — the lowest uncovered number determines player order.",
+      "condition": {"min_count_variant": 3, "max_count_variant": 3}
+    },
+    {
+      "name": "Turn Order Tiles",
+      "type": "Marker",
+      "description": "4 tiles (one per player). Each tile shows two numbers. As you take die actions, dice are placed on these numbers — the lowest uncovered number determines player order.",
+      "condition": {"min_count_variant": 4, "max_count_variant": 4}
+    },
+    {
+      "name": "Round Marker",
+      "type": "Marker",
+      "description": "Tracks the current round (1-7)."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place the components (dustbin, dishes, VP markers, rooms by color) next to the game and action boards.",
+      "short_description": "Place Components"
+    },
+    {
+      "description": "Shuffle the Guest cards and place them face-down on their designated space. Draw 5 and place each one face-up in a Guest space.",
+      "short_description": "Place Initial Guest Cards"
+    },
+    {
+      "description": "Shuffle the Staff cards and place them face-down near the game board.",
+      "short_description": "Prepare Staff Cards"
+    },
+    {
+      "description": "Draw a Politics card from A, B, and C and place them on their designated spaces on the game board.",
+      "short_description": "Place Politics Cards"
+    },
+    {
+      "description": "Draw an Emperor tile from A, B, and C and place them on their designated spaces on the game board.",
+      "short_description": "Place Emperor Tiles"
+    },
+    {
+      "description": "Place 10 dice on the Action space. Return unused dice to the box.",
+      "short_description": "Prepare Dice",
+      "condition": {"min_count_variant": 2, "max_count_variant": 2}
+    },
+    {
+      "description": "Place 12 dice on the Action space. Return unused dice to the box.",
+      "short_description": "Prepare Dice",
+      "condition": {"min_count_variant": 3, "max_count_variant": 3}
+    },
+    {
+      "description": "Place 14 dice on the Action space. Return unused dice to the box.",
+      "short_description": "Prepare Dice",
+      "condition": {"min_count_variant": 4, "max_count_variant": 4}
+    },
+    {
+      "description": "Take the Turn Order tiles for the correct number of players.",
+      "short_description": "Prepare Turn Order Tiles"
+    },
+    {
+      "description": "Each player takes an Overview card, Hotel board, and the 6 wooden disks in their color.",
+      "short_description": "Distribute Player Components"
+    },
+    {
+      "description": "Place one wooden disk on the 0 space of the Emperor track, the 0 space of the VP track, and one on the 10 space of your Money track. Set the other three disks aside – you may use them later to engage in politics.",
+      "short_description": "Initial Disk Placement"
+    },
+    {
+      "description": "Each player takes one of each colored cube – coffee, wine, cake, and strudel and places them in their kitchen.",
+      "short_description": "Initial Resources"
+    },
+    {
+      "description": "Draw 6 Staff cards and keep them hidden. Optionally, use the lettered sets (Intro) or Draft (Experience) as written in the rulebook.",
+      "short_description": "Initial Staff Hand"
+    },
+    {
+      "description": "Place the round marker on space 1 of the Round track.",
+      "short_description": "Set Round Marker"
+    },
+    {
+      "description": "Decide which side of the Hotel board to use.",
+      "short_description": "Choose Hotel Board Side"
+    },
+    {
+      "description": "Randomly determine a start player. The start player receives Turn Order tile 1. The next clockwise receives Turn Order tile 2, etc.",
+      "short_description": "Determine Start Player & Turn Order"
+    },
+    {
+      "description": "Beginning with the last player and proceeding counterclockwise, each player chooses a Guest from the face-up ones and places it in their Café at no cost. After each choice, slide the remaining Guests to the right and place a new one on the empty left space.",
+      "short_description": "Draft Initial Guest"
+    },
+    {
+      "description": "Players then prepare up to 3 rooms by taking Room tiles and placing them on the same-colored spaces of their Hotel board. You MUST start with the bottom left of your Hotel board. Subsequent Room tiles MUST be placed orthogonally adjacent to already placed ones. You pay the cost associated by moving the disk on your Money track down.",
+      "short_description": "Prepare Initial Rooms"
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "On your turn, take actions in this order:\n\n1. Take a Guest from the game board (optional)\n2. Take a die and carry out the corresponding action (mandatory)\n3. Take any appropriate additional actions (optional)\n\nThe player with the lowest visible number on their Turn Order tile always goes next.",
+    "actions": [
+      {
+        "name": "Die 1 — Strudel / Cake",
+        "description": "For each die on the 1-space, take 1 strudel OR 1 cake. You cannot take more cake than strudel in total.",
+        "steps": [
+          { "description": "Count the number of dice on the 1-space — this is your action strength." },
+          { "description": "For each point of strength, take 1 strudel OR 1 cake. Any combination is allowed, but you cannot end up with more cake than strudel total." },
+          { "description": "Whenever you receive dishes, you may immediately place them on a Guest's order. Store any excess in your Kitchen." },
+          { "description": "Remove one die from the 1-space and place it on the lowest visible number of your Turn Order tile." }
+        ]
+      },
+      {
+        "name": "Die 2 — Wine / Coffee",
+        "description": "For each die on the 2-space, take 1 wine OR 1 coffee. You cannot take more coffee than wine in total.",
+        "steps": [
+          { "description": "Count the number of dice on the 2-space — this is your action strength." },
+          { "description": "For each point of strength, take 1 wine OR 1 coffee. Any combination is allowed, but you cannot end up with more coffee than wine total." },
+          { "description": "Whenever you receive drinks, you may immediately place them on a Guest's order. Store any excess in your Kitchen." },
+          { "description": "Remove one die from the 2-space and place it on the lowest visible number of your Turn Order tile." }
+        ]
+      },
+      {
+        "name": "Die 3 — Prepare a Room",
+        "description": "For each die on the 3-space, you may prepare one room on your Hotel board.",
+        "steps": [
+          { "description": "Count the number of dice on the 3-space — this is the number of rooms you may prepare." },
+          { "description": "For each room: take a Room tile of your choice and place it on a valid space on your Hotel board. It must be adjacent to an already placed room tile. The front (bellhop opening door) side must be visible. The color must match the room space. Pay the cost shown for that row of your Hotel board." },
+          { "description": "If you place a room in the top right of your Hotel board, immediately receive the printed VP." },
+          { "description": "If you flip the last room in a group, immediately receive the Occupancy bonus shown at the top of your Hotel board (based on the size and color of the group)." },
+          { "description": "Remove one die from the 3-space and place it on the lowest visible number of your Turn Order tile." }
+        ],
+        "notes": [
+          { "description": "If you turn over the last room in a group, you IMMEDIATELY receive the Occupancy bonus as marked at the top of your Hotel board. The Occupancy bonus is based on the size and color of the group." }
+        ]
+      },
+      {
+        "name": "Die 4 — Emperor Track / Money Track",
+        "description": "For each die on the 4-space, advance 1 space on the Emperor track OR your Money track. You can freely split advances between the two tracks.",
+        "steps": [
+          { "description": "Count the number of dice on the 4-space — this is your action strength." },
+          { "description": "For each point of strength, advance 1 space on the Emperor track OR 1 space on your Money track. You may split the total freely between both tracks." },
+          { "description": "Remove one die from the 4-space and place it on the lowest visible number of your Turn Order tile." }
+        ]
+      },
+      {
+        "name": "Die 5 — Play a Staff Card",
+        "description": "Play exactly one Staff card from your hand. For each die on the 5-space, the card's krone cost is reduced by 1 (minimum 0).",
+        "steps": [
+          { "description": "Count the number of dice on the 5-space — each die reduces the Staff card's krone cost by 1." },
+          { "description": "Choose exactly ONE Staff card from your hand to play." },
+          { "description": "Pay the remaining cost (original cost minus number of dice on the 5-space, minimum 0) by moving down on your Money track." },
+          { "description": "Place the Staff card face-up in front of you to activate its ability." },
+          { "description": "Remove one die from the 5-space and place it on the lowest visible number of your Turn Order tile." }
+        ],
+        "notes": [
+          { "description": "You can play EXACTLY ONE Staff card." },
+          { "description": "The cost CANNOT be less than 0." }
+        ]
+      },
+      {
+        "name": "Die 6 — Wild (Any Action)",
+        "description": "Pay 1 krone and carry out any one of the other 5 actions (1–5). The action strength is determined by the number of dice on the 6-space, not the chosen action space.",
+        "steps": [
+          { "description": "Count the number of dice on the 6-space — this is your action strength for the chosen action." },
+          { "description": "Pay 1 krone by moving down on your Money track." },
+          { "description": "Choose any one of the other 5 actions (1–5) and carry it out using the strength from the 6-space die count." },
+          { "description": "Remove one die from the 6-space and place it on the lowest visible number of your Turn Order tile." }
+        ],
+        "notes": [
+          { "description": "Action strength is based on dice on the 6-space, NOT the chosen action's space." }
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Take a Guest (Optional)",
+        "description": "Before your die action, you may take one of the 5 face-up Guests on the game board. Pay the cost shown on their game board space by moving your Money disk down. Place the Guest in a FREE space in your Café. If ALL Café spaces are occupied, you CANNOT take a Guest. Slide all remaining Guests to the right and place a new Guest from the draw pile in the empty leftmost space."
+      },
+      {
+        "name": "Additional Actions",
+        "description": "After your mandatory die action, you may take the following additional actions. Only the first is limited to once per turn; all others may be done any number of times: ONCE — pay 1 krone to add 1 to the number of dice on your chosen action space. Pay 1 krone to move up to 3 dishes/drinks from your Kitchen to Guest orders. Place a wooden disk on a Politics card if you meet its requirement (see Politics Cards). Use a 'once per round' Staff card effect, then turn it face-down so you don't accidentally use it again. Move a Guest whose order is fully complete to a free room of matching color — immediately receive the printed VP and the Guest's reward, then turn the room tile face-down."
+      },
+      {
+        "name": "Passing",
+        "description": "Instead of taking a turn, you may pass. When you pass, you must wait until every other player has either passed or taken TWO actions (covered both numbers on their Turn Order tile). Once that happens, the player with the LOWEST number still showing on their Turn Order tile takes all remaining dice from all action spaces, removes ONE die to the dustbin, and rolls the rest — sorting and placing them as usual. That player may then take a turn or pass again. Play continues until all players have covered both numbers on their Turn Order tiles OR there are no dice left."
+      },
+      {
+        "name": "Politics Cards",
+        "description": "Each Politics card shows a requirement. As soon as you meet that requirement on your turn, you may place a wooden disk on the highest available space and immediately receive the printed VP. You can only place one disk per Politics card."
+      },
+      {
+        "name": "End of Round",
+        "description": "At the end of each round: turn your Staff cards face-up; pass your Turn Order tile to the next player in clockwise order; the new start player takes the dice and moves the Round marker forward one space."
+      },
+      {
+        "name": "Emperor Scoring",
+        "description": "At the end of rounds 3, 5, and 7, there is an Emperor Scoring. Each player receives VP equal to the value at the BOTTOM of their current Emperor track space. Then each player moves their disk BACK 3 / 5 / 7 spaces after the 1st / 2nd / 3rd Emperor Scoring respectively. If your disk ends in the yellow area (space 3 or higher), receive the Emperor Tile bonus. If it ends in the black area (space 0), suffer the Emperor Tile penalty. If it ends in the gray area (spaces 1–2), you get neither."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends after 7 rounds. After round 7 and its Emperor Scoring, proceed to Final Scoring.",
+    "procedure": [
+      "Complete round 7 (all players take their turns).",
+      "Perform Emperor Scoring for round 7.",
+      "Proceed to Final Scoring."
+    ],
+    "final_scoring": [
+      {
+        "source": "Staff Cards",
+        "description": "Receive VP for any Staff cards in play that provide end-game VP, as indicated on the cards."
+      },
+      {
+        "source": "Occupied Rooms",
+        "description": "Receive VP for each occupied room on your Hotel board: 1 VP per occupied room in row 1, 2 VP per occupied room in row 2, 3 VP per occupied room in row 3, 4 VP per occupied room in row 4."
+      },
+      {
+        "source": "Leftover Resources",
+        "description": "Receive 1 VP for each krone remaining on your Money track, and 1 VP for each leftover dish or drink remaining in your Kitchen."
+      },
+      {
+        "source": "Café Guest Penalty",
+        "description": "LOSE 5 VP for each Guest still remaining in your Café at game end."
+      }
+    ]
+  },
+  "winning_condition": "The player with the most VP wins. Ties are broken by the player with the most remaining dishes, drinks, and krone. If still tied, players share the victory."
+}
