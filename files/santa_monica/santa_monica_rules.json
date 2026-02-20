@@ -1,460 +1,417 @@
 {
-    "game_name": "Santa Monica",
-    "designer": "Josh Wood",
-    "publisher": "Alderac Entertainment Group (AEG)",
-    "game_overview": "In Santa Monica, players create the most appealing oceanfront in Southern California by drafting feature cards to build up their beach (top row) and street (bottom row). Features work together through chains and adjacencies to gain victory points. Players can create calm nature-focused beaches, bustling tourist destinations, or something in between to appeal to locals. Each turn involves drafting cards, placing them strategically, taking placement actions to gain resources and move visitors, and managing VIPs who leave footprints as they explore the city.",
-    "objective": "Create the most appealing oceanfront by strategically placing feature cards to maximize victory points through chains, adjacencies, activity rings, footprints, and scoring objectives.",
-    "min_players": 2,
-    "max_players": 4,
-    "bgg_link": "https://boardgamegeek.com/boardgame/298065/santa-monica",
-    "play_time_minutes": null,
-    "components_overview": [
-        {
-            "name": "Feature Cards",
-            "type": "Card",
-            "subTypes": [
-                "Beach Card",
-                "Street Card"
-            ],
-            "description": "Cards representing beach and street locations that can be built in the game",
-            "detailed_description": "Feature cards come in two types: beach cards (with ocean at top) and street cards (with wooden boardwalk and street at bottom). Each card has location tags, placement actions, scoring opportunities (adjacencies and chains), activity rings, and may include footprint scoring attributes.",
-            "count": 78,
-            "condition": null
-        },
-        {
-            "name": "Sand Dollar Tiles",
-            "type": "Tile",
-            "subTypes": [
-                "Action Tile"
-            ],
-            "description": "Double-sided tiles featuring different actions that players may pay sand dollars to use",
-            "detailed_description": "These tiles provide special actions players can activate by spending sand dollars instead of normal card selection. Two tiles are randomly selected at setup to determine which sand dollar actions are available for the game.",
-            "count": 4,
-            "condition": null
-        },
-        {
-            "name": "Footprint Tokens",
-            "type": "Token",
-            "subTypes": [
-                "Marker"
-            ],
-            "description": "Cardboard tokens used to mark places that VIPs have visited",
-            "detailed_description": "When a VIP moves to or through a feature card with desired attributes, a footprint token is placed on that card. Each card can only have one footprint token, but scores for each matching attribute on the card.",
-            "count": 28,
-            "condition": null
-        },
-        {
-            "name": "Food Truck Token",
-            "type": "Token",
-            "subTypes": [
-                "Special Token"
-            ],
-            "description": "Token that moves beneath the display and provides bonuses for choosing cards",
-            "detailed_description": "When a player selects a card above the Food Truck token, they gain one sand dollar. The token then moves one space to the right (wrapping around to the left edge if needed).",
-            "count": 1,
-            "condition": null
-        },
-        {
-            "name": "Foodie Token",
-            "type": "Token",
-            "subTypes": [
-                "Special Token"
-            ],
-            "description": "Token that moves beneath the display and provides bonuses for choosing cards",
-            "detailed_description": "When a player selects a card above the Foodie token, they may move any one person one space. The token then moves one space to the right. When the Foodie catches up with the Food Truck, the player gets enhanced rewards.",
-            "count": 1,
-            "condition": null
-        },
-        {
-            "name": "Scoring Objective Tiles",
-            "type": "Tile",
-            "subTypes": [
-                "Scoring Tile"
-            ],
-            "description": "Tiles listing different scoring objectives for each game",
-            "detailed_description": "Each tile lists three scoring elements: a wave bonus, a miscellaneous bonus, and a penalty for people outside activity rings. One tile is randomly selected during setup and remains visible throughout the game.",
-            "count": 3,
-            "condition": null
-        },
-        {
-            "name": "Reference Cards",
-            "type": "Card",
-            "subTypes": [
-                "Player Aid"
-            ],
-            "description": "Cards given to each player to remind them of rules",
-            "detailed_description": "Optional player aids showing key symbols and rules for quick reference during gameplay.",
-            "count": 4,
-            "condition": null
-        },
-        {
-            "name": "Locals",
-            "type": "Meeple",
-            "subTypes": [
-                "Visitor"
-            ],
-            "description": "Blue tokens representing the local residents of the city",
-            "detailed_description": "Local tokens can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each local can move up to 3 spaces.",
-            "count": 30,
-            "condition": null
-        },
-        {
-            "name": "Tourists",
-            "type": "Meeple",
-            "subTypes": [
-                "Visitor"
-            ],
-            "description": "Orange tokens representing visitors that come to Santa Monica",
-            "detailed_description": "Tourist tokens can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each tourist can move 1 space.",
-            "count": 30,
-            "condition": null
-        },
-        {
-            "name": "VIPs",
-            "type": "Meeple",
-            "subTypes": [
-                "Special Visitor"
-            ],
-            "description": "Green tokens representing Very Important Persons who want to visit certain types of locations",
-            "detailed_description": "VIP tokens have unique scoring objectives based on the starting feature tile. When moved to or through cards with desired attributes, they leave footprint tokens. During final movement, each VIP can move 1 space.",
-            "count": 8,
-            "condition": null
-        },
-        {
-            "name": "Starting Feature Tiles",
-            "type": "Tile",
-            "subTypes": [
-                "Starting Tile"
-            ],
-            "description": "Double-high tiles that each player starts with in their city",
-            "detailed_description": "Each starting tile shows initial placement bonuses (sand dollars and VIPs) and a unique footprint scoring method. These tiles count as both a beach space and street space for movement purposes.",
-            "count": 6,
-            "condition": null
-        },
-        {
-            "name": "Sand Dollars",
-            "type": "Token",
-            "subTypes": [
-                "Currency"
-            ],
-            "description": "Wooden tokens earned throughout the game that can be spent to carry out sand dollar actions",
-            "detailed_description": "Players gain sand dollars through placement actions and can spend them to activate sand dollar tiles. Unspent sand dollars can convert to victory points at game end through certain card abilities.",
-            "count": 25,
-            "condition": null
-        },
-        {
-            "name": "Start Player Token",
-            "type": "Token",
-            "subTypes": [
-                "Marker"
-            ],
-            "description": "Cardboard token reminding players who started the game",
-            "detailed_description": "Given to the player who most recently visited a beach. This player takes the first turn and play proceeds clockwise.",
-            "count": 1,
-            "condition": null
-        },
-        {
-            "name": "Sand Dollar Multipliers",
-            "type": "Token",
-            "subTypes": [
-                "Currency Multiplier"
-            ],
-            "description": "Cardboard tokens that can be used if the Sand Dollar supply runs low",
-            "detailed_description": "When collecting many sand dollars, players can return four wooden sand dollars and place one on a multiplier token to represent five. Multiple tokens can be stacked to represent 10, 15, or more sand dollars.",
-            "count": 4,
-            "condition": null
-        },
-        {
-            "name": "Scorepad",
-            "type": "Other",
-            "subTypes": [
-                "Scoring Aid"
-            ],
-            "description": "Used at game end to help total each player's points and determine the winner",
-            "detailed_description": "Provides a structured way to calculate all scoring categories including card scores, activity rings, footprints, and objectives.",
-            "count": 1,
-            "condition": null
-        },
-        {
-            "name": "Rulebook",
-            "type": "Other",
-            "subTypes": [
-                "Rules"
-            ],
-            "description": "Complete rules and reference for the game",
-            "detailed_description": null,
-            "count": 1,
-            "condition": null
-        }
-    ],
-    "setup": [
-        {
-            "description": "Shuffle the Feature Cards to form a face-down deck, and deal out 2 rows of 4 cards each face-up to create the display (back row and front row). Place the remaining deck above the back row of the display.",
-            "short_description": "Create card display",
-            "condition": null
-        },
-        {
-            "description": "Randomly select and place 2 of the Sand Dollar Tiles to the left of the display. These will be the 2 Sand Dollar Actions available in this game.",
-            "short_description": "Select sand dollar actions",
-            "condition": null
-        },
-        {
-            "description": "Randomly select 1 of the 3 Scoring Objective Tiles and place it face-up to the right of the display. For your first game, use the blue scoring objective card.",
-            "short_description": "Select scoring objective",
-            "condition": null
-        },
-        {
-            "description": "Place the Locals, Tourists, Sand Dollars, Sand Dollar Multipliers, and Footprint Tokens in piles near the display so that all players can reach them.",
-            "short_description": "Create supply piles",
-            "condition": null
-        },
-        {
-            "description": "The player who has most recently visited a beach becomes the Starting Player and receives the Start Player Token.",
-            "short_description": "Determine start player",
-            "condition": null
-        },
-        {
-            "description": "Randomly draw Starting Feature Tiles equal to the number of players and place them on the table. In reverse player order (beginning with the last player and moving counter-clockwise), each player chooses a starting feature tile.",
-            "short_description": "Draft starting tiles",
-            "condition": null
-        },
-        {
-            "description": "Give each player their starting feature tile's Placement Bonuses (sand dollars and VIPs), and a Reference Card if they would like one.",
-            "short_description": "Distribute starting resources",
-            "condition": null
-        },
-        {
-            "description": "The last player in turn order places the Food Truck Token under any of the 4 display columns of their choice. The Foodie Token begins 2 spaces (cards) away.",
-            "short_description": "Place special tokens",
-            "condition": null
-        },
-        {
-            "description": "The starting player begins the game.",
-            "short_description": "Begin game",
-            "condition": null
-        }
-    ],
-    "gameplay": {
-        "turn_structure": "On each player's turn, they take actions in the following order: (1) Select and Place Feature Cards, (2) Take Placement Actions, (3) Refresh the Display. Play proceeds clockwise around the table.",
-        "actions": [
-            {
-                "name": "Select and Place Feature Cards",
-                "description": "Players either select one feature card from the front row of the display, or spend sand dollars to use a sand dollar action to acquire cards differently. All acquired cards must be placed in the player's city following placement rules.",
-                "steps": [
-                    {
-                        "description": "Select one card from the front row of the display and place it in your city. If the card is above the Foodie or Food Truck token, gain the corresponding bonus.",
-                        "short_description": "Standard card selection",
-                        "condition": null
-                    },
-                    {
-                        "description": "Pay the cost shown on a Sand Dollar Tile and follow its action to acquire cards in a different way. You do not gain Foodie or Food Truck bonuses when using sand dollar actions.",
-                        "short_description": "Sand dollar action (alternative)",
-                        "condition": null
-                    },
-                    {
-                        "description": "Beach cards must be placed in the top row of your city. Street cards must be placed in the bottom row of your city.",
-                        "short_description": "Placement rule: row type",
-                        "condition": null
-                    },
-                    {
-                        "description": "Every feature card must be placed with one of its sides aligned to another feature or to your starting feature tile. Features placed diagonally are not adjacent, and features cannot be placed on top of other features.",
-                        "short_description": "Placement rule: adjacency",
-                        "condition": null
-                    }
-                ],
-                "notes": [
-                    {
-                        "description": "When selecting a card above the Food Truck token, take one sand dollar from the supply. The Food Truck then moves one space to the right.",
-                        "short_description": "Food Truck bonus",
-                        "condition": null
-                    },
-                    {
-                        "description": "When selecting a card above the Foodie token, move any one person (local, tourist, or VIP) by one space. The Foodie then moves one space to the right.",
-                        "short_description": "Foodie bonus",
-                        "condition": null
-                    },
-                    {
-                        "description": "When selecting a card above both the Foodie and Food Truck, either take one sand dollar and move one person, or double one action (take two sand dollars OR move up to 2 people by one space each or 1 person twice). Move only the Food Truck two spaces to the right.",
-                        "short_description": "Combined bonus",
-                        "condition": null
-                    }
-                ]
-            },
-            {
-                "name": "Take Placement Actions",
-                "description": "After placing cards, execute the placement actions shown on the newly placed feature card(s). These may grant sand dollars, add people to the city, move existing people, or trigger VIP footprint placement.",
-                "steps": [
-                    {
-                        "description": "If the placed card shows a sand dollar symbol with a number, take that many sand dollars from the supply.",
-                        "short_description": "Gain sand dollars",
-                        "condition": null
-                    },
-                    {
-                        "description": "If the placed card shows a people symbol with a color and number, take that many people of that color from the supply and place them on the card. This is mandatory.",
-                        "short_description": "Add people",
-                        "condition": null
-                    },
-                    {
-                        "description": "If the placed card shows a movement symbol with a color and numbers, you may move up to that many people of that color the indicated distance. People move orthogonally (not diagonally) and can only move onto placed feature cards.",
-                        "short_description": "Move people",
-                        "condition": null
-                    },
-                    {
-                        "description": "If you moved a VIP to or through a feature card that matches an attribute shown on your starting tile, place a footprint token on that card. Only one footprint per card maximum.",
-                        "short_description": "Place footprints",
-                        "condition": null
-                    }
-                ],
-                "notes": [
-                    {
-                        "description": "Movement symbols showing multiple colors (wild) allow you to move any person type including VIPs.",
-                        "short_description": "Wild movement",
-                        "condition": null
-                    },
-                    {
-                        "description": "Each person can only be moved once per placement action, but multiple people can be moved independently.",
-                        "short_description": "Movement limits",
-                        "condition": null
-                    },
-                    {
-                        "description": "Starting feature tiles count as two spaces for movement (one beach space and one street space).",
-                        "short_description": "Starting tile movement",
-                        "condition": null
-                    }
-                ]
-            },
-            {
-                "name": "Refresh the Display",
-                "description": "After completing placement actions, refill any empty spaces in the display so the next player has a full selection.",
-                "steps": [
-                    {
-                        "description": "If the front row has any empty spaces, slide down the back row card immediately above it to fill those spaces.",
-                        "short_description": "Slide back row cards",
-                        "condition": null
-                    },
-                    {
-                        "description": "Deal new cards from the feature deck into any blank spaces, starting with the front row cards.",
-                        "short_description": "Deal new cards",
-                        "condition": null
-                    },
-                    {
-                        "description": "The next player clockwise may now take their turn.",
-                        "short_description": "Pass turn",
-                        "condition": null
-                    }
-                ],
-                "notes": []
-            }
-        ],
-        "key_concepts": [
-            {
-                "name": "Location Tags",
-                "description": "Each feature card has location tag icons indicating its type: Local Spots (places locals like), Tourist Spots (tourist destinations), Businesses (shops and restaurants), Sports (athletic locations), Nature (natural beauty), and Waves (ocean access). Tags are used for scoring through chains, adjacencies, and objectives."
-            },
-            {
-                "name": "Activity Rings",
-                "description": "Circular spaces on feature cards that can hold a specific number and type of people. Rings score points at game end only if filled with exactly the pictured combination of people. People not in activity rings are considered unplaced."
-            },
-            {
-                "name": "Adjacency Scoring",
-                "description": "Cards score points if adjacent cards (orthogonally, not diagonally) have specific location tags or symbols. Adjacencies score only once even if multiple adjacent cards qualify. The scoring trigger for people/sand dollar adjacencies is the placement action symbol, not the physical pieces."
-            },
-            {
-                "name": "Chain Scoring",
-                "description": "Cards score points if they are part of a contiguous group of cards sharing the same location tag. Chains can weave around the city as long as each card is adjacent to at least one other card with the tag. Some chains require minimum tag counts; others score per tag."
-            },
-            {
-                "name": "VIP Footprints",
-                "description": "Each starting tile designates which location attributes attract VIPs. When a VIP moves to or through a card with matching attributes, place a footprint token. At game end, score points for each matching attribute on cards with footprints."
-            },
-            {
-                "name": "Sand Dollar Actions",
-                "description": "Instead of normal card selection, players may spend sand dollars to activate one of the two available sand dollar action tiles. These provide alternative ways to acquire and place cards, swap card positions, or remove people. When using sand dollar actions, Foodie and Food Truck bonuses are not gained."
-            }
-        ]
+  "game_name": "Santa Monica",
+  "designer": "Josh Wood",
+  "publisher": "Alderac Entertainment Group (AEG)",
+  "game_overview": "In Santa Monica, players create the most appealing oceanfront in Southern California by drafting feature cards to build up their beach (top row) and street (bottom row). Features work together through chains and adjacencies to gain victory points. Players can create calm nature-focused beaches, bustling tourist destinations, or something in between to appeal to locals. Each turn involves drafting cards, placing them strategically, taking placement actions to gain resources and move visitors, and managing VIPs who leave footprints as they explore the city.",
+  "objective": "Create the most appealing oceanfront by strategically placing feature cards to maximize victory points through chains, adjacencies, activity rings, footprints, and scoring objectives.",
+  "min_players": 2,
+  "max_players": 4,
+  "bgg_link": "https://boardgamegeek.com/boardgame/298065/santa-monica",
+  "play_time_minutes": null,
+  "components_overview": [
+    {
+      "name": "Feature Cards",
+      "type": "Card",
+      "subTypes": [
+        "Beach Card",
+        "Street Card"
+      ],
+      "description": "Cards representing beach and street locations that can be built in the game",
+      "detailed_description": "Feature cards come in two types: beach cards (with ocean at top) and street cards (with wooden boardwalk and street at bottom). Each card has location tags, placement actions, scoring opportunities (adjacencies and chains), activity rings, and may include footprint scoring attributes.",
+      "count": 78
     },
-    "end_game": {
-        "trigger": "When one player places their 14th feature card (not including the starting tile), the end of the game is triggered. Continue the round until the last player in turn order finishes their turn.",
-        "procedure": [
-            "After the final turn, all players take a 'final movement' phase: each tourist and VIP may move 1 space, and each local may move up to 3 spaces.",
-            "Score all feature cards using adjacencies, chains, and special abilities.",
-            "Score all activity rings that are correctly filled with the exact pictured number of people.",
-            "Score footprint tokens according to each player's starting tile ability.",
-            "Score the three objectives from the chosen objective tile.",
-            "Calculate total victory points using the scorepad."
-        ],
-        "final_scoring": [
-            {
-                "source": "Feature Cards - Adjacency",
-                "description": "Score points shown on cards if adjacent cards have the pictured location tag or symbol. Adjacencies do not stack."
-            },
-            {
-                "source": "Feature Cards - Chain",
-                "description": "Score points if the card is part of a contiguous group of matching location tags that meets the minimum requirement. Some chains score fixed points, others score per tag."
-            },
-            {
-                "source": "Feature Cards - Unspent Sand Dollars",
-                "description": "Cards with sand dollar scoring convert remaining sand dollars to points at the specified ratio. These abilities stack across multiple cards."
-            },
-            {
-                "source": "Feature Cards - Miscellaneous",
-                "description": "Various unique scoring conditions including specific adjacency requirements, ring-based scoring, and negative point penalties."
-            },
-            {
-                "source": "Activity Rings",
-                "description": "Rings score points only if filled with exactly the pictured number and type of people. 'Any Number' rings score if they have at least 1 person."
-            },
-            {
-                "source": "Footprints",
-                "description": "Score points based on the starting tile's footprint scoring method. Each card with a footprint scores for every matching attribute on that card."
-            },
-            {
-                "source": "Scoring Objectives - Wave Bonus",
-                "description": "Score points based on wave tag groups or chains according to the specific objective."
-            },
-            {
-                "source": "Scoring Objectives - Miscellaneous Bonus",
-                "description": "Score points from various conditions such as filled rings, tag chains, street/beach pairs, or longest tag chains."
-            },
-            {
-                "source": "Scoring Objectives - Unplaced People Penalty",
-                "description": "Lose points based on people not in activity rings or specific penalty conditions from the objective tile."
-            }
-        ]
+    {
+      "name": "Sand Dollar Tiles",
+      "type": "Tile",
+      "subTypes": [
+        "Action Tile"
+      ],
+      "description": "Double-sided tiles featuring different actions that players may pay sand dollars to use",
+      "detailed_description": "These tiles provide special actions players can activate by spending sand dollars instead of normal card selection. Two tiles are randomly selected at setup to determine which sand dollar actions are available for the game.",
+      "count": 4
     },
-    "winning_condition": "The player with the most victory points wins. Tiebreakers in order: (1) most leftover sand dollars, (2) longest chain of tags, (3) next player to write 'I WIN' into sand.",
-    "tips_for_new_players": [
-        {
-            "tip": "Use the Blue Objective for First Game",
-            "description": "The rulebook recommends using the blue scoring objective card for your first game to simplify learning."
-        },
-        {
-            "tip": "Plan Card Placement for Adjacencies and Chains",
-            "description": "Before placing a card, consider how its location tags will connect with existing cards to maximize adjacency and chain scoring. Cards placed diagonally are not adjacent."
-        },
-        {
-            "tip": "Track Your VIP's Footprint Goals",
-            "description": "Refer to your starting tile frequently to remember which attributes your VIP wants to visit. Move VIPs strategically to place footprints on high-value cards with multiple matching attributes."
-        },
-        {
-            "tip": "Fill Activity Rings Exactly",
-            "description": "Activity rings only score if they contain exactly the pictured number of people. Plan movement carefully during the game and especially during final movement to complete rings."
-        },
-        {
-            "tip": "Monitor the Foodie and Food Truck",
-            "description": "The Foodie and Food Truck provide valuable bonuses. Consider their positions when choosing which card to select from the front row."
-        },
-        {
-            "tip": "Save Sand Dollars for Key Actions",
-            "description": "Sand dollar actions can provide powerful alternative ways to acquire cards, especially when the front row doesn't have what you need. Balance spending and saving for crucial moments."
-        },
-        {
-            "tip": "Final Movement Is Crucial",
-            "description": "Remember that all players get one final movement phase after the last turn. Use this to complete activity rings, visit new locations with VIPs, or optimize scoring. Locals can move up to 3 spaces during this phase."
-        },
-        {
-            "tip": "Understand Placement Action Symbols",
-            "description": "For adjacency scoring based on sand dollars or people symbols, the trigger is the placement action symbol on the adjacent card, not the actual physical pieces that may move later."
-        }
+    {
+      "name": "Footprint Tokens",
+      "type": "Token",
+      "subTypes": [
+        "Marker"
+      ],
+      "description": "Cardboard tokens used to mark places that VIPs have visited",
+      "detailed_description": "When a VIP moves to or through a feature card with desired attributes, a footprint token is placed on that card. Each card can only have one footprint token, but scores for each matching attribute on the card.",
+      "count": 28
+    },
+    {
+      "name": "Food Truck Token",
+      "type": "Token",
+      "subTypes": [
+        "Special Token"
+      ],
+      "description": "Token that moves beneath the display and provides bonuses for choosing cards",
+      "detailed_description": "When a player selects a card above the Food Truck token, they gain one sand dollar. The token then moves one space to the right (wrapping around to the left edge if needed).",
+      "count": 1
+    },
+    {
+      "name": "Foodie Token",
+      "type": "Token",
+      "subTypes": [
+        "Special Token"
+      ],
+      "description": "Token that moves beneath the display and provides bonuses for choosing cards",
+      "detailed_description": "When a player selects a card above the Foodie token, they may move any one person one space. The token then moves one space to the right. When the Foodie catches up with the Food Truck, the player gets enhanced rewards.",
+      "count": 1
+    },
+    {
+      "name": "Scoring Objective Tiles",
+      "type": "Tile",
+      "subTypes": [
+        "Scoring Tile"
+      ],
+      "description": "Tiles listing different scoring objectives for each game",
+      "detailed_description": "Each tile lists three scoring elements: a wave bonus, a miscellaneous bonus, and a penalty for people outside activity rings. One tile is randomly selected during setup and remains visible throughout the game.",
+      "count": 3
+    },
+    {
+      "name": "Reference Cards",
+      "type": "Card",
+      "subTypes": [
+        "Player Aid"
+      ],
+      "description": "Cards given to each player to remind them of rules",
+      "detailed_description": "Optional player aids showing key symbols and rules for quick reference during gameplay.",
+      "count": 4
+    },
+    {
+      "name": "Locals",
+      "type": "Meeple",
+      "subTypes": [
+        "Visitor"
+      ],
+      "description": "Blue meeples representing the local residents of the city",
+      "detailed_description": "Local meeples can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each local can move up to 3 spaces.",
+      "count": 30
+    },
+    {
+      "name": "Tourists",
+      "type": "Meeple",
+      "subTypes": [
+        "Visitor"
+      ],
+      "description": "Orange meeples representing visitors that come to Santa Monica",
+      "detailed_description": "Tourist meeples can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each tourist can move 1 space.",
+      "count": 30
+    },
+    {
+      "name": "VIPs",
+      "type": "Meeple",
+      "subTypes": [
+        "Special Visitor"
+      ],
+      "description": "Green meeples representing Very Important Persons who want to visit certain types of locations",
+      "detailed_description": "VIP meeples have unique scoring objectives based on the starting feature tile. When moved to or through cards with desired attributes, they leave footprint tokens. During final movement, each VIP can move 1 space.",
+      "count": 8
+    },
+    {
+      "name": "Starting Feature Tiles",
+      "type": "Tile",
+      "subTypes": [
+        "Starting Tile"
+      ],
+      "description": "Double-high tiles that each player starts with in their city",
+      "detailed_description": "Each starting tile shows initial placement bonuses (sand dollars and VIPs) and a unique footprint scoring method. These tiles count as both a beach space and street space for movement purposes.",
+      "count": 6
+    },
+    {
+      "name": "Sand Dollars",
+      "type": "Token",
+      "subTypes": [
+        "Currency"
+      ],
+      "description": "Wooden tokens earned throughout the game that can be spent to carry out sand dollar actions",
+      "detailed_description": "Players gain sand dollars through placement actions and can spend them to activate sand dollar tiles. Unspent sand dollars can convert to victory points at game end through certain card abilities.",
+      "count": 25
+    },
+    {
+      "name": "Start Player Token",
+      "type": "Token",
+      "subTypes": [
+        "Marker"
+      ],
+      "description": "Cardboard token reminding players who started the game",
+      "detailed_description": "Given to the player who most recently visited a beach. This player takes the first turn and play proceeds clockwise.",
+      "count": 1
+    },
+    {
+      "name": "Sand Dollar Multipliers",
+      "type": "Token",
+      "subTypes": [
+        "Currency Multiplier"
+      ],
+      "description": "Cardboard tokens that can be used if the Sand Dollar supply runs low",
+      "detailed_description": "When collecting many sand dollars, players can return four wooden sand dollars and place one on a multiplier token to represent five. Multiple tokens can be stacked to represent 10, 15, or more sand dollars.",
+      "count": 4
+    },
+    {
+      "name": "Scorepad",
+      "type": "Other",
+      "subTypes": [
+        "Scoring Aid"
+      ],
+      "description": "Used at game end to help total each player's points and determine the winner",
+      "detailed_description": "Provides a structured way to calculate all scoring categories including card scores, activity rings, footprints, and objectives.",
+      "count": 1
+    },
+    {
+      "name": "Rulebook",
+      "type": "Other",
+      "subTypes": [
+        "Rules"
+      ],
+      "description": "Complete rules and reference for the game",
+      "count": 1
+    }
+  ],
+  "setup": [
+    {
+      "description": "Shuffle the Feature Cards to form a face-down deck, and deal out 2 rows of 4 cards each face-up to create the display (back row and front row). Place the remaining deck above the back row of the display.",
+      "short_description": "Create card display"
+    },
+    {
+      "description": "Randomly select and place 2 of the Sand Dollar Tiles to the left of the display. These will be the 2 Sand Dollar Actions available in this game.",
+      "short_description": "Select sand dollar actions"
+    },
+    {
+      "description": "Randomly select 1 of the 3 Scoring Objective Tiles and place it face-up to the right of the display. For your first game, use the blue scoring objective tile.",
+      "short_description": "Select scoring objective"
+    },
+    {
+      "description": "Place the Locals, Tourists, Sand Dollars, Sand Dollar Multipliers, and Footprint Tokens in piles near the display so that all players can reach them.",
+      "short_description": "Create supply piles"
+    },
+    {
+      "description": "The player who has most recently visited a beach becomes the Starting Player and receives the Start Player Token.",
+      "short_description": "Determine start player"
+    },
+    {
+      "description": "Randomly draw Starting Feature Tiles equal to the number of players and place them on the table. In reverse player order (beginning with the last player and moving counter-clockwise), each player chooses a starting feature tile.",
+      "short_description": "Draft starting tiles"
+    },
+    {
+      "description": "Give each player their starting feature tile's Placement Bonuses (sand dollars and VIPs), and a Reference Card if they would like one.",
+      "short_description": "Distribute starting resources"
+    },
+    {
+      "description": "The last player in turn order places the Food Truck Token under any of the 4 display columns of their choice. The Foodie Token begins 2 spaces (cards) away.",
+      "short_description": "Place special tokens"
+    },
+    {
+      "description": "The starting player begins the game.",
+      "short_description": "Begin game"
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "On each player's turn, they take actions in the following order: (1) Select and Place Feature Cards, (2) Take Placement Actions, (3) Refresh the Display. Play proceeds clockwise around the table.",
+    "actions": [
+      {
+        "name": "Select and Place Feature Cards",
+        "description": "Players either select one feature card from the front row of the display, or spend sand dollars to use a sand dollar action to acquire cards differently. All acquired cards must be placed in the player's city following placement rules.",
+        "steps": [
+          {
+            "description": "Select one card from the front row of the display and place it in your city. If the card is above the Foodie or Food Truck token, gain the corresponding bonus.",
+            "short_description": "Standard card selection"
+          },
+          {
+            "description": "Pay the cost shown on a Sand Dollar Tile and follow its action to acquire cards in a different way. You do not gain Foodie or Food Truck bonuses when using sand dollar actions.",
+            "short_description": "Sand dollar action (alternative)"
+          },
+          {
+            "description": "Beach cards must be placed in the top row of your city. Street cards must be placed in the bottom row of your city.",
+            "short_description": "Placement rule: row type"
+          },
+          {
+            "description": "Every feature card must be placed with one of its sides aligned to another feature or to your starting feature tile. Features placed diagonally are not adjacent, and features cannot be placed on top of other features.",
+            "short_description": "Placement rule: adjacency"
+          }
+        ],
+        "notes": [
+          {
+            "description": "When selecting a card above the Food Truck token, take one sand dollar from the supply. The Food Truck then moves one space to the right.",
+            "short_description": "Food Truck bonus"
+          },
+          {
+            "description": "When selecting a card above the Foodie token, move any one person (local, tourist, or VIP) by one space. The Foodie then moves one space to the right.",
+            "short_description": "Foodie bonus"
+          },
+          {
+            "description": "When selecting a card above both the Foodie and Food Truck, either take one sand dollar and move one person, or double one action (take two sand dollars OR move up to 2 people by one space each or 1 person twice). Move only the Food Truck two spaces to the right.",
+            "short_description": "Combined bonus"
+          }
+        ]
+      },
+      {
+        "name": "Take Placement Actions",
+        "description": "After placing cards, execute the placement actions shown on the newly placed feature card(s). These may grant sand dollars, add people to the city, move existing people, or trigger VIP footprint placement.",
+        "steps": [
+          {
+            "description": "If the placed card shows a sand dollar symbol with a number, take that many sand dollars from the supply.",
+            "short_description": "Gain sand dollars"
+          },
+          {
+            "description": "If the placed card shows a people symbol with a color and number, take that many people of that color from the supply and place them on the card. This is mandatory.",
+            "short_description": "Add people"
+          },
+          {
+            "description": "If the placed card shows a movement symbol with a color and numbers, you may move up to that many people of that color the indicated distance. People move orthogonally (not diagonally) and can only move onto placed feature cards.",
+            "short_description": "Move people"
+          },
+          {
+            "description": "If you moved a VIP to or through a feature card that matches an attribute shown on your starting tile, place a footprint token on that card. Only one footprint per card maximum.",
+            "short_description": "Place footprints"
+          }
+        ],
+        "notes": [
+          {
+            "description": "Movement symbols showing multiple colors (wild) allow you to move any person type including VIPs.",
+            "short_description": "Wild movement"
+          },
+          {
+            "description": "Each person can only be moved once per placement action, but multiple people can be moved independently.",
+            "short_description": "Movement limits"
+          },
+          {
+            "description": "Starting feature tiles count as two spaces for movement (one beach space and one street space).",
+            "short_description": "Starting tile movement"
+          }
+        ]
+      },
+      {
+        "name": "Refresh the Display",
+        "description": "After completing placement actions, refill any empty spaces in the display so the next player has a full selection.",
+        "steps": [
+          {
+            "description": "If the front row has any empty spaces, slide down the back row card immediately above it to fill those spaces.",
+            "short_description": "Slide back row cards"
+          },
+          {
+            "description": "Deal new cards from the feature deck into any blank spaces, starting with the front row cards.",
+            "short_description": "Deal new cards"
+          },
+          {
+            "description": "The next player clockwise may now take their turn.",
+            "short_description": "Pass turn"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Location Tags",
+        "description": "Each feature card has location tag icons indicating its type: Local Spots (places locals like), Tourist Spots (tourist destinations), Businesses (shops and restaurants), Sports (athletic locations), Nature (natural beauty), and Waves (ocean access). Tags are used for scoring through chains, adjacencies, and objectives."
+      },
+      {
+        "name": "Activity Rings",
+        "description": "Circular spaces on feature cards that can hold a specific number and type of people. Rings score points at game end only if filled with exactly the pictured combination of people. People not in activity rings are considered unplaced."
+      },
+      {
+        "name": "Adjacency Scoring",
+        "description": "Cards score points if adjacent cards (orthogonally, not diagonally) have specific location tags or symbols. Adjacencies score only once even if multiple adjacent cards qualify. The scoring trigger for people/sand dollar adjacencies is the placement action symbol, not the physical pieces."
+      },
+      {
+        "name": "Chain Scoring",
+        "description": "Cards score points if they are part of a contiguous group of cards sharing the same location tag. Chains can weave around the city as long as each card is adjacent to at least one other card with the tag. Some chains require minimum tag counts; others score per tag."
+      },
+      {
+        "name": "VIP Footprints",
+        "description": "Each starting tile designates which location attributes attract VIPs. When a VIP moves to or through a card with matching attributes, place a footprint token. At game end, score points for each matching attribute on cards with footprints."
+      },
+      {
+        "name": "Sand Dollar Actions",
+        "description": "Instead of normal card selection, players may spend sand dollars to activate one of the two available sand dollar action tiles. These provide alternative ways to acquire and place cards, swap card positions, or remove people. When using sand dollar actions, Foodie and Food Truck bonuses are not gained."
+      }
     ]
+  },
+  "end_game": {
+    "trigger": "When one player places their 14th feature card (not including the starting tile), the end of the game is triggered. Continue the round until the last player in turn order finishes their turn.",
+    "procedure": [
+      "After the final turn, all players take a 'final movement' phase: each tourist and VIP may move 1 space, and each local may move up to 3 spaces.",
+      "Score all feature cards using adjacencies, chains, and special abilities.",
+      "Score all activity rings that are correctly filled with the exact pictured number of people.",
+      "Score footprint tokens according to each player's starting tile ability.",
+      "Score the three objectives from the chosen objective tile.",
+      "Calculate total victory points using the scorepad."
+    ],
+    "final_scoring": [
+      {
+        "source": "Feature Cards - Adjacency",
+        "description": "Score points shown on cards if adjacent cards have the pictured location tag or symbol. Adjacencies do not stack."
+      },
+      {
+        "source": "Feature Cards - Chain",
+        "description": "Score points if the card is part of a contiguous group of matching location tags that meets the minimum requirement. Some chains score fixed points, others score per tag."
+      },
+      {
+        "source": "Feature Cards - Unspent Sand Dollars",
+        "description": "Cards with sand dollar scoring convert remaining sand dollars to points at the specified ratio. These abilities stack across multiple cards."
+      },
+      {
+        "source": "Feature Cards - Miscellaneous",
+        "description": "Various unique scoring conditions including specific adjacency requirements, ring-based scoring, and negative point penalties."
+      },
+      {
+        "source": "Activity Rings",
+        "description": "Rings score points only if filled with exactly the pictured number and type of people. 'Any Number' rings score if they have at least 1 person."
+      },
+      {
+        "source": "Footprints",
+        "description": "Score points based on the starting tile's footprint scoring method. Each card with a footprint scores for every matching attribute on that card."
+      },
+      {
+        "source": "Scoring Objectives - Wave Bonus",
+        "description": "Score points based on wave tag groups or chains according to the specific objective."
+      },
+      {
+        "source": "Scoring Objectives - Miscellaneous Bonus",
+        "description": "Score points from various conditions such as filled rings, tag chains, street/beach pairs, or longest tag chains."
+      },
+      {
+        "source": "Scoring Objectives - Unplaced People Penalty",
+        "description": "Lose points based on people not in activity rings or specific penalty conditions from the objective tile."
+      }
+    ]
+  },
+  "winning_condition": "The player with the most victory points wins. Tiebreakers in order: (1) most leftover sand dollars, (2) longest chain of tags, (3) next player to write 'I WIN' into sand.",
+  "tips_for_new_players": [
+    {
+      "tip": "Use the Blue Objective for First Game",
+      "description": "The rulebook recommends using the blue scoring objective tile for your first game to simplify learning."
+    },
+    {
+      "tip": "Plan Card Placement for Adjacencies and Chains",
+      "description": "Before placing a card, consider how its location tags will connect with existing cards to maximize adjacency and chain scoring. Cards placed diagonally are not adjacent."
+    },
+    {
+      "tip": "Track Your VIP's Footprint Goals",
+      "description": "Refer to your starting tile frequently to remember which attributes your VIP wants to visit. Move VIPs strategically to place footprints on high-value cards with multiple matching attributes."
+    },
+    {
+      "tip": "Fill Activity Rings Exactly",
+      "description": "Activity rings only score if they contain exactly the pictured number of people. Plan movement carefully during the game and especially during final movement to complete rings."
+    },
+    {
+      "tip": "Monitor the Foodie and Food Truck",
+      "description": "The Foodie and Food Truck provide valuable bonuses. Consider their positions when choosing which card to select from the front row."
+    },
+    {
+      "tip": "Save Sand Dollars for Key Actions",
+      "description": "Sand dollar actions can provide powerful alternative ways to acquire cards, especially when the front row doesn't have what you need. Balance spending and saving for crucial moments."
+    },
+    {
+      "tip": "Final Movement Is Crucial",
+      "description": "Remember that all players get one final movement phase after the last turn. Use this to complete activity rings, visit new locations with VIPs, or optimize scoring. Locals can move up to 3 spaces during this phase."
+    },
+    {
+      "tip": "Understand Placement Action Symbols",
+      "description": "For adjacency scoring based on sand dollars or people symbols, the trigger is the placement action symbol on the adjacent card, not the actual physical pieces that may move later."
+    }
+  ]
 }
