@@ -88,6 +88,7 @@
       ],
       "description": "Blue meeples representing the local residents of the city",
       "detailed_description": "Local meeples can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each local can move up to 3 spaces.",
+      "tint": "#2196F3",
       "count": 30
     },
     {
@@ -98,6 +99,7 @@
       ],
       "description": "Orange meeples representing visitors that come to Santa Monica",
       "detailed_description": "Tourist meeples can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each tourist can move 1 space.",
+      "tint": "#FF9800",
       "count": 30
     },
     {
@@ -108,6 +110,7 @@
       ],
       "description": "Green meeples representing Very Important Persons who want to visit certain types of locations",
       "detailed_description": "VIP meeples have unique scoring objectives based on the starting feature tile. When moved to or through cards with desired attributes, they leave footprint tokens. During final movement, each VIP can move 1 space.",
+      "tint": "#4CAF50",
       "count": 8
     },
     {
