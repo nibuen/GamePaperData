@@ -304,6 +304,10 @@
     ],
     "final_scoring": [
       {
+        "source": "Emperor Scoring (Rounds 3, 5 & 7)",
+        "description": "At the end of rounds 3, 5, and 7: score VP equal to the value at the BOTTOM of your Emperor track space. Then retreat your disk 3 / 5 / 7 spaces after the 1st / 2nd / 3rd scoring respectively. Yellow area (space 3+): receive the Emperor Tile bonus. Black area (space 0): suffer the Emperor Tile penalty. Gray area (spaces 1–2): neither."
+      },
+      {
         "source": "Staff Cards",
         "description": "Receive VP for any Staff cards in play that provide end-game VP, as indicated on the cards."
       },
