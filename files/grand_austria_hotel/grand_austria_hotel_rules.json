@@ -210,9 +210,6 @@
           { "description": "If you place a room in the top right of your Hotel board, immediately receive the printed VP." },
           { "description": "If you flip the last room in a group, immediately receive the Occupancy bonus shown at the top of your Hotel board (based on the size and color of the group)." },
           { "description": "Remove one die from the 3-space and place it on the lowest visible number of your Turn Order tile." }
-        ],
-        "notes": [
-          { "description": "If you turn over the last room in a group, you IMMEDIATELY receive the Occupancy bonus as marked at the top of your Hotel board. The Occupancy bonus is based on the size and color of the group." }
         ]
       },
       {
