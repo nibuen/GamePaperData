@@ -1,7 +1,7 @@
 {
   "105": {
     "id": "105",
-    "name": "Objective A",
+    "name": "Politics A",
     "body": "You have 20 krones on your money track.",
     "summary": "Have 20 krones",
     "details": null,
@@ -9,7 +9,7 @@
   },
   "106": {
     "id": "106",
-    "name": "Objective A",
+    "name": "Politics A",
     "body": "There are at least 12 room tiles (any color) on your hotel board, whether vacant or occupied.",
     "summary": "12 room tiles placed",
     "details": null,
@@ -17,7 +17,7 @@
   },
   "107": {
     "id": "107",
-    "name": "Objective A",
+    "name": "Politics A",
     "body": "You have played at least 6 staff cards (of any type).",
     "summary": "6 staff cards played",
     "details": null,
@@ -25,7 +25,7 @@
   },
   "108": {
     "id": "108",
-    "name": "Objective A",
+    "name": "Politics A",
     "body": "Your Emperor track marker is on space 10 or higher.",
     "summary": "Emperor space 10+",
     "details": null,
@@ -33,7 +33,7 @@
   },
   "109": {
     "id": "109",
-    "name": "Objective B",
+    "name": "Politics B",
     "body": "At least 2 floors in your hotel are fully occupied. These floors need not be adjacent.",
     "summary": "2 floors fully occupied",
     "details": null,
@@ -41,7 +41,7 @@
   },
   "110": {
     "id": "110",
-    "name": "Objective B",
+    "name": "Politics B",
     "body": "At least 6 groups of rooms in your hotel (any colors) are fully occupied. The groups need not be contiguous.",
     "summary": "6 groups fully occupied",
     "details": null,
@@ -49,7 +49,7 @@
   },
   "111": {
     "id": "111",
-    "name": "Objective B",
+    "name": "Politics B",
     "body": "All rooms of at least one color in your hotel are occupied.",
     "summary": "All rooms of 1 color",
     "details": null,
@@ -57,7 +57,7 @@
   },
   "112": {
     "id": "112",
-    "name": "Objective B",
+    "name": "Politics B",
     "body": "At least 2 columns in your hotel are fully occupied. These columns need not be adjacent.",
     "summary": "2 columns fully occupied",
     "details": null,
@@ -65,7 +65,7 @@
   },
   "113": {
     "id": "113",
-    "name": "Objective C",
+    "name": "Politics C",
     "body": "You have at least 3 red, at least 3 blue, and at least 3 yellow occupied rooms in your hotel.",
     "summary": "3+ of each color",
     "details": null,
@@ -73,7 +73,7 @@
   },
   "114": {
     "id": "114",
-    "name": "Objective C",
+    "name": "Politics C",
     "body": "You have at least 4 red and at least 3 yellow occupied rooms in your hotel.",
     "summary": "4 red + 3 yellow",
     "details": null,
@@ -81,7 +81,7 @@
   },
   "115": {
     "id": "115",
-    "name": "Objective C",
+    "name": "Politics C",
     "body": "You have at least 4 yellow and at least 3 blue occupied rooms in your hotel.",
     "summary": "4 yellow + 3 blue",
     "details": null,
@@ -89,7 +89,7 @@
   },
   "116": {
     "id": "116",
-    "name": "Objective C",
+    "name": "Politics C",
     "body": "You have at least 4 blue and at least 3 red occupied rooms in your hotel.",
     "summary": "4 blue + 3 red",
     "details": null,

@@ -45,7 +45,7 @@
     {
       "name": "Guest Cards",
       "type": "Card",
-      "description": "Guests waiting to check in. Show required dishes/drinks orders, preferred room color, and a reward received when checked in.",
+      "description": "Guests waiting to check in. Each guest belongs to a type and room color (Artist=Yellow, Noble=Blue, Citizen=Red, Tourist=Green). The card data below lists each guest's check-in reward; order requirements (the specific food/drink combinations needed to serve each guest) are printed on the physical cards.",
       "action": {"name": "CardList", "value": "grand_austria_hotel_guest_cards.json"}
     },
     {
@@ -55,9 +55,9 @@
       "action": {"name": "CardList", "value": "grand_austria_hotel_staff_cards.json"}
     },
     {
-      "name": "Objective Cards",
+      "name": "Politics Cards",
       "type": "Card",
-      "description": "Three Objective cards (A, B, C) each show a requirement. When met on your turn, place a wooden disk on the highest available VP spot to score immediately.",
+      "description": "Three Politics cards (A, B, C) each show a requirement. When met on your turn, place a wooden disk on the highest available VP spot to score immediately.",
       "action": {"name": "CardList", "value": "grand_austria_hotel_objective_cards.json"}
     },
     {
@@ -78,7 +78,7 @@
     {
       "name": "Wooden Disks",
       "type": "Marker",
-      "description": "6 per player. One for Emperor track, one for VP track, one for Money track; the remaining three are reserved for claiming Objective cards."
+      "description": "6 per player. One for Emperor track, one for VP track, one for Money track; the remaining three are reserved for claiming Politics cards."
     },
     {
       "name": "Turn Order Tiles",
@@ -118,8 +118,8 @@
       "short_description": "Prepare Staff Cards"
     },
     {
-      "description": "Draw one Objective card from each category (A, B, and C) and place them on their designated spaces on the game board.",
-      "short_description": "Place Objective Cards"
+      "description": "Draw one Politics card from each category (A, B, and C) and place them on their designated spaces on the game board.",
+      "short_description": "Place Politics Cards"
     },
     {
       "description": "Draw one Emperor tile from each category (A, B, and C) and place them on their designated spaces on the game board.",
@@ -260,15 +260,15 @@
       },
       {
         "name": "Additional Actions",
-        "description": "After your mandatory die action, you may take the following additional actions:\n\n- ONCE PER TURN: Pay 1 krone to add 1 to the number of dice on your chosen action space. Only this action is limited to once per turn.\n- Pay 1 krone to move up to 3 dishes/drinks from your Kitchen to Guest orders.\n- Place a wooden disk on an Objective card if you meet its requirement (see Objective Cards).\n- Use a 'once per round' Staff card effect, then turn it face-down so you don't accidentally use it again.\n- Move a Guest whose order is fully complete to a free room of matching color — immediately receive the printed VP and the Guest's reward, then turn the room tile face-down.\n\nAll additional actions other than the first may be done any number of times on your turn."
+        "description": "After your mandatory die action, you may take the following additional actions:\n\n- ONCE PER TURN: Pay 1 krone to add 1 to the number of dice on your chosen action space. Only this action is limited to once per turn.\n- Pay 1 krone to move up to 3 dishes/drinks from your Kitchen to Guest orders.\n- Place a wooden disk on a Politics card if you meet its requirement (see Politics Cards).\n- Use a 'once per round' Staff card effect, then turn it face-down so you don't accidentally use it again.\n- Move a Guest whose order is fully complete to a free room of matching color — immediately receive the printed VP and the Guest's reward, then turn the room tile face-down.\n\nAll additional actions other than the first may be done any number of times on your turn."
       },
       {
         "name": "Passing",
         "description": "Instead of taking a turn, you may pass. When you pass, you must wait until every other player has either passed or taken TWO actions (covered both numbers on their Turn Order tile). Once that happens, the player with the LOWEST number still showing on their Turn Order tile takes all remaining dice from all action spaces, removes ONE die to the dustbin, and rolls the rest — sorting and placing them as usual. That player may then take a turn or pass again. Play continues until all players have covered both numbers on their Turn Order tiles OR there are no dice left."
       },
       {
-        "name": "Objective Cards",
-        "description": "Each Objective card shows a requirement. As soon as you meet that requirement on your turn, you may place a wooden disk on the highest available VP spot and immediately score the printed VP. You can only place one disk per Objective card."
+        "name": "Politics Cards",
+        "description": "Each Politics card shows a requirement. As soon as you meet that requirement on your turn, you may place a wooden disk on the highest available VP spot and immediately score the printed VP. You can only place one disk per Politics card."
       },
       {
         "name": "End of Round",
