@@ -115,11 +115,11 @@
       "short_description": "Prepare Staff Cards"
     },
     {
-      "description": "Draw a Politics card from A, B, and C and place them on their designated spaces on the game board.",
+      "description": "Draw one Politics card from each category (A, B, and C) and place them on their designated spaces on the game board.",
       "short_description": "Place Politics Cards"
     },
     {
-      "description": "Draw an Emperor tile from A, B, and C and place them on their designated spaces on the game board.",
+      "description": "Draw one Emperor tile from each category (A, B, and C) and place them on their designated spaces on the game board.",
       "short_description": "Place Emperor Tiles"
     },
     {
