@@ -251,6 +251,21 @@
         "notes": [
           { "description": "Action strength is based on dice on the 6-space, NOT the chosen action's space." }
         ]
+      },
+      {
+        "name": "Passing",
+        "description": "Instead of taking a turn, you can pass. You may want to do this if there are dice left on spaces you do not want to use.",
+        "steps": [
+          { "description": "Announce that you are passing. You do NOT forfeit your turn — you postpone it until after the dice are re-rolled." },
+          { "description": "Wait until every other player has either passed or taken TWO actions (covered both numbers on their Turn Order tile)." },
+          { "description": "Once that happens, the player with the LOWEST number still showing on their Turn Order tile takes the remaining dice from ALL action spaces, removes ONE die to the dustbin, then rolls the rest — sorting and placing them as usual." },
+          { "description": "That player can then take a turn or pass again. Play continues according to the visible numbers on Turn Order tiles." },
+          { "description": "Repeat this process until all players have covered BOTH numbers on their Turn Order tiles OR there are no dice left." }
+        ],
+        "notes": [
+          { "description": "Passing does NOT skip your turn — you still get to act after the re-roll." },
+          { "description": "One die is always removed to the dustbin before re-rolling." }
+        ]
       }
     ],
     "key_concepts": [
