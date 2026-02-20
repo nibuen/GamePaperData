@@ -182,7 +182,7 @@
     }
   ],
   "gameplay": {
-    "turn_structure": "On your turn, take actions in this order:\n\n1. Take a Guest from the game board (optional)\n2. Take a die and carry out the corresponding action (mandatory)\n3. Take any appropriate additional actions (optional)\n\nThe player with the lowest visible number on their Turn Order tile always goes next.",
+    "turn_structure": "On your turn, either take a turn OR pass:\n\nTAKE A TURN:\n1. Take a Guest from the game board (optional)\n2. Take a die and carry out the corresponding action (mandatory)\n3. Take any appropriate additional actions (optional)\n\nPASS:\nPostpone your turn until after the dice are re-rolled. You must wait until all other players have passed or taken two actions — then the player with the lowest visible number re-rolls the remaining dice (removing one to the dustbin first).\n\nThe player with the lowest visible number on their Turn Order tile always goes next.",
     "actions": [
       {
         "name": "Die 1 — Strudel / Cake",
