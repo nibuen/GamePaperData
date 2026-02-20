@@ -1,0 +1,450 @@
+{
+  "49": {
+    "id": "49",
+    "name": "Sculptor",
+    "body": "Prepare one room (any color) at no cost; must be in the bottom two floors.",
+    "summary": "Artist (Yellow)",
+    "details": "If the bottom two floors are already full of rooms, you get nothing.",
+    "extra": null
+  },
+  "50": {
+    "id": "50",
+    "name": "Musician",
+    "body": "Draw 1 staff card. Additionally, prepare one room (any color) at normal cost.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "51": {
+    "id": "51",
+    "name": "Composer",
+    "body": "Get 1 strudel.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "52": {
+    "id": "52",
+    "name": "Tailor",
+    "body": "Get 1 strudel and 2 krones.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "53": {
+    "id": "53",
+    "name": "Flamenco Dancer",
+    "body": "Get 1 coffee and advance 2 spaces on the Emperor track.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "54": {
+    "id": "54",
+    "name": "Portrait Painter",
+    "body": "Get 1 dish or drink of your choice and 2 krones.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "55": {
+    "id": "55",
+    "name": "Photographer",
+    "body": "Draw 2 staff cards.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "56": {
+    "id": "56",
+    "name": "Vocalist",
+    "body": "Get 1 cake. Additionally, play a staff card from hand, paying up to 3 krones less.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "57": {
+    "id": "57",
+    "name": "Architect",
+    "body": "Prepare up to two rooms (any color), paying 1 krone less each.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "58": {
+    "id": "58",
+    "name": "Actress",
+    "body": "Occupy one additional room (any color) by turning it to the occupied side.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "59": {
+    "id": "59",
+    "name": "Poet",
+    "body": "Get 1 cake. Additionally, play a staff card from hand, paying up to 2 krones less.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "60": {
+    "id": "60",
+    "name": "Jewelry Designer",
+    "body": "Get 1 coffee and 3 krones.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "61": {
+    "id": "61",
+    "name": "Painter",
+    "body": "Prepare up to two rooms: pay 1 krone less for one; if you prepare a second, pay normal cost.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "62": {
+    "id": "62",
+    "name": "Opera Singer",
+    "body": "Take a guest from the queue at no cost. Additionally, advance 3 spaces on the Emperor track.",
+    "summary": "Artist (Yellow)",
+    "details": null,
+    "extra": null
+  },
+  "63": {
+    "id": "63",
+    "name": "Dame",
+    "body": "Take a guest from the queue at no cost.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "64": {
+    "id": "64",
+    "name": "Duchess",
+    "body": "Play a staff card from hand, paying 1 krone less.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "65": {
+    "id": "65",
+    "name": "Knight of the Empire",
+    "body": "No effect.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "66": {
+    "id": "66",
+    "name": "Landgrave",
+    "body": "Play a staff card from hand, paying 1 krone less. Additionally, prepare one room (any color) at normal cost.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "67": {
+    "id": "67",
+    "name": "Sovereign",
+    "body": "Draw 2 staff cards. Additionally, advance 2 spaces on the Emperor track.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "68": {
+    "id": "68",
+    "name": "Princess",
+    "body": "Advance 3 spaces on the Emperor track.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "69": {
+    "id": "69",
+    "name": "Countess",
+    "body": "Get 3 krones.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "70": {
+    "id": "70",
+    "name": "Elector",
+    "body": "Play a staff card from hand, paying 1 krone less. Additionally, advance 3 spaces on the Emperor track.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "71": {
+    "id": "71",
+    "name": "Baron",
+    "body": "Prepare one room (any color) at no cost.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "72": {
+    "id": "72",
+    "name": "Prince",
+    "body": "Occupy one additional room (any color) by turning it to the occupied side.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "73": {
+    "id": "73",
+    "name": "Count",
+    "body": "Play up to two staff cards from hand, paying 1 krone less each.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "74": {
+    "id": "74",
+    "name": "Earl",
+    "body": "Get 1 krone.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "75": {
+    "id": "75",
+    "name": "Baroness",
+    "body": "Draw 3 staff cards and immediately play one, paying up to 3 krones less. Return the other two to the bottom of the deck.",
+    "summary": "Noble (Blue)",
+    "details": "If you cannot afford or don't want to play any, return all three.",
+    "extra": null
+  },
+  "76": {
+    "id": "76",
+    "name": "Duke",
+    "body": "Draw 3 staff cards and immediately play one at no cost. Return the other two to the bottom of the deck.",
+    "summary": "Noble (Blue)",
+    "details": null,
+    "extra": null
+  },
+  "77": {
+    "id": "77",
+    "name": "Apothecary",
+    "body": "Get 1 krone.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "78": {
+    "id": "78",
+    "name": "Post Councillor",
+    "body": "Take a guest from the queue at no cost.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "79": {
+    "id": "79",
+    "name": "Privy Councillor",
+    "body": "Get 1 krone and advance 1 space on the Emperor track.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "80": {
+    "id": "80",
+    "name": "Professor Emeritus",
+    "body": "Take a guest from the queue at no cost.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "81": {
+    "id": "81",
+    "name": "General",
+    "body": "Get 1 wine and 3 krones.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "82": {
+    "id": "82",
+    "name": "Senior Councillor",
+    "body": "Occupy one additional room (any color) by turning it to the occupied side.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "83": {
+    "id": "83",
+    "name": "Councillor of Commerce",
+    "body": "Get 5 krones.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "84": {
+    "id": "84",
+    "name": "Court Councillor",
+    "body": "Get 3 krones. Additionally, take a guest from the queue at no cost.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "85": {
+    "id": "85",
+    "name": "Major",
+    "body": "Get 3 krones.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "86": {
+    "id": "86",
+    "name": "Veterinary Councillor",
+    "body": "Play a staff card from hand, paying up to 3 krones less.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "87": {
+    "id": "87",
+    "name": "Medicinal Councillor",
+    "body": "Get 3 krones. Additionally, take up to two guests from the queue at no cost (replenish the queue before taking the second).",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "88": {
+    "id": "88",
+    "name": "Procurator",
+    "body": "Prepare up to two rooms (any color), both at no cost.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "89": {
+    "id": "89",
+    "name": "Lord High Commissioner",
+    "body": "Get 4 krones.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "90": {
+    "id": "90",
+    "name": "Senior Legal Secretary",
+    "body": "Get 1 wine and 3 krones.",
+    "summary": "Citizen (Red)",
+    "details": null,
+    "extra": null
+  },
+  "91": {
+    "id": "91",
+    "name": "Tezcatlipoca",
+    "body": "Draw 3 staff cards.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "92": {
+    "id": "92",
+    "name": "Capt. Goldhaken",
+    "body": "Get 1 krone.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "93": {
+    "id": "93",
+    "name": "Mr. Horsa",
+    "body": "Advance 1 space on the Emperor track.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "94": {
+    "id": "94",
+    "name": "M. Ingalls",
+    "body": "Play a staff card from hand, paying 1 krone less.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "95": {
+    "id": "95",
+    "name": "Mr. Boydell",
+    "body": "Advance 2 spaces on the Emperor track.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "96": {
+    "id": "96",
+    "name": "Mr. Oundo",
+    "body": "Play a staff card from hand, paying up to 3 krones less.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "97": {
+    "id": "97",
+    "name": "E. Gizia",
+    "body": "Select an action space with at least one die and carry out that action as normal, without taking a die from the space. You cannot boost this action.",
+    "summary": "Tourist (Green)",
+    "details": "Staff cards that trigger on taking a specific die cannot be used with this effect, as you are not taking a die.",
+    "extra": null
+  },
+  "98": {
+    "id": "98",
+    "name": "M. Polo",
+    "body": "Get 4 krones.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "99": {
+    "id": "99",
+    "name": "Cramersopholus",
+    "body": "Draw 1 staff card. Additionally, advance 2 spaces on the Emperor track.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "100": {
+    "id": "100",
+    "name": "Farmer Franz",
+    "body": "Advance 3 spaces on the Emperor track. Additionally, occupy one additional room (any color) by turning it to the occupied side.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "101": {
+    "id": "101",
+    "name": "Brother Uwe",
+    "body": "Advance 3 spaces on the Emperor track. Additionally, take a guest from the queue at no cost.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "102": {
+    "id": "102",
+    "name": "Conductor",
+    "body": "Advance 1 space on the Emperor track. Additionally, occupy one additional room (any color) by turning it to the occupied side.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "103": {
+    "id": "103",
+    "name": "Durgoing",
+    "body": "Draw 2 staff cards.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  },
+  "104": {
+    "id": "104",
+    "name": "MacLeod",
+    "body": "Play a staff card from hand at no cost.",
+    "summary": "Tourist (Green)",
+    "details": null,
+    "extra": null
+  }
+}
