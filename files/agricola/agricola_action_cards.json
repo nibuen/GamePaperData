@@ -37,7 +37,7 @@
     "name": "Traveling Players",
     "summary": "Accumulates 1 Food per round; take all Food from this space",
     "body": "During Phase 2 (Replenish), 1 Food is placed on this space each round. When you select this action, take all accumulated Food from the space.",
-    "details": "Used in 4-player games (standalone space) and 5-player games (combined with Build 1 Room). Food accumulates each round if not taken.",
+    "details": "Used in 4-player games only as a standalone space. In 5-player games, the Traveling Players mechanic is combined with Build 1 Room on a different card. Food accumulates each round if not taken.",
     "condition": {
       "min_count_variant": 4,
       "max_count_variant": 4
