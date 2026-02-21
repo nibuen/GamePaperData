@@ -4,97 +4,111 @@
     "name": "Sow and/or Bake Bread",
     "summary": "Sow crops into empty fields; optionally bake Grain into Food",
     "body": "You may Sow one or more empty fields by taking 1 Grain or 1 Vegetable from your supply and placing it on a fallow field (then adding 2 Grain or 1 Vegetable from supply). You may also Bake bread: use a Baking Improvement to convert Grain from your supply into Food. You need not Sow all empty fields.",
-    "details": "Stage 1 (Rounds 1–4). Baking requires a Fireplace (1 Grain → 2 Food), Cooking Hearth (→ 3 Food), Clay Oven (up to 1 Grain → 5 Food), or Stone Oven (up to 2 Grain → 4 Food each). Grain on fields may not be used for Baking."
+    "details": "Stage 1 (Rounds 1–4). Baking requires a Fireplace (1 Grain → 2 Food), Cooking Hearth (→ 3 Food), Clay Oven (up to 1 Grain → 5 Food), or Stone Oven (up to 2 Grain → 4 Food each). Grain on fields may not be used for Baking.",
+    "extra": null
   },
   "major_minor_improvement_s1": {
     "id": "major_minor_improvement_s1",
     "name": "1 Major or Minor Improvement",
     "summary": "Purchase one Major or Minor Improvement card",
     "body": "Purchase either one Major Improvement (from the shared board) or one Minor Improvement (from your hand). Pay the cost shown in the upper-right corner of the card. Check prerequisites in the top-left corner if present.",
-    "details": "Stage 1 (Rounds 1–4). This is the first Improvement action space available. A second Renovation-linked Improvement space appears in Stage 2."
+    "details": "Stage 1 (Rounds 1–4). This is the first Improvement action space available. A second Renovation-linked Improvement space appears in Stage 2.",
+    "extra": null
   },
   "sheep": {
     "id": "sheep",
     "name": "1 Sheep",
     "summary": "Accumulates 1 Sheep per round; take all Sheep from this space",
     "body": "During Phase 2 (Replenish), 1 Sheep is placed on this space each round. When you select this action, take all Sheep from the space and place them in your farmyard, or immediately convert them to Food using an Improvement with the cooking symbol. Sheep that cannot be pastured or converted must be returned to supply.",
-    "details": "Stage 1 (Rounds 1–4). Sheep accumulate each round if not taken — there is no upper limit."
+    "details": "Stage 1 (Rounds 1–4). Sheep accumulate each round if not taken — there is no upper limit.",
+    "extra": null
   },
   "fences": {
     "id": "fences",
     "name": "Fences",
     "summary": "Build any number of fences for 1 Wood each",
     "body": "Pay 1 Wood per fence to build fences on your farmyard. Fences must fully enclose a pasture. All pastures must be orthogonally adjacent. Fences cannot be demolished once built. Each player may build at most 15 fences total. The edge of the farmyard board, stables, fields, and rooms do not count as fences.",
-    "details": "Stage 1 (Rounds 1–4). Each enclosed farmyard space counts as 'used' for scoring. A pasture can be subdivided by adding fences later."
+    "details": "Stage 1 (Rounds 1–4). Each enclosed farmyard space counts as 'used' for scoring. A pasture can be subdivided by adding fences later.",
+    "extra": null
   },
   "stone_s2": {
     "id": "stone_s2",
     "name": "1 Stone",
     "summary": "Accumulates 1 Stone per round; take all Stone from this space",
     "body": "During Phase 2 (Replenish), 1 Stone is placed on this space each round. When you select this action, take all Stone from the space and place it in your supply. Stone accumulates each round if not taken.",
-    "details": "Stage 2 (Rounds 5–7). A second Stone space is added in Stage 4."
+    "details": "Stage 2 (Rounds 5–7). A second Stone space is added in Stage 4.",
+    "extra": null
   },
   "renovation_improvement": {
     "id": "renovation_improvement",
     "name": "After Renovation, also 1 Major or Minor Improvement",
     "summary": "Renovate your home, then optionally purchase one Improvement",
     "body": "Renovate your home from Wooden hut to Clay hut (pay 1 Clay per room + 1 Reed) or from Clay hut to Stone house (pay 1 Stone per room + 1 Reed). After renovating, you may purchase one Major or Minor Improvement. You cannot skip the renovation to purchase only an Improvement, and you cannot perform a double renovation in one action.",
-    "details": "Stage 2 (Rounds 5–7). This is the first renovation space available. A second renovation space appears in Stage 6 (Round 14)."
+    "details": "Stage 2 (Rounds 5–7). This is the first renovation space available. A second renovation space appears in Stage 6 (Round 14).",
+    "extra": null
   },
   "family_growth_improvement": {
     "id": "family_growth_improvement",
     "name": "After Family Growth, also 1 Minor Improvement",
     "summary": "Grow your family (requires spare room), then optionally play a Minor Improvement",
     "body": "Add a newborn Family member — you must have more rooms than Family members. Place the newborn on this Action space; they return home and become an adult at the end of the round. After Family Growth, you may optionally purchase one Minor Improvement from your hand. You cannot skip Family Growth to purchase only an Improvement.",
-    "details": "Stage 2 (Rounds 5–7). Families are limited to 5 members. The newborn is not available for actions until the following round."
+    "details": "Stage 2 (Rounds 5–7). Families are limited to 5 members. The newborn is not available for actions until the following round.",
+    "extra": null
   },
   "vegetable": {
     "id": "vegetable",
     "name": "Take 1 Vegetable",
     "summary": "Take 1 Vegetable from supply",
     "body": "Take 1 Vegetable from the general supply and place it in your personal supply. You may not immediately Sow it — to plant it, you must later select a Sow action space.",
-    "details": "Stage 3 (Rounds 8–9). Vegetables are worth 1 Food each unprocessed, or more Food when cooked with a Fireplace or Cooking Hearth."
+    "details": "Stage 3 (Rounds 8–9). Vegetables are worth 1 Food each unprocessed, or more Food when cooked with a Fireplace or Cooking Hearth.",
+    "extra": null
   },
   "wild_boar": {
     "id": "wild_boar",
     "name": "1 Wild Boar",
     "summary": "Accumulates 1 Wild Boar per round; take all Wild Boar from this space",
     "body": "During Phase 2 (Replenish), 1 Wild Boar is placed on this space each round. When you select this action, take all Wild Boar from the space and place them in your farmyard, or immediately convert them to Food using an Improvement with the cooking symbol. Wild Boar that cannot be pastured or converted must be returned to supply.",
-    "details": "Stage 3 (Rounds 8–9). Wild Boar accumulate each round if not taken."
+    "details": "Stage 3 (Rounds 8–9). Wild Boar accumulate each round if not taken.",
+    "extra": null
   },
   "stone_s4": {
     "id": "stone_s4",
     "name": "1 Stone (second space)",
     "summary": "Second Stone space — accumulates 1 Stone per round",
     "body": "During Phase 2 (Replenish), 1 Stone is placed on this space each round. When you select this action, take all Stone from the space and place it in your supply. Stone accumulates each round if not taken.",
-    "details": "Stage 4 (Rounds 10–11). This is the second Stone accumulation space; the first entered play in Stage 2."
+    "details": "Stage 4 (Rounds 10–11). This is the second Stone accumulation space; the first entered play in Stage 2.",
+    "extra": null
   },
   "cattle": {
     "id": "cattle",
     "name": "1 Cattle",
     "summary": "Accumulates 1 Cattle per round; take all Cattle from this space",
     "body": "During Phase 2 (Replenish), 1 Cattle is placed on this space each round. When you select this action, take all Cattle from the space and place them in your farmyard, or immediately convert them to Food using an Improvement with the cooking symbol. Cattle that cannot be pastured or converted must be returned to supply.",
-    "details": "Stage 4 (Rounds 10–11). Cattle accumulate each round if not taken."
+    "details": "Stage 4 (Rounds 10–11). Cattle accumulate each round if not taken.",
+    "extra": null
   },
   "plow_sow": {
     "id": "plow_sow",
     "name": "Plow and/or Sow 1 Field",
     "summary": "Plow one field, then optionally sow any empty fields",
     "body": "Plow one field by placing a field tile on an empty farmyard space (orthogonally adjacent to existing fields if you have any). After plowing, you may Sow any empty fields by planting Grain or Vegetables from your personal supply. You need not Sow all empty fields.",
-    "details": "Stage 5 (Rounds 12–13). Combines plowing and sowing in one action. A newly plowed field can be sown immediately with this action."
+    "details": "Stage 5 (Rounds 12–13). Combines plowing and sowing in one action. A newly plowed field can be sown immediately with this action.",
+    "extra": null
   },
   "family_growth_no_room": {
     "id": "family_growth_no_room",
     "name": "Family Growth even without a Room",
     "summary": "Grow your family regardless of available rooms",
     "body": "Add a newborn Family member even if you have no spare rooms. Place the newborn on this Action space; they return home at end of round. If there is no empty room, the new Family member shares a room. After using this card, the other Family Growth action (which requires a spare room) cannot be used again until you have more rooms than Family members.",
-    "details": "Stage 5 (Rounds 12–13). Families are limited to 5 members. Using this three times could result in 5 Family members sharing 2 rooms."
+    "details": "Stage 5 (Rounds 12–13). Families are limited to 5 members. Using this three times could result in 5 Family members sharing 2 rooms.",
+    "extra": null
   },
   "renovation_fences": {
     "id": "renovation_fences",
     "name": "After Renovation, also Fences",
     "summary": "Renovate your home, then optionally build fences",
     "body": "Renovate your home from Wooden hut to Clay hut (pay 1 Clay per room + 1 Reed) or from Clay hut to Stone house (pay 1 Stone per room + 1 Reed). After renovating, you may build fences (1 Wood per fence). You cannot skip the renovation to build only fences, and you cannot perform a double renovation in one action.",
-    "details": "Stage 6 (Round 14 only). Round 14 has two Renovation spaces — this one and the Stage 2 'After Renovation, also 1 Major or Minor Improvement' space — so multiple players can renovate in the final round."
+    "details": "Stage 6 (Round 14 only). Round 14 has two Renovation spaces — this one and the Stage 2 'After Renovation, also 1 Major or Minor Improvement' space — so multiple players can renovate in the final round.",
+    "extra": null
   }
 }
