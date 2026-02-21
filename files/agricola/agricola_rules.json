@@ -402,267 +402,129 @@
     }
   ],
   "gameplay": {
-    "turn_structure": "The game consists of 14 rounds divided into six stages. Each round follows the same pattern with four phases: (1) Start the round - draw a new Round card, (2) Replenish - place new goods and animals on Action spaces, (3) Work phase - players take turns placing one Family member at a time on unoccupied Action spaces and taking that action until all Family members have been placed, (4) Return home - remove Family members from game boards and return them to the farmyard. A Harvest occurs after rounds 4, 7, 9, 11, 13 and 14.",
+    "turn_structure": "The game consists of 14 rounds divided into six stages. Each round follows four phases in order: Start the Round, Replenish Action Spaces, Work Phase, and Return Home. A Harvest occurs at the end of rounds 4, 7, 9, 11, 13, and 14.",
     "actions": [
       {
-        "name": "Extend Wooden hut or renovate",
-        "description": "Players can extend their huts by Building rooms or renovate from Wooden hut to Clay hut to Stone house. New rooms must be orthogonally adjacent to existing rooms. Renovation requires 1 material per room plus 1 Reed. After certain Renovation actions, players may purchase an Improvement or Fence pastures.",
+        "name": "Phase 1: Start the Round",
+        "description": "Draw the top Round card and reveal the new Action space it introduces for this round.",
         "steps": [
           {
-            "description": "To extend, pay 5 of the same material as existing rooms plus 2 Reed per new room. Place room tiles orthogonally adjacent to existing rooms.",
-            "short_description": "Build room(s)"
+            "description": "Draw the top Round card from the current Stage's deck and place it face up next to the board.",
+            "short_description": "Draw Round card"
           },
           {
-            "description": "To renovate Wooden hut to Clay hut, pay 1 Clay per existing room plus 1 Reed. Turn tiles over to show Clay hut side.",
-            "short_description": "Renovate to Clay hut"
-          },
+            "description": "Place the new Action space tile on the board as indicated. If the space accumulates goods, place the first tokens on it now.",
+            "short_description": "Reveal new Action space"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "name": "Phase 2: Replenish Action Spaces",
+        "description": "Add goods and animals to all accumulating Action spaces before workers are placed.",
+        "steps": [
           {
-            "description": "To renovate Clay hut to Stone house, pay 1 Stone per existing room plus 1 Reed. Replace Clay hut tiles with Stone house tiles.",
-            "short_description": "Renovate to Stone house"
-          },
-          {
-            "description": "When choosing the Build Room(s) action space, may instead or in addition build up to 4 stables for 2 Wood each.",
-            "short_description": "Build stables"
+            "description": "For each Action space that accumulates resources (shown by an arrow), add the indicated tokens (Wood, Clay, Reed, Stone, Food, Grain, Vegetables, or animals) to the space.",
+            "short_description": "Add tokens to spaces"
           }
         ],
         "notes": [
           {
-            "description": "Each Family member requires their own room (exception: Family growth even without room in your home action).",
-            "short_description": "Room requirement"
-          },
-          {
-            "description": "Players can only ever renovate a complete hut. Rooms may never be renovated one at a time. Double renovation from Wooden hut to Stone house in one turn is not allowed.",
-            "short_description": "Renovation restrictions"
+            "description": "Goods accumulate on Action spaces round after round until a player takes them — there is no upper limit.",
+            "short_description": "No accumulation limit"
           }
         ]
       },
       {
-        "name": "Family growth",
-        "description": "Add a new Family member to the family. Requires an empty room in the home (except when using the Family growth even without room in your home action). The new Family member becomes available from the following round onwards.",
+        "name": "Phase 3: Work Phase",
+        "description": "In turn order, each player places one Family member at a time on an unoccupied Action space and immediately takes that action. This continues until all players have placed all their Family members.",
         "steps": [
           {
-            "description": "Select the after Family growth, also 1 Minor Improvement action. Must have more rooms than Family members. Add newborn offspring to Action space. May purchase a Minor Improvement after.",
-            "short_description": "Family growth with room requirement"
+            "description": "Take resources: Collect all tokens from a resource or animal Action space and add them to your personal supply. Animals must be placed directly into the farmyard or converted to Food using an Improvement.",
+            "short_description": "Take resources or animals"
           },
           {
-            "description": "Select the Family growth even without room in your home action. May grow family regardless of number of rooms. Add newborn offspring to Action space.",
-            "short_description": "Family growth without room requirement"
+            "description": "Solo: The Forest action space adds only 2 Wood per round instead of 3.",
+            "short_description": "Solo: Forest gives 2 Wood",
+            "condition": {
+              "max_count_variant": 1
+            }
           },
           {
-            "description": "In the Return home phase, place new Family member in its room (or sharing a room if no empty room available).",
-            "short_description": "Place new Family member"
-          }
-        ],
-        "notes": [
-          {
-            "description": "Newborn offspring are not available for use in the round when produced - they must first grow up.",
-            "short_description": "Newborn timing"
+            "description": "Farm: Plow a field (orthogonally adjacent to existing fields), take 1 Grain, take 1 Vegetable, Sow fields (place 1 crop from hand, add 2 Grain or 1 Vegetable from supply), or Bake bread using a Baking Improvement (Fireplace: 1 Grain→2 Food; Cooking Hearth: 1→3; Clay Oven: up to 1→5; Stone Oven: up to 2→4 each).",
+            "short_description": "Farm actions"
           },
           {
-            "description": "Families are limited to a maximum of 5 members. A player with 5 Family members may not choose the Family growth action.",
-            "short_description": "Family size limit"
-          }
-        ]
-      },
-      {
-        "name": "Plowing fields, Grain and Vegetables",
-        "description": "Players can Plow fields, take Grain or Vegetables, Sow fields, and Bake bread.",
-        "steps": [
-          {
-            "description": "Plow 1 field: Take a field tile and place it on an empty farmyard space. If you already have fields, the new field must be orthogonally adjacent to an existing field.",
-            "short_description": "Plow 1 field"
+            "description": "Build or Renovate: Extend your home by adding rooms (5 matching material + 2 Reed per room, placed orthogonally adjacent) or build stables (2 Wood each). Renovate Wooden hut to Clay hut (1 Clay + 1 Reed per room) or Clay hut to Stone house (1 Stone + 1 Reed per room). You cannot renovate one room at a time or skip a material tier.",
+            "short_description": "Build / Renovate"
           },
           {
-            "description": "Take 1 Grain: Take one Grain marker and place it in personal supply.",
-            "short_description": "Take 1 Grain"
+            "description": "Family growth: Add a new Family member. Requires a spare room (or use the no-room-required space). The newborn is placed on the Action space and returns home at the end of the round. Maximum 5 Family members.",
+            "short_description": "Family growth"
           },
           {
-            "description": "Take 1 Vegetable: Take one Vegetable marker and place it in personal supply.",
-            "short_description": "Take 1 Vegetable"
+            "description": "Raise animals: Fence pastures (1 Wood per fence, must fully enclose a pasture), build stables (2 Wood each; doubles a pasture's capacity; unfenced stables hold 1 animal), or keep 1 animal as a pet in your home. Each pasture holds one animal type; capacity = 2 animals per enclosed farmyard space.",
+            "short_description": "Raise animals"
           },
           {
-            "description": "Sow: To Sow a field, take 1 Grain or Vegetable from personal supply and place it on an empty field. Add 2 more Grain or 1 more Vegetable from the general supply. A player may Sow multiple empty fields with one action.",
-            "short_description": "Sow fields"
-          },
-          {
-            "description": "Bake bread (when choosing Sow and/or Bake bread): Use a Baking Improvement to convert Grain to Food. Fireplace converts 1 Grain to 2 Food, Cooking Hearth to 3 Food. Stone Oven converts up to 2 Grain to 4 Food each, Clay Oven converts at most 1 Grain to 5 Food.",
-            "short_description": "Bake bread"
-          }
-        ],
-        "notes": [
-          {
-            "description": "Grain and Vegetables are harvested during the Harvest. During Harvest, remove 1 Grain or Vegetable token from each Sown field and place in personal supply.",
-            "short_description": "Harvesting"
-          },
-          {
-            "description": "If a field is emptied, it can be replanted using the Sow action - a Harvested field does not need to be re-Plowed.",
-            "short_description": "Re-Sowing"
-          },
-          {
-            "description": "Grain and Vegetables in personal supply may be converted to 1 Food at any time, or to more than 1 Food with appropriate Improvements.",
-            "short_description": "Converting to Food"
-          }
-        ]
-      },
-      {
-        "name": "Raising animals",
-        "description": "Players can Fence pastures, Build stables, and take Sheep, Wild boar, and Cattle. Animals breed during Harvest.",
-        "steps": [
-          {
-            "description": "Each player may raise exactly one animal as a pet in their home, regardless of home's size and type. The pet does not take a room away from a Family member.",
-            "short_description": "Pet animal"
-          },
-          {
-            "description": "Fence pastures: Pay 1 Wood for each fence. Fences border pastures and are laid between farmyard spaces. All pastures must be orthogonally adjacent. Fences may only be built if they will create a fully enclosed pasture. Each player may build at most 15 fences.",
-            "short_description": "Fence pastures"
-          },
-          {
-            "description": "Each pasture may only hold animals of one type. Up to 2 animals may live on each square of the pasture. Pastures occupying 1 farmyard square can hold 2 animals; 2 squares can hold 4 animals; 3 squares can hold 6 animals, etc.",
-            "short_description": "Pasture capacity"
-          },
-          {
-            "description": "Build stables: Build stables for 2 Wood each. May be placed on any farmyard space that does not already contain a room or field. Only 1 stable may be built in any farmyard space.",
-            "short_description": "Build stables"
-          },
-          {
-            "description": "Placing a stable in a pasture doubles the capacity of the entire pasture. Each unfenced stable may hold exactly 1 animal.",
-            "short_description": "Stable capacity bonus"
-          }
-        ],
-        "notes": [
-          {
-            "description": "Players may rearrange their animals at any time, as long as the rules are followed. A player may release some or all of their animals at any time.",
-            "short_description": "Animal management"
-          },
-          {
-            "description": "The edge of the farmyard board, stables, fields and rooms do not count as fences. Fences may not be demolished once built.",
-            "short_description": "Fence rules"
-          },
-          {
-            "description": "Animals that cannot be placed into the farmyard must be returned to the general supply or immediately transformed into Food using an Improvement with the appropriate symbol.",
-            "short_description": "Overflow animals"
-          }
-        ]
-      },
-      {
-        "name": "Play Occupation card",
-        "description": "Play an Occupation card from hand by placing it face-up and reading it aloud. The first Occupation card a player plays is free; each additional Occupation costs 1 Food (or varies by Action space).",
-        "steps": [
-          {
-            "description": "Choose the 1 Occupation Action space. Pay the required Food (first is free, subsequent cost 1 Food unless on a different Action space).",
+            "description": "Play Occupation: Play a card from hand face-up. The first Occupation is free; each additional costs 1 Food (exact cost may vary by Action space). The card's effect applies immediately.",
             "short_description": "Play Occupation"
           },
           {
-            "description": "Read the card aloud. The text on the Occupation applies to the player as soon as the card is played.",
-            "short_description": "Apply Occupation effect"
+            "description": "Purchase Improvement: Pay the cost shown on a Major or Minor Improvement card. Major Improvements are taken from the shared board; Minor Improvements are played from hand. Check prerequisites (top-left corner) before playing.",
+            "short_description": "Buy Improvement"
+          },
+          {
+            "description": "Starting player: Take the Starting player token — you will go first next round. From Stage 2 onwards, you may also play 1 Minor Improvement from hand when taking this action.",
+            "short_description": "Starting player"
           }
         ],
         "notes": [
           {
-            "description": "Cards that are in a player's hand have no effect on the game.",
-            "short_description": "Hand cards inactive"
-          }
-        ]
-      },
-      {
-        "name": "Purchase Improvement card",
-        "description": "Purchase a Major or Minor Improvement by paying its cost shown in the upper-right corner. Some require prerequisites shown in the top left corner.",
-        "steps": [
-          {
-            "description": "Choose the 1 Major or Minor Improvement Action space (or Renovation space, or as part of other actions). Choose to play either a Major or a Minor Improvement.",
-            "short_description": "Select Improvement action"
+            "description": "Only one player may occupy each Action space per round.",
+            "short_description": "One player per space"
           },
           {
-            "description": "Pay the cost shown in the upper-right corner of the card. Some cards show a slash allowing choice between two payment options.",
-            "short_description": "Pay Improvement cost"
-          },
-          {
-            "description": "If the card has prerequisites (top left corner), must have the required goods, tiles or cards on the table.",
-            "short_description": "Check prerequisites"
-          },
-          {
-            "description": "Place the card face-up and read it aloud. For Major Improvements, take from the board. For Minor Improvements, play from hand.",
-            "short_description": "Place Improvement card"
-          }
-        ],
-        "notes": [
-          {
-            "description": "Some Minor Improvements are Traveling cards - after use, they are passed to the player on the left.",
-            "short_description": "Traveling cards",
+            "description": "Traveling Minor Improvement cards are passed to the player on the left after use.",
+            "short_description": "Traveling cards passed left",
             "condition": {
               "min_count_variant": 2
             }
           },
           {
-            "description": "In the solo game, Traveling Minor Improvement cards are removed from the game after use instead of being passed to the left.",
+            "description": "Solo: Traveling Minor Improvement cards are removed from the game after use instead of being passed left.",
             "short_description": "Solo: Traveling cards removed",
             "condition": {
               "max_count_variant": 1
             }
           },
           {
-            "description": "Some Minor Improvements are Upgrade cards - playing them requires returning an existing Improvement. Upgraded Major Improvements return to the board; upgraded Minor Improvements are removed from the game.",
+            "description": "Upgrade Minor Improvements require returning an existing Improvement. Upgraded Major Improvements return to the board; upgraded Minor Improvements are removed from the game.",
             "short_description": "Upgrade cards"
           }
         ]
       },
       {
-        "name": "Take resources or animals",
-        "description": "Take resources (Wood, Clay, Reed, Stone), Food, or animals from Action spaces with arrows. All items on the space are taken.",
+        "name": "Phase 4: Return Home",
+        "description": "All Family members are removed from Action spaces and returned to their farmyard rooms.",
         "steps": [
           {
-            "description": "Place a Family member on an unoccupied Action space that provides resources, Food, or animals (indicated by an arrow).",
-            "short_description": "Select resource Action"
+            "description": "Pick up all Family members from the game boards and return them to the rooms on your farmyard.",
+            "short_description": "Retrieve Family members"
           },
           {
-            "description": "Take all tokens from that space and place resources and Food in personal supply. Animals must be placed directly into the farmyard or converted to Food using an Improvement.",
-            "short_description": "Collect resources"
+            "description": "Newborn offspring that were placed on Action spaces during the round now return home and become adults.",
+            "short_description": "Newborns become adults"
           }
         ],
-        "notes": [
-          {
-            "description": "Goods and Food build up on Action spaces over several rounds if not taken - there is no upper limit.",
-            "short_description": "Resource accumulation"
-          },
-          {
-            "description": "In the solo game, the Forest action space only adds 2 Wood each round instead of 3.",
-            "short_description": "Solo: Forest gives 2 Wood",
-            "condition": {
-              "max_count_variant": 1
-            }
-          }
-        ]
-      },
-      {
-        "name": "Starting player",
-        "description": "Take or retain the Starting player token. In Stage 2 onwards, may also play a Minor Improvement when taking this action.",
-        "steps": [
-          {
-            "description": "Place a Family member on the Starting player and/or Minor Improvement Action space.",
-            "short_description": "Take Starting player action"
-          },
-          {
-            "description": "Take or keep the Starting player token. The player will go first in the next round.",
-            "short_description": "Gain Starting player"
-          },
-          {
-            "description": "May play one Minor Improvement from hand (available from Stage 2 onwards).",
-            "short_description": "Optional Minor Improvement"
-          }
-        ],
-        "notes": [
-          {
-            "description": "The Starting player marker only moves when a player chooses this action - it is not automatically passed.",
-            "short_description": "Starting player transfer"
-          }
-        ]
+        "notes": []
       },
       {
         "name": "Harvest",
-        "description": "A Harvest occurs at the end of rounds 4, 7, 9, 11, 13, and 14. Each Harvest proceeds in three phases in order: Field phase, Feeding, and Breeding.",
+        "description": "A Harvest occurs at the end of rounds 4, 7, 9, 11, 13, and 14. It proceeds in three phases in order: Field phase, Feeding, and Breeding.",
         "steps": [
           {
-            "description": "Field phase: Remove 1 Grain or Vegetable token from each Sown field tile and add it to your personal supply.",
+            "description": "Field phase: Remove 1 Grain or Vegetable token from each Sown field tile and add it to your personal supply. An emptied field can be re-Sown later without re-Plowing.",
             "short_description": "Harvest fields"
           },
           {
@@ -674,7 +536,7 @@
           },
           {
             "description": "Feeding: Each adult Family member must be fed 3 Food. Newborn offspring require 1 Food each. If you cannot feed everyone, take 1 Begging card per missing Food.",
-            "short_description": "Feed family (3 Food per adult)",
+            "short_description": "Feed family (3 Food/adult)",
             "condition": {
               "max_count_variant": 1
             }
@@ -686,12 +548,12 @@
         ],
         "notes": [
           {
-            "description": "Newborn offspring placed on Action spaces during the round return home and become adults at the end of the Return home phase, before the Harvest begins.",
-            "short_description": "Newborns become adults before Harvest"
-          },
-          {
             "description": "Animals that cannot be accommodated after Breeding must be returned to the general supply or immediately converted to Food using an appropriate Improvement.",
             "short_description": "Breeding overflow"
+          },
+          {
+            "description": "Grain and Vegetables in personal supply may be converted to 1 Food at any time, or to more Food with appropriate Baking Improvements.",
+            "short_description": "Converting crops to Food"
           }
         ]
       }
