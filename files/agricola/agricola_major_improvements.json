@@ -1,0 +1,72 @@
+{
+  "fireplace_cheap": {
+    "id": "fireplace_cheap",
+    "name": "Fireplace (2 Clay)",
+    "summary": "Cook animals and Vegetables; bake Grain into bread",
+    "body": "Cost: 2 Clay. At any time, cook animals into Food (Sheep → 2 Food, Wild Boar → 2 Food, Cattle → 3 Food) or cook Vegetables into 2 Food. When you take a Bake bread action, convert 1 Grain into 2 Food. Can be upgraded to a Cooking Hearth by taking a Cooking Hearth and returning this card to the board.",
+    "extra": "1 Victory Point. May be upgraded to a Cooking Hearth."
+  },
+  "fireplace_expensive": {
+    "id": "fireplace_expensive",
+    "name": "Fireplace (3 Clay)",
+    "summary": "Cook animals and Vegetables; bake Grain into bread",
+    "body": "Cost: 3 Clay. At any time, cook animals into Food (Sheep → 2 Food, Wild Boar → 2 Food, Cattle → 3 Food) or cook Vegetables into 2 Food. When you take a Bake bread action, convert 1 Grain into 2 Food. Can be upgraded to a Cooking Hearth by taking a Cooking Hearth and returning this card to the board.",
+    "extra": "1 Victory Point. May be upgraded to a Cooking Hearth."
+  },
+  "cooking_hearth_cheap": {
+    "id": "cooking_hearth_cheap",
+    "name": "Cooking Hearth (4 Clay)",
+    "summary": "Better cooking than a Fireplace; bake Grain into more Food",
+    "body": "Cost: 4 Clay (or upgrade from a Fireplace by returning it to the board). At any time, cook animals into Food or cook Vegetables into 3 Food. When you take a Bake bread action, convert 1 Grain into 3 Food. Produces 1 more Food than a Fireplace when baking bread or cooking Vegetables, Wild Boar, and Cattle.",
+    "extra": "1 Victory Point."
+  },
+  "cooking_hearth_expensive": {
+    "id": "cooking_hearth_expensive",
+    "name": "Cooking Hearth (5 Clay)",
+    "summary": "Better cooking than a Fireplace; bake Grain into more Food",
+    "body": "Cost: 5 Clay (or upgrade from a Fireplace by returning it to the board). At any time, cook animals into Food or cook Vegetables into 3 Food. When you take a Bake bread action, convert 1 Grain into 3 Food. Produces 1 more Food than a Fireplace when baking bread or cooking Vegetables, Wild Boar, and Cattle.",
+    "extra": "1 Victory Point."
+  },
+  "clay_oven": {
+    "id": "clay_oven",
+    "name": "Clay Oven",
+    "summary": "Bake 1 Grain into 5 Food; bake once immediately on purchase",
+    "body": "Cost: 3 Clay and 1 Stone. When you take a Bake bread action, convert at most 1 Grain from your supply into 5 Food. Immediately after purchasing this Oven, you may take a one-time Bake bread action.",
+    "extra": "2 Victory Points. May be upgraded by certain Minor Improvements."
+  },
+  "stone_oven": {
+    "id": "stone_oven",
+    "name": "Stone Oven",
+    "summary": "Bake up to 2 Grain into 4 Food each; bake once immediately on purchase",
+    "body": "Cost: 1 Clay and 3 Stone. When you take a Bake bread action, convert up to 2 Grain from your supply into 4 Food each. Immediately after purchasing this Oven, you may take a one-time Bake bread action.",
+    "extra": "3 Victory Points. May be upgraded by certain Minor Improvements."
+  },
+  "joinery": {
+    "id": "joinery",
+    "name": "Joinery",
+    "summary": "Convert Wood to Food each Harvest; bonus points for Wood stockpiles",
+    "body": "Cost: 2 Stone and 2 Wood. During each Harvest, you may convert up to 1 Wood from your supply into Food. At the end of the game, earn Bonus points based on the amount of Wood in your supply.",
+    "extra": "2 Victory Points plus Bonus points for Wood at end of game."
+  },
+  "pottery": {
+    "id": "pottery",
+    "name": "Pottery",
+    "summary": "Convert Clay to Food each Harvest; bonus points for Clay stockpiles",
+    "body": "Cost: 2 Stone and 2 Clay. During each Harvest, you may convert up to 1 Clay from your supply into Food. At the end of the game, earn Bonus points based on the amount of Clay in your supply.",
+    "extra": "2 Victory Points plus Bonus points for Clay at end of game."
+  },
+  "basketmakers_workshop": {
+    "id": "basketmakers_workshop",
+    "name": "Basketmaker's Workshop",
+    "summary": "Convert Reed to Food each Harvest; bonus points for Reed stockpiles",
+    "body": "Cost: 2 Stone and 2 Reed. During each Harvest, you may convert up to 1 Reed from your supply into Food. At the end of the game, earn Bonus points based on the amount of Reed in your supply.",
+    "extra": "2 Victory Points plus Bonus points for Reed at end of game."
+  },
+  "well": {
+    "id": "well",
+    "name": "Well",
+    "summary": "Provides 1 Food at the start of each of the next 5 rounds",
+    "body": "Cost: 3 Stone and 1 Wood. When purchased, place 1 Food on each of the next 5 Round card spaces (up to Round 14). At the start of each of those rounds, you receive the Food placed on that space.",
+    "extra": "4 Victory Points."
+  }
+}

@@ -67,7 +67,11 @@
       ],
       "description": "Red Major Improvement cards",
       "detailed_description": "10 red Major Improvement cards",
-      "count": 10
+      "count": 10,
+      "action": {
+        "name": "CardList",
+        "value": "agricola_major_improvements.json"
+      }
     },
     {
       "name": "Round cards",
@@ -77,7 +81,11 @@
       ],
       "description": "Blue Round cards with possible actions for rounds 1 to 14",
       "detailed_description": "14 blue Round cards with possible actions for rounds 1 to 14",
-      "count": 14
+      "count": 14,
+      "action": {
+        "name": "CardList",
+        "value": "agricola_round_cards.json"
+      }
     },
     {
       "name": "Action cards",
@@ -87,7 +95,11 @@
       ],
       "description": "Green Action cards with possible actions that depend on the number of players",
       "detailed_description": "16 green Action cards with possible actions that depend on the number of players",
-      "count": 16
+      "count": 16,
+      "action": {
+        "name": "CardList",
+        "value": "agricola_action_cards.json"
+      }
     },
     {
       "name": "Begging cards",
@@ -439,6 +451,15 @@
         "name": "Phase 3: Work Phase",
         "description": "In turn order, each player places one Family member at a time on an unoccupied Action space and immediately takes that action. This continues until all players have placed all their Family members.",
         "steps": [
+          {
+            "description": "New action spaces are revealed each round via Round cards — one new space per round across all 14 rounds. The available spaces grow as the game progresses.",
+            "short_description": "Round card spaces",
+            "action": {
+              "type": "card_list",
+              "value": "agricola_round_cards.json",
+              "label": "Browse"
+            }
+          },
           {
             "description": "Take resources: Collect all tokens from a resource or animal Action space and add them to your personal supply. Animals must be placed directly into the farmyard or converted to Food using an Improvement.",
             "short_description": "Take resources or animals"

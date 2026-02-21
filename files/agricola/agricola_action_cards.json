@@ -1,0 +1,90 @@
+{
+  "occupation_3p": {
+    "id": "occupation_3p",
+    "name": "1 Occupation (3-player)",
+    "summary": "Play one Occupation card for 2 Food",
+    "body": "Play 1 Occupation card from your hand face-up on the table and read it aloud. This action always costs 2 Food, regardless of how many Occupations you have already played.",
+    "details": "Used in 3-player games only. More expensive than the Occupation space printed on the game board (where the first card is free).",
+    "condition": {
+      "min_count_variant": 3,
+      "max_count_variant": 3
+    }
+  },
+  "reed_stone_food_4p": {
+    "id": "reed_stone_food_4p",
+    "name": "Take 1 Reed, 1 Stone and 1 Food",
+    "summary": "Take 1 Reed, 1 Stone, and 1 Food from supply",
+    "body": "Take 1 Reed, 1 Stone, and 1 Food from the general supply and place them in your personal supply.",
+    "details": "Used in 4-player games only. These resources do not accumulate — the same amounts are always available regardless of how many rounds have passed.",
+    "condition": {
+      "min_count_variant": 4,
+      "max_count_variant": 4
+    }
+  },
+  "occupation_4p": {
+    "id": "occupation_4p",
+    "name": "1 Occupation (4-player)",
+    "summary": "Play one Occupation card; cost varies by how many you've played",
+    "body": "Play 1 Occupation card from your hand face-up on the table and read it aloud. If this is your first or second Occupation card, it costs 1 Food. Each subsequent Occupation card costs 2 Food.",
+    "details": "Used in 4-player games only. This is an additional Occupation space beyond the one printed on the game board.",
+    "condition": {
+      "min_count_variant": 4,
+      "max_count_variant": 4
+    }
+  },
+  "traveling_players": {
+    "id": "traveling_players",
+    "name": "Traveling Players",
+    "summary": "Accumulates 1 Food per round; take all Food from this space",
+    "body": "During Phase 2 (Replenish), 1 Food is placed on this space each round. When you select this action, take all accumulated Food from the space.",
+    "details": "Used in 4-player games only as a standalone space. In 5-player games, the Traveling Players mechanic is combined with Build 1 Room on a different card. Food accumulates each round if not taken.",
+    "condition": {
+      "min_count_variant": 4,
+      "max_count_variant": 4
+    }
+  },
+  "reed_stone_wood_5p": {
+    "id": "reed_stone_wood_5p",
+    "name": "Take 1 Reed, also 1 Stone and 1 Wood",
+    "summary": "Take accumulating Reed, plus 1 Stone and 1 Wood from supply",
+    "body": "During Phase 2 (Replenish), 1 Reed is placed on this space each round and accumulates. When you select this action, take all accumulated Reed from the space, plus 1 Stone and 1 Wood directly from the general supply. Stone and Wood do not accumulate on this space.",
+    "details": "Used in 5-player games only.",
+    "condition": {
+      "min_count_variant": 5,
+      "max_count_variant": 5
+    }
+  },
+  "take_animals_5p": {
+    "id": "take_animals_5p",
+    "name": "Take Animals (choice)",
+    "summary": "Choose one: Sheep + 1 Food, Wild Boar, or pay 1 Food for Cattle",
+    "body": "Choose one of three options: (1) Take 1 Sheep and 1 Food from supply; (2) Take 1 Wild Boar from supply; or (3) Pay 1 Food to take 1 Cattle from supply. The chosen animal must be placed immediately into your farmyard or converted to Food using an appropriate Improvement.",
+    "details": "Used in 5-player games only. Only one player may use this Action space per round, and choosing one option prevents other players from choosing the others that round.",
+    "condition": {
+      "min_count_variant": 5,
+      "max_count_variant": 5
+    }
+  },
+  "occupation_or_family_growth_5p": {
+    "id": "occupation_or_family_growth_5p",
+    "name": "1 Occupation or, from Round 5, Family Growth",
+    "summary": "Play an Occupation; or from Round 5, take Family Growth instead",
+    "body": "Play 1 Occupation card from your hand (1 Food for 1st or 2nd Occupation; 2 Food for subsequent). From the start of Round 5 onwards, you may instead choose to take Family Growth: add a newborn Family member (requires a spare room). The newborn is placed on the Action space and returns home at end of round.",
+    "details": "Used in 5-player games only. The Family Growth option becomes available from Round 5 onward. Families are limited to 5 members.",
+    "condition": {
+      "min_count_variant": 5,
+      "max_count_variant": 5
+    }
+  },
+  "build_room_or_traveling_players_5p": {
+    "id": "build_room_or_traveling_players_5p",
+    "name": "Build 1 Room or Traveling Players",
+    "summary": "Build one room, or take accumulated Food from the Traveling Players space",
+    "body": "Choose one option: (1) Build 1 room using the standard costs (5 matching material + 2 Reed), placed orthogonally adjacent to existing rooms. Unlike the main Build Room(s) space, only a single room may be built here. (2) Take all accumulated Food from the Traveling Players portion of this space (1 Food is added per round). If you build a room, the accumulated Food remains on the space for another player.",
+    "details": "Used in 5-player games only. Each round, 1 Food is placed on the Traveling Players portion regardless of which option players choose.",
+    "condition": {
+      "min_count_variant": 5,
+      "max_count_variant": 5
+    }
+  }
+}
