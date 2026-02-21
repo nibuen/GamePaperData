@@ -452,52 +452,13 @@
         "description": "In turn order, each player places one Family member at a time on an unoccupied Action space and immediately takes that action. This continues until all players have placed all their Family members.",
         "steps": [
           {
-            "description": "New action spaces are revealed each round via Round cards — one new space per round across all 14 rounds. The available spaces grow as the game progresses.",
-            "short_description": "Round card spaces",
+            "description": "Place one Family member on any unoccupied Action space and immediately take that action. One new space unlocks each round via Round cards — 14 spaces total across the game.",
+            "short_description": "Place a worker",
             "action": {
               "type": "card_list",
               "value": "agricola_round_cards.json",
-              "label": "Browse"
+              "label": "Browse round cards"
             }
-          },
-          {
-            "description": "Take resources: Collect all tokens from a resource or animal Action space and add them to your personal supply. Animals must be placed directly into the farmyard or converted to Food using an Improvement.",
-            "short_description": "Take resources or animals"
-          },
-          {
-            "description": "Solo: The Forest action space adds only 2 Wood per round instead of 3.",
-            "short_description": "Solo: Forest gives 2 Wood",
-            "condition": {
-              "max_count_variant": 1
-            }
-          },
-          {
-            "description": "Farm: Plow a field (orthogonally adjacent to existing fields), take 1 Grain, take 1 Vegetable, Sow fields (place 1 crop from hand, add 2 Grain or 1 Vegetable from supply), or Bake bread using a Baking Improvement (Fireplace: 1 Grain→2 Food; Cooking Hearth: 1→3; Clay Oven: up to 1→5; Stone Oven: up to 2→4 each).",
-            "short_description": "Farm actions"
-          },
-          {
-            "description": "Build or Renovate: Extend your home by adding rooms (5 matching material + 2 Reed per room, placed orthogonally adjacent) or build stables (2 Wood each). Renovate Wooden hut to Clay hut (1 Clay + 1 Reed per room) or Clay hut to Stone house (1 Stone + 1 Reed per room). You cannot renovate one room at a time or skip a material tier.",
-            "short_description": "Build / Renovate"
-          },
-          {
-            "description": "Family growth: Add a new Family member. Requires a spare room (or use the no-room-required space). The newborn is placed on the Action space and returns home at the end of the round. Maximum 5 Family members.",
-            "short_description": "Family growth"
-          },
-          {
-            "description": "Raise animals: Fence pastures (1 Wood per fence, must fully enclose a pasture), build stables (2 Wood each; doubles a pasture's capacity; unfenced stables hold 1 animal), or keep 1 animal as a pet in your home. Each pasture holds one animal type; capacity = 2 animals per enclosed farmyard space.",
-            "short_description": "Raise animals"
-          },
-          {
-            "description": "Play Occupation: Play a card from hand face-up. The first Occupation is free; each additional costs 1 Food (exact cost may vary by Action space). The card's effect applies immediately.",
-            "short_description": "Play Occupation"
-          },
-          {
-            "description": "Purchase Improvement: Pay the cost shown on a Major or Minor Improvement card. Major Improvements are taken from the shared board; Minor Improvements are played from hand. Check prerequisites (top-left corner) before playing.",
-            "short_description": "Buy Improvement"
-          },
-          {
-            "description": "Starting player: Take the Starting player token — you will go first next round. From Stage 2 onwards, you may also play 1 Minor Improvement from hand when taking this action.",
-            "short_description": "Starting player"
           }
         ],
         "notes": [
