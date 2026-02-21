@@ -315,7 +315,20 @@ Describes the turn structure and available actions.
 |-------|------|----------|-------------|
 | `trigger` | string | No | What causes the game to end |
 | `procedure` | array of strings | No | End-of-game steps |
-| `final_scoring` | array of [FinalScoring](#final-scoring-object) | No | Scoring categories |
+| `intermediate_scoring` | array of [IntermediateScoring](#intermediate-scoring-object) | No | Mid-game scoring events that occur at specific points before the game ends |
+| `final_scoring` | array of [FinalScoring](#final-scoring-object) | No | Scoring categories resolved at game end |
+
+---
+
+### Intermediate Scoring Object
+
+Describes a scoring event that happens at a defined point **during** the game (e.g., after a specific round), rather than at the very end.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `source` | string | **Yes** | Name of the scoring category or event |
+| `when` | string | **Yes** | When this scoring occurs (e.g., `"Round 3"`, `"After Phase 2"`) |
+| `description` | string | **Yes** | How points are calculated and any consequences |
 
 ---
 
@@ -330,10 +343,23 @@ Describes the turn structure and available actions.
 ```json
 {
   "end_game": {
-    "trigger": "The game ends after 13 tricks have been played.",
+    "trigger": "The game ends after 7 rounds.",
     "procedure": [
-      "Count the number of tricks each player won.",
-      "Determine scores based on the scoring table."
+      "Complete round 7.",
+      "Perform the final intermediate scoring.",
+      "Proceed to Final Scoring."
+    ],
+    "intermediate_scoring": [
+      {
+        "source": "Mid-Game Bonus",
+        "when": "Round 3",
+        "description": "Score 1 VP per completed objective tile."
+      },
+      {
+        "source": "Mid-Game Bonus",
+        "when": "Round 5",
+        "description": "Score 2 VP per completed objective tile."
+      }
     ],
     "final_scoring": [
       {
