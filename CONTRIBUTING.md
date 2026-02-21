@@ -263,39 +263,89 @@ Describes the turn structure and available actions.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `turn_structure` | string | **Yes** | How turns work |
-| `actions` | array of [GamePlayAction](#gameplay-action-object) | **Yes** | Available player actions |
+| `turn_structure` | string | **Yes** | A 2–3 sentence overview of how a round flows. Appears as the intro text on the Play screen. |
+| `actions` | array of [GamePlayAction](#gameplay-action-object) | **Yes** | The **sequential phases of a round**, in the order they occur (e.g., "Phase 1: Draw Cards", "Phase 2: Take Actions", "Phase 3: Cleanup"). |
 | `key_concepts` | array of [KeyConcept](#key-concept-object) | No | Important rules concepts |
 
 ---
 
 ### Gameplay Action Object
 
+Each entry in `actions` represents **one phase of a round**, in the order it occurs. Within a phase where players choose from multiple options (e.g., a worker-placement game's action spaces, or a card game's available plays), list those options as `steps` inside that single phase entry rather than as separate top-level actions.
+
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | string | **Yes** | Action name |
-| `description` | string | **Yes** | What the action does |
-| `steps` | array of [Phrase](#phrase-object) | **Yes** | Step-by-step breakdown |
-| `notes` | array of [Phrase](#phrase-object) | No | Important notes about this action |
+| `name` | string | **Yes** | Phase name (e.g., `"Phase 1: Draw Cards"`, `"Work Phase"`, `"Harvest"`) |
+| `description` | string | **Yes** | What happens during this phase |
+| `steps` | array of [Phrase](#phrase-object) | **Yes** | Ordered sub-steps within the phase, or the available player choices if this is a selection phase |
+| `notes` | array of [Phrase](#phrase-object) | No | Important exceptions or clarifications that don't fit in the sequential flow |
 
-**Example:**
+#### Common patterns
+
+**Sequential phase game** (most games) — each phase is one entry:
 ```json
-{
-  "name": "Play a Card",
-  "description": "Select and play a card from your hand",
-  "steps": [
-    { "description": "Choose a card from your hand" },
-    { "description": "Play it face-up to the trick" },
-    { "description": "Resolve any special abilities" }
-  ],
-  "notes": [
-    { "description": "You must follow suit if able" },
-    {
-      "description": "Also draw a card after playing",
-      "condition": { "min_count_variant": 2, "max_count_variant": 2 }
-    }
-  ]
-}
+"actions": [
+  {
+    "name": "Phase 1: Draw Cards",
+    "description": "Each player draws up to their hand limit.",
+    "steps": [
+      { "description": "Draw cards from the top of the deck until you have 5 in hand." }
+    ],
+    "notes": [
+      { "description": "If the deck is empty, shuffle the discard pile to form a new deck." }
+    ]
+  },
+  {
+    "name": "Phase 2: Play Cards",
+    "description": "In turn order, each player plays one card from their hand.",
+    "steps": [
+      { "description": "Choose a card from your hand and play it face-up." },
+      { "description": "Resolve the card's effect immediately." }
+    ],
+    "notes": [
+      { "description": "You must follow suit if able." },
+      {
+        "description": "Also draw a replacement card after playing.",
+        "condition": { "min_count_variant": 2, "max_count_variant": 2 }
+      }
+    ]
+  },
+  {
+    "name": "Phase 3: Cleanup",
+    "description": "Discard played cards and pass the first-player token.",
+    "steps": [
+      { "description": "Move all played cards to the discard pile." },
+      { "description": "Pass the first-player token clockwise." }
+    ],
+    "notes": []
+  }
+]
+```
+
+**Worker placement / action selection game** — the selection phase is one entry; the available action types are `steps` inside it:
+```json
+"actions": [
+  {
+    "name": "Phase 1: Place Workers",
+    "description": "In turn order, each player places one worker on an unoccupied action space and takes that action. Continue until all workers are placed.",
+    "steps": [
+      { "description": "Gather resources: Take all tokens from the chosen resource space." },
+      { "description": "Build: Pay the listed cost to construct a building on your board." },
+      { "description": "Recruit: Pay 2 Food to add a new worker to your supply." }
+    ],
+    "notes": [
+      { "description": "Only one player may occupy each space per round." }
+    ]
+  },
+  {
+    "name": "Phase 2: Return Home",
+    "description": "Retrieve all workers and prepare for the next round.",
+    "steps": [
+      { "description": "Pick up all workers from the board and return them to your supply." }
+    ],
+    "notes": []
+  }
+]
 ```
 
 ---
