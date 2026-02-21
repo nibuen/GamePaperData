@@ -123,7 +123,34 @@ Controls when a rule, component, or card is visible based on player count or exp
 
 ### Phrase Action Object
 
-Adds interactive elements to phrases (e.g., a dice roll button in the setup screen).
+Adds interactive elements to phrases (e.g., a dice roll button or a card list link).
+
+**Card List** (`type: "card_list"`):
+
+Links a step or note to a card data file, rendering a tappable "Browse" chip that opens the card browser.
+
+| Field | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| `type` | string | **Yes** | — | Must be `"card_list"` |
+| `value` | string | **Yes** | — | Filename of the card JSON file (e.g., `"my_game_round_cards.json"`) |
+| `label` | string | No | `"Browse"` | Chip label text |
+
+**Example:**
+```json
+{
+  "description": "New action spaces are revealed each round via Round cards — one new space per round.",
+  "short_description": "Round card spaces",
+  "action": {
+    "type": "card_list",
+    "value": "agricola_round_cards.json",
+    "label": "Browse"
+  }
+}
+```
+
+The referenced file must exist in the same game folder and follow the [Card File Schema](#card-file-schema-game_id_cardsjson).
+
+---
 
 **Dice Roll** (`type: "dice_roll"`):
 
