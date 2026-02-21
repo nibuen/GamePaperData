@@ -8,8 +8,7 @@
     "condition": {
       "min_count_variant": 3,
       "max_count_variant": 3
-    },
-    "extra": null
+    }
   },
   "reed_stone_food_4p": {
     "id": "reed_stone_food_4p",
@@ -20,8 +19,7 @@
     "condition": {
       "min_count_variant": 4,
       "max_count_variant": 4
-    },
-    "extra": null
+    }
   },
   "occupation_4p": {
     "id": "occupation_4p",
@@ -32,8 +30,7 @@
     "condition": {
       "min_count_variant": 4,
       "max_count_variant": 4
-    },
-    "extra": null
+    }
   },
   "traveling_players": {
     "id": "traveling_players",
@@ -44,8 +41,7 @@
     "condition": {
       "min_count_variant": 4,
       "max_count_variant": 4
-    },
-    "extra": null
+    }
   },
   "reed_stone_wood_5p": {
     "id": "reed_stone_wood_5p",
@@ -56,8 +52,7 @@
     "condition": {
       "min_count_variant": 5,
       "max_count_variant": 5
-    },
-    "extra": null
+    }
   },
   "take_animals_5p": {
     "id": "take_animals_5p",
@@ -68,8 +63,7 @@
     "condition": {
       "min_count_variant": 5,
       "max_count_variant": 5
-    },
-    "extra": null
+    }
   },
   "occupation_or_family_growth_5p": {
     "id": "occupation_or_family_growth_5p",
@@ -80,8 +74,7 @@
     "condition": {
       "min_count_variant": 5,
       "max_count_variant": 5
-    },
-    "extra": null
+    }
   },
   "build_room_or_traveling_players_5p": {
     "id": "build_room_or_traveling_players_5p",
@@ -92,7 +85,6 @@
     "condition": {
       "min_count_variant": 5,
       "max_count_variant": 5
-    },
-    "extra": null
+    }
   }
 }
