@@ -67,7 +67,11 @@
       ],
       "description": "Red Major Improvement cards",
       "detailed_description": "10 red Major Improvement cards",
-      "count": 10
+      "count": 10,
+      "action": {
+        "name": "CardList",
+        "value": "agricola_major_improvements.json"
+      }
     },
     {
       "name": "Round cards",
