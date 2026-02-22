@@ -781,7 +781,11 @@
       },
       {
         "source": "Common Objectives (2-player)",
-        "description": "The second player to claim an objective places their worker in the third position (second position is not available)."
+        "description": "The second player to claim an objective places their worker in the third position (second position is not available).",
+        "condition": {
+          "min_count_variant": 2,
+          "max_count_variant": 2
+        }
       }
     ]
   },
