@@ -1,0 +1,31 @@
+name: Compress game data
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.json']
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync compressed game JSON files
+        run: |
+          # Delete all existing .gz files, then regenerate from current .json files.
+          # --no-name zeros the timestamp so output is deterministic:
+          # unchanged files produce byte-identical .gz → git sees no diff → no bot commit.
+          find . -name "*.json.gz" -delete
+          find . -name "*.json" -not -name "*.schema.json" \
+            -exec gzip --best --no-name --keep {} \;
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add --all '*.json.gz'
+          git diff --cached --quiet || git commit -m "chore: sync compressed game JSON [skip ci]"
+          git push
