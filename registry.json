@@ -37,6 +37,12 @@
                       "game_name":  "Santa Monica",
                       "designer":  "Josh Wood",
                       "publisher":  "Alderac Entertainment Group (AEG)"
+                  },
+                  {
+                      "id":  "orloj",
+                      "game_name":  "Orloj: The Prague Astronomical Clock",
+                      "designer":  "Paloma J. Pascual, Abraham Sánchez Hermida",
+                      "publisher":  "Perro Loko Games"
                   }
               ]
 }
