@@ -1,0 +1,823 @@
+{
+  "game_name": "Orloj: The Prague Astronomical Clock",
+  "designer": "Paloma J. Pascual, Abraham Sánchez Hermida",
+  "publisher": "Perro Loko Games",
+  "game_overview": "Set around 1865 Prague, players are clockmakers constructing the famous Orloj astronomical clock. From their workshops, players build zodiac signs, calendar months, and apostle figures. The game features a unique dual-dial mechanism where rotating the astronomical dial and Orloj clock face determines available actions each turn. Worker placement, resource management, and mastery track advancement combine in an interlocking euro-style design.",
+  "objective": "To have the most Victory Points (VP) at the end of the game.",
+  "min_players": 1,
+  "max_players": 4,
+  "bgg_link": "https://boardgamegeek.com/boardgame/429405/orloj-the-prague-astronomical-clock",
+  "play_time_minutes": 90,
+  "components_overview": [
+    {
+      "name": "Main Board",
+      "type": "Board",
+      "description": "Central play area with the clock mechanism, outer ring actions, construction zones for months and zodiac, mastery tracks, rooster track, round track, scoring track, calendar sections, and sculptor action spaces."
+    },
+    {
+      "name": "Orloj Clock Face",
+      "type": "Tile",
+      "description": "Rotates counterclockwise on the central axis. Divided into sections with actions."
+    },
+    {
+      "name": "Astronomical Dial",
+      "type": "Tile",
+      "description": "Rotates clockwise on the central axis. The hand of the astronomical dial indicates the actions a player performs on their turn."
+    },
+    {
+      "name": "Moon Disc",
+      "type": "Marker",
+      "description": "Moves clockwise along the astronomical dial. Used to correct deviations and gain rewards."
+    },
+    {
+      "name": "Walk of the Apostles",
+      "type": "Board",
+      "description": "Two interlocking gears displaying apostle pairs. Placed above the main board. Rotates to reveal new apostle combinations."
+    },
+    {
+      "name": "Apostle Gears",
+      "type": "Tile",
+      "count": 2,
+      "description": "Fit together on the walk of the apostles. Initial position shows Apostle 1 (James) on the left and Apostle 2 (Peter) on the right."
+    },
+    {
+      "name": "Orloj Crowning Pieces",
+      "type": "Tile",
+      "count": 3,
+      "description": "Placed atop the walk of the apostles. One is for solo mode only. For the first game, use the one marked with the special symbol."
+    },
+    {
+      "name": "Round Marker",
+      "type": "Marker",
+      "description": "Tracks the current round on the round track. Starting position depends on player count."
+    },
+    {
+      "name": "Golden Rooster",
+      "type": "Marker",
+      "description": "Moves along the general rooster track. When it reaches the last position, the rooster's call is triggered."
+    },
+    {
+      "name": "Hammer Discs",
+      "type": "Marker",
+      "count": 2,
+      "description": "One in each construction zone (months and zodiac). Moves clockwise along blue arrows to reach dials for construction."
+    },
+    {
+      "name": "Month Dials",
+      "type": "Tile",
+      "count": 12,
+      "description": "Placed in the calendar construction zone. Some start illustrated (pre-placed), others are face-down for construction."
+    },
+    {
+      "name": "Blocked Month Dials",
+      "type": "Tile",
+      "count": 6,
+      "description": "Placed in the construction area on spaces indicated by the setup cards. Cannot be constructed."
+    },
+    {
+      "name": "Zodiac Dials",
+      "type": "Tile",
+      "count": 12,
+      "description": "Placed in the zodiac construction zone. Setup mirrors month dials."
+    },
+    {
+      "name": "Blocked Zodiac Dials",
+      "type": "Tile",
+      "count": 6,
+      "description": "Placed in the construction area on spaces indicated during setup. Cannot be constructed."
+    },
+    {
+      "name": "Large Final Construction Dial",
+      "type": "Tile",
+      "description": "Placed in the center of the calendar. Flipped when the last calendar dial is constructed, enabling a special 1 gold + 1 wood + 1 paint + 1 iron construction for 8 VP."
+    },
+    {
+      "name": "Calendar Sections",
+      "type": "Tile",
+      "count": 12,
+      "description": "Shuffled and placed in a circle around the calendar. Each shows two bonuses. The painter moves along these to grant bonuses."
+    },
+    {
+      "name": "Workshop Cards",
+      "type": "Card",
+      "count": 21,
+      "description": "Purchased to expand your workshop. Cost includes paint plus position-based resources. Completing apostle or construction icons on adjacent cards triggers bonus actions.",
+      "action": {
+        "name": "CardList",
+        "value": "orloj_cards.json"
+      }
+    },
+    {
+      "name": "Hammer Cards",
+      "type": "Card",
+      "count": 6,
+      "description": "Each player receives one during setup. Determines hammer movement capacity and construction bonuses. Placed under the forge.",
+      "action": {
+        "name": "CardList",
+        "value": "orloj_cards.json"
+      }
+    },
+    {
+      "name": "Initial Resource Cards",
+      "type": "Card",
+      "count": 8,
+      "description": "Paired with hammer cards during setup. Provide starting resources and possibly apostles."
+    },
+    {
+      "name": "Scrolls (Red Seal)",
+      "type": "Card",
+      "count": 24,
+      "description": "Gained from mastery track bonuses. Flipped to gain a one-time bonus. Kept in play area after use. Remove marked scrolls based on player count."
+    },
+    {
+      "name": "Royal Scrolls (Blue Seal)",
+      "type": "Card",
+      "count": 6,
+      "description": "Placed at the top of mastery tracks during setup (3 used per game). Score immediately based on the condition, up to a maximum of 10 VP. Only one player can score each royal scroll."
+    },
+    {
+      "name": "Common Stained-Glass-Window Objectives",
+      "type": "Card",
+      "count": 9,
+      "description": "Three per color (3 colors). One of each color used per game. Display conditions for players to claim with workers for 8/6/4 VP at end of game."
+    },
+    {
+      "name": "Common Objective Bonuses",
+      "type": "Tile",
+      "count": 9,
+      "description": "Three per color. One of each placed below objectives. The first player to claim the objective receives this bonus, then it is flipped."
+    },
+    {
+      "name": "Mastery Stained-Glass Windows",
+      "type": "Card",
+      "count": 6,
+      "description": "Three used per game, placed at the top of mastery tracks. Provide endgame scoring based on mastery disc height and a repeatable condition."
+    },
+    {
+      "name": "Painter",
+      "type": "Meeple",
+      "description": "Moves clockwise around the calendar sections. Players move the painter to gain bonuses from adjacent calendar sections."
+    },
+    {
+      "name": "Assistants",
+      "type": "Meeple",
+      "count": 18,
+      "description": "Six types (3 of each). Placed on workshop cards for endgame scoring and immediate bonuses. Each pile has 1 fewer than the number of players. You cannot have two identical assistants."
+    },
+    {
+      "name": "Personal Board",
+      "type": "Board",
+      "description": "Each player's board with apostle panel, production zone (3 tracks), personal rooster track, deviation token spaces, and forge/hammer track."
+    },
+    {
+      "name": "Workers",
+      "type": "Meeple",
+      "count": 14,
+      "description": "Per player. Placed on clock sections, calendar dials, and objectives. Available workers are beside the personal board."
+    },
+    {
+      "name": "Production Cubes",
+      "type": "Token",
+      "count": 3,
+      "description": "Per player. One on each production track (paint, wood, iron). Moving cubes up increases production and can unlock workers."
+    },
+    {
+      "name": "Hammer Cube",
+      "type": "Token",
+      "description": "Per player. Tracks position on the forge/hammer track. Moving it up improves hammer bonuses during construction."
+    },
+    {
+      "name": "Deviation Tokens",
+      "type": "Token",
+      "count": 5,
+      "description": "Per player. Flipped to force extra rotations or meet action requirements. Broken gear side showing means deviation is forced. Unforced deviations can be corrected via moon or rooster's call."
+    },
+    {
+      "name": "Mastery Discs",
+      "type": "Marker",
+      "count": 3,
+      "description": "Per player (numbered 1-12 backs in player color). One on each mastery track: Innovation (blue), Precision (pink), Observation (yellow)."
+    },
+    {
+      "name": "Scoring Marker",
+      "type": "Marker",
+      "description": "Per player. Tracks VP on the scoring track. Flip to indicate score greater than 100 VP."
+    },
+    {
+      "name": "Rooster Disc",
+      "type": "Marker",
+      "description": "Per player. Moves up the personal rooster track. Determines how many deviations are corrected during rooster's call and rooster-related bonuses."
+    },
+    {
+      "name": "Sculptor",
+      "type": "Meeple",
+      "description": "Per player. Placed on one of four sculptor action spaces on the main board. Level determined by pink mastery track position."
+    },
+    {
+      "name": "Forge",
+      "type": "Board",
+      "description": "Per player. Placed next to personal board. Holds the hammer card underneath and tracks hammer cube position."
+    },
+    {
+      "name": "Warehouse",
+      "type": "Board",
+      "description": "Per player. Holds apostles and assistants. Two spaces: one exclusively for an apostle, one for either an apostle or an assistant. May rearrange contents at any time."
+    },
+    {
+      "name": "Apostle Tiles",
+      "type": "Tile",
+      "count": 12,
+      "description": "Per player (numbered 1-12, backs in player color). Taken from the walk of the apostles gears and placed on the apostle panel or kept in the warehouse."
+    },
+    {
+      "name": "Gold",
+      "type": "Resource",
+      "count": 15,
+      "description": "Special resource. Can substitute for any basic resource. Cannot be substituted by coins. Obtained via production, moon, or exchanging 3 identical basic resources."
+    },
+    {
+      "name": "Paint",
+      "type": "Resource",
+      "count": 20,
+      "description": "Basic resource. Used for workshop card costs, construction, and apostle placement."
+    },
+    {
+      "name": "Wood",
+      "type": "Resource",
+      "count": 20,
+      "description": "Basic resource. Used for construction and various costs."
+    },
+    {
+      "name": "Iron",
+      "type": "Resource",
+      "count": 20,
+      "description": "Basic resource. Used for construction and various costs."
+    },
+    {
+      "name": "Coins",
+      "type": "Resource",
+      "count": 18,
+      "description": "Special resource. Can substitute for any basic resource but NOT for gold. Related to mastery tracks and the university."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Unfold the main board in the center of the table. Place the Orloj clock face and the astronomical dial on the rotation axis to form the clock. The Orloj clock face should be placed in a random position. Set the astronomical dial with the hand pointing to a random starting hour.",
+      "short_description": "Place Main Board and Clock"
+    },
+    {
+      "description": "Place the moon disc in the first position to the left of the hand inside the astronomical dial.",
+      "short_description": "Place Moon Disc"
+    },
+    {
+      "description": "Assemble the walk of the apostles gears above the main board. Fit the gears so that Apostle 1 (James) is on the left and Apostle 2 (Peter) is on the right in the lower position. Randomly take one Orloj crowning piece and assemble it with the walk of the apostles.",
+      "short_description": "Assemble Walk of the Apostles"
+    },
+    {
+      "description": "Place the round marker on the leftmost space of the round track according to the number of players. Place the golden rooster on the general rooster track on the number indicated by the round marker.",
+      "short_description": "Place Round and Rooster Markers"
+    },
+    {
+      "description": "Draw 6 month dials at random from the bag. Place a blocked month dial in each construction space indicated by the drawn dials. Draw 1 more dial from the bag and place all extracted dials in their corresponding calendar spaces with illustrated side up. Place all remaining dials in their construction area spaces with non-illustrated side up.",
+      "short_description": "Set Up Month Dials",
+      "condition": {
+        "min_count_variant": 2,
+        "max_count_variant": 2
+      }
+    },
+    {
+      "description": "Draw 5 month dials at random from the bag. Place a blocked month dial in each construction space indicated by the drawn dials. Draw 1 more dial from the bag and place all extracted dials in their corresponding calendar spaces with illustrated side up. Place all remaining dials in their construction area spaces with non-illustrated side up.",
+      "short_description": "Set Up Month Dials",
+      "condition": {
+        "min_count_variant": 3,
+        "max_count_variant": 3
+      }
+    },
+    {
+      "description": "Draw 4 month dials at random from the bag. Place a blocked month dial in each construction space indicated by the drawn dials. Draw 1 more dial from the bag and place all extracted dials in their corresponding calendar spaces with illustrated side up. Place all remaining dials in their construction area spaces with non-illustrated side up.",
+      "short_description": "Set Up Month Dials",
+      "condition": {
+        "min_count_variant": 4,
+        "max_count_variant": 4
+      }
+    },
+    {
+      "description": "Prepare the zodiac dials in the same way as the month dials, using the same number of draws based on player count.",
+      "short_description": "Set Up Zodiac Dials"
+    },
+    {
+      "description": "Place the large final construction dial in the center of the calendar with its initial side facing up.",
+      "short_description": "Place Final Construction Dial"
+    },
+    {
+      "description": "Place a hammer disc in the indicated position in each of the two construction zones (months and zodiac).",
+      "short_description": "Place Hammer Discs"
+    },
+    {
+      "description": "Shuffle the 12 calendar sections and place them face up in a random order to form a circle around the calendar. Place the painter in the starting position.",
+      "short_description": "Set Up Calendar Sections and Painter"
+    },
+    {
+      "description": "Shuffle the 6 mastery stained-glass windows and randomly place 3 at the top of the mastery tracks. Return the rest to the box.",
+      "short_description": "Place Mastery Stained-Glass Windows"
+    },
+    {
+      "description": "Shuffle the 6 royal scrolls (blue seal) and place 3 face up at the top of the mastery tracks. Return the rest to the box.",
+      "short_description": "Place Royal Scrolls"
+    },
+    {
+      "description": "Use all 24 scrolls (red seal). Shuffle to form a face-down reserve next to the main board, then reveal 4 scrolls.",
+      "short_description": "Set Up Scrolls",
+      "condition": {
+        "min_count_variant": 3
+      }
+    },
+    {
+      "description": "Remove scrolls marked with the 3+ and 4-player symbols. Shuffle remaining scrolls to form a face-down reserve next to the main board, then reveal 3 scrolls.",
+      "short_description": "Set Up Scrolls",
+      "condition": {
+        "min_count_variant": 2,
+        "max_count_variant": 2
+      }
+    },
+    {
+      "description": "Shuffle the common stained-glass-window objectives by back color. Place one of each color in the corresponding positions. Return the rest to the box.",
+      "short_description": "Place Common Objectives"
+    },
+    {
+      "description": "Shuffle the common objective bonuses by back color. Place one of each color below the corresponding objectives. Return the rest to the box.",
+      "short_description": "Place Objective Bonuses"
+    },
+    {
+      "description": "Shuffle the 21 workshop cards and place 3 in the designated spaces on the main board. Place the rest of the deck aside.",
+      "short_description": "Set Up Workshop Cards"
+    },
+    {
+      "description": "Place the assistants next to the board in 6 separate piles by type. Each pile should have 1 assistant fewer than the number of players. Return remaining assistants to the box.",
+      "short_description": "Set Up Assistants"
+    },
+    {
+      "description": "Place gold, paint, wood, iron and coins next to the main board to form a general supply.",
+      "short_description": "Set Up Resource Supply"
+    },
+    {
+      "description": "Each player takes a personal board, warehouse, and forge. Place them in your play area. Take an additional actions reference card.",
+      "short_description": "Take Personal Components"
+    },
+    {
+      "description": "Place your 5 deviation tokens at the top of your personal board with the non-gear side facing up (no broken gears showing).",
+      "short_description": "Place Deviation Tokens"
+    },
+    {
+      "description": "Place your rooster disc in the first (bottom) position of your personal rooster track.",
+      "short_description": "Place Rooster Disc"
+    },
+    {
+      "description": "Place one production cube in the bottom position of each of the three production tracks and one hammer cube in the bottom position of the forge track.",
+      "short_description": "Place Production and Hammer Cubes"
+    },
+    {
+      "description": "Place 3 workers in your apostle panel, 3 workers in your production zone, and 1 worker above each of the 3 workshop cards on the main board (3 workers total). Place remaining workers next to your personal board as available workers.",
+      "short_description": "Place Workers"
+    },
+    {
+      "description": "Return 1 of your available workers to the box.",
+      "short_description": "Remove 1 Worker",
+      "condition": {
+        "min_count_variant": 3
+      }
+    },
+    {
+      "description": "Place your sculptor next to your personal board.",
+      "short_description": "Place Sculptor"
+    },
+    {
+      "description": "Place one mastery disc on the lowest space of each of the three mastery tracks on the main board.",
+      "short_description": "Place Mastery Discs"
+    },
+    {
+      "description": "Place your scoring marker on space 10 of the scoring track.",
+      "short_description": "Place Scoring Marker"
+    },
+    {
+      "description": "Take your personal set of 12 apostle tiles (backs in your color) and place them next to your personal board.",
+      "short_description": "Take Apostle Tiles"
+    },
+    {
+      "description": "Shuffle the 6 hammer cards and reveal one more than the number of players. Place one initial resource card next to each hammer card. Starting with the last player and going counterclockwise, each player chooses one combination.",
+      "short_description": "Draft Hammer and Resource Cards"
+    },
+    {
+      "description": "Place your chosen hammer card underneath your forge. Take the resources shown on the initial resource card. If the card includes apostles, take them from your personal set and place them in your warehouse.",
+      "short_description": "Receive Starting Resources"
+    },
+    {
+      "description": "The last player to have visited Prague is the starting player.",
+      "short_description": "Determine Starting Player"
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "On each turn, choose one of two options: Activate the Clock Mechanism (requires at least one available worker) or Pass. Regardless of your choice, you may perform any number of Additional Actions at any point during your turn. You may also exchange 3 identical basic resources for 1 gold at any time during your turn.",
+    "actions": [
+      {
+        "name": "Activate the Clock Mechanism",
+        "description": "Configure the clock so the hand of the astronomical dial points to a section of the outer ring and a section of the Orloj clock face, then perform the indicated actions.",
+        "steps": [
+          {
+            "description": "Configure the astronomical dial: It always rotates clockwise and must move at least one space. Maximum rotation is determined by the height of your disc on the blue mastery track (Innovation). You may force deviation to rotate additional spaces (one deviation per extra space)."
+          },
+          {
+            "description": "Configure the Orloj clock face: It always rotates counterclockwise and you are not required to move it. Force one deviation for each space you wish to rotate it."
+          },
+          {
+            "description": "Place one of your available workers on the space indicated by the hand. If there is already a worker there, return it to its owner (you may return your own worker to yourself)."
+          },
+          {
+            "description": "Choose whether to perform the actions of the outer ring section first or the Orloj clock face section first. You cannot alternate actions between each section — complete one section's actions before starting the other."
+          }
+        ],
+        "notes": [
+          {
+            "description": "The astronomical dial and the Orloj clock face are two independent components — rotating one does not affect the other."
+          },
+          {
+            "description": "You must have at least one available worker to choose this option."
+          },
+          {
+            "description": "The maximum rotation of the astronomical dial is indicated by the Innovation (blue) mastery track level."
+          },
+          {
+            "description": "The Orloj clock face never needs to move, but each space of movement costs one deviation."
+          }
+        ]
+      },
+      {
+        "name": "Pass",
+        "description": "Instead of activating the clock mechanism, you may pass. Typically done to recover workers, but you may also pass even if you still have available workers.",
+        "steps": [
+          {
+            "description": "Recover as many workers as indicated by the height of your mastery disc on the pink mastery track (Precision)."
+          },
+          {
+            "description": "Activate the moon (move it clockwise along the astronomical dial as many steps as your yellow mastery track indicates, gaining all rewards along the way)."
+          },
+          {
+            "description": "Move the golden rooster one space to the right on the general rooster track."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Workers are normally recovered only from the clock. Recovering them from the calendar may result in earning fewer VP at the end of the game."
+          },
+          {
+            "description": "Passing is not always bad — it activates the moon, which is the most efficient way to correct deviations."
+          }
+        ]
+      },
+      {
+        "name": "Resource Production",
+        "description": "Produce resources as indicated by the current level of a production track.",
+        "steps": [
+          {
+            "description": "Produce as many resources as indicated by your production track level. Higher levels produce more resources and can include gold."
+          }
+        ],
+        "notes": [
+          {
+            "description": "You choose which production track to produce from (paint, wood, or iron)."
+          },
+          {
+            "description": "At the highest production level, you produce 2 of the resource plus 1 gold."
+          }
+        ]
+      },
+      {
+        "name": "Mastery",
+        "description": "Advance on one of the three mastery tracks to improve your abilities.",
+        "steps": [
+          {
+            "description": "Move one of your mastery discs up one space on the indicated mastery track."
+          },
+          {
+            "description": "If you are already on the last space of the track when you would gain a mastery, gain 1 VP instead."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Some mastery actions let you pay one coin to move up on a mastery track of your choice."
+          },
+          {
+            "description": "The three mastery tracks are: Innovation (blue) — controls astronomical dial rotation; Precision (pink) — controls pass recovery and sculptor level; Observation (yellow) — controls painter steps and moon steps."
+          },
+          {
+            "description": "Mastery tracks have bonus spaces that award scrolls (red seal), royal scrolls (blue seal), moon activations, and assistants as you advance."
+          }
+        ]
+      },
+      {
+        "name": "Taking an Apostle",
+        "description": "Take one of the two apostles displayed at the bottom of the walk of the apostles gears.",
+        "steps": [
+          {
+            "description": "Take one of the two visible apostles from your personal set and place it in your warehouse."
+          },
+          {
+            "description": "After taking, the gears automatically rotate one position (direction indicated at gear center) to reveal a new apostle combination."
+          }
+        ],
+        "notes": [
+          {
+            "description": "You cannot take an apostle if your warehouse is full."
+          },
+          {
+            "description": "Before taking an apostle, you may choose to rotate the gears. Force as many deviation tokens as extra spaces you wish to rotate the gears before taking the apostle."
+          },
+          {
+            "description": "When rotating the gears, if one of the red teeth on the left gear aligns with the red arrow, move the golden rooster one step forward on the general rooster track."
+          },
+          {
+            "description": "Some actions give you both a coin and an apostle together."
+          }
+        ]
+      },
+      {
+        "name": "Activating the Moon",
+        "description": "The moon moves clockwise around the astronomical dial, granting rewards for each step taken.",
+        "steps": [
+          {
+            "description": "Move the moon disc clockwise as many steps as indicated by your disc on the yellow mastery track (Observation). Gain all rewards shown in the steps taken by the moon."
+          }
+        ],
+        "notes": [
+          {
+            "description": "The moon is the most efficient way to correct deviations — look for the correction icons along the astronomical dial."
+          },
+          {
+            "description": "Some moon activations include a modifier (e.g., +2 additional steps beyond your yellow mastery track level)."
+          }
+        ]
+      },
+      {
+        "name": "Moving the Painter",
+        "description": "Move the painter around the calendar sections to gain bonuses.",
+        "steps": [
+          {
+            "description": "Move the painter clockwise up to the number of steps indicated by your disc on the yellow mastery track (Observation). The painter must move at least one space."
+          },
+          {
+            "description": "Once moved, choose one of the two bonuses shown in the calendar sections to the left or right of the painter."
+          }
+        ],
+        "notes": [
+          {
+            "description": "The painter's maximum movement and the moon's steps are both controlled by the yellow (Observation) mastery track."
+          }
+        ]
+      },
+      {
+        "name": "Performing an Upgrade",
+        "description": "Move one of your production cubes or your hammer cube one position upward.",
+        "steps": [
+          {
+            "description": "Move one of your production cubes or your hammer cube one position upward on its track."
+          },
+          {
+            "description": "If all three production cubes reach a worker's position in the production zone, that worker is unlocked and becomes available."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Gain 1 VP and 1 gold when performing an upgrade on a production track that has already reached its final position."
+          }
+        ]
+      },
+      {
+        "name": "Expanding Your Workshop",
+        "description": "Purchase a workshop card to expand your workshop and gain bonuses.",
+        "steps": [
+          {
+            "description": "Choose a workshop card from the 3 displayed and pay its cost: one paint plus a number of resources based on card position and type."
+          },
+          {
+            "description": "If present, unlock the worker of your color above the card and place it as a new available worker. If no worker is there, you have already purchased from that position and do not gain a worker."
+          },
+          {
+            "description": "Gain the reward shown at the top of the card."
+          },
+          {
+            "description": "Place the card in your play area. If it is your first, simply place it. Otherwise, place it to the left or right of your existing workshop cards."
+          },
+          {
+            "description": "If placing the new card completes the two halves of an apostle icon or construction icon with an adjacent card, immediately perform that action."
+          },
+          {
+            "description": "Slide the remaining workshop cards to the right and refill the empty space with a new card from the deck."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Completing an apostle icon between adjacent workshop cards lets you take an apostle immediately."
+          },
+          {
+            "description": "Completing a construction icon between adjacent workshop cards lets you construct immediately."
+          }
+        ]
+      },
+      {
+        "name": "Constructing",
+        "description": "Build month or zodiac dials on the calendar to score VP based on adjacency.",
+        "steps": [
+          {
+            "description": "Move the hammer disc clockwise (following blue arrows) until it reaches a position adjacent to the dial you wish to construct. Maximum movement is determined by your hammer card level. Force one deviation per extra space beyond your limit."
+          },
+          {
+            "description": "Pay the required resources shown at the intersection of the row and column where the dial is located. Gain 2 VP for each resource spent."
+          },
+          {
+            "description": "Place the constructed tile in its corresponding position on the calendar with the illustrated side up. Place an available worker on it."
+          },
+          {
+            "description": "Gain 2 VP per dial (including this one) that is part of an adjacent group of dials with workers of your color."
+          },
+          {
+            "description": "Gain the bonus corresponding to the calendar section where the dial was built."
+          },
+          {
+            "description": "Gain the hammer bonus based on the position of your cube on your hammer card."
+          }
+        ],
+        "notes": [
+          {
+            "description": "You must have an available worker to place on the constructed dial."
+          },
+          {
+            "description": "A single dial tile with no adjacent ones is considered a group of 1."
+          },
+          {
+            "description": "Month dials and zodiac dials are also adjacent to each other. For example, month XII has three possible adjacent positions: month I, month XI, and the Capricorn zodiac dial."
+          },
+          {
+            "description": "You are not required to move the hammer disc to construct if it is already adjacent."
+          }
+        ]
+      },
+      {
+        "name": "Activating the Sculptor",
+        "description": "Place your sculptor on one of four sculptor action spaces to gain graded bonuses.",
+        "steps": [
+          {
+            "description": "Move your sculptor to one of the four sculptor action spaces on the main board. If another sculptor is already there, return it to its owner."
+          },
+          {
+            "description": "You must move the sculptor — you cannot repeat the same action space if your sculptor is already there."
+          },
+          {
+            "description": "Perform the action corresponding to your sculptor's level, which is determined by your disc's position on the pink mastery track (Precision)."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Some sculptor actions require forcing a deviation. You cannot perform the remaining action unless you first force the indicated deviation."
+          },
+          {
+            "description": "Sculptor Level 1 actions: (1) Force deviation, take 1 gold + 1 coin; (2) Force deviation, expand workshop; (3) Force deviation, move painter OR activate moon without forcing deviation; (4) Force 2 deviations, construct."
+          },
+          {
+            "description": "Sculptor Level 2 actions: (1) Force deviation, take 1 gold + 2 coins; (2) Force deviation, take 1 resource + expand workshop; (3) Force deviation, take 1 coin + move painter OR take 1 coin + activate moon with +1 modifier; (4) Force deviation, take 1 resource + construct."
+          },
+          {
+            "description": "Sculptor Level 3 actions: (1) Correct deviation, take 1 gold + 3 coins; (2) Correct deviation, take 1 gold + expand workshop; (3) Correct deviation, take 1 coin + move painter OR take 1 coin + activate moon with +2 modifier; (4) Correct deviation, take 1 gold + construct."
+          }
+        ]
+      },
+      {
+        "name": "The Rooster's Call",
+        "description": "Triggered when the golden rooster reaches the last position on the general rooster track. A scoring and maintenance phase.",
+        "steps": [
+          {
+            "description": "The active player takes the rooster and places it on their personal board as a reminder, then finishes their turn."
+          },
+          {
+            "description": "All players correct as many deviations as indicated by their personal rooster track. If the track value is higher than the number of forced deviations, gain 1 VP for each deviation you cannot correct."
+          },
+          {
+            "description": "All players lose VP equal to the number of broken gear icons still showing on their deviation tokens."
+          },
+          {
+            "description": "Move the round marker one position to the right. Place the rooster back on the general rooster track on the number indicated by the new round marker position."
+          }
+        ],
+        "notes": [
+          {
+            "description": "The rooster moves for only two reasons: (1) When rotating the apostle gears and a red tooth aligns with the red arrow, move rooster one step; (2) When a player passes, move rooster one step."
+          },
+          {
+            "description": "If the rooster needs to move additional steps during the remainder of a turn after reaching the last position, those extra steps are not taken."
+          },
+          {
+            "description": "Avoid completely exhausting your deviation tokens — use the moon to correct deviations when needed."
+          }
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Deviation Tokens",
+        "description": "Each player has 5 deviation tokens. Forcing deviation flips a token to show the broken gear icon, allowing extra clock rotations, gear rotations, or meeting sculptor action requirements. You cannot force a deviation if all 5 tokens already show the broken gear. Correcting deviation flips a token back to hide the broken gear. Broken gear icons cost VP during the rooster's call."
+      },
+      {
+        "name": "Worker Management",
+        "description": "Workers are placed on the clock, calendar dials, and objectives. If you have no available workers, you must pass or find ways to unlock/recover them. Workers are recovered via passing (from the clock, or calendar at a cost), unlocked from the apostle panel, production zone upgrades, or workshop card purchases."
+      },
+      {
+        "name": "Mastery Tracks",
+        "description": "Three tracks that improve abilities: Innovation (blue) controls astronomical dial max rotation; Precision (pink) controls pass recovery amount and sculptor level; Observation (yellow) controls painter movement range and moon steps. Each has bonus spaces with scrolls, royal scrolls, moon activations, and assistants."
+      },
+      {
+        "name": "Resources",
+        "description": "Basic resources: paint, wood, iron. Special resources: gold and coins. Gold can substitute for any basic resource. Coins can substitute for any basic resource but NOT for gold. 3 identical basic resources can be exchanged for 1 gold at any time during your turn."
+      },
+      {
+        "name": "Warehouse",
+        "description": "Holds apostles and assistants. Two spaces: one exclusively for apostles, one for either. You may rearrange contents at any time. Warehouse must have space before taking an apostle or assistant."
+      },
+      {
+        "name": "Clock Mechanism",
+        "description": "The outer ring is printed on the main board. The Orloj clock face rotates counterclockwise. The astronomical dial rotates clockwise. The hand of the astronomical dial indicates which outer ring section and which clock face section are active. The moon moves clockwise along the astronomical dial."
+      },
+      {
+        "name": "Adjacency (Calendar)",
+        "description": "When scoring construction, count all dials in a connected group that have your workers. Month dials and zodiac dials ARE adjacent to each other. A lone dial is a group of 1."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends after completing the round in which the last calendar dial has been constructed, OR after completing the round in which the fourth rooster's call occurs.",
+    "procedure": [
+      "Complete the current round so that all players have played the same number of turns.",
+      "When the last calendar dial is constructed, flip the large final construction dial. Players on their turn may pay 1 gold, 1 wood, 1 paint, and 1 iron for the final construction to gain 8 VP (no worker placed, no adjacency points, no calendar section bonus, but hammer bonus still applies).",
+      "Proceed to endgame scoring."
+    ],
+    "final_scoring": [
+      {
+        "source": "Mastery Stained-Glass Windows",
+        "description": "Each window scores independently. Your mastery disc must reach the 7th space on the corresponding track to score. The player(s) with the highest disc multiply the primary value by the number of times they meet the condition. All other players who crossed the brick line (minimum threshold) multiply the secondary value by the condition count."
+      },
+      {
+        "source": "Surplus Gold",
+        "description": "Exchange all remaining resources and coins to maximize gold (3 identical resources = 1 gold, coins count as any resource type). Score 1 VP per gold."
+      },
+      {
+        "source": "Deviation Penalty",
+        "description": "Lose 1 VP for each broken gear icon still showing on your deviation tokens."
+      },
+      {
+        "source": "Assistant Scoring",
+        "description": "Score each assistant placed on your workshop cards according to its type (ranging from 1 VP per upgrade to 6 VP flat bonus, with various conditions and maximums)."
+      },
+      {
+        "source": "Common Stained-Glass-Window Objectives",
+        "description": "Score based on worker position: 8 VP for first position, 6 VP for second, 4 VP for third."
+      },
+      {
+        "source": "Common Stained-Glass-Window Objectives",
+        "description": "The second player to claim an objective places their worker in the third position (second position is not available).",
+        "condition": {
+          "min_count_variant": 2,
+          "max_count_variant": 2
+        }
+      }
+    ]
+  },
+  "winning_condition": "The player with the most VP wins. In case of a tie, the winner is the player who has placed the most apostles in their panel. If still tied, the tied players share the victory.",
+  "tips_for_new_players": [
+    {
+      "tip": "Focus on Two Mastery Tracks",
+      "description": "Avoid spreading yourself across all three mastery tracks. It is more effective to focus on two. Any combination can work, but some will be stronger depending on which common objectives and mastery stained-glass windows are in play."
+    },
+    {
+      "tip": "Prioritize Common Objectives",
+      "description": "Pay attention to common stained-glass-window objectives. Being the first to claim them grants bonus rewards and additional scoring opportunities."
+    },
+    {
+      "tip": "Manage Your Deviation Tokens",
+      "description": "Avoid completely exhausting your deviation tokens. Use the moon to correct deviations when needed. Passing is not always bad as it activates the moon."
+    },
+    {
+      "tip": "Plan Construction Carefully",
+      "description": "Before constructing, observe which bonus you want from the calendar sections and check if you have the necessary resources before evaluating all options in the construction zone."
+    },
+    {
+      "tip": "Gold Is Versatile",
+      "description": "Gold can substitute for any basic resource. You can exchange 3 identical basic resources for 1 gold at any time during your turn. Coins can also substitute for basic resources but NOT for gold."
+    },
+    {
+      "tip": "Worker Recovery from Calendar",
+      "description": "Workers can normally be recovered only from the clock. Recovering them from the calendar may result in earning fewer VP at the end of the game since you lose the adjacency group."
+    },
+    {
+      "tip": "Enjoy Your First Games",
+      "description": "Orloj is a complex game. Try to enjoy it in your first few games before attempting to evaluate every possibility to win."
+    }
+  ]
+}

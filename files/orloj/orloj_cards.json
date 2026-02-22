@@ -1,0 +1,183 @@
+{
+  "assistant_6vp": {
+    "id": "assistant_6vp",
+    "name": "Assistant: 6 VP Flat",
+    "body": "This assistant grants 6 VP at the end of the game (flat bonus, no condition).",
+    "summary": "6 VP at end of game",
+    "details": "Simply place on a workshop card. Scores 6 VP during endgame scoring regardless of other conditions."
+  },
+  "assistant_apostle_panel": {
+    "id": "assistant_apostle_panel",
+    "name": "Assistant: Apostles on Panel",
+    "body": "Score 1 VP for each apostle placed on your apostle panel at the end of the game, up to a maximum of 10 VP.",
+    "summary": "1 VP per apostle on panel (max 10 VP)",
+    "details": "Counts all apostles placed on your personal board's apostle panel."
+  },
+  "assistant_mastery_level_4": {
+    "id": "assistant_mastery_level_4",
+    "name": "Assistant: Mastery at Level IV",
+    "body": "Score 4 VP for each mastery disc at Level IV on any mastery track at the end of the game.",
+    "summary": "4 VP per mastery disc at Level IV",
+    "details": "Check all three mastery tracks. Each disc at position IV scores 4 VP."
+  },
+  "assistant_apostle_columns": {
+    "id": "assistant_apostle_columns",
+    "name": "Assistant: Completed Apostle Columns",
+    "body": "Score 5 VP for each completed apostle column in your apostle panel at the end of the game.",
+    "summary": "5 VP per completed apostle column",
+    "details": "Each full column of apostles on your personal board scores 5 VP."
+  },
+  "assistant_month_dials": {
+    "id": "assistant_month_dials",
+    "name": "Assistant: Month Dials with Workers",
+    "body": "Score 3 VP for each month dial with one of your workers on top at the end of the game.",
+    "summary": "3 VP per month dial with your worker",
+    "details": "Only counts month dials (not zodiac) that have your workers placed on them."
+  },
+  "assistant_zodiac_dials": {
+    "id": "assistant_zodiac_dials",
+    "name": "Assistant: Zodiac Dials with Workers",
+    "body": "Score 3 VP for each zodiac dial with one of your workers on top at the end of the game.",
+    "summary": "3 VP per zodiac dial with your worker",
+    "details": "Only counts zodiac dials (not month) that have your workers placed on them."
+  },
+  "sculptor_action_1": {
+    "id": "sculptor_action_1",
+    "name": "Sculptor Action: Vanity (Gold & Coins)",
+    "body": "Level 1: Force deviation → take 1 gold + 1 coin. Level 2: Force deviation → take 1 gold + 2 coins. Level 3: Correct deviation → take 1 gold + 3 coins.",
+    "summary": "Gain gold and coins",
+    "details": "The Vanity statue. Higher sculptor levels (determined by pink mastery track) grant more coins and switch from forcing to correcting deviation."
+  },
+  "sculptor_action_2": {
+    "id": "sculptor_action_2",
+    "name": "Sculptor Action: Greed (Workshop)",
+    "body": "Level 1: Force deviation → expand workshop. Level 2: Force deviation → take 1 resource of choice + expand workshop. Level 3: Correct deviation → take 1 gold + expand workshop.",
+    "summary": "Expand workshop (with resources at higher levels)",
+    "details": "The Greed statue. At all levels, lets you expand your workshop. Higher levels add free resources."
+  },
+  "sculptor_action_3": {
+    "id": "sculptor_action_3",
+    "name": "Sculptor Action: Lust (Painter/Moon)",
+    "body": "Level 1: Force deviation → move painter; OR activate moon without forcing deviation. Level 2: Force deviation → take 1 coin + move painter; OR take 1 coin + activate moon with +1 modifier. Level 3: Correct deviation → take 1 coin + move painter; OR take 1 coin + activate moon with +2 modifier.",
+    "summary": "Move painter or activate moon",
+    "details": "The Lust statue. Choose between painter movement or moon activation. Higher levels add coins and moon modifiers."
+  },
+  "sculptor_action_4": {
+    "id": "sculptor_action_4",
+    "name": "Sculptor Action: Death (Construct)",
+    "body": "Level 1: Force 2 deviations → construct. Level 2: Force 1 deviation → take 1 resource of choice + construct. Level 3: Correct 1 deviation → take 1 gold + construct.",
+    "summary": "Perform a construction",
+    "details": "The Death statue (rings the bell). Allows construction action. Level 1 is expensive (2 deviations), improving at higher levels."
+  },
+  "scroll_recover_workers": {
+    "id": "scroll_recover_workers",
+    "name": "Scroll: Recover Two Workers",
+    "body": "Flip this scroll to recover two workers from the clock or calendar.",
+    "summary": "Recover 2 workers"
+  },
+  "scroll_upgrade": {
+    "id": "scroll_upgrade",
+    "name": "Scroll: Perform an Upgrade",
+    "body": "Flip this scroll to perform an upgrade on a production track or hammer track.",
+    "summary": "Perform 1 upgrade"
+  },
+  "scroll_moon": {
+    "id": "scroll_moon",
+    "name": "Scroll: Activate the Moon",
+    "body": "Flip this scroll to activate the moon following the standard rules.",
+    "summary": "Activate the moon"
+  },
+  "scroll_painter": {
+    "id": "scroll_painter",
+    "name": "Scroll: Move the Painter",
+    "body": "Flip this scroll to move the painter following the standard rules.",
+    "summary": "Move the painter"
+  },
+  "scroll_apostle": {
+    "id": "scroll_apostle",
+    "name": "Scroll: Take an Apostle",
+    "body": "Flip this scroll to take one apostle in the usual way from the walk of the apostles.",
+    "summary": "Take 1 apostle"
+  },
+  "scroll_construct": {
+    "id": "scroll_construct",
+    "name": "Scroll: Perform a Construction",
+    "body": "Flip this scroll to perform a construction following the standard rules.",
+    "summary": "Construct 1 dial"
+  },
+  "scroll_mastery_choice": {
+    "id": "scroll_mastery_choice",
+    "name": "Scroll: Mastery Advance (Choice)",
+    "body": "Flip this scroll to move one mastery disc of your choice up one space.",
+    "summary": "Advance 1 mastery (choice)"
+  },
+  "scroll_coin_mastery": {
+    "id": "scroll_coin_mastery",
+    "name": "Scroll: Coin + Mastery",
+    "body": "Flip this scroll to take one coin and move your disc up one space in a mastery track of your choice.",
+    "summary": "1 coin + 1 mastery advance"
+  },
+  "scroll_apostle_moon": {
+    "id": "scroll_apostle_moon",
+    "name": "Scroll: Take Apostle + Activate Moon",
+    "body": "Flip this scroll to take one apostle in the usual way AND activate the moon following the standard rules.",
+    "summary": "Take apostle + activate moon"
+  },
+  "royal_scroll_scrolls": {
+    "id": "royal_scroll_scrolls",
+    "name": "Royal Scroll: Scroll Collection",
+    "body": "Immediately score 3 VP for each scroll or royal scroll (used or unused) in your play area, up to a maximum of 10 VP.",
+    "summary": "3 VP per scroll (max 10 VP)"
+  },
+  "royal_scroll_month_dials": {
+    "id": "royal_scroll_month_dials",
+    "name": "Royal Scroll: Month Dials",
+    "body": "Immediately score 3 VP for each month dial constructed with a worker of yours on top, up to a maximum of 10 VP.",
+    "summary": "3 VP per month dial with worker (max 10 VP)"
+  },
+  "royal_scroll_zodiac_dials": {
+    "id": "royal_scroll_zodiac_dials",
+    "name": "Royal Scroll: Zodiac Dials",
+    "body": "Immediately score 3 VP for each zodiac dial constructed with a worker of yours on top, up to a maximum of 10 VP.",
+    "summary": "3 VP per zodiac dial with worker (max 10 VP)"
+  },
+  "royal_scroll_upgrades": {
+    "id": "royal_scroll_upgrades",
+    "name": "Royal Scroll: Upgrades",
+    "body": "Immediately score 3 VP for each upgrade in your hammer track and production tracks, up to a maximum of 10 VP.",
+    "summary": "3 VP per upgrade (max 10 VP)"
+  },
+  "royal_scroll_workshops": {
+    "id": "royal_scroll_workshops",
+    "name": "Royal Scroll: Workshop Cards",
+    "body": "Immediately score 3 VP for each workshop card in your play area, up to a maximum of 10 VP.",
+    "summary": "3 VP per workshop card (max 10 VP)"
+  },
+  "royal_scroll_apostles": {
+    "id": "royal_scroll_apostles",
+    "name": "Royal Scroll: Apostles on Panel",
+    "body": "Immediately score 2 VP for each apostle placed on your apostle panel, up to a maximum of 10 VP.",
+    "summary": "2 VP per apostle on panel (max 10 VP)"
+  },
+  "hammer_level_2": {
+    "id": "hammer_level_2",
+    "name": "Hammer Bonus: Level II",
+    "body": "Each hammer card grants a unique ability applied as the final step of construction. No hammer has an ability at Level I. Level II abilities vary by card and include: mastery advances, coins, resources, rooster disc movement, gold, and VP.",
+    "summary": "Construction bonus at Level II",
+    "details": "Specific abilities vary per hammer card: Move mastery disc up 1 space (choice); Take 1 coin; Move rooster disc up 1 on personal board + take 1 gold + 1 VP if already at top."
+  },
+  "hammer_level_3": {
+    "id": "hammer_level_3",
+    "name": "Hammer Bonus: Level III",
+    "body": "Level III hammer abilities are enhanced versions of Level II. They include: mastery advances + coin, mastery advances + additional VP, rooster advances + gold + VP.",
+    "summary": "Enhanced construction bonus at Level III",
+    "details": "Specific abilities vary per hammer card: Move mastery disc up 1 + take 1 coin; Move mastery disc up 1 + take 1 coin + gain 2 VP; Move rooster disc up 1 on personal board + take 1 gold + 1 VP if already at top."
+  },
+  "assistant_placement_rooster": {
+    "id": "assistant_placement_rooster",
+    "name": "Workshop: Placing Assistant Reward",
+    "body": "When you place an assistant on a workshop card, move your rooster disc up one position on your personal board. Take 1 gold and 1 VP if your rooster disc is already on the last position of the track.",
+    "summary": "Rooster disc +1, gold if maxed",
+    "details": "This reward triggers every time you place any assistant on any of your workshop cards."
+  }
+}
