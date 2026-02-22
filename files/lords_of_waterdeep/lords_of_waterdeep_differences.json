@@ -1,0 +1,34 @@
+{
+  "expansions": [
+    {
+      "id": "scoundrels",
+      "name": "Scoundrels of Skullport",
+      "overview": "Adds two new action boards and a Corruption mechanic. Certain powerful action spaces grant Corruption tokens, and at game end players lose VP based on the total Corruption in play.",
+      "sections": [
+        {
+          "title": "New Components",
+          "items": [
+            {"description": "Skullport Board — powerful action spaces that often grant Corruption as a cost"},
+            {"description": "Undermountain Board — high-reward action spaces for experienced players"},
+            {"description": "Corruption Track — tracks Corruption tokens taken by all players"},
+            {"description": "Corruption Tokens — negative VP tokens; the more Corruption in play, the more VP each token costs at game end"}
+          ]
+        },
+        {
+          "title": "Setup Changes",
+          "items": [
+            {"description": "Place the Corruption Track near the board and fill all spaces with Corruption tokens from the supply."},
+            {"description": "Place the Skullport and/or Undermountain expansion boards adjacent to the main board."}
+          ]
+        },
+        {
+          "title": "New Rules",
+          "items": [
+            {"description": "Certain action spaces grant Corruption tokens alongside their rewards."},
+            {"description": "At end of game, lose VP per Corruption token held — the penalty per token scales with the total Corruption in play."}
+          ]
+        }
+      ]
+    }
+  ]
+}
