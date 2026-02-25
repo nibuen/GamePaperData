@@ -22,8 +22,7 @@
       "title": "Your Farmyard",
       "content": [
         {
-          "description": "Each player has a farmyard board with 15 spaces arranged in a 3×5 grid. Two of those spaces start with wooden hut rooms, and each room holds one family member.",
-          "action": { "type": "icon_formula", "formula": "{StructureHouse} {StructureHouse} = 2 rooms, 2 {Pawn}" }
+          "description": "Each player has a farmyard board with 15 spaces arranged in a 3×5 grid. Two of those spaces start with wooden hut rooms, and each room holds one family member."
         },
         {
           "description": "Over the game, you'll fill those empty spaces with fields (for crops), pastures (fenced areas for animals), more rooms (for more family members), and stables."
