@@ -8,9 +8,10 @@ Thank you for helping build a community-maintained library of board game rules! 
 GamersPaperData/
 ├── files/                    # Game data (one folder per game)
 │   └── <game_id>/
-│       ├── <game_id>_rules.json       # Required: Main rules file
-│       ├── <game_id>_<cards>.json     # Optional: Card data files
-│       └── <game_id>_glossary.json    # Optional: Glossary terms
+│       ├── <game_id>_rules.json             # Required: Main rules file
+│       ├── <game_id>_<cards>.json           # Optional: Card data files
+│       ├── <game_id>_glossary.json          # Optional: Glossary terms
+│       └── <game_id>_teaching_flow.json     # Optional: Interactive teaching walkthrough
 ├── icons/                    # SVG icons for game components
 │   ├── README.md             # Icon catalog and usage guide
 │   └── *.svg                 # Icon files
@@ -199,6 +200,57 @@ The referenced file must exist in the same game folder and follow the [Card File
 
 ---
 
+**Icon Formula** (`type: "icon_formula"`):
+
+Renders a visual equation using inline icons from the shared icon registry. Icon tokens are wrapped in `{curly braces}`.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `type` | string | **Yes** | Must be `"icon_formula"` |
+| `formula` | string | **Yes** | Formula string with `{IconName}` tokens (e.g., `"{TagD6} = {DiceQuestion}"`) |
+
+**Example:**
+```json
+{
+  "description": "Your dice determine which depot and estate spaces you can use.",
+  "action": {
+    "type": "icon_formula",
+    "formula": "{TagD6} = {DiceQuestion}"
+  }
+}
+```
+
+Available icon names include: `Dice1`–`Dice6`, `DiceQuestion`, `Tag1`–`Tag6`, `TagD6`, `Pawn`, `Dollar`, `Hexagon`, `HexagonTile`, `Hourglass`, `TokensStack`, `Puzzle`, `ArrowRight`, `ArrowRotate`, `Card`, `CardsFan`, `HandCard`, `Hand`, `Sword`, `Shield`, `FlagTriangle`, `StructureHouse`, `Fire`, `CrownA`, `BookOpen`, `Award`, `TokenGive`, and all `Resource*` icons. See the app's icon registry for the full list.
+
+---
+
+**Value Grid** (`type: "value_grid"`):
+
+Renders a compact reference table with dividers. Useful for scoring grids, phase bonuses, and other tabular data.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `type` | string | **Yes** | Must be `"value_grid"` |
+| `columns` | array of arrays | **Yes** | Each inner array is one column of data. First element is the column header. |
+
+**Example:**
+```json
+{
+  "description": "Complete a region earlier for more bonus VP.",
+  "action": {
+    "type": "value_grid",
+    "columns": [
+      ["Phase", "A", "B", "C", "D", "E"],
+      ["Bonus", "+10", "+8", "+6", "+4", "+2"]
+    ]
+  }
+}
+```
+
+The grid auto-splits into multiple cards on narrow screens when column count exceeds available width.
+
+---
+
 ### Component Object
 
 Describes a physical game component (cards, tokens, boards, etc.).
@@ -306,6 +358,7 @@ Each entry in `actions` represents **one phase of a round**, in the order it occ
 | `description` | string | **Yes** | What happens during this phase |
 | `steps` | array of [Phrase](#phrase-object) | **Yes** | Ordered sub-steps within the phase, or the available player choices if this is a selection phase |
 | `notes` | array of [Phrase](#phrase-object) | No | Important exceptions or clarifications that don't fit in the sequential flow |
+| `icon` | string | No | Icon name from the shared icon registry. Displayed on the action header. If omitted, a distinct fallback icon is assigned automatically. |
 
 #### Common patterns
 
@@ -383,6 +436,22 @@ Each entry in `actions` represents **one phase of a round**, in the order it occ
 |-------|------|----------|-------------|
 | `name` | string | **Yes** | Concept name |
 | `description` | string | **Yes** | Explanation of the concept |
+| `action` | [PhraseAction](#phrase-action-object) | No | Optional visual element (e.g., a `value_grid` scoring table or `icon_formula`) |
+
+**Example with a scoring grid:**
+```json
+{
+  "name": "Phase Bonus (Timing)",
+  "description": "Complete a region earlier for more bonus VP.",
+  "action": {
+    "type": "value_grid",
+    "columns": [
+      ["Phase", "A", "B", "C", "D", "E"],
+      ["Bonus", "+10", "+8", "+6", "+4", "+2"]
+    ]
+  }
+}
+```
 
 ---
 
