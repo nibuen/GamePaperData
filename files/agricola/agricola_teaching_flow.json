@@ -84,7 +84,7 @@
         }
       ],
       "options": [
-        { "label": "Got it", "next_node": "worker_placement" }
+        { "label": "Got it", "next_node": "how_a_round_works" }
       ]
     },
     {
@@ -173,7 +173,7 @@
         }
       ],
       "options": [
-        { "label": "Got it", "next_node": "the_harvest" }
+        { "label": "Got it", "next_node": "key_actions" }
       ]
     },
     {
@@ -200,7 +200,7 @@
         }
       ],
       "options": [
-        { "label": "Got it", "next_node": "the_harvest" }
+        { "label": "Got it", "next_node": "key_actions" }
       ]
     },
     {
@@ -255,7 +255,7 @@
         }
       ],
       "options": [
-        { "label": "Got it", "next_node": "food_engine" }
+        { "label": "Got it", "next_node": "the_harvest" }
       ]
     },
     {
@@ -324,7 +324,7 @@
         }
       ],
       "options": [
-        { "label": "Got it", "next_node": "growing_your_family" }
+        { "label": "Got it", "next_node": "food_engine" }
       ]
     },
     {
@@ -427,7 +427,7 @@
         }
       ],
       "options": [
-        { "label": "Got it", "next_node": "ready_to_play" }
+        { "label": "Got it", "next_node": "scoring" }
       ]
     },
     {

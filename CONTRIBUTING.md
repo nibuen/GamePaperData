@@ -931,12 +931,12 @@ Teaching flows are **linear with optional detours**, not a maze.
 - Subsequent options are **side branches** (rendered as outlined buttons with a help icon)
 - `next_node: null` ends the flow and returns to the game overview
 
-**Critical rule: side branches must rejoin the main path.** When a side branch node's "Got it" button navigates forward, it must go to the **same next node** the parent's main-path option leads to. This ensures the learner always returns to the main flow after a detour.
+**Critical rule: side branches return to the parent node.** When a side branch node's "Got it" button navigates back, it must go to the **parent node** that offered the branch. This lets the learner explore other side branches or press the main-path button to continue forward.
 
 ```
 Main path:  A ──→ B ──→ C ──→ D
-                   ↑
-Side branch: B offers "Details?" ──→ B2 ──→ C  (rejoins at C, not back to B)
+                   ↑ ↓
+Side branch: B offers "Details?" ──→ B2 ──→ B  (back to B, where "Got it" → C)
 ```
 
 **Example:**
@@ -949,7 +949,7 @@ Side branch: B offers "Details?" ──→ B2 ──→ C  (rejoins at C, not ba
 
 // Side branch node: animals
 "options": [
-  { "label": "Got it", "next_node": "the_harvest" }  // rejoins at C (same as parent's main path)
+  { "label": "Got it", "next_node": "key_actions" }  // back to parent (where user can continue or explore)
 ]
 ```
 
@@ -997,7 +997,7 @@ Before submitting a pull request:
 - [ ] All card files referenced by components actually exist in the game folder
 - [ ] Component `type` values are consistent
 - [ ] No placeholder or TODO text remains
-- [ ] Teaching flow side branches rejoin the main path (not back to the parent node)
+- [ ] Teaching flow side branches return to the parent node (not skip ahead to the next main-path node)
 - [ ] Teaching flow `start_node` exists in the nodes list and all `next_node` references resolve
 - [ ] Game is registered in `registry.json` with matching `id`
 - [ ] If adding translations, language subfolders use ISO 639-1 codes (`de/`, `fr/`, not `_de.json` suffixes)
