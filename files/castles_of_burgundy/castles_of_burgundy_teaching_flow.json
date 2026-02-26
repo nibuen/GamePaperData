@@ -54,26 +54,13 @@
         { "description": "Each player starts with:", "style": "header" },
         { "description": "A personal estate board", "glossary_ref": "estate", "style": "bullet" },
         { "description": "2 dice in your color", "style": "bullet", "icon": "DiceQuestion" },
-        { "description": "1 castle tile (already placed on the starred space)", "glossary_ref": "castle_tile", "style": "bullet" },
+        { "description": "1 castle tile (already placed on the center dark green space)", "glossary_ref": "castle_tile", "style": "bullet" },
         { "description": "1 Silverling (the game's currency)", "glossary_ref": "silverling", "style": "bullet" },
         { "description": "3 worker tiles", "glossary_ref": "workers", "style": "bullet" },
         { "description": "The goods tiles for Phase A go face-up on the 5 goods spaces on the main board. Bonus tiles for each color go near the board." }
       ],
       "options": [
-        { "label": "Got it", "next_node": "a_round" },
-        { "label": "What do workers do?", "next_node": "workers_preview" }
-      ]
-    },
-    {
-      "id": "workers_preview",
-      "title": "Workers",
-      "content": [
-        { "description": "Worker tiles adjust dice results. Each worker spent changes a die by +1 or -1.", "action": { "type": "icon_formula", "formula": "{Pawn} {ArrowRight} {DiceQuestion} +/-1" } },
-        { "description": "They even wrap around -- a 1 can become a 6, and vice versa.", "action": { "type": "icon_formula", "formula": "{Dice1} <-> {Dice6}" } },
-        { "description": "Multiple workers can be spent on the same die. So if you really need a specific number, workers make it happen." }
-      ],
-      "options": [
-        { "label": "Got it", "next_node": "starting_stuff" }
+        { "label": "Got it", "next_node": "a_round" }
       ]
     },
     {
@@ -132,8 +119,21 @@
       ],
       "options": [
         { "label": "Got it, let's play!", "next_node": "ready_to_play" },
+        { "label": "How do workers help?", "next_node": "workers_preview" },
         { "label": "How does scoring work?", "next_node": "scoring" },
         { "label": "What if nothing fits?", "next_node": "nothing_fits" }
+      ]
+    },
+    {
+      "id": "workers_preview",
+      "title": "Workers",
+      "content": [
+        { "description": "Worker tiles adjust dice results. Each worker spent changes a die by +1 or -1.", "action": { "type": "icon_formula", "formula": "{Pawn} {ArrowRight} {DiceQuestion} +/-1" } },
+        { "description": "They even wrap around -- a 1 can become a 6, and vice versa.", "action": { "type": "icon_formula", "formula": "{Dice1} <-> {Dice6}" } },
+        { "description": "Multiple workers can be spent on the same die. So if you really need a specific number, workers make it happen." }
+      ],
+      "options": [
+        { "label": "Got it", "next_node": "placing_rules" }
       ]
     },
     {
