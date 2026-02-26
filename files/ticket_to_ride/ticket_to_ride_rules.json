@@ -237,7 +237,10 @@
     "intermediate_scoring": [
       {
         "source": "Route Points",
-        "description": "Score points immediately when claiming a route based on its length: 1 space = 1 pt, 2 spaces = 2 pts, 3 spaces = 4 pts, 4 spaces = 7 pts, 5 spaces = 10 pts, 6 spaces = 15 pts. Advance your Scoring Marker on the track.",
+        "description": {
+          "description": "Score points immediately when claiming a route. Advance your Scoring Marker on the track.",
+          "action": { "type": "value_grid", "columns": [["Length", "1", "2", "3", "4", "5", "6"], ["Points", "1", "2", "4", "7", "10", "15"]] }
+        },
         "when": "When Claiming a Route"
       }
     ],
