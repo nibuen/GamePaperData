@@ -590,22 +590,25 @@
     ],
     "intermediate_scoring": [
       {
-        "category": "Wagon Trains",
         "description": {
           "description": "1 VP to the U.S. for each Wagon cube reaching the Rockies. 1 VP to the Indians for each Wagon cube eliminated. Scored immediately when each event occurs during play."
-        }
+        },
+        "source": "Wagon Trains",
+        "when": "During Play"
       },
       {
-        "category": "Cavalry Elimination",
         "description": {
           "description": "1 VP to the Indians for every 2 Cavalry cubes eliminated (rounded down) in each engagement. Scored at the conclusion of each engagement."
-        }
+        },
+        "source": "Cavalry Elimination",
+        "when": "During Play"
       },
       {
-        "category": "Custer Bonus",
         "description": {
           "description": "The Indians earn 2 bonus VP if Custer force is eliminated on the same turn it is placed. Scored immediately when Custer cubes are eliminated."
-        }
+        },
+        "source": "Custer Bonus",
+        "when": "During Play"
       }
     ]
   },
