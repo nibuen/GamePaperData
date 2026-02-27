@@ -31,7 +31,7 @@
       "name": "Knowledge Tiles",
       "type": "Tile",
       "icon": "Hexagon",
-      "tint": "#F9A825",
+      "tint": "#FFEB3B",
       "description": "26 different yellow tiles providing ongoing abilities or end-game scoring bonuses.",
       "action": {
         "name": "CardList",

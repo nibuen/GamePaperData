@@ -34,7 +34,7 @@
     "definition": "Yellow hex tile granting an ongoing ability or end-game scoring bonus. 26 different types exist.",
     "context": "Tile Types",
     "icon": "Hexagon",
-    "tint": "#F9A825",
+    "tint": "#FFEB3B",
     "overlay": "BookOpen"
   },
   "mine_tile": {
