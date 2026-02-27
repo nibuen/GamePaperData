@@ -214,11 +214,33 @@
       },
       {
         "name": "Large Bonus Tile VP",
-        "description": "5 VP with 2 players, 6 VP with 3 players, 7 VP with 4 players."
+        "description": "Large bonus tile is worth 5 VP.",
+        "condition": {"min_count_variant": 2, "max_count_variant": 2}
+      },
+      {
+        "name": "Large Bonus Tile VP",
+        "description": "Large bonus tile is worth 6 VP.",
+        "condition": {"min_count_variant": 3, "max_count_variant": 3}
+      },
+      {
+        "name": "Large Bonus Tile VP",
+        "description": "Large bonus tile is worth 7 VP.",
+        "condition": {"min_count_variant": 4, "max_count_variant": 4}
       },
       {
         "name": "Small Bonus Tile VP",
-        "description": "2 VP with 2 players, 3 VP with 3 players, 4 VP with 4 players."
+        "description": "Small bonus tile is worth 2 VP.",
+        "condition": {"min_count_variant": 2, "max_count_variant": 2}
+      },
+      {
+        "name": "Small Bonus Tile VP",
+        "description": "Small bonus tile is worth 3 VP.",
+        "condition": {"min_count_variant": 3, "max_count_variant": 3}
+      },
+      {
+        "name": "Small Bonus Tile VP",
+        "description": "Small bonus tile is worth 4 VP.",
+        "condition": {"min_count_variant": 4, "max_count_variant": 4}
       },
       {
         "name": "Buildings (Brown Tiles)",
@@ -259,8 +281,24 @@
         "when": "During Play",
         "source": "Goods Sales",
         "description": {
-          "description": "1 Silverling + VP per tile sold. VP depends on player count.",
-          "action": { "type": "value_grid", "columns": [["Players", "2", "3", "4"], ["VP/Tile", "2", "3", "4"]] }
+          "description": "1 Silverling + 2 VP per goods tile sold.",
+          "condition": {"min_count_variant": 2, "max_count_variant": 2}
+        }
+      },
+      {
+        "when": "During Play",
+        "source": "Goods Sales",
+        "description": {
+          "description": "1 Silverling + 3 VP per goods tile sold.",
+          "condition": {"min_count_variant": 3, "max_count_variant": 3}
+        }
+      },
+      {
+        "when": "During Play",
+        "source": "Goods Sales",
+        "description": {
+          "description": "1 Silverling + 4 VP per goods tile sold.",
+          "condition": {"min_count_variant": 4, "max_count_variant": 4}
         }
       },
       {
