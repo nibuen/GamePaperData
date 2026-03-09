@@ -2,193 +2,193 @@
   "caravan_court": {
     "id": "caravan_court",
     "name": "Caravan Court",
-    "body": "Cost: 4 Gold. Action: Take all Fighters from this space. Owner: +1 Fighter. (Fighters accumulate here each round)",
-    "summary": "4 Gold - Accumulating Fighters",
-    "details": "At the start of each round, 1 Fighter is placed here. When used, take all accumulated Fighters.",
+    "body": "Cost: 4 Gold. When Purchased and at Start of Round: Place 2 Fighters on this space from the supply. Action: Take all Fighters from this space and place them in your Tavern. Owner: Take 1 Fighter from the supply.",
+    "summary": "4 Gold - Accumulating Fighters (2/round)",
+    "details": "Location: South Ward. At purchase and each round start, 2 Fighters are placed here. They accumulate if unused.",
     "extra": "Owner Benefit: 1 Fighter"
   },
   "dragon_tower": {
     "id": "dragon_tower",
     "name": "Dragon Tower",
-    "body": "Cost: 3 Gold. Action: Take 1 Wizard + draw 1 Intrigue card. Owner: Draw 1 Intrigue card.",
-    "summary": "3 Gold - Wizard + Intrigue",
-    "details": "Good value building that provides both an adventurer and an Intrigue card.",
-    "extra": "Owner Benefit: 1 Intrigue card"
+    "body": "Cost: 3 Gold. Action: Take 1 Wizard from the supply and place it in your Tavern, and draw 1 Intrigue card. Owner: Draw 1 Intrigue card.",
+    "summary": "3 Gold - 1 Wizard + 1 Intrigue card",
+    "details": "Location: Sea Ward.",
+    "extra": "Owner Benefit: Draw 1 Intrigue card"
   },
   "fetlock_court": {
     "id": "fetlock_court",
     "name": "Fetlock Court",
-    "body": "Cost: 8 Gold. Action: Take 2 Fighters + 1 Wizard. Owner: +1 Fighter or Wizard.",
+    "body": "Cost: 8 Gold. Action: Take 2 Fighters and 1 Wizard from the supply and place them in your Tavern. Owner: Take 1 Fighter or 1 Wizard from the supply.",
     "summary": "8 Gold - 2 Fighters + 1 Wizard",
-    "details": "Expensive but powerful building providing 3 adventurers.",
-    "extra": "Owner Benefit: 1 Fighter or Wizard"
+    "details": "Location: Castle Ward.",
+    "extra": "Owner Benefit: 1 Fighter or 1 Wizard"
   },
   "the_golden_horn": {
     "id": "the_golden_horn",
     "name": "The Golden Horn",
-    "body": "Cost: 4 Gold. Action: Take all Gold from this space. Owner: +2 Gold. (Gold accumulates here each round)",
-    "summary": "4 Gold - Accumulating Gold",
-    "details": "At the start of each round, 2 Gold is placed here. When used, take all accumulated Gold.",
+    "body": "Cost: 4 Gold. When Purchased and at Start of Round: Take 4 Gold from the supply and place it on this space. Action: Take all Gold from this space and place it in your Tavern. Owner: Take 2 Gold from the supply.",
+    "summary": "4 Gold - Accumulating Gold (4/round)",
+    "details": "Location: Trades Ward. At purchase and each round start, 4 Gold is placed here. Gold accumulates if unused.",
     "extra": "Owner Benefit: 2 Gold"
   },
   "helmstar_warehouse": {
     "id": "helmstar_warehouse",
     "name": "Helmstar Warehouse",
-    "body": "Cost: 3 Gold. Action: Take 2 Rogues + 2 Gold. Owner: +1 Rogue.",
+    "body": "Cost: 3 Gold. Action: Take 2 Rogues and 2 Gold from the supply and place them in your Tavern. Owner: Take 1 Rogue from the supply.",
     "summary": "3 Gold - 2 Rogues + 2 Gold",
-    "details": "Excellent value building providing both adventurers and gold.",
+    "details": "Location: Dock Ward.",
     "extra": "Owner Benefit: 1 Rogue"
   },
   "heroes_garden": {
     "id": "heroes_garden",
     "name": "Heroes' Garden",
-    "body": "Cost: 4 Gold. Action: Take 1 face-up Quest; if you complete it this turn, score +4 VP. Owner: +2 VP.",
-    "summary": "4 Gold - Quest + 4 bonus VP",
-    "details": "Powerful building that rewards completing a Quest immediately after taking it.",
+    "body": "Cost: 4 Gold. Action: Take 1 face-up Quest card from Cliffwatch Inn. You may immediately complete that Quest. If you do, score 4 bonus VP in addition to the Quest reward. (You do not score the bonus VP if you complete the Quest later.) Owner: Score 2 VP.",
+    "summary": "4 Gold - Quest + 4 bonus VP if completed immediately",
+    "details": "Location: Sea Ward. The 4 bonus VP is only earned if the Quest is completed on the same turn it is taken from this building.",
     "extra": "Owner Benefit: 2 VP"
   },
   "house_of_good_spirits": {
     "id": "house_of_good_spirits",
     "name": "House of Good Spirits",
-    "body": "Cost: 3 Gold. Action: Take 1 Fighter + 1 adventurer of any type. Owner: +1 Fighter.",
-    "summary": "3 Gold - 1 Fighter + 1 any",
-    "details": "Flexible building providing a Fighter plus your choice of adventurer.",
+    "body": "Cost: 3 Gold. Action: Take 1 Fighter and 1 Adventurer of any type from the supply and place them in your Tavern. Owner: Take 1 Fighter from the supply.",
+    "summary": "3 Gold - 1 Fighter + 1 any Adventurer",
+    "details": "Location: South Ward.",
     "extra": "Owner Benefit: 1 Fighter"
   },
   "house_of_heroes": {
     "id": "house_of_heroes",
     "name": "House of Heroes",
-    "body": "Cost: 8 Gold. Action: Take 1 Cleric + 2 Fighters. Owner: +1 Cleric or Fighter.",
+    "body": "Cost: 8 Gold. Action: Take 1 Cleric and 2 Fighters from the supply and place them in your Tavern. Owner: Take 1 Cleric or 1 Fighter from the supply.",
     "summary": "8 Gold - 1 Cleric + 2 Fighters",
-    "details": "Expensive building good for Piety and Warfare quests.",
-    "extra": "Owner Benefit: 1 Cleric or Fighter"
+    "details": "Location: Sea Ward.",
+    "extra": "Owner Benefit: 1 Cleric or 1 Fighter"
   },
   "house_of_the_moon": {
     "id": "house_of_the_moon",
     "name": "House of the Moon",
-    "body": "Cost: 3 Gold. Action: Take 1 Cleric + take 1 face-up Quest. Owner: +2 Gold.",
-    "summary": "3 Gold - 1 Cleric + Quest",
-    "details": "Combines adventurer collection with Quest acquisition.",
+    "body": "Cost: 3 Gold. Action: Take 1 Cleric from the supply and place it in your Tavern, and take 1 face-up Quest card from Cliffwatch Inn. Owner: Take 2 Gold from the supply.",
+    "summary": "3 Gold - 1 Cleric + 1 Quest",
+    "details": "Location: Sea Ward.",
     "extra": "Owner Benefit: 2 Gold"
   },
   "house_of_wonder": {
     "id": "house_of_wonder",
     "name": "House of Wonder",
-    "body": "Cost: 4 Gold. Action: Pay 2 Gold to take 2 Clerics or Wizards (any combination). Owner: +2 Gold.",
-    "summary": "4 Gold - Pay 2 for 2 Clerics/Wizards",
-    "details": "Flexible but requires payment. Good for Arcana and Piety quests.",
+    "body": "Cost: 4 Gold. Action: Spend 2 Gold, and then take 2 Adventurers from the supply and place them in your Tavern. These Adventurers can be only Clerics or Wizards (any combination). Owner: Take 2 Gold from the supply.",
+    "summary": "4 Gold - Pay 2 Gold for 2 Clerics/Wizards",
+    "details": "Location: Sea Ward. Requires spending 2 Gold as part of the action.",
     "extra": "Owner Benefit: 2 Gold"
   },
   "jesters_court": {
     "id": "jesters_court",
     "name": "Jesters' Court",
-    "body": "Cost: 4 Gold. Action: Take all Rogues from this space. Owner: +1 Rogue. (Rogues accumulate here each round)",
-    "summary": "4 Gold - Accumulating Rogues",
-    "details": "At the start of each round, 2 Rogues are placed here. When used, take all accumulated Rogues.",
+    "body": "Cost: 4 Gold. When Purchased and at Start of Round: Place 2 Rogues on this space from the supply. Action: Take all Rogues from this space and place them in your Tavern. Owner: Take 1 Rogue from the supply.",
+    "summary": "4 Gold - Accumulating Rogues (2/round)",
+    "details": "Location: Castle Ward. At purchase and each round start, 2 Rogues are placed here. They accumulate if unused.",
     "extra": "Owner Benefit: 1 Rogue"
   },
   "new_olamn": {
     "id": "new_olamn",
     "name": "New Olamn",
-    "body": "Cost: 8 Gold. Action: Take 2 Rogues + 1 Wizard. Owner: +1 Rogue or Wizard.",
+    "body": "Cost: 8 Gold. Action: Take 2 Rogues and 1 Wizard from the supply and place them in your Tavern. Owner: Take 1 Rogue or 1 Wizard from the supply.",
     "summary": "8 Gold - 2 Rogues + 1 Wizard",
-    "details": "Expensive building for Skullduggery and Arcana quests.",
-    "extra": "Owner Benefit: 1 Rogue or Wizard"
+    "details": "Location: Castle Ward.",
+    "extra": "Owner Benefit: 1 Rogue or 1 Wizard"
   },
   "northgate": {
     "id": "northgate",
     "name": "Northgate",
-    "body": "Cost: 3 Gold. Action: Take 1 adventurer of any type + 2 Gold. Owner: +2 VP.",
-    "summary": "3 Gold - 1 any + 2 Gold",
-    "details": "Flexible and inexpensive. Good early purchase.",
+    "body": "Cost: 3 Gold. Action: Take 1 Adventurer of any type and 2 Gold from the supply and place them in your Tavern. Owner: Score 2 VP.",
+    "summary": "3 Gold - 1 any Adventurer + 2 Gold",
+    "details": "Location: North Ward.",
     "extra": "Owner Benefit: 2 VP"
   },
   "the_palace_of_waterdeep": {
     "id": "the_palace_of_waterdeep",
     "name": "The Palace of Waterdeep",
-    "body": "Cost: 4 Gold. Action: Take the Ambassador (extra Agent for this round only). Owner: +2 VP.",
-    "summary": "4 Gold - Ambassador token",
-    "details": "The Ambassador returns to this space at end of round. Only one player can have it per round.",
+    "body": "Cost: 4 Gold. Action: Take the Ambassador piece and place it with your unused Agents. At the start of the next round, before any other player takes a turn, assign the Ambassador. Owner: Score 2 VP.",
+    "summary": "4 Gold - Gain the Ambassador",
+    "details": "Location: Castle Ward. The Ambassador is assigned before anyone else at the start of the next round. If assigned to Waterdeep Harbor, it cannot be reassigned at end of round. Once placed, the Ambassador counts as an opponent's Agent for all players.",
     "extra": "Owner Benefit: 2 VP"
   },
   "the_skulkway": {
     "id": "the_skulkway",
     "name": "The Skulkway",
-    "body": "Cost: 4 Gold. Action: Take 1 Fighter + 1 Rogue + 2 Gold. Owner: +1 Fighter or Rogue.",
+    "body": "Cost: 4 Gold. Action: Take 1 Fighter, 1 Rogue, and 2 Gold from the supply and place them in your Tavern. Owner: Take 1 Fighter or 1 Rogue from the supply.",
     "summary": "4 Gold - 1 Fighter + 1 Rogue + 2 Gold",
-    "details": "Versatile building providing multiple resource types.",
-    "extra": "Owner Benefit: 1 Fighter or Rogue"
+    "details": "Location: Sea Ward.",
+    "extra": "Owner Benefit: 1 Fighter or 1 Rogue"
   },
   "smugglers_dock": {
     "id": "smugglers_dock",
     "name": "Smuggler's Dock",
-    "body": "Cost: 4 Gold. Action: Pay 2 Gold to take 4 Fighters or Rogues (any combination). Owner: +2 Gold.",
-    "summary": "4 Gold - Pay 2 for 4 Fighters/Rogues",
-    "details": "High volume but requires payment. Excellent for Warfare/Skullduggery.",
+    "body": "Cost: 4 Gold. Action: Spend 2 Gold, and then take 4 Adventurers from the supply and place them in your Tavern. These Adventurers can be only Fighters or Rogues (any combination). Owner: Take 2 Gold from the supply.",
+    "summary": "4 Gold - Pay 2 Gold for 4 Fighters/Rogues",
+    "details": "Location: Castle Ward. Requires spending 2 Gold as part of the action.",
     "extra": "Owner Benefit: 2 Gold"
   },
   "spires_of_the_morning": {
     "id": "spires_of_the_morning",
     "name": "Spires of the Morning",
-    "body": "Cost: 4 Gold. Action: Take all Clerics from this space. Owner: +2 VP. (Clerics accumulate here each round)",
-    "summary": "4 Gold - Accumulating Clerics",
-    "details": "At the start of each round, 1 Cleric is placed here. When used, take all accumulated Clerics.",
+    "body": "Cost: 4 Gold. When Purchased and at Start of Round: Place 1 Cleric on this space from the supply. Action: Take all Clerics from this space and place them in your Tavern. Owner: Score 2 VP.",
+    "summary": "4 Gold - Accumulating Clerics (1/round)",
+    "details": "Location: Castle Ward. At purchase and each round start, 1 Cleric is placed here. Clerics accumulate if unused.",
     "extra": "Owner Benefit: 2 VP"
   },
   "the_stone_house": {
     "id": "the_stone_house",
     "name": "The Stone House",
-    "body": "Cost: 4 Gold. Action: Take 1 Gold for each Building tile in play (including this one). Owner: +2 Gold.",
-    "summary": "4 Gold - Gold per Building",
-    "details": "Scales with game progress. Better in late game with many buildings in play.",
+    "body": "Cost: 4 Gold. Action: Take 1 Gold from the supply for each Building tile in play. Owner: Take 2 Gold from the supply.",
+    "summary": "4 Gold - 1 Gold per Building in play",
+    "details": "Location: South Ward. Scales with the number of advanced Building tiles currently in play.",
     "extra": "Owner Benefit: 2 Gold"
   },
   "the_three_pearls": {
     "id": "the_three_pearls",
     "name": "The Three Pearls",
-    "body": "Cost: 4 Gold. Action: Return 2 adventurers to supply, then take 3 adventurers of any type. Owner: +2 Gold.",
-    "summary": "4 Gold - Trade 2 for 3 any",
-    "details": "Converts unwanted adventurers into ones you need. Net gain of 1 adventurer.",
+    "body": "Cost: 4 Gold. Action: Return 2 of your Adventurers of any type to the supply. Then take 3 Adventurers of any type from the supply and place them in your Tavern. Owner: Take 2 Gold from the supply.",
+    "summary": "4 Gold - Trade 2 Adventurers for 3 any",
+    "details": "Location: Dock Ward. Net gain of 1 Adventurer plus the ability to change types.",
     "extra": "Owner Benefit: 2 Gold"
   },
   "the_tower_of_luck": {
     "id": "the_tower_of_luck",
     "name": "The Tower of Luck",
-    "body": "Cost: 8 Gold. Action: Take 1 Cleric + 2 Rogues. Owner: +1 Cleric or Rogue.",
+    "body": "Cost: 8 Gold. Action: Take 1 Cleric and 2 Rogues from the supply and place them in your Tavern. Owner: Take 1 Cleric or 1 Rogue from the supply.",
     "summary": "8 Gold - 1 Cleric + 2 Rogues",
-    "details": "Expensive building for Piety and Skullduggery quests.",
-    "extra": "Owner Benefit: 1 Cleric or Rogue"
+    "details": "Location: Sea Ward.",
+    "extra": "Owner Benefit: 1 Cleric or 1 Rogue"
   },
   "tower_of_the_order": {
     "id": "tower_of_the_order",
     "name": "Tower of the Order",
-    "body": "Cost: 4 Gold. Action: Take all Wizards from this space. Owner: Draw 1 Intrigue card. (Wizards accumulate here each round)",
-    "summary": "4 Gold - Accumulating Wizards",
-    "details": "At the start of each round, 1 Wizard is placed here. When used, take all accumulated Wizards.",
-    "extra": "Owner Benefit: 1 Intrigue card"
+    "body": "Cost: 4 Gold. When Purchased and at Start of Round: Place 1 Wizard on this space from the supply. Action: Take all Wizards from this space and place them in your Tavern. Owner: Draw 1 Intrigue card.",
+    "summary": "4 Gold - Accumulating Wizards (1/round)",
+    "details": "Location: Castle Ward. At purchase and each round start, 1 Wizard is placed here. Wizards accumulate if unused.",
+    "extra": "Owner Benefit: Draw 1 Intrigue card"
   },
   "the_waymoot": {
     "id": "the_waymoot",
     "name": "The Waymoot",
-    "body": "Cost: 4 Gold. Action: Score all VP tokens on this space + take 1 face-up Quest. Owner: +2 VP.",
-    "summary": "4 Gold - VP tokens + Quest",
-    "details": "VP tokens accumulate here each round. Good value if left unused for several rounds.",
+    "body": "Cost: 4 Gold. When Purchased and at Start of Round: Place 3 VP tokens on this space. Action: Remove all VP tokens from this space and score that many VP, and take 1 face-up Quest card from Cliffwatch Inn. Owner: Score 2 VP.",
+    "summary": "4 Gold - Accumulating VP (3/round) + Quest",
+    "details": "Location: South Ward. At purchase and each round start, 3 VP tokens are placed here. They accumulate if unused.",
     "extra": "Owner Benefit: 2 VP"
   },
   "the_yawning_portal": {
     "id": "the_yawning_portal",
     "name": "The Yawning Portal",
-    "body": "Cost: 4 Gold. Action: Take 2 adventurers of any type from the supply. Owner: +1 adventurer of any type.",
-    "summary": "4 Gold - 2 any adventurers",
-    "details": "Maximum flexibility. One of the most versatile buildings.",
-    "extra": "Owner Benefit: 1 any adventurer"
+    "body": "Cost: 4 Gold. Action: Take 2 Adventurers of any type from the supply and place them in your Tavern. Owner: Take 1 Adventurer of any type from the supply.",
+    "summary": "4 Gold - 2 any Adventurers",
+    "details": "Location: Castle Ward.",
+    "extra": "Owner Benefit: 1 any Adventurer"
   },
   "the_zoarstar": {
     "id": "the_zoarstar",
     "name": "The Zoarstar",
-    "body": "Cost: 8 Gold. Action: Choose any action space with an opponent's Agent and use that action. Owner: +2 VP.",
-    "summary": "8 Gold - Copy opponent's space",
-    "details": "Expensive but powerful. Lets you use an action space that's already occupied.",
+    "body": "Cost: 8 Gold. Action: Choose a space containing an opponent's Agent. You use that space's action as though you had assigned an Agent to it. Owner: Score 2 VP.",
+    "summary": "8 Gold - Copy an opponent's occupied action space",
+    "details": "Location: Trades Ward. Lets you use an action space that is already occupied by an opponent.",
     "extra": "Owner Benefit: 2 VP"
   }
 }
