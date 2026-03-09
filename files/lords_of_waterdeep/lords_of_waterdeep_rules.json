@@ -21,21 +21,18 @@
       "name": "Agents",
       "type": "Meeple",
       "description": "Wooden agent tokens in each player color. Each player starts with 4 Agents in their pool. Each player also places 1 Agent near the Round 5 space.",
-      "count": 25,
       "condition": {"min_count_variant": 2, "max_count_variant": 2}
     },
     {
       "name": "Agents",
       "type": "Meeple",
       "description": "Wooden agent tokens in each player color. Each player starts with 3 Agents in their pool. Each player also places 1 Agent near the Round 5 space.",
-      "count": 25,
       "condition": {"min_count_variant": 3, "max_count_variant": 3}
     },
     {
       "name": "Agents",
       "type": "Meeple",
       "description": "Wooden agent tokens in each player color. Each player starts with 2 Agents in their pool. Each player also places 1 Agent near the Round 5 space.",
-      "count": 25,
       "condition": {"min_count_variant": 4}
     },
     {
@@ -437,10 +434,15 @@
       {
         "source": "Lord Card Bonus",
         "description": "Score the bonus VP shown on your Lord card, based on the specific conditions it describes."
+      },
+      {
+        "source": "Corruption Penalty",
+        "description": "Each player loses VP based on the number of Corruption tokens they hold. The penalty per token depends on total Corruption in play: 0 tokens = 0, 1-3 tokens = -1 each, 4-6 = -2 each, 7-8 = -3 each, 9+ = -4 each.",
+        "condition": {"expansion": "scoundrels"}
       }
     ]
   },
-  "winning_condition": "The player with the most VP after final scoring is the winner. In the event of a tie, the player with the most Gold wins.",
+  "winning_condition": "The player with the most VP after final scoring is the winner. In the event of a tie, the tied players compare Gold; the player with the most Gold wins. If there is still a tie in both VP and Gold, the tied players share the victory.",
   "tips_for_new_players": [
     {
       "tip": "Remember your Lord",
