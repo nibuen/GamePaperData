@@ -150,21 +150,26 @@ def generate_og_image(game_id: str, rules: dict, cover_path: object = None):
     cover_region_w = 0
     if cover_path and cover_path.exists():
         try:
-            cover = Image.open(cover_path).convert("RGB")
+            cover = Image.open(cover_path).convert("RGBA")
             # Fit cover into right portion: 300px wide, full height with padding
             cover_w = 280
             cover_h = HEIGHT - 80
             cover.thumbnail((cover_w, cover_h), Image.LANCZOS)
-            # Add slight darkening overlay for blending
             cover_x = WIDTH - cover.width - 50
             cover_y = (HEIGHT - cover.height) // 2
-            img.paste(cover, (cover_x, cover_y))
-            # Draw a subtle border
-            draw.rectangle(
-                [(cover_x - 1, cover_y - 1),
-                 (cover_x + cover.width, cover_y + cover.height)],
-                outline=(60, 60, 80), width=1,
-            )
+            # Composite with alpha if present, otherwise paste directly
+            if cover.mode == "RGBA":
+                img.paste(cover, (cover_x, cover_y), cover)
+            else:
+                img.paste(cover, (cover_x, cover_y))
+            # Draw a subtle border only for opaque (JPG) covers
+            has_alpha = any(cover.getdata(band=3))
+            if not has_alpha:
+                draw.rectangle(
+                    [(cover_x - 1, cover_y - 1),
+                     (cover_x + cover.width, cover_y + cover.height)],
+                    outline=(60, 60, 80), width=1,
+                )
             cover_region_w = cover.width + 80
             content_w = WIDTH - 120 - cover_region_w
         except Exception:
@@ -272,10 +277,10 @@ def main():
 
     print(f"Generating OG images for {len(games)} games...")
     for game_id, rules in sorted(games.items()):
-        # Check for optional cover image
-        cover = FILES_DIR / game_id / "cover.jpg"
+        # Check for optional cover image (prefer PNG with transparency)
+        cover = FILES_DIR / game_id / "cover.png"
         if not cover.exists():
-            cover = FILES_DIR / game_id / "cover.png"
+            cover = FILES_DIR / game_id / "cover.jpg"
         if not cover.exists():
             cover = None
         generate_og_image(game_id, rules, cover)
