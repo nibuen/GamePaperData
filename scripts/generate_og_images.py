@@ -150,25 +150,25 @@ def generate_og_image(game_id: str, rules: dict, cover_path: object = None):
     cover_region_w = 0
     if cover_path and cover_path.exists():
         try:
-            cover = Image.open(cover_path).convert("RGBA")
+            raw_cover = Image.open(cover_path)
+            has_transparency = (raw_cover.mode == "RGBA" and raw_cover.getextrema()[3][0] < 255)
+            cover = raw_cover.convert("RGBA")
             # Fit cover into right portion: 300px wide, full height with padding
             cover_w = 280
             cover_h = HEIGHT - 80
             cover.thumbnail((cover_w, cover_h), Image.LANCZOS)
             cover_x = WIDTH - cover.width - 50
             cover_y = (HEIGHT - cover.height) // 2
-            # Composite with alpha if present, otherwise paste directly
-            if cover.mode == "RGBA":
-                img.paste(cover, (cover_x, cover_y), cover)
-            else:
-                img.paste(cover, (cover_x, cover_y))
-            # Draw a subtle border only for opaque (JPG) covers
-            has_alpha = any(cover.getdata(band=3))
-            if not has_alpha:
-                draw.rectangle(
-                    [(cover_x - 1, cover_y - 1),
-                     (cover_x + cover.width, cover_y + cover.height)],
-                    outline=(60, 60, 80), width=1,
+            # Composite with alpha mask for transparent covers
+            img.paste(cover, (cover_x, cover_y), cover)
+            # Draw a rounded border for opaque covers to frame them
+            if not has_transparency:
+                draw.rounded_rectangle(
+                    [(cover_x - 2, cover_y - 2),
+                     (cover_x + cover.width + 1, cover_y + cover.height + 1)],
+                    radius=6,
+                    outline=(70, 70, 100),
+                    width=2,
                 )
             cover_region_w = cover.width + 80
             content_w = WIDTH - 120 - cover_region_w
