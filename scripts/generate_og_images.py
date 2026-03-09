@@ -253,6 +253,45 @@ def generate_og_image(game_id: str, rules: dict, cover_path: object = None):
     print(f"  Generated: {out_path}")
 
 
+def validate_cover(cover_path, game_id):
+    """Check cover image for white/light background MARGINS (not art that is light).
+    Detects uniform white padding around the image by checking if the outermost
+    rows/columns are mostly the same light color — a sign of uncropped margins.
+    Returns list of warnings. Fails the build if issues are found."""
+    warnings = []
+    img = Image.open(cover_path).convert("RGB")
+    w, h = img.size
+    pixels = img.load()
+
+    def is_near_white(r, g, b):
+        return r > 230 and g > 230 and b > 230
+
+    # Check each edge: what % of the outermost 3px band is near-white?
+    edges = {"top": [], "bottom": [], "left": [], "right": []}
+    for x in range(w):
+        for dy in range(min(3, h)):
+            edges["top"].append(pixels[x, dy])
+            edges["bottom"].append(pixels[x, h - 1 - dy])
+    for y in range(h):
+        for dx in range(min(3, w)):
+            edges["left"].append(pixels[dx, y])
+            edges["right"].append(pixels[w - 1 - dx, y])
+
+    white_edges = []
+    for side, pxs in edges.items():
+        white_pct = sum(1 for r, g, b in pxs if is_near_white(r, g, b)) / len(pxs) * 100
+        if white_pct > 80:
+            white_edges.append(side)
+
+    # Only warn if 2+ edges are white margins (a single light edge could be art)
+    if len(white_edges) >= 2:
+        warnings.append(
+            f"  WARNING: {game_id} cover has white margins on {', '.join(white_edges)} edges. "
+            f"Replace with tightly-cropped flat art or a transparent PNG."
+        )
+    return warnings
+
+
 def main():
     # Load all games: bundled files + registry
     games = {}
@@ -276,6 +315,7 @@ def main():
         sys.exit(1)
 
     print(f"Generating OG images for {len(games)} games...")
+    all_warnings = []
     for game_id, rules in sorted(games.items()):
         # Check for optional cover image (prefer PNG with transparency)
         cover = FILES_DIR / game_id / "cover.png"
@@ -283,7 +323,19 @@ def main():
             cover = FILES_DIR / game_id / "cover.jpg"
         if not cover.exists():
             cover = None
+
+        # Validate cover before generating
+        if cover and cover.exists():
+            all_warnings.extend(validate_cover(cover, game_id))
+
         generate_og_image(game_id, rules, cover)
+
+    if all_warnings:
+        print("\n*** COVER IMAGE ISSUES ***")
+        for w in all_warnings:
+            print(w)
+        print("Fix these before merging — light edges look bad on the dark OG card.")
+        sys.exit(1)
 
     print(f"Done! Generated {len(games)} OG images.")
 
