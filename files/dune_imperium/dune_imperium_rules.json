@@ -430,7 +430,7 @@
     },
     {
       "tip": "Influence bonuses at level 4",
-      "description": "The bonus at 4 Influence with each Faction is a one-time reward. Even if you drop below 4, you keep it. If you later rise back to 4, you earn it again."
+      "description": "The bonus at 4 Influence with each Faction is a one-time reward. You keep it even if you drop below 4 later, but you do not earn it again if you return to 4."
     },
     {
       "tip": "Control defensive bonus",
