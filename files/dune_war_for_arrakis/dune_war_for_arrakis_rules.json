@@ -368,6 +368,16 @@
           {
             "description": "The Atreides player can use Wormsign placement strategically via the Wormsign action die result."
           }
+        ],
+        "details": [
+          {
+            "short_description": "Which areas are at risk from sandworms?",
+            "description": "Only Minor Erg and Desert areas. Mountain and Plateau areas are completely safe from sandworm attacks."
+          },
+          {
+            "short_description": "Can Carryalls rescue Harvesters from sandworm attacks?",
+            "description": "Yes. Each Carryall can rescue one Harvester from a sandworm attack, returning the Harvester to the supply for later placement."
+          }
         ]
       },
       {
@@ -440,6 +450,12 @@
           {
             "description": "Surprise attacks may grant combat advantages."
           }
+        ],
+        "details": [
+          {
+            "short_description": "What makes a surprise attack different from normal combat?",
+            "description": "A surprise attack is initiated by moving a Legion with a leader into an enemy-occupied area using the Men/Tactics die result. It may grant combat advantages over a standard engagement."
+          }
         ]
       },
       {
@@ -456,6 +472,12 @@
             "condition": {
               "min_count_variant": 3
             }
+          }
+        ],
+        "details": [
+          {
+            "short_description": "Can I choose which deck to draw from?",
+            "description": "No. You must draw exactly 1 card from your House deck and 1 card from your Ally deck -- you cannot draw 2 from the same deck."
           }
         ]
       },
