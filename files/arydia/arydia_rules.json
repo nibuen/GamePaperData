@@ -67,6 +67,7 @@
     {
       "name": "Event Tokens",
       "type": "Token",
+      "icon": "HexagonQuestion",
       "description": "Placed on uncleared maps at designated pointers. When an exile moves adjacent, the event immediately triggers (mandatory)."
     },
     {
@@ -82,11 +83,15 @@
     {
       "name": "Wound Tokens",
       "type": "Token",
+      "icon": "Bullseye",
+      "tint": "#D32F2F",
       "description": "Red gems placed on foe Hit Grid points when wounded. A foe is defeated when all Hit Points are covered."
     },
     {
       "name": "Power Tokens",
       "type": "Token",
+      "icon": "Fire",
+      "tint": "#EF6C00",
       "description": "Orange gems placed on foe AI cards during Limit Breaks. Each Power token adds 1 damage to every foe attack."
     },
     {
