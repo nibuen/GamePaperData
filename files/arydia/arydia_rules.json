@@ -214,7 +214,7 @@
         ]
       },
       {
-        "name": "Interact with POI (Worldmap)",
+        "name": "Interact with Point of Interest (POI)",
         "description": "Draw and resolve the POI card for your current hex. POIs are often Towns or Guilds.",
         "icon": "StructureHouse",
         "steps": [
