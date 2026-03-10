@@ -287,7 +287,7 @@
     }
   ],
   "gameplay": {
-    "turn_structure": "The game is played over a series of rounds. Each round consists of: Start of the Round (draw cards, reveal prescience cards), then 4 Steps: (1) Vehicle Placement, (2) Action Resolution, (3) Desert Hazards, (4) Spice Harvesting, followed by End of the Round (check prescience victory, return vehicles, advance regeneration tank, discard to hand limit, recover dice). Check victory conditions after Spice Harvesting.",
+    "turn_structure": "Each round: Start of Round, then Steps 1-4, then End of Round. Victory is checked after Spice Harvesting.",
     "actions": [
       {
         "name": "Start of the Round",
