@@ -88,7 +88,7 @@
     "definition": "The player to the left of the active player. The Guide draws and runs event/NPC/POI cards by roleplaying or reading them aloud. The Guide earns RP when reaching a roleplay marker on a card.",
     "context": "Role",
     "icon": "BookClosed",
-    "tint": "#795548"
+    "tint": "#5D4037"
   },
   "foe": {
     "term": "Foe",
@@ -193,7 +193,7 @@
     "definition": "A deck of cards drawn when traveling between hexes on the Worldmap. Draw the top card, resolve its effects (you may use skills or items before resolving), then discard. Shuffled and Travel tokens refreshed when Resting.",
     "context": "Card",
     "icon": "CardsStack",
-    "tint": "#795548"
+    "tint": "#5D4037"
   },
   "threat_deck": {
     "term": "Threat Deck",
@@ -207,7 +207,7 @@
     "definition": "Tokens that determine whether the party can explore new hexes. When any Travel token is exhausted (gray side), the party can only move to explored (face-up) hexes and cannot travel to unexplored (face-down) hexes. Refreshed by Resting.",
     "context": "Token",
     "icon": "Token",
-    "tint": "#795548"
+    "tint": "#5D4037"
   },
   "event_token": {
     "term": "Event Token",
@@ -235,7 +235,7 @@
     "definition": "General items available to any exile, identified by a brown 'A' icon. Pathless items can be freely traded between exiles.",
     "context": "Item",
     "icon": "HandCard",
-    "tint": "#795548"
+    "tint": "#5D4037"
   },
   "durability": {
     "term": "Durability",
@@ -291,7 +291,7 @@
     "definition": "An exile on a Hex pointer or Stairs pointer may flee combat as a Free action by drawing EVT-333.",
     "context": "Combat",
     "icon": "PawnRight",
-    "tint": "#795548"
+    "tint": "#5D4037"
   },
   "positional_grid": {
     "term": "Positional Grid",
