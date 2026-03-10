@@ -1,0 +1,258 @@
+{
+  "sietch": {
+    "term": "Sietch",
+    "definition": "Hidden Fremen shelters scattered across Arrakis. Each sietch has a rank (hidden until revealed). When destroyed by Harkonnen, they gain supremacy points equal to the rank. The Atreides player may inspect sietch tokens at any time.",
+    "context": "Settlements",
+    "icon": "StructureTower",
+    "tint": "#D4A03C"
+  },
+  "legion": {
+    "term": "Legion",
+    "definition": "A group of units and leaders occupying the same area. Legions move and fight together. Combat power is 1 per unit and 2 per leader. Maximum 6 units per area (stacking limit).",
+    "context": "Units & Movement",
+    "icon": "Pawns",
+    "tint": "#78909C"
+  },
+  "supremacy_points": {
+    "term": "Supremacy Points",
+    "definition": "Harkonnen victory points, tracked on the Supremacy Track. Gained by destroying Fremen Sietches (equal to sietch rank) or by spending 3 spice during harvesting (if Supremacy marker is at step 5 or below). Harkonnen wins at 10+ SP.",
+    "context": "Victory / Harkonnen",
+    "icon": "Crown_a",
+    "tint": "#C62828",
+    "related_terms": ["sietch"]
+  },
+  "prescience": {
+    "term": "Prescience",
+    "definition": "The Atreides victory system tracked on 3 markers: Kwisatz Haderach (green), Sand Dwellers (yellow), and Jihad (red). Markers advance by claiming prescience cards, taking ecological stations, or destroying Harkonnen settlements. Step 3 triggers leader upgrades, step 6 brings Alia, step 8 unlocks Family Atomics.",
+    "context": "Victory / Atreides",
+    "icon": "BookOpen",
+    "tint": "#1B5E20",
+    "related_terms": ["kwisatz_haderach", "sand_dwellers", "jihad"]
+  },
+  "kwisatz_haderach": {
+    "term": "Kwisatz Haderach",
+    "definition": "Green Prescience track. At step 3, Paul Atreides upgrades to Paul-Muad'Dib. Named after the prophesied super-being the Bene Gesserit have sought for generations.",
+    "context": "Prescience Tracks",
+    "icon": "BookOpen",
+    "tint": "#2E7D32",
+    "related_terms": ["prescience", "paul_muaddib"]
+  },
+  "sand_dwellers": {
+    "term": "Sand Dwellers",
+    "definition": "Yellow Prescience track. At step 3, Lady Jessica upgrades to Reverend Mother Jessica. Represents the Atreides integration with the Fremen people.",
+    "context": "Prescience Tracks",
+    "icon": "BookOpen",
+    "tint": "#F9A825",
+    "related_terms": ["prescience"]
+  },
+  "jihad": {
+    "term": "Jihad",
+    "definition": "Red Prescience track. At step 3, Chani enters play. Represents the growing holy war movement among the Fremen.",
+    "context": "Prescience Tracks",
+    "icon": "BookOpen",
+    "tint": "#C62828",
+    "related_terms": ["prescience"]
+  },
+  "desert_power": {
+    "term": "Desert Power",
+    "definition": "Atreides-only free action available when the Atreides player has fewer unused action dice than Harkonnen. Does not cost a die. Options: place 2 wormsign tokens in desert areas (1 per area, no existing wormsign/sandworm/sietch), OR attack with 1 sandworm on the board.",
+    "context": "Actions / Atreides",
+    "icon": "Dice",
+    "tint": "#D4A03C"
+  },
+  "sandriding": {
+    "term": "Sandriding",
+    "definition": "Atreides movement ability. An Atreides legion adjacent to an area containing a wormsign token or sandworm can move through any number of adjacent, consecutive areas containing wormsigns or sandworms, ending movement or attacking from an area adjacent to one of those tokens. Cannot be combined with Troop-Transport.",
+    "context": "Movement / Atreides",
+    "icon": "PawnRight",
+    "tint": "#D4A03C",
+    "related_terms": ["wormsign", "sandworm"]
+  },
+  "troop_transport": {
+    "term": "Troop-Transport",
+    "definition": "Harkonnen movement ability using Ornithopters. Remove 1 Ornithopter from an Air zone connected to the starting sector to move or attack with a legion up to 1 additional area. This allows crossing impassable borders, enemy legions, and sandworms. Only the starting area must be connected to the Ornithopter's Air Zone. Max 1 per legion per turn.",
+    "context": "Movement / Harkonnen",
+    "icon": "PawnRight",
+    "tint": "#C62828"
+  },
+  "scouting": {
+    "term": "Scouting",
+    "definition": "Harkonnen ability using Ornithopters. Remove 1 Ornithopter from the board to choose an area in a connected Sector. Reveal any Sietch and all Deployment tokens in that area. Disabled when the Spacing Guild Imperium Ban is active.",
+    "context": "Actions / Harkonnen",
+    "icon": "Hexagon",
+    "tint": "#C62828",
+    "related_terms": ["deployment_token", "sietch"]
+  },
+  "wormsign": {
+    "term": "Wormsign",
+    "definition": "Tokens placed face-down on the board during Desert Hazards and via Desert Power. When flipped, they resolve as: Sand (false alarm, discard), Sandworm (place a sandworm, discard token), or Burrowing Sandworm (place sandworm only if in deep desert, otherwise discard).",
+    "context": "Desert Hazards",
+    "icon": "Token",
+    "tint": "#E65100",
+    "related_terms": ["sandworm", "desert_power"]
+  },
+  "sandworm": {
+    "term": "Sandworm",
+    "definition": "Giant desert creatures that threaten units and harvesters. Maximum 4 on the board (5 with Wild Maker). Attack with 4 combat dice (6 for Wild Maker). Appear during Desert Hazards phase when wormsign tokens are resolved. The Atreides can move and attack with them via Desert Power.",
+    "context": "Desert Hazards",
+    "icon": "Sword",
+    "tint": "#E65100",
+    "related_terms": ["wormsign", "wild_maker"]
+  },
+  "wild_maker": {
+    "term": "Wild Maker",
+    "definition": "A special Atreides sandworm that enters play when 1 of the 3 Sand-Hulud Fremen Ally planning cards is played. Follows sandworm rules but attacks with 6 combat dice instead of 4. Increases the board sandworm limit to 5.",
+    "context": "Units / Atreides",
+    "icon": "Sword",
+    "tint": "#D4A03C",
+    "related_terms": ["sandworm"]
+  },
+  "sardaukar": {
+    "term": "Sardaukar",
+    "definition": "Elite Harkonnen special units provided by the Emperor. In combat, each Sardaukar cancels 1 enemy Shield result before casualties are removed. They are the Harkonnen equivalent of the Atreides Fedaykin.",
+    "context": "Units / Harkonnen",
+    "icon": "Pawn",
+    "tint": "#C62828",
+    "related_terms": ["fedaykin"]
+  },
+  "fedaykin": {
+    "term": "Fedaykin",
+    "definition": "Elite Atreides special units (Fremen death commandos). In combat, each Fedaykin cancels 1 enemy Shield result before casualties are removed. They are the Atreides equivalent of the Harkonnen Sardaukar.",
+    "context": "Units / Atreides",
+    "icon": "Pawn",
+    "tint": "#D4A03C",
+    "related_terms": ["sardaukar"]
+  },
+  "deployment_token": {
+    "term": "Deployment Token",
+    "definition": "Atreides tokens placed face-down to hide unit composition. Count as 1 unit for stacking/movement. Revealed via Guerrilla Training (free action -- cannot use in sectors with Ornithopters in connected Air Zones), when attacked, or when scouted. Replaced by the corresponding units when revealed.",
+    "context": "Units / Atreides",
+    "icon": "TokensStack",
+    "tint": "#D4A03C",
+    "related_terms": ["guerrilla_training", "scouting"]
+  },
+  "guerrilla_training": {
+    "term": "Guerrilla Training",
+    "definition": "Atreides-only free action. Reveal any number of deployment tokens on the board by flipping them and replacing with the corresponding units. Cannot voluntarily reveal tokens in a Sector with an Ornithopter in a connected Air Zone (but forced reveals from attacks still apply).",
+    "context": "Free Actions / Atreides",
+    "icon": "TokensStack",
+    "tint": "#D4A03C",
+    "related_terms": ["deployment_token"]
+  },
+  "imperium_ban": {
+    "term": "Imperium Ban",
+    "definition": "Penalties activated when Imperium markers move down during Spice Harvesting or are on the bottom step. CHOAM Ban reduces the stacking limit from 6 to 5 units. Landsraad Ban prevents discarding Planning cards from hand to gain additional combat dice. Bans remain active until the beginning of the next round's harvesting phase.",
+    "context": "Spice Harvesting",
+    "icon": "LockClosed",
+    "tint": "#C62828",
+    "related_terms": ["spice_harvesting"]
+  },
+  "spice_harvesting": {
+    "term": "Spice Harvesting",
+    "definition": "Step 4 of each round. Harvesters collect spice (1 point in Desert, 2 in Deep Desert). Harkonnen spends spice to maintain Imperium markers: 2 to keep a marker in place, 3 to raise it 1 step (max 1 step per marker). Unspent markers drop 1 step, triggering Imperium Bans.",
+    "context": "Round Structure",
+    "icon": "TokensStack",
+    "tint": "#FF8F00",
+    "related_terms": ["imperium_ban"]
+  },
+  "coriolis_storm": {
+    "term": "Coriolis Storm",
+    "definition": "Occurs during Desert Hazards (step 3). All Plateau, Minor Erg, and Desert areas are exposed. For each Harkonnen legion in such an area, the Atreides player rolls 2 combat dice. Special results deal variable hits based on terrain: Deep Desert = 2 hits, Desert = 1 hit, Minor Erg or Plateau = 0 hits. Mountain areas are safe.",
+    "context": "Desert Hazards",
+    "icon": "Spinner",
+    "tint": "#E65100"
+  },
+  "regeneration_tank": {
+    "term": "Regeneration Tank",
+    "definition": "Where eliminated named leaders are placed. Leaders enter at the leftmost slot and advance 1 step to the right each time the player spends an action die (Desert Power actions do not advance it). When a leader moves off the rightmost slot, they become available for deployment the following turn.",
+    "context": "Leaders",
+    "icon": "Hourglass",
+    "tint": "#78909C"
+  },
+  "bene_gesserit_token": {
+    "term": "Bene Gesserit Token",
+    "definition": "Temporary action dice. Atreides starts with 1 token, gains more from the Supremacy Track and when Gaius Helen Mohiam enters play. At the start of Action Resolution, each player may place 1 token on an empty action box as a temporary die. Once the action is taken, the token is permanently discarded from the game.",
+    "context": "Actions",
+    "icon": "Token",
+    "tint": "#7B1FA2"
+  },
+  "paul_muaddib": {
+    "term": "Paul-Muad'Dib",
+    "definition": "Upgraded form of Paul Atreides, entering play when the Kwisatz Haderach Prescience marker reaches step 3. Replaces Paul Atreides entirely (figure and card removed from game). Placed in the same position as the replaced Paul. If a card refers to 'Paul', it applies to both versions.",
+    "context": "Named Leaders / Atreides",
+    "icon": "Character",
+    "tint": "#1B5E20",
+    "related_terms": ["kwisatz_haderach"]
+  },
+  "reverend_mother_jessica": {
+    "term": "Reverend Mother Jessica",
+    "definition": "Upgraded form of Lady Jessica, entering play when the Sand Dwellers Prescience marker reaches step 3. Replaces Lady Jessica entirely (figure and card removed from game). Placed in the same position as the replaced Jessica. If a card refers to 'Jessica', it applies to both versions.",
+    "context": "Named Leaders / Atreides",
+    "icon": "Character",
+    "tint": "#1B5E20",
+    "related_terms": ["sand_dwellers"]
+  },
+  "family_atomics": {
+    "term": "Family Atomics",
+    "definition": "Devastating weapons unlocked when any Prescience marker reaches step 8. The Atreides player may detonate as a free action, choosing 1 of the 3 tokens to place over a border on the board. Effects change terrain: Splintered Rock (Hagga Basin), Hole in the Rock (Imperial Basin), Rimwall (Imperial Basin/Arrakeen) -- making areas exposed to coriolis storms and sandworms. One detonation per game.",
+    "context": "Special Abilities / Atreides",
+    "icon": "Fire",
+    "tint": "#C62828",
+    "related_terms": ["prescience"]
+  },
+  "free_area": {
+    "term": "Free Area",
+    "definition": "An area containing no enemy settlements, enemy units, or sandworms. Areas with only ecological stations or harvesters are considered free for both players. An area is 'empty' when it contains no figures or tokens of any kind.",
+    "context": "Board / Terminology",
+    "icon": "Hexagon",
+    "tint": "#78909C"
+  },
+  "air_zone": {
+    "term": "Air Zone",
+    "definition": "Spaces on borders between 2 Sectors where Harkonnen vehicles are placed. Connected to all areas in both adjacent Sectors. The North Pole (Mountain area) is part of all 4 central Sectors and connected to all 4 central Air zones.",
+    "context": "Board / Terminology",
+    "icon": "HexagonTile",
+    "tint": "#1565C0"
+  },
+  "deep_desert": {
+    "term": "Deep Desert",
+    "definition": "Desert areas adjacent to the edges of the board. Extra dangerous: harvesters collect 2 spice (vs 1 in regular Desert), and Coriolis Storm Special results deal 2 hits (vs 1 in regular Desert).",
+    "context": "Area Types",
+    "icon": "Hexagon",
+    "tint": "#E65100",
+    "related_terms": ["coriolis_storm", "spice_harvesting"]
+  },
+  "cone_of_silence": {
+    "term": "Cone of Silence",
+    "definition": "In 3-4 player games, each team gets 3 Cone of Silence tokens. Players sharing a faction must communicate openly at all times. To share secret information (like planning cards), they must discard 1 token. A cone of silence can be considered to last for 3 minutes.",
+    "context": "3-4 Player Rules",
+    "icon": "LockClosed",
+    "tint": "#78909C",
+    "condition": {
+      "min_count_variant": 3
+    }
+  },
+  "planning_cards": {
+    "term": "Planning Cards",
+    "definition": "36 cards per faction in two decks (House + Ally). Draw 2 per round via Mentat action. Playing a card costs 1 action die (instead of using the die result). Hand limit is 6 cards. Can also be discarded in combat to add 1 combat die each (max 6 total). Discarded openly. Exhausted decks are not reshuffled.",
+    "context": "Cards",
+    "icon": "Card",
+    "tint": "#78909C"
+  },
+  "surprise_attack": {
+    "term": "Surprise Attack",
+    "definition": "An attack initiated via the Leadership action die result. The attacking player adds 1 combat die to their first round of battle only. Requires a leader in the attacking legion.",
+    "context": "Combat",
+    "icon": "DiceSword",
+    "tint": "#C62828",
+    "related_terms": ["legion"]
+  },
+  "stacking_limit": {
+    "term": "Stacking Limit",
+    "definition": "All areas can contain a maximum of 6 units. If exceeded at any time, the controlling player must immediately remove excess units. Leaders do not count. Atreides deployment tokens count as 1 unit. Reduced to 5 when the CHOAM Imperium Ban is active.",
+    "context": "Board Rules",
+    "icon": "Pawns",
+    "tint": "#78909C",
+    "related_terms": ["imperium_ban"]
+  }
+}
