@@ -152,22 +152,35 @@
   ],
   "setup": [
     {
-      "description": "This is a campaign game. Follow the Quick Start Guide for initial campaign setup including character creation, starting location, and deck preparation."
+      "description": "First time playing? Use the Quick Start Guide for initial campaign setup including character creation, starting location, and deck preparation. The steps below are for resuming a saved campaign.",
+      "short_description": "Quick Start / Resume"
     },
     {
-      "description": "Set the Mode token to Adventure side.",
-      "short_description": "Mode Token"
+      "description": "Place the Worldmap with the Party token on your saved hex. Set the Mode token to Adventure side. Place exile miniatures on the Mode token.",
+      "short_description": "Worldmap"
     },
     {
-      "description": "Place the Party token on the starting hex of the Worldmap. Place exile miniatures on the Mode token.",
-      "short_description": "Party Placement"
+      "description": "Place the Threat/Combo Track with cubes set to 0. Set out the Threat Deck, Threat discard pile, and Hit Dice.",
+      "short_description": "Threat Track"
     },
     {
-      "description": "Prepare the Travel deck by shuffling all Travel cards.",
-      "short_description": "Travel Deck"
+      "description": "Set out the Map boxes with Maps (BIG, MED, SML, and LNG).",
+      "short_description": "Map Boxes"
     },
     {
-      "description": "Ensure each exile has their character sheet, starting items, skills, and starting stats (HP, MP, SP) set to their character's values.",
+      "description": "Set out XP tokens, Armor cubes (blue), Kae tokens, Wound tokens (red), Wear tokens (orange), Chest/Event/Cart tokens, and the Pathless Chest.",
+      "short_description": "Tokens"
+    },
+    {
+      "description": "Set out the Travel deck with Travel tokens (face up) and a discard pile. Set out the Job deck. Set out the Day deck with the current Day card face up and a Day discard pile. The Day discard pile always includes DAY-1 as its first card.",
+      "short_description": "Card Decks"
+    },
+    {
+      "description": "Set out the Card Indexes and any Party Inventory cards.",
+      "short_description": "Indexes"
+    },
+    {
+      "description": "Ensure each exile has their character sheet, items, skills, and current stats (HP, MP, SP) restored to their saved values.",
       "short_description": "Character Setup"
     }
   ],
