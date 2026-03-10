@@ -13,174 +13,203 @@
       "name": "Game Board",
       "type": "Board",
       "description": "Two-section board showing the northern hemisphere of Arrakis. Divided into 8 Sectors containing Areas of four types: Mountain, Plateau, Minor Erg, and Desert. Desert areas adjacent to board edges are Deep Desert. Includes Air zones for Harkonnen vehicles, the Supremacy Track, and the Prescience Track.",
+      "icon": "hexagon_tile",
       "count": 2
     },
     {
       "name": "The Spice Must Flow Board",
       "type": "Board",
       "description": "Tracks spice harvesting, Imperium relations, and vehicle placement based on the Imperium marker position.",
+      "icon": "hexagon_tile",
       "count": 1
     },
     {
       "name": "Player Dashboards",
       "type": "Board",
       "description": "Each player has a dashboard showing action die slots, the Regeneration Tank, and reference information for action dice results.",
+      "icon": "hexagon_tile",
       "count": 2
     },
     {
       "name": "Harkonnen Leaders",
       "type": "Meeple",
       "description": "Baron Harkonnen, Beast Rabban, Feyd-Rautha, Captain Aramsham, Thufir Hawat, and 6 Bashar Leaders. Leaders join Legions and provide combat abilities and special actions.",
+      "icon": "character",
       "count": 11
     },
     {
       "name": "Atreides Leaders",
       "type": "Meeple",
       "description": "Paul Atreides, Paul-Muad'Dib, Lady Jessica, Reverend Mother Jessica, Stilgar, Chani, Gurney Halleck, Alia, and 12 Naib Leaders. Leaders join Legions and provide combat abilities and special actions.",
+      "icon": "character",
       "count": 20
     },
     {
       "name": "Harkonnen Units",
       "type": "Meeple",
       "description": "24 Regular units, 12 Elite units, and 8 Sardaukar units (soldier-fanatics provided by the Emperor). Sardaukar have special combat abilities.",
+      "icon": "pawns",
       "count": 44
     },
     {
       "name": "Atreides Units",
       "type": "Meeple",
       "description": "16 Regular units, 8 Elite units, and 6 Fedaykin units (elite Fremen warriors). Fedaykin have special combat abilities.",
+      "icon": "pawns",
       "count": 30
     },
     {
       "name": "Vehicles",
       "type": "Token",
       "description": "6 Ornithopters (flying attack/transport), 8 Harvesters (spice collection), and 3 Carryalls (transport harvesters away from danger). Placed in Air zones each round based on the Imperium marker. All Harkonnen vehicles are returned by end of round.",
+      "icon": "pawn_right",
       "count": 17
     },
     {
       "name": "Sandworms",
       "type": "Meeple",
       "description": "4 Sandworms and 1 Wild Maker. Sandworms move and attack in desert areas. The Wild Maker is a special Atreides unit.",
+      "icon": "sword",
       "count": 5
     },
     {
       "name": "Settlement Tokens",
       "type": "Token",
       "description": "1 Arrakeen, 1 Carthag (major cities), 4 Pyon Villages, and 8 Sietches (Fremen hidden shelters). Harkonnen gains Supremacy Points by destroying Sietches.",
+      "icon": "structure_tower",
       "count": 14
     },
     {
       "name": "Wormsign Tokens",
       "type": "Token",
       "description": "Placed during the Desert Hazards phase and via Desert Power action. Wormsigns trigger sandworm appearances and Coriolis Storms that create desert hazards.",
+      "icon": "token",
       "count": 16
     },
     {
       "name": "Ecological Testing Stations",
       "type": "Token",
       "description": "Placed on designated board locations. Stations are not Settlements -- areas with only stations are considered free for both players. When an Atreides legion enters an area with a station, it is removed and advances the corresponding Prescience marker 1 step.",
+      "icon": "structure_farm",
       "count": 6
     },
     {
       "name": "Deployment Tokens",
       "type": "Token",
       "description": "8 Atreides Garrison, 8 Atreides Deployment, and 12 Harkonnen Garrison Deployment tokens. Atreides tokens are placed face-down to hide unit composition. Used for deploying reinforcements.",
+      "icon": "tokens_stack",
       "count": 28
     },
     {
       "name": "Family Atomics Tokens",
       "type": "Token",
       "description": "3 tokens representing the devastating Family Atomics weapons. Available when any Prescience marker reaches step 8. Effects: Splintered Rock (Hagga Basin -- exposed to coriolis storms and sandworms), Hole in the Rock (Imperial Basin -- exposed to coriolis storms and sandworms), and Rimwall (Imperial Basin and Arrakeen -- exposed to coriolis storms and sandworms).",
+      "icon": "fire",
       "count": 3
     },
     {
       "name": "Prescience Markers",
       "type": "Marker",
       "description": "3 markers tracking the Atreides player's progress: Kwisatz Haderach (green), Sand Dwellers (yellow), and Jihad (red).",
+      "icon": "flag_triangle",
       "count": 3
     },
     {
       "name": "Imperium Markers",
       "type": "Marker",
       "description": "3 markers representing relations with the great powers of the Imperium: CHOAM, Spacing Guild, and Landsraad. Position determines vehicle placement and Imperium Bans.",
+      "icon": "flag_triangle",
       "count": 3
     },
     {
       "name": "Supremacy Marker",
       "type": "Marker",
       "description": "Tracks Harkonnen Supremacy Points on the Supremacy Track. Harkonnen wins at 10+ SP.",
+      "icon": "crown_a",
       "count": 1
     },
     {
       "name": "Spice Reserve Token",
       "type": "Token",
       "description": "Tracks the current spice reserve level.",
+      "icon": "token",
       "count": 1
     },
     {
       "name": "Bene Gesserit Tokens",
       "type": "Token",
       "description": "Atreides starts with 1 token. Additional tokens gained from Supremacy Track symbols and from Gaius Helen Mohiam entering play. Tokens are placed on dashboards at the start of Action Resolution and act as temporary action dice for that round. Once used, they are discarded from the game.",
+      "icon": "token",
       "count": 4
     },
     {
       "name": "Atreides Action Dice",
       "type": "Dice",
       "description": "4 dice with faces showing: Strategy (move/attack), Leadership (move/attack with leader), Deployment (place deployment token at sietch), Mentat (draw planning cards), House (use as any result), and Desert Power (wormsign/sandworm).",
+      "icon": "dice",
       "count": 4
     },
     {
       "name": "Harkonnen Action Dice",
       "type": "Dice",
       "description": "Up to 8 dice, number available each round depends on the Spice Must Flow board. Faces show: Strategy (move/attack), Leadership (move/attack with leader), House (replace units or place vehicles), and Mentat (draw planning cards).",
+      "icon": "dice",
       "count": 8
     },
     {
       "name": "Combat Dice",
       "type": "Dice",
       "description": "6 Atreides and 6 Harkonnen combat dice. Faces show Hit (dagger), Shield, and Special results.",
+      "icon": "dice_sword",
       "count": 12
     },
     {
       "name": "Atreides Planning Cards",
       "type": "Card",
       "description": "36 cards split into House Atreides deck (18) and Fremen Ally deck (18). Draw 2 per round (1 from each, or 2 from same deck via Mentat). Can be played by spending an action die instead of using the die's action.",
+      "icon": "cards_fan",
       "count": 36
     },
     {
       "name": "Harkonnen Planning Cards",
       "type": "Card",
       "description": "36 cards split into House Harkonnen deck (18) and Corrino Ally deck (18). Draw 2 per round. Can be played by spending an action die.",
+      "icon": "cards_fan",
       "count": 36
     },
     {
       "name": "Atreides Leader Cards",
       "type": "Card",
       "description": "10 cards: Paul Atreides, Lady Jessica, Reverend Mother Jessica, Gurney Halleck, Alia (House Atreides); Naib Leaders, Paul-Muad'Dib, Stilgar, Chani, Wild Maker (Fremen Ally). Define special abilities for each leader.",
+      "icon": "card",
       "count": 10
     },
     {
       "name": "Harkonnen Leader Cards",
       "type": "Card",
       "description": "6 cards: Beast Rabban, Thufir Hawat, Baron Harkonnen, Feyd-Rautha (House Harkonnen); Bashar Leaders, Captain Aramsham (Corrino Ally). Define special abilities for each leader.",
+      "icon": "card",
       "count": 6
     },
     {
       "name": "Prescience Cards",
       "type": "Card",
       "description": "16 cards revealed 3 at a time each round. Each card specifies the phase and conditions required to claim it. The Atreides can claim a maximum of 2 per round. Unclaimed cards can be discarded or reshuffled at end of round.",
+      "icon": "card",
       "count": 16
     },
     {
       "name": "Objective Cards",
       "type": "Card",
       "description": "6 secret objective cards. Atreides draws one at game start -- it defines the Prescience Point thresholds needed on all 3 tracks to win.",
+      "icon": "card_target",
       "count": 6
     },
     {
       "name": "Imperium Bans Cards",
       "type": "Card",
       "description": "3 reference cards (CHOAM, Spacing Guild, Landsraad) defining penalties when Imperium markers move down during Spice Harvesting. Effects are described on the corresponding reference cards and apply at all times while active.",
+      "icon": "lock_closed",
       "count": 3
     }
   ],
