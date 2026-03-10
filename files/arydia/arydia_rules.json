@@ -438,13 +438,7 @@
     ]
   },
   "end_game": {
-    "trigger": "Arydia is a campaign game. The game ends when the campaign story concludes. Individual sessions end when the party chooses to Rest at a town or at a natural stopping point.",
-    "final_scoring": [
-      {
-        "source": "Campaign Progression",
-        "description": "This is a cooperative campaign game. There is no competitive scoring. Victory is achieved by completing the campaign objectives together."
-      }
-    ]
+    "trigger": "Arydia is a campaign game. The game ends when the campaign story concludes. Individual sessions end when the party chooses to Rest at a town or at a natural stopping point."
   },
   "winning_condition": "All exiles cooperate to complete the campaign. There are no individual scores or tiebreakers. If all exiles are KO'd in combat, draw EVT-999 to determine the consequence.",
   "tips_for_new_players": [
