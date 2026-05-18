@@ -1,0 +1,101 @@
+{
+  "game_id": "hammer_of_the_scots",
+  "start_node": "intro",
+  "nodes": [
+    {
+      "id": "intro",
+      "title": "How Blocks Work",
+      "content": [
+        { "description": "Hammer of the Scots is a block wargame. Your forces are wooden blocks that stand upright facing you, so your opponent cannot see a unit's type or strength until it fights. These three short animations show the core ideas." }
+      ],
+      "options": [
+        { "label": "Show me", "next_node": "hidden_strength" }
+      ]
+    },
+    {
+      "id": "hidden_strength",
+      "title": "Hidden Strength",
+      "content": [
+        { "description": "A block stands so only its owner sees the strength on the top edge. The enemy just sees a blank back. When the block is committed to battle it is stood face-up for both players to see." },
+        {
+          "description": "Tap Replay to watch a block reveal its strength.",
+          "action": {
+            "type": "block_animation",
+            "caption": "A block hides its strength until it is revealed",
+            "blocks": [
+              { "id": "en", "label": "EN", "color": "#B33A3A", "strength": 3, "revealed": false, "x": 0.5, "y": 0.5 }
+            ],
+            "beats": [
+              { "op": "pause", "duration_ms": 700, "label": "Face-down: the enemy sees nothing" },
+              { "op": "flip", "target": "en", "revealed": true, "duration_ms": 700, "label": "Revealed: strength 3" }
+            ]
+          }
+        }
+      ],
+      "options": [
+        { "label": "Next", "next_node": "step_loss" }
+      ]
+    },
+    {
+      "id": "step_loss",
+      "title": "Taking a Hit",
+      "content": [
+        { "description": "When a block takes a hit in combat it is rotated down one step to show one less strength. It stays in the fight, just weaker. A block reduced to zero is eliminated." },
+        {
+          "description": "Watch a hit drop this block from strength 3 to 2.",
+          "action": {
+            "type": "block_animation",
+            "caption": "A hit reduces a block by one step",
+            "blocks": [
+              { "id": "sc", "label": "SC", "color": "#3A6BB3", "strength": 3, "revealed": true, "x": 0.5, "y": 0.5 }
+            ],
+            "beats": [
+              { "op": "pause", "duration_ms": 600, "label": "Strength 3" },
+              { "op": "set_strength", "target": "sc", "strength": 2, "duration_ms": 700, "label": "Hit! Strength now 2" }
+            ]
+          }
+        }
+      ],
+      "options": [
+        { "label": "Next", "next_node": "moving_to_battle" }
+      ]
+    },
+    {
+      "id": "moving_to_battle",
+      "title": "Moving Into Battle",
+      "content": [
+        { "description": "Blocks move between connected areas. When blocks of both sides end up in the same area, a battle begins and both sides reveal and fight." },
+        {
+          "description": "A Scottish block advances into an area held by an English block.",
+          "action": {
+            "type": "block_animation",
+            "caption": "Moving into an occupied area forces a battle",
+            "blocks": [
+              { "id": "en", "label": "EN", "color": "#B33A3A", "strength": 3, "revealed": false, "x": 0.74, "y": 0.5 },
+              { "id": "sc", "label": "SC", "color": "#3A6BB3", "strength": 4, "revealed": false, "x": 0.16, "y": 0.5 }
+            ],
+            "beats": [
+              { "op": "pause", "duration_ms": 500, "label": "Two areas, two hidden blocks" },
+              { "op": "move", "target": "sc", "to_x": 0.54, "to_y": 0.5, "duration_ms": 900, "label": "Scotland advances" },
+              { "op": "flip", "target": "sc", "revealed": true, "duration_ms": 600, "label": "Battle! Both sides reveal" },
+              { "op": "flip", "target": "en", "revealed": true, "duration_ms": 600 }
+            ]
+          }
+        }
+      ],
+      "options": [
+        { "label": "Done", "next_node": "wrap" }
+      ]
+    },
+    {
+      "id": "wrap",
+      "title": "That Is the Core",
+      "content": [
+        { "description": "Hidden strength, losing a step on a hit, and moving blocks to force battles are the heart of every block wargame. The rest of Hammer of the Scots is the year-by-year card play and the fight to control the Scottish nobles. Keep the rulebook handy for the full sequence of play." }
+      ],
+      "options": [
+        { "label": "Finish", "next_node": null }
+      ]
+    }
+  ]
+}

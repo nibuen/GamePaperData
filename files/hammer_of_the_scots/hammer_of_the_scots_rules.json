@@ -1,0 +1,135 @@
+{
+  "game_name": "Hammer of the Scots",
+  "designer": "Tom Dalgliesh, Jerry Taylor",
+  "publisher": "Columbia Games",
+  "game_overview": "Hammer of the Scots is a two-player block wargame covering the Scottish War of Independence from 1297 to 1314. One player commands England under Edward I, the Hammer of the Scots; the other commands the Scottish resistance led by William Wallace and later Robert the Bruce. Forces are wooden blocks that stand upright facing their owner, so the enemy cannot see a unit's type or current strength until it is committed to battle. Each game year is driven by a hand of cards that determines how much each side can move and which special events are available. Control of the Scottish nobles, who can change sides, is the heart of the struggle.",
+  "objective": "Control the majority of the Scottish nobles. England seeks to occupy Scotland and hold the nobles' loyalty; Scotland seeks to free the country by keeping or winning back the nobles. A decisive majority at the end of a year can also end the game early.",
+  "min_players": 2,
+  "max_players": 2,
+  "bgg_link": "https://boardgamegeek.com/boardgame/1899/hammer-scots",
+  "play_time_minutes": 120,
+  "components_overview": [
+    {
+      "name": "Mounted Map Board",
+      "type": "Board",
+      "description": "A point-to-point map of Scotland and northern England divided into areas, including the noble homelands and English border regions.",
+      "count": 1
+    },
+    {
+      "name": "Wooden Blocks",
+      "type": "Token",
+      "subTypes": ["English (red)", "Scottish (blue)"],
+      "description": "Wooden blocks representing the English and Scottish forces. Blocks stand upright facing their owner so strength stays hidden until combat.",
+      "detailed_description": "Block types include nobles, knights, men-at-arms, infantry and spearmen (schiltrons), archers, plus the leaders Edward I, William Wallace and Robert the Bruce. A letter (A, B or C) on each block sets its combat fire order. Block strength is shown by the number of pips on the top edge and is reduced one step at a time as the block takes hits."
+    },
+    {
+      "name": "Block Labels",
+      "type": "Token",
+      "description": "Adhesive labels applied to the blocks on first setup to identify each unit.",
+      "count": 1
+    },
+    {
+      "name": "Command Cards",
+      "type": "Card",
+      "description": "The deck dealt each year. Movement cards show the number of groups that may be activated; event cards provide special actions such as Sea Move, Truce, Herald and Pirates."
+    },
+    {
+      "name": "Dice",
+      "type": "Dice",
+      "description": "Six-sided dice used to resolve combat. Each block rolls dice equal to its current strength.",
+      "count": 6
+    },
+    {
+      "name": "Year and Crown Markers",
+      "type": "Marker",
+      "description": "Markers that track the current year on the turn track and the status of the English crown."
+    }
+  ],
+  "setup": [
+    { "description": "Place the mounted map board between the two players.", "short_description": "Board" },
+    { "description": "On first play only, apply the adhesive labels to the wooden blocks.", "short_description": "Labels" },
+    { "description": "Each player takes their colored blocks: red for England, blue for Scotland. Stand them upright so only the owner can see their type and strength.", "short_description": "Blocks" },
+    { "description": "Set up the starting English and Scottish forces in their historical home and entry areas, and place Edward I with the English forces.", "short_description": "Starting Forces" },
+    { "description": "Shuffle the command card deck and place it face down within reach of both players.", "short_description": "Card Deck" },
+    { "description": "Place the year marker on the first year of the turn track to begin the campaign.", "short_description": "Year Marker" }
+  ],
+  "gameplay": {
+    "turn_steps": [
+      "Deal a fresh hand of command cards to each player",
+      "Play one card each per round and resolve movement and battles",
+      "Repeat for all card rounds in the year",
+      "Resolve the Winter phase",
+      "Check for victory and advance the year"
+    ],
+    "actions": [
+      {
+        "name": "Play a Command Card",
+        "description": "Each round both players choose a card in secret and reveal together. The card's number sets how many groups of blocks may move; event cards trigger their special effect instead.",
+        "steps": [
+          { "description": "Both players secretly select one card from their hand." },
+          { "description": "Reveal the chosen cards at the same time." },
+          { "description": "The player who revealed the higher movement value decides who acts first that round." },
+          { "description": "The active player moves blocks, then the other player moves." }
+        ],
+        "notes": [
+          { "description": "A movement card lets you activate that many separate groups of blocks." },
+          { "description": "Event cards such as Sea Move replace normal movement with their printed effect." }
+        ]
+      },
+      {
+        "name": "Move Blocks",
+        "description": "Move activated blocks between connected areas. Moving into an area held by the enemy forces a battle.",
+        "steps": [
+          { "description": "Choose a group of blocks in one area to activate." },
+          { "description": "Move them along connections into adjacent areas, respecting movement limits." },
+          { "description": "If friendly blocks end movement in an area containing enemy blocks, a battle is fought there." }
+        ],
+        "notes": [
+          { "description": "Blocks stay face-down to the enemy while moving; they only reveal when battle begins." }
+        ]
+      },
+      {
+        "name": "Resolve a Battle",
+        "description": "When opposing blocks share an area, both sides reveal and fight over a series of combat rounds in strict fire order.",
+        "steps": [
+          { "description": "Both players stand their blocks in the contested area face-up so strengths are visible." },
+          { "description": "Blocks fire in order of their letter: all A blocks first, then B, then C." },
+          { "description": "A firing block rolls dice equal to its current strength and scores hits according to its combat rating." },
+          { "description": "Each hit reduces an enemy block by one step; rotate the block down to show its lower strength. A block at zero strength is eliminated." },
+          { "description": "After the combat rounds, the loser retreats or is destroyed; the attacker may regroup." }
+        ],
+        "notes": [
+          { "description": "Reducing a block one step at a time is the core of the block system: a damaged unit keeps fighting at lower strength." },
+          { "description": "Nobles fight at full effect only in or adjacent to their own homelands." }
+        ]
+      },
+      {
+        "name": "Noble Loyalty and Defection",
+        "description": "The Scottish nobles are the prize. A noble can change sides when pressure or opportunity allows, and Robert the Bruce can switch allegiance during the campaign.",
+        "steps": [
+          { "description": "Nobles belong to whichever side currently commands their loyalty." },
+          { "description": "Controlling a noble's homeland, or playing the right event, can flip that noble to your side." },
+          { "description": "A defecting noble's block changes ownership and is repositioned accordingly." }
+        ],
+        "notes": [
+          { "description": "The Bruce changing sides is a pivotal historical swing and a key strategic lever." }
+        ]
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The campaign runs through the years on the turn track. It can also end early if one side gains a decisive majority of the nobles at the end of a year.",
+    "procedure": [
+      { "description": "After the final card round of a year, resolve the Winter phase: blocks retreat to friendly winter quarters, units that cannot reach supply disband, and nobles return to their homelands." },
+      { "description": "Count the nobles controlled by each side." },
+      { "description": "If neither side has reached a decisive majority, advance the year marker and begin the next year." }
+    ],
+    "final_scoring": [
+      {
+        "source": "Noble Control",
+        "description": "The side controlling the majority of the Scottish nobles at the end of the campaign wins. A dominating majority at the end of any year ends the game immediately in that side's favor."
+      }
+    ]
+  },
+  "winning_condition": "Win by controlling the majority of the Scottish nobles, either when the campaign ends on the turn track or earlier through a decisive majority at the end of a year. England wins by holding Scotland's loyalty; Scotland wins by freeing the nobles."
+}
