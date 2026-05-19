@@ -1,0 +1,538 @@
+{
+  "block": {
+    "term": "Block",
+    "definition": "A wooden block representing a single military unit. Blocks stand upright facing their owner so the enemy cannot see their type or current strength until combat begins.",
+    "context": "Components",
+    "icon": "Token",
+    "tint": "#795548",
+    "related_terms": ["strength", "combat_rating", "move_rating"]
+  },
+  "strength": {
+    "term": "Strength",
+    "definition": "The number of pips visible on the top edge of an upright block (1-4). Equals the number of six-sided dice the block rolls in combat. Each hit rotates the block 90 degrees counter-clockwise, reducing strength by one step.",
+    "context": "Combat",
+    "icon": "Dice6",
+    "tint": "#37474F",
+    "related_terms": ["step", "block"]
+  },
+  "step": {
+    "term": "Step",
+    "definition": "One point of strength on a block. Hits reduce a block one step at a time. A block reduced to zero strength is eliminated. Replacement Points may add steps to existing blocks during winter.",
+    "context": "Combat",
+    "icon": "TokenRemove",
+    "tint": "#37474F",
+    "related_terms": ["strength", "replacement_points"]
+  },
+  "combat_rating": {
+    "term": "Combat Rating",
+    "definition": "A letter (A, B, or C) and number (1-4) on each block. The letter sets fire order: all A blocks fire before all B, which fire before all C. The number is the maximum die roll that scores a hit (e.g. B3 hits on 1, 2, or 3).",
+    "context": "Combat",
+    "icon": "DiceSword",
+    "tint": "#C62828",
+    "related_terms": ["fire_order", "strength"]
+  },
+  "move_rating": {
+    "term": "Move Rating",
+    "definition": "The maximum number of areas a block may move per Move Phase, printed on its lower-left corner (2 or 3). Leaders, the Etterick archers, and the Hobelar/Keith cavalry have Move 3; most other blocks have Move 2.",
+    "context": "Movement",
+    "icon": "PawnRight",
+    "tint": "#1565C0",
+    "related_terms": ["group_move", "block"]
+  },
+  "group": {
+    "term": "Group",
+    "definition": "All friendly blocks located in a single area form a Group (the Norse block is always its own group). Activating one Group costs one Group Move.",
+    "context": "Movement",
+    "icon": "TokensStack",
+    "tint": "#1565C0",
+    "related_terms": ["group_move", "norse"]
+  },
+  "group_move": {
+    "term": "Group Move",
+    "definition": "The unit of activation. A Move Card with value N allows up to N Group Moves. Each Group Move activates one area's blocks, which may then move to one or more areas within their Move Rating.",
+    "context": "Movement",
+    "icon": "ArrowRight",
+    "tint": "#1565C0",
+    "related_terms": ["group", "move_card"]
+  },
+  "area": {
+    "term": "Area",
+    "definition": "A map region. Areas are separated by green or red borders that restrict movement. Where no border line is drawn between two regions on the map, blocks cannot move between them.",
+    "context": "Map",
+    "icon": "Pentagon",
+    "tint": "#795548",
+    "related_terms": ["green_border", "red_border", "castle_limit"]
+  },
+  "green_border": {
+    "term": "Green Border",
+    "definition": "A border allowing up to six blocks per player to cross per Movement Phase. (Earlier editions drew these as black borders -- they are equivalent.)",
+    "context": "Map",
+    "icon": "LockOpen",
+    "tint": "#388E3C",
+    "related_terms": ["red_border", "border_control"]
+  },
+  "red_border": {
+    "term": "Red Border",
+    "definition": "A border allowing up to two blocks per player to cross per Movement Phase. Blocks crossing a red border must stop immediately, even if they have movement remaining.",
+    "context": "Map",
+    "icon": "LockClosed",
+    "tint": "#D32F2F",
+    "related_terms": ["green_border", "border_control"]
+  },
+  "anglo_scottish_border": {
+    "term": "Anglo-Scottish Border",
+    "definition": "The dashed red or green line between England and Scotland. Each Group Move allows only one block to cross. Blocks must stop on crossing into Teviot (red dashed) or England (always).",
+    "context": "Map",
+    "icon": "LockClosed",
+    "tint": "#D32F2F",
+    "related_terms": ["border_raid", "sea_move"]
+  },
+  "castle_limit": {
+    "term": "Castle Limit",
+    "definition": "Each area has a Castle Limit of 0-3. This is both the maximum blocks (including nobles) that may winter there and the annual Replacement Points the area generates if friendly. Areas with no printed limit are 0.",
+    "context": "Winter",
+    "icon": "StructureTower",
+    "tint": "#5D4037",
+    "related_terms": ["cathedral", "replacement_points", "winter_turn"]
+  },
+  "cathedral": {
+    "term": "Cathedral",
+    "definition": "Strathspey, Lennox, and Fife each contain a cathedral. A cathedral adds +1 to the Castle Limit for the Scots only (English get no bonus). The Scots King may also winter in any Friendly or Neutral cathedral.",
+    "context": "Map",
+    "icon": "StructureChurch",
+    "tint": "#1565C0",
+    "related_terms": ["castle_limit", "scottish_king"]
+  },
+  "noble": {
+    "term": "Noble",
+    "definition": "One of the 14 Scottish lords (including Moray), identified by heraldic arms. Each noble (except Moray) has a red and a blue block; only one is in play at a time, depending on current allegiance. Control of nobles is the main victory condition.",
+    "context": "Units",
+    "icon": "Shield",
+    "tint": "#7B1FA2",
+    "related_terms": ["home_area", "defection", "bruce_faction", "comyn_faction"]
+  },
+  "home_area": {
+    "term": "Home Area",
+    "definition": "Each noble's heraldic home on the map. A noble defending its Home Area fires at B3 instead of B2, including when it arrived this Game Turn or defected mid-battle. Nobles attacking their own home do NOT gain this bonus. Bruce has two homes (Annan, Carrick); Comyn has two (Badenoch, Lochaber).",
+    "context": "Combat",
+    "icon": "Shield",
+    "tint": "#7B1FA2",
+    "related_terms": ["noble", "winter_turn"]
+  },
+  "bruce_faction": {
+    "term": "Bruce Faction",
+    "definition": "Nobles with green pips on their labels. If Comyn or Balliol is crowned, all Bruce-faction nobles immediately defect to the English.",
+    "context": "Factions",
+    "icon": "Shield",
+    "tint": "#388E3C",
+    "related_terms": ["comyn_faction", "coronation", "return_of_the_king"]
+  },
+  "comyn_faction": {
+    "term": "Comyn Faction",
+    "definition": "Nobles with yellow pips on their labels. If Bruce is crowned king, all Comyn-faction nobles (except Moray) immediately defect to the English.",
+    "context": "Factions",
+    "icon": "Shield",
+    "tint": "#FBC02D",
+    "related_terms": ["bruce_faction", "coronation"]
+  },
+  "moray": {
+    "term": "Moray",
+    "definition": "A unique Scots noble (Andrew de Moray). He has only one block: he NEVER changes allegiance. If eliminated in combat he is permanently dead. If killed by Pillage he is disbanded to the draw pool. Moray must be on the board to count toward victory or toward the 8-noble threshold for French knights.",
+    "context": "Units",
+    "icon": "Shield",
+    "tint": "#1565C0",
+    "related_terms": ["noble", "defection", "draw_pool"]
+  },
+  "leader": {
+    "term": "Leader",
+    "definition": "A king-class block: Wallace and the Scottish King (A3, Move 3) for the Scots; Edward (B4, Move 3) for the English. Leaders fight as normal blocks but enjoy Move 3 and other advantages.",
+    "context": "Units",
+    "icon": "CrownA",
+    "tint": "#FFD54F",
+    "related_terms": ["wallace", "edward", "scottish_king"]
+  },
+  "wallace": {
+    "term": "Wallace",
+    "definition": "William Wallace (Scots, A3, Move 3). A black-cross block: if eliminated in combat or unable to retreat, he is permanently dead. In Winter he may move to Selkirk for free from anywhere in Scotland and gain 2 steps. If a Scots King is crowned, Wallace must already be dead.",
+    "context": "Units",
+    "icon": "Sword",
+    "tint": "#1565C0",
+    "related_terms": ["leader", "coronation", "selkirk_winter"]
+  },
+  "edward": {
+    "term": "Edward",
+    "definition": "The English king block (B4, Move 3). Represents Edward I until killed in combat or until the end of 1306, then becomes Edward II. Edward II cannot winter in Scotland; if Edward II is killed in combat, the Scots win a Sudden Death victory.",
+    "context": "Units",
+    "icon": "CrownA",
+    "tint": "#D32F2F",
+    "related_terms": ["edward_wintering", "sudden_death", "feudal_levy"]
+  },
+  "scottish_king": {
+    "term": "Scottish King",
+    "definition": "Crowned via Coronation once per game (Bruce or Comyn) or Return of the King (Balliol). A3, Move 3. If killed in combat after crowning, the English win a Sudden Death victory. May winter in any Friendly or Neutral cathedral.",
+    "context": "Units",
+    "icon": "CrownB",
+    "tint": "#1565C0",
+    "related_terms": ["coronation", "return_of_the_king", "sudden_death"]
+  },
+  "archer": {
+    "term": "Archers",
+    "definition": "Ranged units. English archers (Lancaster, York) and Welsh archers fire at B3, Move 2. Scots Etterick archers fire at B2 but have Move 3. Welsh archers are subject to Celtic Unity.",
+    "context": "Units",
+    "icon": "Bow",
+    "tint": "#37474F",
+    "related_terms": ["celtic_unity", "schiltrom"]
+  },
+  "knight": {
+    "term": "Knights",
+    "definition": "Heavy cavalry, B3 Move 2. English knights (Durham, Wales, Lancaster) bear the Cross of St. George. The Scots have a single French Knight block that enters via special rule.",
+    "context": "Units",
+    "icon": "ChessKnight",
+    "tint": "#37474F",
+    "related_terms": ["french_knights"]
+  },
+  "hobelar": {
+    "term": "Hobelar",
+    "definition": "English light cavalry, A2 Move 3. A black-cross block: if killed in combat or unable to retreat, permanently dead.",
+    "context": "Units",
+    "icon": "PawnRight",
+    "tint": "#D32F2F",
+    "related_terms": ["cavalry", "black_cross"]
+  },
+  "cavalry": {
+    "term": "Keith Cavalry",
+    "definition": "Scottish light cavalry, B1 Move 3. Returns to the Scottish Draw Pool if eliminated in combat.",
+    "context": "Units",
+    "icon": "PawnRight",
+    "tint": "#1565C0",
+    "related_terms": ["hobelar"]
+  },
+  "infantry": {
+    "term": "Infantry",
+    "definition": "Foot soldiers, C2 or C3 Move 2. English infantry are named after their counties (Cross of St. George); Scots infantry after clans (Cross of St. Andrew). Welsh and Ulster infantry are subject to Celtic Unity.",
+    "context": "Units",
+    "icon": "Pawn",
+    "tint": "#5D4037",
+    "related_terms": ["celtic_unity", "schiltrom"]
+  },
+  "norse": {
+    "term": "Norse",
+    "definition": "A unique Scottish block (A2). Always its own group (one Group Move to activate alone). Moves by sea from any coastal area to any other coastal area; no borders are crossed. Cannot enter England or use the Sea Move card. Retreats/Regroups only to a Friendly (not Neutral) coastal area. A black-cross block.",
+    "context": "Units",
+    "icon": "DirectionN",
+    "tint": "#5D4037",
+    "related_terms": ["sea_move", "black_cross"]
+  },
+  "french_knights": {
+    "term": "French Knights",
+    "definition": "A single Scottish knight block (B3, Move 2). Added to the Scottish Draw Pool only after the Scots control 8 or more nobles at the start of a Winter Builds phase. Must be deployed in a coastal area. A black-cross block. Required for Return of the King.",
+    "context": "Units",
+    "icon": "ChessKnight",
+    "tint": "#1565C0",
+    "related_terms": ["return_of_the_king", "black_cross"]
+  },
+  "friendly_area": {
+    "term": "Friendly / Enemy / Neutral / Contested",
+    "definition": "Area control states. Friendly: solely your blocks. Enemy: solely opponent's blocks. Neutral: vacant. Contested: contains an unresolved battle. Changes to area control take effect immediately.",
+    "context": "Movement",
+    "icon": "Pentagon",
+    "tint": "#388E3C",
+    "related_terms": ["pinning", "retreat", "regroup"]
+  },
+  "pinning": {
+    "term": "Pinning",
+    "definition": "In a Contested Area, each attacking block (including Reserves) prevents one defending block from moving. The defender chooses which blocks are pinned; unpinned blocks may move and attack but cannot cross borders the enemy used to enter the battle. Player 1's blocks can never be pinned.",
+    "context": "Movement",
+    "icon": "LockClosed",
+    "tint": "#C62828",
+    "related_terms": ["main_attack", "border_control"]
+  },
+  "move_card": {
+    "term": "Move Card",
+    "definition": "A numbered command card (value 1, 2, or 3) allowing that many Group Moves. The deck contains 20 Move cards.",
+    "context": "Cards",
+    "icon": "Card",
+    "tint": "#37474F",
+    "related_terms": ["event_card", "card_phase"]
+  },
+  "event_card": {
+    "term": "Event Card",
+    "definition": "A special card replacing normal movement with a printed effect. The deck contains five: Sea Move, Truce, Herald, Pillage, and Victuals. The player of an Event card is Player 1. If both players play Event cards in the same Game Turn, both effects resolve (English first) and the year ends.",
+    "context": "Cards",
+    "icon": "CardFlip",
+    "tint": "#7B1FA2",
+    "related_terms": ["sea_move", "truce", "herald", "pillage", "victuals"]
+  },
+  "card_phase": {
+    "term": "Card Phase",
+    "definition": "First phase of each Game Turn. Both players secretly pick one card and reveal simultaneously. The higher value becomes Player 1; ties go to the English. Event cards resolve before Move cards.",
+    "context": "Sequence",
+    "icon": "CardsFan",
+    "tint": "#37474F",
+    "related_terms": ["initiative", "game_turn"]
+  },
+  "initiative": {
+    "term": "Initiative",
+    "definition": "Player 1 status for the current Game Turn, determined by the higher revealed card. English win ties. Player 1 moves first and chooses the order of battles.",
+    "context": "Sequence",
+    "icon": "DirectionN",
+    "tint": "#FFD54F",
+    "related_terms": ["card_phase"]
+  },
+  "main_attack": {
+    "term": "Main Attack",
+    "definition": "Attacking blocks that start in the same area and cross the same border into battle. Main Attack blocks fight in Round 1 and cannot be voluntarily placed in Reserve. Each battle has at most one Main Attack group; all other attacking blocks are Reserves.",
+    "context": "Combat",
+    "icon": "Sword",
+    "tint": "#C62828",
+    "related_terms": ["reserve", "combat_round"]
+  },
+  "reserve": {
+    "term": "Reserve",
+    "definition": "Blocks joining a battle in Round 2 or later. They cannot fire, retreat, or take hits in Round 1; they are revealed at the start of Round 2 (and skip the battle entirely if it ended in Round 1). All blocks moved by Player 2 to a Contested Area are Reserves.",
+    "context": "Combat",
+    "icon": "CardsUnder",
+    "tint": "#5D4037",
+    "related_terms": ["main_attack", "combat_round"]
+  },
+  "combat_round": {
+    "term": "Combat Round",
+    "definition": "Battles last up to three Combat Rounds. The attacker must retreat if not victorious by the end of Round 3. Each block takes one Combat Turn per round (Fire, Retreat, or Pass).",
+    "context": "Combat",
+    "icon": "Timer100",
+    "tint": "#C62828",
+    "related_terms": ["combat_turn", "fire_order"]
+  },
+  "combat_turn": {
+    "term": "Combat Turn",
+    "definition": "A single block's action in a Combat Round: Fire (roll dice), Retreat, or Pass. Order is set by Combat Rating letter (all A, then all B, then all C) and defender priority (defending A before attacking A, etc.).",
+    "context": "Combat",
+    "icon": "DiceSword",
+    "tint": "#C62828",
+    "related_terms": ["fire_order", "combat_round"]
+  },
+  "fire_order": {
+    "term": "Fire Order",
+    "definition": "Defending A blocks -> Attacking A blocks -> Defending B -> Attacking B -> Defending C -> Attacking C. All hits resolve immediately (combat is not simultaneous). Within a category, blocks act in any order.",
+    "context": "Combat",
+    "icon": "DiceSword",
+    "tint": "#37474F",
+    "related_terms": ["combat_rating", "battle_hits"]
+  },
+  "battle_hits": {
+    "term": "Battle Hits",
+    "definition": "Each die rolled at or below the block's Combat Rating number is one hit. Hits are applied immediately to the strongest enemy block in the battle (not in the firing block's category). Ties: the player under fire chooses which block to reduce.",
+    "context": "Combat",
+    "icon": "Sword",
+    "tint": "#C62828",
+    "related_terms": ["combat_rating", "step"]
+  },
+  "retreat": {
+    "term": "Retreat",
+    "definition": "A block may retreat instead of firing on its Combat Turn, moving to any adjacent Friendly or Neutral area (not Contested or Enemy). Border Limits apply per Combat Round. The Anglo-Scottish Border may not be crossed in retreat (English never into Scotland, Scots never into England). Blocks unable to retreat when required are eliminated.",
+    "context": "Combat",
+    "icon": "ArrowCounterclockwise",
+    "tint": "#5D4037",
+    "related_terms": ["border_control", "regroup"]
+  },
+  "regroup": {
+    "term": "Regroup",
+    "definition": "When a battle is won, the victor (including Reserves) may immediately Regroup: move to adjacent Friendly or Neutral areas. Border Limits apply. Border Control rules do NOT apply to regrouping; victors may cross any border into Friendly/Neutral areas.",
+    "context": "Combat",
+    "icon": "ArrowClockwise",
+    "tint": "#388E3C",
+    "related_terms": ["retreat", "border_control"]
+  },
+  "border_control": {
+    "term": "Border Control",
+    "definition": "Blocks may not Retreat via a border that was last used by the enemy to enter the battle. If both sides used the same border, only Player 2 (the later mover) may retreat through it. A Player 1 move that does NOT start a battle does not close any borders.",
+    "context": "Combat",
+    "icon": "LockClosed",
+    "tint": "#D32F2F",
+    "related_terms": ["retreat", "pinning"]
+  },
+  "celtic_unity": {
+    "term": "Celtic Unity",
+    "definition": "Each time an Ulster or Welsh block (infantry or archers) is revealed in battle, roll one die for it. On 5-6, the block goes into the English Draw Pool immediately (does not fight this battle). Rolls for Reserve Ulster/Welsh blocks happen when they are revealed in Round 2.",
+    "context": "Combat",
+    "icon": "DiceSkull",
+    "tint": "#388E3C",
+    "related_terms": ["draw_pool"]
+  },
+  "schiltrom": {
+    "term": "Schiltrom (optional)",
+    "definition": "Optional rule. In battles where the English side has NO archers present, all Scottish infantry fire at +1 (C3 becomes C4, C2 becomes C3). Represents the spear formations pioneered by Wallace at Falkirk.",
+    "context": "Combat",
+    "icon": "Sword",
+    "tint": "#1565C0",
+    "related_terms": ["archer", "infantry"]
+  },
+  "border_raid": {
+    "term": "Border Raid",
+    "definition": "The Scottish player may invade England (not during a Truce). Costs 1 movement point per block to cross the Anglo-Scottish Border. While any Scots block occupies England, the English must disband 1 non-noble block at the end of every Game Turn (English choice, not revealed). Scots blocks cannot winter in England.",
+    "context": "Special",
+    "icon": "Sword",
+    "tint": "#1565C0",
+    "related_terms": ["anglo_scottish_border", "truce", "disband"]
+  },
+  "sea_move": {
+    "term": "Sea Move",
+    "definition": "Event card. Move one or two blocks from one coastal area to one other Friendly coastal area, including into or out of England. The Norse block can never use Sea Move.",
+    "context": "Events",
+    "icon": "DirectionE",
+    "tint": "#0288D1",
+    "related_terms": ["event_card", "norse"]
+  },
+  "truce": {
+    "term": "Truce",
+    "definition": "Event card. The Scots may not initiate a Border Raid during a Truce. Scots blocks already in England may remain (and the English still disband one non-noble per Game Turn).",
+    "context": "Events",
+    "icon": "Hand",
+    "tint": "#FFD54F",
+    "related_terms": ["border_raid", "event_card"]
+  },
+  "herald": {
+    "term": "Herald",
+    "definition": "Event card. Triggers a defection: a target noble switches sides. Resulting defection battles are fought immediately as normal 3-round battles with the defector(s) as attacker. Player 1 chooses the order.",
+    "context": "Events",
+    "icon": "CardsFan",
+    "tint": "#7B1FA2",
+    "related_terms": ["defection", "event_card"]
+  },
+  "pillage": {
+    "term": "Pillage",
+    "definition": "Event card. Inflicts hits on an enemy group. If a noble is eliminated by Pillage, it switches sides as if killed in combat (Moray is disbanded to the draw pool instead). Eliminated non-noble blocks go to the Draw Pool. Any unit (including Edward I) can receive pips via Victuals or Pillage on a friendly group.",
+    "context": "Events",
+    "icon": "DiceSword",
+    "tint": "#C62828",
+    "related_terms": ["defection", "event_card", "draw_pool"]
+  },
+  "victuals": {
+    "term": "Victuals",
+    "definition": "Event card. Adds strength steps to a friendly group, including to Edward I. Cannot exceed each block's maximum strength.",
+    "context": "Events",
+    "icon": "ResourceWheat",
+    "tint": "#FFD54F",
+    "related_terms": ["event_card", "step"]
+  },
+  "coronation": {
+    "term": "Coronation",
+    "definition": "The Scots crown Bruce or Comyn by playing any Event card and announcing Coronation instead of the printed event. Requirements: Wallace must be dead, the candidate must be in Fife. The King block deploys in Fife at full strength; the candidate block remains in play as a normal noble. If Bruce is crowned, all Comyn nobles (except Moray) defect to the English; if Comyn, all Bruce nobles defect. Battles fought immediately.",
+    "context": "Special",
+    "icon": "CrownB",
+    "tint": "#1565C0",
+    "related_terms": ["scottish_king", "return_of_the_king", "defection"]
+  },
+  "return_of_the_king": {
+    "term": "Return of the King",
+    "definition": "Balliol returns from exile by the Scots playing any Event card and announcing Return of the King. Requirements: year is 1301 or later, no other king has been crowned, the French Knight block is on the map. Wallace may be alive or dead. The King block deploys at full strength with the French Knight. All Bruce nobles immediately defect to the English; battles fought immediately.",
+    "context": "Special",
+    "icon": "CrownB",
+    "tint": "#1565C0",
+    "related_terms": ["scottish_king", "coronation", "french_knights"]
+  },
+  "defection": {
+    "term": "Defection",
+    "definition": "A noble switches allegiance. Triggered by elimination in combat or Pillage (immediately switch to enemy side at Strength 1, placed in Reserve), by Winter return to an enemy-occupied home area, or by Coronation/Return of the King/Herald events. Moray never defects.",
+    "context": "Special",
+    "icon": "CardsFlip",
+    "tint": "#7B1FA2",
+    "related_terms": ["noble", "home_area", "moray"]
+  },
+  "draw_pool": {
+    "term": "Draw Pool",
+    "definition": "Each side's face-down stack of eliminated non-noble blocks. The English Feudal Levy draws half of this pool each Winter; the Scots draw individual blocks via Replacement Points. Nobles (except Moray) never enter a Draw Pool -- they switch sides instead.",
+    "context": "Winter",
+    "icon": "CardsStack",
+    "tint": "#37474F",
+    "related_terms": ["feudal_levy", "replacement_points", "disband"]
+  },
+  "disband": {
+    "term": "Disband",
+    "definition": "Voluntarily send a block to the Draw Pool (not permanently eliminated). Done in Winter when over Castle Limits or when an English unit cannot Winter in Scotland. Nobles cannot disband, except Moray.",
+    "context": "Winter",
+    "icon": "CardsReturn",
+    "tint": "#5D4037",
+    "related_terms": ["draw_pool", "castle_limit"]
+  },
+  "feudal_levy": {
+    "term": "English Feudal Levy",
+    "definition": "Each Winter (except when Edward I is wintering in Scotland), the English shuffle their Draw Pool face-down and deploy half (round up) at full strength in England. Edward I face-up in the Draw Pool counts toward levy size but is not eligible to be drawn (tournament rule).",
+    "context": "Winter",
+    "icon": "CardsShuffle",
+    "tint": "#D32F2F",
+    "related_terms": ["draw_pool", "edward_wintering"]
+  },
+  "replacement_points": {
+    "term": "Replacement Points (RPs)",
+    "definition": "Each Friendly area generates RPs equal to its Castle Limit (Scots also +1 for a cathedral) in Winter. Each RP either (1) builds one step on an existing block in that area, or (2) draws one block from the pool and deploys it there at strength 1. RPs cannot be saved.",
+    "context": "Winter",
+    "icon": "TokenAdd",
+    "tint": "#388E3C",
+    "related_terms": ["castle_limit", "winter_turn", "draw_pool"]
+  },
+  "edward_wintering": {
+    "term": "Edward Wintering",
+    "definition": "Edward I may winter in Scotland (Edward II may not). Cannot winter in Scotland in two consecutive years, nor in 1306. When Edward winters, all red non-noble blocks in his area ignore Castle Limit -- and the English get NO Feudal Levy; England begins the next year empty.",
+    "context": "Winter",
+    "icon": "CrownA",
+    "tint": "#D32F2F",
+    "related_terms": ["edward", "feudal_levy"]
+  },
+  "selkirk_winter": {
+    "term": "Wallace at Selkirk",
+    "definition": "During Winter, Wallace may move from anywhere in Scotland to Selkirk (unless enemy-occupied) and gain 2 steps. A favoured tactic to keep Wallace alive at full strength.",
+    "context": "Winter",
+    "icon": "Sword",
+    "tint": "#1565C0",
+    "related_terms": ["wallace", "winter_turn"]
+  },
+  "winter_turn": {
+    "term": "Winter Turn",
+    "definition": "Occurs at the end of every game year, after the last card round. Resolve steps in exact order: (1) English nobles go home, (2) Scots nobles go home, (3) Scottish King moves/disbands, (4) English disbanding, (5) Edward winters, (6) Scots disbanding, (7) Winter Builds (RPs), (8) French Knights check, (9) English Feudal Levy, (10) deal new 5-card hands.",
+    "context": "Sequence",
+    "icon": "Hourglass",
+    "tint": "#0288D1",
+    "related_terms": ["replacement_points", "feudal_levy", "year"]
+  },
+  "year": {
+    "term": "Year",
+    "definition": "A game year (1297-1314 in the Campaign). Each year both players begin with five cards. A year ends when all five cards have been played OR when both players play Event cards in the same Game Turn. Cards never carry forward.",
+    "context": "Sequence",
+    "icon": "Timer100",
+    "tint": "#5D4037",
+    "related_terms": ["game_turn", "winter_turn"]
+  },
+  "game_turn": {
+    "term": "Game Turn",
+    "definition": "A single card-play round within a year. Each Game Turn has three phases: Card Phase, Move Phase, Battle Phase. A year contains 1-5 Game Turns.",
+    "context": "Sequence",
+    "icon": "Card",
+    "tint": "#37474F",
+    "related_terms": ["card_phase", "year"]
+  },
+  "sudden_death": {
+    "term": "Sudden Death Victory",
+    "definition": "Instant win conditions, checked at the end of a Game Turn: (1) a player controls ALL nobles in play (Moray must be dead or in the Draw Pool for England to win this way); (2) Edward II is eliminated in combat -- Scots win; (3) the crowned Scottish King is eliminated in combat -- English win.",
+    "context": "Victory",
+    "icon": "Award",
+    "tint": "#FFD54F",
+    "related_terms": ["edward", "scottish_king"]
+  },
+  "black_cross": {
+    "term": "Black Cross Blocks",
+    "definition": "Blocks marked with a black cross are permanently eliminated if killed in combat or unable to retreat when required. Scots: Wallace, Moray, Norse, French Knights. English: Hobelars, Edward. Other non-noble blocks killed in combat return to the Draw Pool instead.",
+    "context": "Units",
+    "icon": "Skull",
+    "tint": "#37474F",
+    "related_terms": ["wallace", "moray", "norse", "french_knights", "hobelar", "edward"]
+  },
+  "tournament_bid": {
+    "term": "Tournament Bid",
+    "definition": "Optional balancing mechanism for matched play. Each player secretly bids E1/E2/E3 (to play English) or S1/S2/S3 (to play Scottish). Opposite bids cancel; the net higher bid applies. E# bids: that many years Edward sits face-up in the Draw Pool ineligible to be drawn (still counts toward levy size). S# bids: that many extra blocks added to the 1297 English Feudal Levy.",
+    "context": "Variants",
+    "icon": "CardsCollection",
+    "tint": "#FFD54F",
+    "related_terms": ["feudal_levy"]
+  }
+}
