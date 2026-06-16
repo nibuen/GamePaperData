@@ -6,7 +6,7 @@
       "id": "intro",
       "title": "How Blocks Work",
       "content": [
-        { "description": "Hammer of the Scots is a block wargame. Your forces are wooden blocks that stand upright facing you, so your opponent cannot see a unit's type or strength until it fights. These three short animations show the core ideas." }
+        { "description": "Hammer of the Scots is a block wargame. Your forces are wooden blocks that stand upright facing you, so your opponent cannot see a unit's type or strength until it fights. These three short animations show the core gameplay flow." }
       ],
       "options": [
         { "label": "Show me", "next_node": "hidden_strength" }
@@ -41,7 +41,7 @@
       "title": "Taking a Hit",
       "content": [
         {
-          "description": "When a block takes a hit in combat it is rotated down one step to show one less strength. It stays in the fight, just weaker. A block reduced to zero is eliminated.",
+          "description": "When a block takes a hit in combat it is rotated down one step to show one less strength. If the edge it rotates to still shows strength pips, it stays in the fight, just weaker; if no pips remain, the block is reduced to zero and eliminated.",
           "action": {
             "type": "block_animation",
             "caption": "A hit reduces a block by one step",
@@ -97,7 +97,7 @@
       "id": "wrap",
       "title": "That Is the Core",
       "content": [
-        { "description": "Hidden strength, losing a step on a hit, and moving blocks to force battles are the heart of every block wargame. The rest of Hammer of the Scots is the year-by-year card play and the fight to control the Scottish nobles. Keep the rulebook handy for the full sequence of play." }
+        { "description": "Hidden strength, losing a step on a hit, and moving blocks to force battles are the heart of this style of wargame. The rest of Hammer of the Scots is the year-by-year card play and the fight to control the Scottish nobles. Keep the rulebook handy for the full sequence of play." }
       ],
       "options": [
         { "label": "Finish", "next_node": null }

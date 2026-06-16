@@ -8,6 +8,11 @@
   "max_players": 2,
   "bgg_link": "https://boardgamegeek.com/boardgame/1899/hammer-scots",
   "play_time_minutes": 180,
+  "variants": [
+    { "id": "braveheart", "name": "Braveheart (1297-1305)", "description": "The Wallace rebellion. The standard introductory scenario.", "default": true },
+    { "id": "the_bruce", "name": "The Bruce (1306-1314)", "description": "Robert the Bruce's war for the crown." },
+    { "id": "campaign", "name": "Campaign (1297-1314)", "description": "Both scenarios linked; begins as Braveheart, then continues into The Bruce." }
+  ],
   "components_overview": [
     {
       "name": "Mounted Map Board",
@@ -61,28 +66,33 @@
       "short_description": "Take Blocks"
     },
     {
-      "description": "Choose a scenario: Braveheart (1297-1305), The Bruce (1306-1314), or Campaign (1297 onward, both scenarios linked). Deploy starting forces per the scenario instructions below.",
+      "description": "Pick your scenario with the scenario selector in the top bar: Braveheart (1297-1305), The Bruce (1306-1314), or Campaign. The deployment steps below then show only the forces for the scenario you chose.",
       "short_description": "Choose Scenario"
     },
     {
-      "description": "BRAVEHEART (1297-1305) -- English: deploy all nobles EXCEPT Bruce, Moray, and Galloway at full strength in their home areas; deploy Comyn in Badenoch (his Home Area); place Cumbria Infantry in Lothian; place Northumber Infantry in Mentieth. Place all other red blocks face-down in the English Draw Pool, then draw 4 and deploy them at full strength in England. (Note: Edward I is in the Draw Pool at start -- he can be drawn as one of the 4 starting Feudal Levy blocks.)",
-      "short_description": "Braveheart -- English"
+      "description": "English: deploy all nobles EXCEPT Bruce, Moray, and Galloway at full strength in their home areas; deploy Comyn in Badenoch (his Home Area); place Cumbria Infantry in Lothian; place Northumber Infantry in Mentieth. Place all other red blocks face-down in the English Draw Pool, then draw 4 and deploy them at full strength in England. (Note: Edward I is in the Draw Pool at start -- he can be drawn as one of the 4 starting Feudal Levy blocks.)",
+      "short_description": "English deployment",
+      "condition": { "variants": ["braveheart", "campaign"] }
     },
     {
-      "description": "BRAVEHEART (1297-1305) -- Scottish: deploy Bruce in Annan; Galloway in Galloway; Wallace, Douglas, and Barclay in Fife; Moray and Fraser in Moray; Grant in Strathspey. The Scottish King and French Knight blocks are set aside off-map. Place all other 7 blue blocks face-down in the Scottish Draw Pool.",
-      "short_description": "Braveheart -- Scottish"
+      "description": "Scottish: deploy Bruce in Annan; Galloway in Galloway; Wallace, Douglas, and Barclay in Fife; Moray and Fraser in Moray; Grant in Strathspey. The Scottish King and French Knight blocks are set aside off-map. Place all other 7 blue blocks face-down in the Scottish Draw Pool.",
+      "short_description": "Scottish deployment",
+      "condition": { "variants": ["braveheart", "campaign"] }
     },
     {
-      "description": "THE BRUCE (1306-1314) -- English: deploy all 6 Comyn-faction nobles (NOT Moray) at full strength in their home areas; Comyn in Badenoch; Cumbria Infantry in Moray; Mentieth noble + Northumber Infantry in Mentieth; Durham Infantry in Lothian; Stewart noble + Westmor Infantry in Lanark. Place the other 11 red blocks face-down in the English Draw Pool and draw 6 to deploy in England. Edward I dies at end of 1306 and the king block becomes Edward II; Edward I cannot winter in Scotland in 1306.",
-      "short_description": "The Bruce -- English"
+      "description": "English: deploy all 6 Comyn-faction nobles (NOT Moray) at full strength in their home areas; Comyn in Badenoch; Cumbria Infantry in Moray; Mentieth noble + Northumber Infantry in Mentieth; Durham Infantry in Lothian; Stewart noble + Westmor Infantry in Lanark. Place the other 11 red blocks face-down in the English Draw Pool and draw 6 to deploy in England. Edward I dies at end of 1306 and the king block becomes Edward II; Edward I cannot winter in Scotland in 1306.",
+      "short_description": "English deployment",
+      "condition": { "variants": ["the_bruce"] }
     },
     {
-      "description": "THE BRUCE (1306-1314) -- Scottish: Wallace and Moray are dead -- set aside off-map. Deploy all Bruce-faction nobles (EXCEPT Mentieth and Stewart, who are on the English side) at full strength in their home areas; deploy Bruce in Carrick. Place King, Douglas, Barclay in Fife; Campbell in Lennox; Lindsay in Carrick. Place the other 7 blue blocks face-down in the Scottish Draw Pool. French Knight is off-map until conditions trigger.",
-      "short_description": "The Bruce -- Scottish"
+      "description": "Scottish: Wallace and Moray are dead -- set aside off-map. Deploy all Bruce-faction nobles (EXCEPT Mentieth and Stewart, who are on the English side) at full strength in their home areas; deploy Bruce in Carrick. Place King, Douglas, Barclay in Fife; Campbell in Lennox; Lindsay in Carrick. Place the other 7 blue blocks face-down in the Scottish Draw Pool. French Knight is off-map until conditions trigger.",
+      "short_description": "Scottish deployment",
+      "condition": { "variants": ["the_bruce"] }
     },
     {
-      "description": "CAMPAIGN -- play exactly as Braveheart; if neither side has achieved Sudden Death by end of 1305, continue into The Bruce period. Edward I cannot winter in Scotland in 1306. The Edward block flips to Edward II at the end of 1306. Extend years past 1314 if no decisive majority has been reached.",
-      "short_description": "Campaign"
+      "description": "Campaign linkage: deploy exactly as the Braveheart steps above. If neither side has achieved Sudden Death by end of 1305, continue into The Bruce period. Edward I cannot winter in Scotland in 1306. The Edward block flips to Edward II at the end of 1306. Extend years past 1314 if no decisive majority has been reached.",
+      "short_description": "Campaign linkage",
+      "condition": { "variants": ["campaign"] }
     },
     {
       "description": "Shuffle the 25-card deck and deal 5 cards face-down to each player. Players may examine their hands. Place the year marker on the appropriate starting year (1297 for Braveheart / Campaign, 1306 for The Bruce). The game is ready to begin.",
@@ -102,12 +112,12 @@
       {
         "name": "Card Phase",
         "icon": "CardsFan",
-        "description": "Both players secretly choose one card from their five-card hand and reveal simultaneously. The higher value becomes Player 1 for this Game Turn (English wins ties). Players may also choose to pass -- the effect cannot be saved.",
+        "description": "Both players secretly choose one card from their five-card hand and reveal simultaneously. The higher movement value becomes Player 1 for this Game Turn (English wins ties). An Event card may be played, but it has no movement value and forfeits turn order -- the player who plays an Event becomes Player 2 and the opponent moves. The only exception is when BOTH players play Events: then the English player is Player 1 (winning the tie) and the year ends after both events resolve. Players may also choose to pass -- the effect cannot be saved.",
         "steps": [
           {"description": "Each player secretly selects one card from their hand and places it face-down."},
           {"description": "Both cards are revealed at the same time."},
           {"description": "The player who revealed the higher movement value is Player 1; ties go to the English player."},
-          {"description": "If either player played an Event card, resolve the event(s) first -- the Event player is Player 1. If BOTH players played Event cards, resolve both (English first), then the year ends immediately."},
+          {"description": "If exactly one player played an Event card, the event resolves first, but that player forfeits turn order -- the opponent becomes Player 1 and takes the Move Phase. If BOTH players played Event cards, resolve both (English first, winning the tie), then the year ends immediately."},
           {"description": "If both players played Move cards, proceed to the Move Phase."}
         ],
         "notes": [
@@ -384,17 +394,17 @@
   "end_game": {
     "trigger": "A game year ends when both players have played all 5 cards, OR when both players play Event cards in the same Game Turn. Once a year ends, resolve the Winter Turn. The scenario ends at the final year (1305 for Braveheart, 1314 for The Bruce / Campaign), unless a Sudden Death victory occurs first.",
     "procedure": [
-      {"description": "WINTER STEP 1 -- English nobles go home. Every English noble on the map moves to its Home Area (teleports from anywhere). If the Home Area is enemy-occupied, the noble defects to the Scots at current strength (swap to the blue block)."},
-      {"description": "WINTER STEP 2 -- Scottish nobles go home. Every Scottish noble moves to its Home Area. If enemy-occupied, the noble defects to the English (swap to red block). Bruce and Comyn each have two Home Areas; they only convert if BOTH homes are enemy-occupied (the new owner chooses which home to place them in)."},
-      {"description": "WINTER STEP 2a -- Moray's choice. Moray alone may decline to return home: he may stay where he is (subject to Castle Limit), or disband to the Scottish Draw Pool."},
-      {"description": "WINTER STEP 3 -- Scottish King. The King may move to any Friendly or Neutral cathedral (Strathspey, Lennox, or Fife), remain in his current area (subject to Castle Limit), or disband."},
-      {"description": "WINTER STEP 4 -- English disbanding. All English blocks in England must disband. Archers, Knights, and Hobelars in Scotland MUST disband (unless wintering with Edward I). English Infantry (incl. Welsh / Ulster) may remain in Scotland subject to Castle Limits, or disband. Nobles cannot disband. Infantry exceeding Castle Limits must disband (owner's choice)."},
-      {"description": "WINTER STEP 5 -- Edward wintering. If Edward I is in Scotland, he may winter there OR disband. Edward II may NEVER winter in Scotland. Edward I cannot winter in Scotland in two consecutive years, nor in 1306. When Edward I winters, ALL red non-noble blocks in his area ignore Castle Limit. CRITICAL: if Edward winters, the English get NO Feudal Levy and England begins next year EMPTY."},
-      {"description": "WINTER STEP 6 -- Scottish disbanding. Wallace may move to Selkirk (unless enemy-occupied) and gain 2 steps -- free move from anywhere. Then disband any Scottish blocks exceeding Castle Limits (owner's choice). Nobles other than Moray cannot disband."},
-      {"description": "WINTER STEP 7 -- Winter Builds (Replacement Points). Each Friendly area generates RPs equal to its Castle Limit (Scots add +1 if the area has a cathedral). Spend each RP either: (a) build 1 step on an existing block in that area, or (b) draw 1 block from the Draw Pool and deploy it there at Strength 1 (Scots only). RPs cannot be saved. English RPs can only strengthen infantry or nobles already in the area -- not deploy new units."},
-      {"description": "WINTER STEP 7a -- French Knights check. If the Scots control 8 or more nobles at the start of Winter Builds, the French Knight block is added to the Scottish Draw Pool. Once drawn, it remains in play until eliminated. If drawn for an inland area like Lanark or Badenoch, deploy in any friendly adjacent coastal area instead (Castle Limits do not apply for this redeploy)."},
-      {"description": "WINTER STEP 8 -- English Feudal Levy. SKIP if Edward I wintered in Scotland. Otherwise: shuffle the English Draw Pool face-down, draw HALF (round up), and deploy those blocks at FULL strength in England."},
-      {"description": "WINTER STEP 9 -- New cards. Shuffle the full 25-card deck. Deal 5 new cards face-down to each player. Advance the year marker; begin the next year."}
+      {"description": "English nobles go home. Every English noble on the map moves to its Home Area (teleports from anywhere). If the Home Area is enemy-occupied, the noble defects to the Scots at current strength (swap to the blue block).", "style": "numbered"},
+      {"description": "Scottish nobles go home. Every Scottish noble moves to its Home Area. If enemy-occupied, the noble defects to the English (swap to red block). Bruce and Comyn each have two Home Areas; they only convert if BOTH homes are enemy-occupied (the new owner chooses which home to place them in).", "style": "numbered"},
+      {"description": "Moray's choice. Moray alone may decline to return home: he may stay where he is (subject to Castle Limit), or disband to the Scottish Draw Pool.", "style": "numbered"},
+      {"description": "Scottish King. The King may move to any Friendly or Neutral cathedral (Strathspey, Lennox, or Fife), remain in his current area (subject to Castle Limit), or disband.", "style": "numbered"},
+      {"description": "English disbanding. All English blocks in England must disband. Archers, Knights, and Hobelars in Scotland MUST disband (unless wintering with Edward I). English Infantry (incl. Welsh / Ulster) may remain in Scotland subject to Castle Limits, or disband. Nobles cannot disband. Infantry exceeding Castle Limits must disband (owner's choice).", "style": "numbered"},
+      {"description": "Edward wintering. If Edward I is in Scotland, he may winter there OR disband. Edward II may NEVER winter in Scotland. Edward I cannot winter in Scotland in two consecutive years, nor in 1306. When Edward I winters, ALL red non-noble blocks in his area ignore Castle Limit. CRITICAL: if Edward winters, the English get NO Feudal Levy and England begins next year EMPTY.", "style": "numbered"},
+      {"description": "Scottish disbanding. Wallace may move to Selkirk (unless enemy-occupied) and gain 2 steps -- free move from anywhere. Then disband any Scottish blocks exceeding Castle Limits (owner's choice). Nobles other than Moray cannot disband.", "style": "numbered"},
+      {"description": "Winter Builds (Replacement Points). Each Friendly area generates RPs equal to its Castle Limit (Scots add +1 if the area has a cathedral). Spend each RP either: (a) build 1 step on an existing block in that area, or (b) draw 1 block from the Draw Pool and deploy it there at Strength 1 (Scots only). RPs cannot be saved. English RPs can only strengthen infantry or nobles already in the area -- not deploy new units.", "style": "numbered"},
+      {"description": "French Knights check. If the Scots control 8 or more nobles at the start of Winter Builds, the French Knight block is added to the Scottish Draw Pool. Once drawn, it remains in play until eliminated. If drawn for an inland area like Lanark or Badenoch, deploy in any friendly adjacent coastal area instead (Castle Limits do not apply for this redeploy).", "style": "numbered"},
+      {"description": "English Feudal Levy. SKIP if Edward I wintered in Scotland. Otherwise: shuffle the English Draw Pool face-down, draw HALF (round up), and deploy those blocks at FULL strength in England.", "style": "numbered"},
+      {"description": "New cards. Shuffle the full 25-card deck. Deal 5 new cards face-down to each player. Advance the year marker; begin the next year.", "style": "numbered"}
     ],
     "final_scoring": [
       {

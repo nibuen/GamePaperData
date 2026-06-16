@@ -48,7 +48,8 @@ GamersPaperData/
 | `max_players` | integer | **Yes** | Maximum supported player count |
 | `bgg_link` | string | No | BoardGameGeek URL |
 | `play_time_minutes` | integer | No | Average play time in minutes |
-| `expansions` | array of [Expansion](#expansion-object) | No | Supported expansions |
+| `expansions` | array of [Expansion](#expansion-object) | No | Supported expansions (additive toggles) |
+| `variants` | array of [Variant](#variant-object) | No | Mutually-exclusive scenarios / modes / maps |
 | `components_overview` | array of [Component](#component-object) | No | List of game components |
 | `setup` | array of [Phrase](#phrase-object) | No | Setup steps |
 | `gameplay` | [Gameplay](#gameplay-object) | No | Turn structure and actions |
@@ -80,17 +81,20 @@ The fundamental building block for rule text. Used in setup steps, action steps,
 
 ### Condition Object
 
-Controls when a rule, component, or card is visible based on player count or expansion.
+Controls when a rule, component, or card is visible based on player count, expansion, or game variant.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `min_count_variant` | integer | No | Minimum player count for this item to appear |
 | `max_count_variant` | integer | No | Maximum player count for this item to appear |
-| `expansion` | string | No | Expansion ID this item belongs to (only shown when expansion is enabled) |
+| `expansion` | string | No | Expansion ID this item belongs to (only shown when that expansion is enabled) |
+| `variants` | array of strings | No | Variant IDs this item belongs to (only shown when the selected variant is one of them). See [Variant Object](#variant-object). |
 
 **Important rules:**
-- **Omit the `"condition"` field entirely** if the rule applies to all player counts and the base game
+- **Omit the `"condition"` field entirely** if the rule applies to all player counts, the base game, and every variant
 - **NEVER put player count text** like "2 Players ONLY:" or "For 3-5 players:" in description text — use `condition` fields instead and let the app handle filtering
+- **NEVER put scenario/variant text** like "BRAVEHEART:" or "(The Bruce only)" in description text — declare a [Variant Object](#variant-object) and tag items with `condition.variants` instead
+- `expansion` is an **additive toggle** (several can be on at once); `variants` is a **mutually-exclusive selection** (exactly one variant is active). A single item can list **multiple** variants when it is shared by them (e.g. a setup step used by both "Braveheart" and "Campaign").
 
 **Examples:**
 ```json
@@ -112,6 +116,18 @@ Controls when a rule, component, or card is visible based on player count or exp
 {
   "description": "Add the expansion cards to the deck.",
   "condition": { "expansion": "promo_pack" }
+}
+
+// Setup step shown only for the "The Bruce" scenario
+{
+  "description": "Wallace and Moray are dead -- set aside off-map.",
+  "condition": { "variants": ["the_bruce"] }
+}
+
+// Step shared by two scenarios (shown for either selection)
+{
+  "description": "Deploy the Scottish nobles in their home areas.",
+  "condition": { "variants": ["braveheart", "campaign"] }
 }
 
 // Rule that always applies (no condition needed)
@@ -539,6 +555,38 @@ Describes a scoring event that happens at a defined point **during** the game (e
   ]
 }
 ```
+
+---
+
+### Variant Object
+
+A **variant** is a mutually-exclusive way to play the game — a scenario, mode, or map. The
+player picks exactly one in the scenario selector, and content tagged with `condition.variants`
+shows only for the selected variant. Use this instead of expansions when the choices are
+alternatives (you play one), not add-ons (you can stack several).
+
+Declared at the top level of the rules file under `variants`:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | **Yes** | Unique variant identifier (used in `condition.variants`) |
+| `name` | string | **Yes** | Display name shown in the selector |
+| `description` | string | No | Short blurb shown under the name in the selector |
+| `default` | boolean | No | The variant selected when the game opens. Mark **exactly one** (or none — the first is then used). |
+
+**Example:**
+```json
+{
+  "variants": [
+    { "id": "braveheart", "name": "Braveheart (1297-1305)", "description": "The Wallace rebellion.", "default": true },
+    { "id": "the_bruce", "name": "The Bruce (1306-1314)", "description": "Robert the Bruce's war for the crown." },
+    { "id": "campaign", "name": "Campaign (1297-1314)", "description": "Both scenarios linked." }
+  ]
+}
+```
+
+Then tag variant-specific items with `condition.variants` (see [Condition Object](#condition-object)).
+Items with no `variants` condition are shared across every variant.
 
 ---
 
