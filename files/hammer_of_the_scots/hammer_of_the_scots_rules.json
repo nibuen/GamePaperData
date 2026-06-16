@@ -70,9 +70,17 @@
       "short_description": "Choose Scenario"
     },
     {
-      "description": "English: deploy all nobles EXCEPT Bruce, Moray, and Galloway at full strength in their home areas; deploy Comyn in Badenoch (his Home Area); place Cumbria Infantry in Lothian; place Northumber Infantry in Mentieth. Place all other red blocks face-down in the English Draw Pool, then draw 4 and deploy them at full strength in England. (Note: Edward I is in the Draw Pool at start -- he can be drawn as one of the 4 starting Feudal Levy blocks.)",
+      "description": "English deployment:",
       "short_description": "English deployment",
-      "condition": { "variants": ["braveheart", "campaign"] }
+      "condition": { "variants": ["braveheart", "campaign"] },
+      "items": [
+        {"description": "Deploy all nobles EXCEPT Bruce, Moray, and Galloway at full strength in their home areas.", "style": "bullet"},
+        {"description": "Deploy Comyn in Badenoch (his Home Area).", "style": "bullet"},
+        {"description": "Place Cumbria Infantry in Lothian.", "style": "bullet"},
+        {"description": "Place Northumber Infantry in Mentieth.", "style": "bullet"},
+        {"description": "Place all other red blocks face-down in the English Draw Pool, then draw 4 and deploy them at full strength in England.", "style": "bullet"},
+        {"description": "Note: Edward I starts in the Draw Pool -- he can be drawn as one of the 4 starting Feudal Levy blocks.", "style": "bullet"}
+      ]
     },
     {
       "description": "Scottish: deploy Bruce in Annan; Galloway in Galloway; Wallace, Douglas, and Barclay in Fife; Moray and Fraser in Moray; Grant in Strathspey. The Scottish King and French Knight blocks are set aside off-map. Place all other 7 blue blocks face-down in the Scottish Draw Pool.",
