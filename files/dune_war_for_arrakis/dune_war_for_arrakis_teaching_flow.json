@@ -64,9 +64,12 @@
             ],
             "beats": [
               { "op": "pause", "duration_ms": 500, "label": "Harkonnen hold the area" },
-              { "op": "move", "target": "at", "to_x": 0.6, "to_y": 0.42, "duration_ms": 800, "label": "Atreides attack -- they roll more hits than the Harkonnen defense" },
-              { "op": "pause", "duration_ms": 500, "label": "Battle!" },
-              { "op": "fade", "target": "hk", "opacity": 0.15, "duration_ms": 700, "label": "More hits wins -- the Harkonnen Legion is destroyed" }
+              { "op": "move", "target": "at", "to_x": 0.6, "to_y": 0.42, "duration_ms": 800, "label": "Atreides move in to attack" },
+              { "op": "pause", "duration_ms": 400, "label": "Battle!" },
+              { "op": "roll", "target": "at", "dice": 3, "duration_ms": 900, "label": "Atreides roll their attack dice" },
+              { "op": "roll", "target": "hk", "dice": 2, "duration_ms": 900, "label": "Harkonnen roll to defend" },
+              { "op": "pause", "duration_ms": 700, "label": "Atreides score more hits than the defense" },
+              { "op": "fade", "target": "hk", "opacity": 0.15, "duration_ms": 700, "label": "The Harkonnen Legion is destroyed" }
             ]
           }
         }
