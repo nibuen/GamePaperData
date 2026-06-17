@@ -83,19 +83,48 @@
       ]
     },
     {
-      "description": "Scottish: deploy Bruce in Annan; Galloway in Galloway; Wallace, Douglas, and Barclay in Fife; Moray and Fraser in Moray; Grant in Strathspey. The Scottish King and French Knight blocks are set aside off-map. Place all other 7 blue blocks face-down in the Scottish Draw Pool.",
+      "description": "Scottish deployment:",
       "short_description": "Scottish deployment",
-      "condition": { "variants": ["braveheart", "campaign"] }
+      "condition": { "variants": ["braveheart", "campaign"] },
+      "items": [
+        {"description": "Deploy Bruce in Annan.", "style": "bullet"},
+        {"description": "Deploy Galloway in Galloway.", "style": "bullet"},
+        {"description": "Deploy Wallace, Douglas, and Barclay in Fife.", "style": "bullet"},
+        {"description": "Deploy Moray and Fraser in Moray.", "style": "bullet"},
+        {"description": "Deploy Grant in Strathspey.", "style": "bullet"},
+        {"description": "Set the Scottish King and French Knight blocks aside off-map.", "style": "bullet"},
+        {"description": "Place all other 7 blue blocks face-down in the Scottish Draw Pool.", "style": "bullet"}
+      ]
     },
     {
-      "description": "English: deploy all 6 Comyn-faction nobles (NOT Moray) at full strength in their home areas; Comyn in Badenoch; Cumbria Infantry in Moray; Mentieth noble + Northumber Infantry in Mentieth; Durham Infantry in Lothian; Stewart noble + Westmor Infantry in Lanark. Place the other 11 red blocks face-down in the English Draw Pool and draw 6 to deploy in England. Edward I dies at end of 1306 and the king block becomes Edward II; Edward I cannot winter in Scotland in 1306.",
+      "description": "English deployment:",
       "short_description": "English deployment",
-      "condition": { "variants": ["the_bruce"] }
+      "condition": { "variants": ["the_bruce"] },
+      "items": [
+        {"description": "Deploy all 6 Comyn-faction nobles (NOT Moray) at full strength in their home areas.", "style": "bullet"},
+        {"description": "Deploy Comyn in Badenoch.", "style": "bullet"},
+        {"description": "Place Cumbria Infantry in Moray.", "style": "bullet"},
+        {"description": "Place the Mentieth noble + Northumber Infantry in Mentieth.", "style": "bullet"},
+        {"description": "Place Durham Infantry in Lothian.", "style": "bullet"},
+        {"description": "Place the Stewart noble + Westmor Infantry in Lanark.", "style": "bullet"},
+        {"description": "Place the other 11 red blocks face-down in the English Draw Pool and draw 6 to deploy in England.", "style": "bullet"},
+        {"description": "Edward I dies at the end of 1306 and the king block becomes Edward II; Edward I cannot winter in Scotland in 1306.", "style": "bullet"}
+      ]
     },
     {
-      "description": "Scottish: Wallace and Moray are dead -- set aside off-map. Deploy all Bruce-faction nobles (EXCEPT Mentieth and Stewart, who are on the English side) at full strength in their home areas; deploy Bruce in Carrick. Place King, Douglas, Barclay in Fife; Campbell in Lennox; Lindsay in Carrick. Place the other 7 blue blocks face-down in the Scottish Draw Pool. French Knight is off-map until conditions trigger.",
+      "description": "Scottish deployment:",
       "short_description": "Scottish deployment",
-      "condition": { "variants": ["the_bruce"] }
+      "condition": { "variants": ["the_bruce"] },
+      "items": [
+        {"description": "Wallace and Moray are dead -- set them aside off-map.", "style": "bullet"},
+        {"description": "Deploy all Bruce-faction nobles (EXCEPT Mentieth and Stewart, who are on the English side) at full strength in their home areas.", "style": "bullet"},
+        {"description": "Deploy Bruce in Carrick.", "style": "bullet"},
+        {"description": "Place King, Douglas, and Barclay in Fife.", "style": "bullet"},
+        {"description": "Place Campbell in Lennox.", "style": "bullet"},
+        {"description": "Place Lindsay in Carrick.", "style": "bullet"},
+        {"description": "Place the other 7 blue blocks face-down in the Scottish Draw Pool.", "style": "bullet"},
+        {"description": "The French Knight is off-map until conditions trigger.", "style": "bullet"}
+      ]
     },
     {
       "description": "Campaign linkage: deploy exactly as the Braveheart steps above. If neither side has achieved Sudden Death by end of 1305, continue into The Bruce period. Edward I cannot winter in Scotland in 1306. The Edward block flips to Edward II at the end of 1306. Extend years past 1314 if no decisive majority has been reached.",
