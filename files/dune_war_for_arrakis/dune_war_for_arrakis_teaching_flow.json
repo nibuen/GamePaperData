@@ -59,19 +59,14 @@
               ]
             },
             "blocks": [
-              { "id": "hk", "label": "HK", "color": "#B33A3A", "strength": 2, "revealed": true, "x": 0.82, "y": 0.55 },
-              { "id": "at", "label": "AT", "color": "#2E7D32", "strength": 3, "revealed": true, "x": 0.12, "y": 0.55 }
+              { "id": "hk", "label": "HK", "color": "#B33A3A", "revealed": true, "x": 0.8, "y": 0.5 },
+              { "id": "at", "label": "AT", "color": "#2E7D32", "revealed": true, "x": 0.12, "y": 0.5 }
             ],
             "beats": [
-              { "op": "pause", "duration_ms": 500, "label": "Harkonnen hold the area (2 steps)" },
-              { "op": "move", "target": "at", "to_x": 0.55, "to_y": 0.55, "duration_ms": 800, "label": "Atreides attack (3 steps)" },
-              { "op": "pause", "duration_ms": 400, "label": "Battle!" },
-              { "op": "roll", "target": "at", "dice": 3, "hits": 2, "duration_ms": 1000, "label": "Atreides roll 3 attack dice: 2 hits" },
-              { "op": "roll", "target": "hk", "dice": 2, "hits": 1, "duration_ms": 1000, "label": "Harkonnen roll defense: 1 hit back" },
-              { "op": "pause", "duration_ms": 700, "label": "2 hits beat 1 -- Atreides win the exchange" },
-              { "op": "set_strength", "target": "at", "strength": 2, "duration_ms": 600, "label": "Atreides take 1 hit (down to 2)" },
-              { "op": "set_strength", "target": "hk", "strength": 0, "duration_ms": 700, "label": "Harkonnen take 2 hits" },
-              { "op": "fade", "target": "hk", "opacity": 0.15, "duration_ms": 600, "label": "Harkonnen Legion destroyed" }
+              { "op": "pause", "duration_ms": 500, "label": "Harkonnen hold the area" },
+              { "op": "move", "target": "at", "to_x": 0.6, "to_y": 0.42, "duration_ms": 800, "label": "Atreides attack -- they roll more hits than the Harkonnen defense" },
+              { "op": "pause", "duration_ms": 500, "label": "Battle!" },
+              { "op": "fade", "target": "hk", "opacity": 0.15, "duration_ms": 700, "label": "More hits wins -- the Harkonnen Legion is destroyed" }
             ]
           }
         }
@@ -91,7 +86,7 @@
             "caption": "A hidden token flips to reveal an Atreides troop",
             "hint": { "description": "One face-down tile -- flip it to reveal the troop's unit symbols." },
             "blocks": [
-              { "id": "tok", "label": "Troop", "color": "#2E7D32", "symbols": ["square", "square"], "revealed": false, "x": 0.5, "y": 0.5 }
+              { "id": "tok", "label": "Troop", "color": "#2E7D32", "symbols": ["square", "square"], "aspect": 1.6, "revealed": false, "x": 0.5, "y": 0.5 }
             ],
             "beats": [
               { "op": "pause", "duration_ms": 700, "label": "Face-down: a hidden token" },
