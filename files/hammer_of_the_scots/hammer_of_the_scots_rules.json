@@ -1,0 +1,470 @@
+{
+  "game_name": "Hammer of the Scots",
+  "designer": "Tom Dalgliesh, Jerry Taylor",
+  "publisher": "Columbia Games",
+  "game_overview": "Hammer of the Scots is a two-player block wargame covering the Scottish Wars of Independence from 1297 to 1314. One player commands England under Edward I (the Hammer of the Scots, later Edward II); the other commands the Scottish resistance led by William Wallace and later Robert the Bruce. Forces are wooden blocks that stand upright facing their owner -- the enemy cannot see a block's identity or current strength until it is committed to battle. Each game year is driven by a hand of five command cards that determines movement and triggers special events. Control of the fourteen Scottish nobles, who can change sides through combat, defection, and coronation, is the heart of the struggle.",
+  "objective": "Control the majority of the fourteen Scottish nobles at the end of the scenario. England seeks to occupy Scotland and hold the nobles' loyalty; Scotland seeks to free the country by keeping or winning back the nobles. A side can also win by Sudden Death -- controlling every noble in play, killing Edward II in battle (Scots win), or killing the crowned Scottish King in battle (English win).",
+  "min_players": 2,
+  "max_players": 2,
+  "bgg_link": "https://boardgamegeek.com/boardgame/1899/hammer-scots",
+  "play_time_minutes": 180,
+  "variants": [
+    { "id": "braveheart", "name": "Braveheart (1297-1305)", "description": "The Wallace rebellion. The standard introductory scenario.", "default": true },
+    { "id": "the_bruce", "name": "The Bruce (1306-1314)", "description": "Robert the Bruce's war for the crown." },
+    { "id": "campaign", "name": "Campaign (1297-1314)", "description": "Both scenarios linked; begins as Braveheart, then continues into The Bruce." }
+  ],
+  "components_overview": [
+    {
+      "name": "Mounted Map Board",
+      "type": "Board",
+      "description": "A point-to-point map of Scotland and northern England divided into areas. Borders are green (up to 6 blocks may cross) or red (up to 2, must stop). The Anglo-Scottish Border has special rules. Each area has a Castle Limit of 0-3.",
+      "count": 1
+    },
+    {
+      "name": "Wooden Blocks",
+      "type": "Token",
+      "subTypes": ["English (red)", "Scottish (blue)"],
+      "description": "Wooden blocks representing units. Blocks stand upright facing their owner so type and current strength stay hidden until combat. Each face shows pips indicating current strength (1-4); rotate 90 degrees counter-clockwise per hit.",
+      "detailed_description": "ENGLISH (red) blocks: Edward (King, B4 Move 3) x1; Archers (B3 Move 2) x2; Knights (B3 Move 2) x3; Hobelar (A2 Move 3) x1; Infantry (C2/C3 Move 2) x8 including Welsh and Ulster; Nobles (B2/B3 Move 2) x13. SCOTTISH (blue) blocks: Wallace (A3 Move 3) x1; King (A3 Move 3) x1; Etterick Archers (B2 Move 3) x1; Keith Cavalry (B1 Move 3) x1; French Knights (B3 Move 2) x1; Norse (A2, sea movement) x1; Infantry (C2/C3 Move 2) x8; Nobles (B2/B3 Move 2) x14 (including Moray). Nobles other than Moray have a red and a blue twin; only one is in play at a time."
+    },
+    {
+      "name": "Block Labels",
+      "type": "Token",
+      "description": "Adhesive labels applied to the wooden blocks on first setup, identifying each unit and showing its starting strength, combat rating, and move rating.",
+      "count": 1
+    },
+    {
+      "name": "Command Cards",
+      "type": "Card",
+      "description": "A deck of 25 cards: 20 Move cards (values 1-3) and 5 Event cards (Sea Move, Truce, Herald, Pillage, Victuals). Reshuffled and dealt 5 each at the start of every year.",
+      "count": 25
+    },
+    {
+      "name": "Dice",
+      "type": "Dice",
+      "description": "Six-sided dice for combat resolution. A firing block rolls dice equal to its current strength; each roll at or below the block's Combat Rating number scores one hit.",
+      "count": 6
+    },
+    {
+      "name": "Year Marker",
+      "type": "Marker",
+      "description": "A two-sided gray block tracking the current year on the turn track (1297 through 1314). The Edward block also flips from Edward I to Edward II at the end of 1306 (or when Edward I dies in combat).",
+      "count": 1
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place the mounted map board between the two players. The English player sits at the southern (England) edge; the Scottish player sits at the northern edge.",
+      "short_description": "Board"
+    },
+    {
+      "description": "On first play only, apply the adhesive labels to the wooden blocks. Scottish labels go on blue blocks; English labels go on red blocks. Lightly position each label straight, then press firmly.",
+      "short_description": "Labels (first play)"
+    },
+    {
+      "description": "Each player takes their colored blocks: red for England, blue for Scotland. Stand them upright so only the owner can see their type and strength.",
+      "short_description": "Take Blocks"
+    },
+    {
+      "description": "Pick your scenario with the scenario selector in the top bar: Braveheart (1297-1305), The Bruce (1306-1314), or Campaign. The deployment steps below then show only the forces for the scenario you chose.",
+      "short_description": "Choose Scenario"
+    },
+    {
+      "description": "English deployment:",
+      "short_description": "English deployment",
+      "condition": { "variants": ["braveheart", "campaign"] },
+      "items": [
+        {"description": "Deploy all nobles EXCEPT Bruce, Moray, and Galloway at full strength in their home areas.", "style": "bullet"},
+        {"description": "Deploy Comyn in Badenoch (his Home Area).", "style": "bullet"},
+        {"description": "Place Cumbria Infantry in Lothian.", "style": "bullet"},
+        {"description": "Place Northumber Infantry in Mentieth.", "style": "bullet"},
+        {"description": "Place all other red blocks face-down in the English Draw Pool, then draw 4 and deploy them at full strength in England.", "style": "bullet"},
+        {"description": "Note: Edward I starts in the Draw Pool -- he can be drawn as one of the 4 starting Feudal Levy blocks.", "style": "bullet"}
+      ]
+    },
+    {
+      "description": "Scottish deployment:",
+      "short_description": "Scottish deployment",
+      "condition": { "variants": ["braveheart", "campaign"] },
+      "items": [
+        {"description": "Deploy Bruce in Annan.", "style": "bullet"},
+        {"description": "Deploy Galloway in Galloway.", "style": "bullet"},
+        {"description": "Deploy Wallace, Douglas, and Barclay in Fife.", "style": "bullet"},
+        {"description": "Deploy Moray and Fraser in Moray.", "style": "bullet"},
+        {"description": "Deploy Grant in Strathspey.", "style": "bullet"},
+        {"description": "Set the Scottish King and French Knight blocks aside off-map.", "style": "bullet"},
+        {"description": "Place all other 7 blue blocks face-down in the Scottish Draw Pool.", "style": "bullet"}
+      ]
+    },
+    {
+      "description": "English deployment:",
+      "short_description": "English deployment",
+      "condition": { "variants": ["the_bruce"] },
+      "items": [
+        {"description": "Deploy all 6 Comyn-faction nobles (NOT Moray) at full strength in their home areas.", "style": "bullet"},
+        {"description": "Deploy Comyn in Badenoch.", "style": "bullet"},
+        {"description": "Place Cumbria Infantry in Moray.", "style": "bullet"},
+        {"description": "Place the Mentieth noble + Northumber Infantry in Mentieth.", "style": "bullet"},
+        {"description": "Place Durham Infantry in Lothian.", "style": "bullet"},
+        {"description": "Place the Stewart noble + Westmor Infantry in Lanark.", "style": "bullet"},
+        {"description": "Place the other 11 red blocks face-down in the English Draw Pool and draw 6 to deploy in England.", "style": "bullet"},
+        {"description": "Edward I dies at the end of 1306 and the king block becomes Edward II; Edward I cannot winter in Scotland in 1306.", "style": "bullet"}
+      ]
+    },
+    {
+      "description": "Scottish deployment:",
+      "short_description": "Scottish deployment",
+      "condition": { "variants": ["the_bruce"] },
+      "items": [
+        {"description": "Wallace and Moray are dead -- set them aside off-map.", "style": "bullet"},
+        {"description": "Deploy all Bruce-faction nobles (EXCEPT Mentieth and Stewart, who are on the English side) at full strength in their home areas.", "style": "bullet"},
+        {"description": "Deploy Bruce in Carrick.", "style": "bullet"},
+        {"description": "Place King, Douglas, and Barclay in Fife.", "style": "bullet"},
+        {"description": "Place Campbell in Lennox.", "style": "bullet"},
+        {"description": "Place Lindsay in Carrick.", "style": "bullet"},
+        {"description": "Place the other 7 blue blocks face-down in the Scottish Draw Pool.", "style": "bullet"},
+        {"description": "The French Knight is off-map until conditions trigger.", "style": "bullet"}
+      ]
+    },
+    {
+      "description": "Campaign linkage: deploy exactly as the Braveheart steps above. If neither side has achieved Sudden Death by end of 1305, continue into The Bruce period. Edward I cannot winter in Scotland in 1306. The Edward block flips to Edward II at the end of 1306. Extend years past 1314 if no decisive majority has been reached.",
+      "short_description": "Campaign linkage",
+      "condition": { "variants": ["campaign"] }
+    },
+    {
+      "description": "Shuffle the 25-card deck and deal 5 cards face-down to each player. Players may examine their hands. Place the year marker on the appropriate starting year (1297 for Braveheart / Campaign, 1306 for The Bruce). The game is ready to begin.",
+      "short_description": "Cards & Year Marker"
+    }
+  ],
+  "gameplay": {
+    "turn_steps": [
+      "Card Phase: both players secretly choose 1 card and reveal simultaneously. Higher value = Player 1 (English wins ties). Events resolve before Move cards.",
+      "Move Phase: Player 1 completes all Group Moves, then Player 2 does the same. A Move Card of value N allows N Group Moves.",
+      "Battle Phase: resolve battles one at a time in Player 1's chosen order. Each battle lasts up to 3 Combat Rounds.",
+      "Check end-of-year: if all 5 cards have been played OR both players played Events this Game Turn, the year ends -- proceed to Winter Turn.",
+      "Otherwise repeat the Card / Move / Battle sequence with the next pair of cards.",
+      "Winter Turn (end of year): nobles return home, units disband or build, French Knights check, English Feudal Levy, deal 5 new cards, advance the year."
+    ],
+    "actions": [
+      {
+        "name": "Card Phase",
+        "icon": "CardsFan",
+        "description": "Both players secretly choose one card from their five-card hand and reveal simultaneously. The higher movement value becomes Player 1 for this Game Turn (English wins ties). An Event card may be played, but it has no movement value and forfeits turn order -- the player who plays an Event becomes Player 2 and the opponent moves. The only exception is when BOTH players play Events: then the English player is Player 1 (winning the tie) and the year ends after both events resolve. Players may also choose to pass -- the effect cannot be saved.",
+        "steps": [
+          {"description": "Each player secretly selects one card from their hand and places it face-down."},
+          {"description": "Both cards are revealed at the same time."},
+          {"description": "The player who revealed the higher movement value is Player 1; ties go to the English player."},
+          {"description": "If exactly one player played an Event card, the event resolves first, but that player forfeits turn order -- the opponent becomes Player 1 and takes the Move Phase. If BOTH players played Event cards, resolve both (English first, winning the tie), then the year ends immediately."},
+          {"description": "If both players played Move cards, proceed to the Move Phase."}
+        ],
+        "notes": [
+          {"description": "Players may examine cards their opponent has played earlier in the same year."},
+          {"description": "Cards never carry forward into the next year. Unused moves are forfeit."},
+          {"description": "An Event card may be passed as a Coronation (Bruce/Comyn) or Return of the King (Balliol) instead of its printed event, if conditions are met."}
+        ],
+        "details": [
+          {"description": "Does Edward I start in the Draw Pool? Yes -- in 1297 (Braveheart), it is possible to draw Edward I as one of the 4 starting Feudal Levy blocks. He is in the pool until drawn."},
+          {"description": "Can players pass an Event card? Yes, like Move cards -- but the effect cannot be saved."},
+          {"description": "If both players play Events the same turn, the English event resolves first, then the Scottish event, then the year ends. The Scots may wait to see the English outcome before deciding whether to use their card as Coronation."}
+        ]
+      },
+      {
+        "name": "Move Phase",
+        "icon": "ArrowRight",
+        "description": "Player 1 completes ALL their Group Moves, then Player 2 completes all of theirs. A Move Card of value N allows N Group Moves; each Group Move activates one area's blocks. Moves cannot be saved.",
+        "steps": [
+          {"description": "Choose an area containing your blocks to activate -- ALL friendly blocks in that area form one Group (except the Norse block, which is always its own group)."},
+          {"description": "Move any number of blocks from that Group to one or more adjacent areas, up to each block's Move Rating (2 or 3 areas)."},
+          {"description": "Blocks may pass through vacant areas and friendly blocks but must STOP on entering an area containing enemy blocks (this starts a battle in that area)."},
+          {"description": "Blocks must also stop immediately after crossing a red border, even with movement remaining."},
+          {"description": "Repeat for additional Groups, up to the card's value."}
+        ],
+        "notes": [
+          {"description": "Border Limits per Move Phase: 6 blocks may cross a green border, 2 may cross a red border. Limits apply per player and per individual border segment, regardless of direction of travel."},
+          {"description": "Anglo-Scottish Border: each Group Move allows only 1 block to cross. A 3-Move card allows 3 separate Group Moves of 1 block each. Blocks entering England must always stop; blocks crossing the red dashed border into Teviot must also stop."},
+          {"description": "Player 1's blocks can never be pinned -- pinning only affects Player 2 in Contested Areas (see Pinning action)."}
+        ],
+        "details": [
+          {"description": "Multiple Group Moves attacking the SAME area combine in battle: one is the Main Attack (same starting area + same border) and the others arrive as Reserves in Round 2."},
+          {"description": "Border limits include movement in BOTH directions across the same border (e.g. 2 blocks crossing a green border northward leaves only 4 of the 6 limit available southward)."},
+          {"description": "A Player 1 move into a vacant area does NOT close any borders. Border Control only applies when a move starts or reinforces a battle."}
+        ]
+      },
+      {
+        "name": "Norse Movement",
+        "icon": "DirectionN",
+        "description": "The Norse block moves and attacks separately from all other blocks. One Group Move activates the Norse alone. It moves by sea from any coastal area to any other coastal area; no borders are crossed.",
+        "steps": [
+          {"description": "Spend 1 Group Move (the Norse is its own group)."},
+          {"description": "Declare both the origin and destination coastal area before moving."},
+          {"description": "Move the Norse directly to the chosen coastal area -- no intermediate area, no border crossings."},
+          {"description": "If the destination is enemy-occupied, a battle begins (the Norse fights alone as the Main Attacker, or joins as a Reserve if other Scots already entered that battle)."}
+        ],
+        "notes": [
+          {"description": "The Norse may move to an empty coastal area instead of attacking."},
+          {"description": "Norse Retreats / Regroups must go to a FRIENDLY (not Neutral) coastal area. The Norse can never enter England, never use the Sea Move card, and never retreat to a vacant area."},
+          {"description": "Because Norse movement does not cross any borders, it never closes a border for the English player. Norse moves must be declared so the opponent knows about them."}
+        ],
+        "details": [
+          {"description": "Where does Norse spawn? It enters via the Scottish Draw Pool (Winter Builds). If drawn for an inland area like Lanark or Badenoch, deploy in any friendly adjacent coastal area instead -- Castle Limits do not apply to this redeployment."},
+          {"description": "Can the Norse join an existing battle? Yes, as a Reserve attacker (arrives Round 2) if it moves to a Contested area already targeted by other Scottish blocks. It can also be the lone Main Attacker."},
+          {"description": "Why declare Norse moves? Because they cross no borders, they don't close borders the way normal moves do. Declaring origin and destination prevents disputes about Border Control later."}
+        ]
+      },
+      {
+        "name": "Battle Phase",
+        "icon": "Sword",
+        "description": "After all movement is complete, resolve battles one at a time in any order chosen by Player 1. Each battle lasts up to 3 Combat Rounds.",
+        "steps": [
+          {"description": "Player 1 chooses which Contested Area to fight next (without examining enemy blocks first)."},
+          {"description": "Both players reveal their blocks in that area by tipping them forward, maintaining current strength."},
+          {"description": "Roll for Celtic Unity on every Welsh/Ulster block revealed (1-4 no effect, 5-6 the block goes straight to the English Draw Pool)."},
+          {"description": "Resolve up to 3 Combat Rounds. The attacker must retreat if not victorious by the end of Round 3."},
+          {"description": "When the battle ends, stand all blocks upright. The loser retreats; the victor may Regroup."},
+          {"description": "Player 1 then chooses the next battle. After all battles are done, check for end of year."}
+        ],
+        "notes": [
+          {"description": "Player 1 need not commit to a sequence of battles in advance -- they may decide the next battle after seeing the previous one resolve."},
+          {"description": "Border Control: blocks may not retreat through a border that the enemy used to enter THIS battle. If both sides used the same border, only Player 2 (later mover) may retreat through it."}
+        ],
+        "details": [
+          {"description": "Reserve blocks arrive at the START of Round 2 (revealed then). They cannot fire, retreat, or take hits in Round 1 -- if the battle ends in Round 1, the Reserves were never revealed at all."},
+          {"description": "Battlefield Control can flip: if the Main Attacker eliminates all defenders in Round 1 before defending Reserves arrive, the original attacker becomes the DEFENDER for Rounds 2-3."},
+          {"description": "Border Control does NOT apply to Regroups -- the victor may regroup across any border into Friendly or Neutral areas (subject to standard Border Limits)."}
+        ]
+      },
+      {
+        "name": "Combat Round",
+        "icon": "Timer100",
+        "description": "Within a battle, each block takes one Combat Turn per round to Fire, Retreat, or Pass. The order is strict: defending A blocks, attacking A blocks, defending B, attacking B, defending C, attacking C.",
+        "steps": [
+          {"description": "Defending A-rated blocks act first (Fire, Retreat, or Pass -- chosen per block)."},
+          {"description": "Then attacking A-rated blocks act."},
+          {"description": "Then defending B blocks, then attacking B blocks."},
+          {"description": "Then defending C blocks, then attacking C blocks."},
+          {"description": "After all blocks have acted, one Combat Round is complete. Reveal Reserves at the start of the next round, then repeat up to 2 more times."}
+        ],
+        "notes": [
+          {"description": "Within a single A/B/C category, blocks may act in any order to obscure choices."},
+          {"description": "Combat is NOT simultaneous -- hits resolve immediately, so a block reduced or eliminated by an earlier firer may have no chance to fire that round."},
+          {"description": "A block may Pass instead of firing or retreating -- useful to avoid weakening an enemy noble before it goes home for Winter and switches sides."}
+        ],
+        "details": [
+          {"description": "A firing block rolls dice equal to its current Strength. Each die at or below the block's Combat Rating number is one hit (e.g. B3 hits on 1, 2, 3; B1 hits only on 1)."},
+          {"description": "Each hit is applied immediately to the STRONGEST enemy block in the battle (regardless of which category fired). Ties: the player under fire chooses which block takes the hit. Apply hits sequentially."},
+          {"description": "Nobles defending their Home Area fire at B3 instead of B2 -- even if they arrived this Game Turn or defected mid-battle. The bonus applies regardless of current allegiance. Nobles attacking their own home do NOT get the bonus."},
+          {"description": "OPTIONAL Schiltrom rule: in battles where the English side has NO archers present, all Scottish infantry fire at +1 (C2 becomes C3, C3 becomes C4)."}
+        ]
+      },
+      {
+        "name": "Reserves & Main Attack",
+        "icon": "CardsUnder",
+        "description": "When attacking with multiple groups, exactly one is the Main Attack (fights in Round 1); all others are Reserves (arrive in Round 2). Player 2's reinforcements to an existing battle are also Reserves.",
+        "steps": [
+          {"description": "Before the battle, the attacker declares which group is the Main Attack: all blocks of that group must have started in the same area and crossed the same border."},
+          {"description": "Place Main Attack blocks in the battle area. Keep Reserves on the borders they crossed until they arrive."},
+          {"description": "Resolve Round 1 with only the Main Attack (and the defenders already present)."},
+          {"description": "At the start of Round 2, reveal Reserves -- both attacking and defending -- and add them to the battle. Roll Celtic Unity for any newly revealed Welsh/Ulster Reserves."},
+          {"description": "Reserves take normal Combat Turns from Round 2 onward."}
+        ],
+        "notes": [
+          {"description": "Main Attack blocks cannot be voluntarily placed in Reserve. The largest single-area / single-border group must fight in Round 1."},
+          {"description": "All blocks moved by Player 2 to a Contested Area arrive as Reserves -- Player 2 cannot fight in Round 1 of a battle they reinforced."},
+          {"description": "If the Main Attack wins in Round 1 before defending Reserves arrive, area control flips: the original attacker is now the DEFENDER for Rounds 2-3."}
+        ],
+        "details": [
+          {"description": "Can blocks from the same starting area attack a single destination across DIFFERENT borders? Yes -- but only one of those borders' group is the Main Attack; the others enter as Reserves in Round 2."},
+          {"description": "Are Celtic Unity rolls for Reserves made in Round 1 or Round 2? Round 2, when the Reserve is revealed."},
+          {"description": "Where do Reserves physically sit during Round 1? On the border they used to cross, until they arrive. Keep them off the battle area to make the timing clear."}
+        ]
+      },
+      {
+        "name": "Retreat & Regroup",
+        "icon": "ArrowCounterclockwise",
+        "description": "A block may Retreat instead of firing on its Combat Turn, moving to an adjacent Friendly or Neutral area. When a battle ends, the victor may Regroup to adjacent Friendly or Neutral areas.",
+        "steps": [
+          {"description": "RETREAT: on its Combat Turn, a block may choose to Retreat instead of firing. Move it to any adjacent Friendly or Neutral area (not Contested or Enemy)."},
+          {"description": "Retreats follow A-then-B-then-C order. Blocks of the same letter may retreat together to hide who went where. Stand them upright before moving."},
+          {"description": "Border Limits reset each Combat Round and apply separately for the mandatory retreat after Round 3 and for Regroups."},
+          {"description": "REGROUP: when a battle ends in your favor, victorious blocks (including Reserves) stand up and may move to any adjacent Friendly or Neutral area (or stay put). Subject to Border Limits."}
+        ],
+        "notes": [
+          {"description": "English blocks may NEVER retreat or regroup into Scotland; Scottish blocks may NEVER retreat or regroup into England. Norse may only retreat/regroup to Friendly (not Neutral) coastal areas."},
+          {"description": "Blocks cannot retreat to an area with another unfought battle. They cannot retreat through a border the enemy used to start this battle (Border Control -- see Battle Phase)."},
+          {"description": "Blocks that cannot retreat when required are ELIMINATED (the strongest die in combat -- normal blocks return to the Draw Pool; black-cross blocks are permanently dead)."}
+        ],
+        "details": [
+          {"description": "Border Limits during retreat: 6 blocks across a green border, 2 across a red, per Combat Round. The mandatory post-Round-3 retreat is a fresh round for limits."},
+          {"description": "The victor's Regroup ignores Border Control -- they may regroup across any border into Friendly or Neutral areas (still bound by Border Limits)."},
+          {"description": "Different blocks in the same battle may retreat or regroup to different areas. They are not required to stay together."}
+        ]
+      },
+      {
+        "name": "Capturing Nobles",
+        "icon": "CardsFlip",
+        "description": "When a noble is eliminated in combat (or by Pillage), it immediately switches sides at Strength 1 and is placed in Reserve. The captured noble fights for its new side starting next Combat Round.",
+        "steps": [
+          {"description": "When a noble's last step is removed, replace its block with the opposite-colored twin at Strength 1."},
+          {"description": "Place the newly captured noble in Reserve for this battle."},
+          {"description": "The noble fights for its new owner starting in the next Combat Round."},
+          {"description": "If the battle ended this round, the noble simply joins its new side's available forces from now on."}
+        ],
+        "notes": [
+          {"description": "MORAY NEVER changes allegiance. If killed in combat, Moray is PERMANENTLY eliminated (removed from play). If eliminated by Pillage, Moray goes to the Scottish Draw Pool."},
+          {"description": "Pillage that eliminates a noble triggers defection the same way as combat (except for Moray)."},
+          {"description": "Captured nobles in their own Home Area defend at B3 even though they just changed sides."}
+        ],
+        "details": [
+          {"description": "Can a noble go into the Draw Pool? Only Moray. All other nobles have a red AND blue twin -- when one is eliminated, the other is put into play. The eliminated block goes to an off-board face-up pile, not the Draw Pool."},
+          {"description": "Does the +1 Home defense bonus apply to nobles freshly defected? Yes -- the bonus is tied to the Home Area, regardless of allegiance. A noble captured mid-battle defending its own home fires at B3."},
+          {"description": "Does Moray count for victory if dead? No. He must be on the board to count toward either side's noble total OR toward the 8-noble threshold that triggers French Knights. Effectively 13 nobles in play if Moray is gone."}
+        ]
+      },
+      {
+        "name": "Pinning",
+        "icon": "LockClosed",
+        "description": "When attacked, defending blocks become pinned in their area. Each attacking block (including Reserves) pins one defender. Player 2 (the defender) chooses which of their blocks are pinned.",
+        "steps": [
+          {"description": "Count the attacking blocks (including any that will arrive as Reserves) in the Contested Area."},
+          {"description": "Defender chooses that many of their blocks in the area to be pinned -- they cannot move."},
+          {"description": "Any remaining defenders ('unpinned' blocks) may move normally and may even attack -- but they cannot cross any border that the enemy used to enter this battle."},
+          {"description": "Pinning is one-sided: only Player 2's blocks can be pinned. Player 1 already moved before pinning was triggered."}
+        ],
+        "notes": [
+          {"description": "Adding reinforcements to a Contested Area does NOT unpin already-pinned blocks. Reinforcements simply become Reserves themselves."},
+          {"description": "EXAMPLE: 6 Scots in Buchan are attacked by 3 English from Angus and 2 from Strathspey (5 attackers). The Scots pin 5 blocks; 1 unpinned block may move out -- but only via Badenoch or Mar (the borders the English did not use)."}
+        ],
+        "details": [
+          {"description": "Can Player 1 ever be pinned? No -- Player 1 has completed all moves before Player 2 begins, so there are no blocks left to pin."},
+          {"description": "Why can't unpinned blocks use the borders the enemy crossed? Border Control -- those borders are closed against retreating/leaving for the rest of this Game Turn."},
+          {"description": "Do Reserves count for pinning? Yes -- both Main Attack and Reserve attackers count toward the pin total."}
+        ]
+      },
+      {
+        "name": "Border Raid",
+        "icon": "Sword",
+        "description": "The Scottish player may invade England (except during a Truce). Costs 1 movement point per block to cross the Anglo-Scottish Border. Forces the English to bleed off blocks every Game Turn while occupied.",
+        "steps": [
+          {"description": "Spend 1 movement point per block crossing the Anglo-Scottish Border into England (blocks may start anywhere, not just adjacent to England)."},
+          {"description": "If England is occupied by English blocks, fight a battle there -- defenders cannot retreat (no retreat into Scotland), so they must win or be eliminated."},
+          {"description": "At the end of EVERY Game Turn while any Scots block occupies England, the English player must disband 1 non-noble block of their choice (not revealed to the Scots). English nobles cannot be chosen."},
+          {"description": "Scots raiders cannot Winter in England -- they must leave or disband at year's end."}
+        ],
+        "notes": [
+          {"description": "The Scots cannot initiate a Border Raid during a Truce. Scots already in England may remain (and the English still loses 1 non-noble per Game Turn)."},
+          {"description": "If the English have ONLY noble blocks on the board, no block is forced to disband (English nobles are protected)."},
+          {"description": "Sea Move can be used by Scots blocks to reach English coastal areas more efficiently (Norse cannot)."}
+        ],
+        "details": [
+          {"description": "Do Scots raiders need to start adjacent to England? No -- they can be anywhere in Scotland. The 1 movement point pays only for the border crossing; they spend the rest of their Move Rating reaching the border."},
+          {"description": "Can multiple Scots groups combine in England? Yes -- same rules as any battle. Blocks from the same starting area crossing the same border form the Main Attack; others are Reserves."},
+          {"description": "Can the English retreat once attacked in England? No -- they have nowhere to retreat (cannot retreat into Scotland) and must fight to the death or be destroyed."}
+        ]
+      },
+      {
+        "name": "Event Cards",
+        "icon": "CardFlip",
+        "description": "The deck contains 5 Event cards: Sea Move, Truce, Herald, Pillage, Victuals. Events resolve first in the Card Phase; the Event player is Player 1. If both players play Events, both resolve (English first) and the year ends.",
+        "steps": [
+          {"description": "When revealed, the Event card's printed effect replaces normal movement for that player."},
+          {"description": "Resolve the event in full. The Event player is Player 1 for any battles or defections that result."},
+          {"description": "If both players played Event cards this Game Turn, resolve the English event first, then the Scottish event, then the year ends -- skip any remaining unplayed cards."}
+        ],
+        "notes": [
+          {"description": "Players may pass on an Event card. Effects cannot be saved."},
+          {"description": "A Scottish Event card may be announced as a Coronation or Return of the King in place of its printed effect, if conditions are met (see Coronation actions)."},
+          {"description": "If the English ALSO play an event the same turn, the Scots may wait to see the English resolution before deciding whether to use their card as Coronation or its printed event."}
+        ],
+        "details": [
+          {"description": "SEA MOVE: move one or two blocks from one coastal area to another Friendly coastal area, including into or out of England. Norse can never Sea Move."},
+          {"description": "TRUCE: prevents the Scots from initiating new Border Raids this Game Turn. Existing Scots forces in England may remain; the English still disband 1 non-noble at end of turn."},
+          {"description": "HERALD: defection event. Targeted noble(s) switch sides; resulting battles fought immediately as normal 3-round battles with the defector as attacker. Player 1 (the Herald player) chooses order."},
+          {"description": "PILLAGE: inflict combat hits on a target group. Eliminated nobles switch sides (Moray is disbanded instead). Eliminated non-noble blocks go to the Draw Pool."},
+          {"description": "VICTUALS: add strength steps to a friendly group. Cannot exceed each block's maximum strength. Edward I can be strengthened this way (the only winter exception to the 'no RPs for Edward' rule -- but Victuals is not a Winter action)."}
+        ]
+      },
+      {
+        "name": "Coronation",
+        "icon": "CrownB",
+        "description": "The Scots crown Bruce or Comyn as King by playing any Event card and announcing 'Coronation' in place of its printed event. Triggers immediate defection of the rival faction.",
+        "steps": [
+          {"description": "Verify prerequisites: Wallace must be dead, and the candidate (Bruce or Comyn) must currently be located in Fife."},
+          {"description": "Play any Event card and announce 'Coronation' instead of the printed event."},
+          {"description": "Place the King block in Fife at full strength. The original candidate block remains in play as a normal noble (representing a family member)."},
+          {"description": "If BRUCE is crowned: all Comyn-faction nobles EXCEPT Moray immediately defect to the English. If COMYN is crowned: all Bruce-faction nobles immediately defect to the English."},
+          {"description": "Fight any resulting battles immediately as normal 3-round battles -- defecting noble(s) are the attacker. Player 1 (the Coronation player) chooses battle order."}
+        ],
+        "notes": [
+          {"description": "Coronation is once per game. If the King is later eliminated in combat, the English win a Sudden Death victory."},
+          {"description": "If the English ALSO play an Event card the same turn, the English event resolves first; the Scots may then decide whether to use their card as Coronation or its printed event."},
+          {"description": "Defection battles caused by Coronation are normal battles: 3 rounds max, victor can Regroup, etc."}
+        ],
+        "details": [
+          {"description": "What happens to the candidate block? The Bruce or Comyn block stays in play as a normal noble (representing another family member). The new King block is a separate piece deployed at full strength in Fife."},
+          {"description": "Why must Wallace be dead first? Historically, Bruce was crowned after Wallace's execution in 1305. Mechanically, it forces the Scots to commit to one charismatic leader at a time."},
+          {"description": "When does the Coronation Battle resolve relative to the year-end check? Coronation battles always fight before the year ends, even if the Scots' Coronation card triggered an immediate year-end via dual Events."}
+        ]
+      },
+      {
+        "name": "Return of the King (Balliol)",
+        "icon": "CrownB",
+        "description": "King John Balliol may return from exile via Event card, replacing its printed event. Brings the French Knights into play and triggers Bruce-faction defection.",
+        "steps": [
+          {"description": "Verify ALL four prerequisites: year is 1301 or later; no other king has yet been crowned; the French Knight block is on the map; Wallace may be alive or dead (either is allowed)."},
+          {"description": "Play any Event card and announce 'Return of the King' instead of the printed event."},
+          {"description": "Deploy the King block at full strength with the French Knight (same area)."},
+          {"description": "All Bruce-faction nobles immediately defect to the English."},
+          {"description": "Fight any resulting battles immediately as normal 3-round battles -- defectors are the attacker. Player 1 chooses order."}
+        ],
+        "notes": [
+          {"description": "Same Sudden Death rule applies: if Balliol (as the Scottish King) is killed in combat, the English win immediately."},
+          {"description": "The French Knight must already have entered the game via the 8-Noble threshold rule (see Winter Builds) before Return of the King is legal."}
+        ],
+        "details": [
+          {"description": "Why is Balliol blocked until 1301? Historically, the French threat to send the Count of Artois to restore Balliol was a 1302 development. The rule reflects that diplomatic timeline."},
+          {"description": "What if another king was already crowned? Then Return of the King is illegal -- only one Scottish King block can be in play per game."},
+          {"description": "Why does Wallace alive NOT block Balliol? Unlike Bruce/Comyn coronations (which require Wallace dead), Balliol's return is via French aid -- Wallace's status is irrelevant."}
+        ]
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "A game year ends when both players have played all 5 cards, OR when both players play Event cards in the same Game Turn. Once a year ends, resolve the Winter Turn. The scenario ends at the final year (1305 for Braveheart, 1314 for The Bruce / Campaign), unless a Sudden Death victory occurs first.",
+    "procedure": [
+      {"description": "English nobles go home. Every English noble on the map moves to its Home Area (teleports from anywhere). If the Home Area is enemy-occupied, the noble defects to the Scots at current strength (swap to the blue block).", "style": "numbered"},
+      {"description": "Scottish nobles go home. Every Scottish noble moves to its Home Area. If enemy-occupied, the noble defects to the English (swap to red block). Bruce and Comyn each have two Home Areas; they only convert if BOTH homes are enemy-occupied (the new owner chooses which home to place them in).", "style": "numbered"},
+      {"description": "Moray's choice. Moray alone may decline to return home: he may stay where he is (subject to Castle Limit), or disband to the Scottish Draw Pool.", "style": "numbered"},
+      {"description": "Scottish King. The King may move to any Friendly or Neutral cathedral (Strathspey, Lennox, or Fife), remain in his current area (subject to Castle Limit), or disband.", "style": "numbered"},
+      {"description": "English disbanding. All English blocks in England must disband. Archers, Knights, and Hobelars in Scotland MUST disband (unless wintering with Edward I). English Infantry (incl. Welsh / Ulster) may remain in Scotland subject to Castle Limits, or disband. Nobles cannot disband. Infantry exceeding Castle Limits must disband (owner's choice).", "style": "numbered"},
+      {"description": "Edward wintering. If Edward I is in Scotland, he may winter there OR disband. Edward II may NEVER winter in Scotland. Edward I cannot winter in Scotland in two consecutive years, nor in 1306. When Edward I winters, ALL red non-noble blocks in his area ignore Castle Limit. CRITICAL: if Edward winters, the English get NO Feudal Levy and England begins next year EMPTY.", "style": "numbered"},
+      {"description": "Scottish disbanding. Wallace may move to Selkirk (unless enemy-occupied) and gain 2 steps -- free move from anywhere. Then disband any Scottish blocks exceeding Castle Limits (owner's choice). Nobles other than Moray cannot disband.", "style": "numbered"},
+      {"description": "Winter Builds (Replacement Points). Each Friendly area generates RPs equal to its Castle Limit (Scots add +1 if the area has a cathedral). Spend each RP either: (a) build 1 step on an existing block in that area, or (b) draw 1 block from the Draw Pool and deploy it there at Strength 1 (Scots only). RPs cannot be saved. English RPs can only strengthen infantry or nobles already in the area -- not deploy new units.", "style": "numbered"},
+      {"description": "French Knights check. If the Scots control 8 or more nobles at the start of Winter Builds, the French Knight block is added to the Scottish Draw Pool. Once drawn, it remains in play until eliminated. If drawn for an inland area like Lanark or Badenoch, deploy in any friendly adjacent coastal area instead (Castle Limits do not apply for this redeploy).", "style": "numbered"},
+      {"description": "English Feudal Levy. SKIP if Edward I wintered in Scotland. Otherwise: shuffle the English Draw Pool face-down, draw HALF (round up), and deploy those blocks at FULL strength in England.", "style": "numbered"},
+      {"description": "New cards. Shuffle the full 25-card deck. Deal 5 new cards face-down to each player. Advance the year marker; begin the next year.", "style": "numbered"}
+    ],
+    "final_scoring": [
+      {
+        "source": "Noble Majority",
+        "description": "Count the number of nobles each side controls on the board at the end of the final year of the scenario. The side with the majority wins. If Moray is dead or in the Draw Pool, there are effectively only 13 nobles in play."
+      },
+      {
+        "source": "Braveheart Tiebreaker",
+        "description": "In Braveheart (1297-1305), a 7-7 tie is possible. If tied: the Scots win if Wallace is alive on the map; the English win if Wallace is dead or in the Scottish Draw Pool."
+      },
+      {
+        "source": "Sudden Death -- All Nobles",
+        "description": "At the end of any Game Turn: if one side controls EVERY noble currently in play, they win immediately. Note: Moray must be dead or in the Draw Pool for England to win this way (he never defects)."
+      },
+      {
+        "source": "Sudden Death -- Edward II Killed",
+        "description": "The Scottish player wins immediately if the Edward II block is eliminated in combat (a black-cross block, permanently dead). Killing Edward I in combat does NOT trigger Sudden Death -- the block simply flips to Edward II."
+      },
+      {
+        "source": "Sudden Death -- Scottish King Killed",
+        "description": "The English player wins immediately if the crowned Scottish King block (Bruce, Comyn, or Balliol once on the throne) is eliminated in combat. Black-cross block, permanently dead."
+      }
+    ]
+  },
+  "winning_condition": "Control the majority of the fourteen Scottish nobles when the scenario ends, OR achieve a Sudden Death victory at the end of any Game Turn (all nobles in play, Edward II killed in combat for the Scots, or the crowned Scottish King killed in combat for the English)."
+}
