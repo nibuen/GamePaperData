@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "date": "2026-06-17",
+      "title": "New game: Hammer of the Scots",
+      "description": "The block-wargame classic of Robert the Bruce's rebellion is now available, with a full rules reference, scenarios, and a learn-to-play teaching flow.",
+      "game_id": "hammer_of_the_scots"
+    },
+    {
+      "date": "2026-06-17",
+      "title": "Dune: War for Arrakis -- learn to play",
+      "description": "Added an animated teaching flow covering movement, battles, and hidden Atreides deployment, with faction-colored blocks.",
+      "game_id": "dune_war_for_arrakis"
+    }
+  ]
+}
