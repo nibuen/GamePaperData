@@ -80,17 +80,20 @@
       "title": "Hidden Deployment",
       "content": [
         {
-          "description": "Atreides deployment tokens stand hidden -- your opponent cannot tell what they are until they are revealed in battle or scouted. This concealment is the heart of Atreides guerrilla play.",
+          "description": "Atreides deployment tokens stand hidden -- your opponent cannot tell what they are until they are revealed in battle or scouted. Identical face-down tokens can hide different units, so your foe never knows what they are walking into. This concealment is the heart of Atreides guerrilla play.",
           "action": {
             "type": "block_animation",
-            "caption": "A hidden Atreides token is revealed",
-            "hint": { "description": "A face-down deployment token flips to reveal a Legion." },
+            "caption": "Two identical hidden tokens reveal different units",
+            "hint": { "description": "The backs look the same -- then they flip to different unit types." },
             "blocks": [
-              { "id": "tok", "label": "AT", "color": "#2E7D32", "revealed": false, "x": 0.5, "y": 0.5 }
+              { "id": "t1", "label": "Troop", "color": "#2E7D32", "shape": "square", "revealed": false, "x": 0.32, "y": 0.5 },
+              { "id": "t2", "label": "Leader", "color": "#2E7D32", "shape": "circle", "revealed": false, "x": 0.68, "y": 0.5 }
             ],
             "beats": [
-              { "op": "pause", "duration_ms": 700, "label": "Face-down: a hidden unit" },
-              { "op": "flip", "target": "tok", "revealed": true, "duration_ms": 700, "label": "Revealed in battle" }
+              { "op": "pause", "duration_ms": 700, "label": "Two face-down tokens -- identical backs" },
+              { "op": "flip", "target": "t1", "revealed": true, "duration_ms": 600, "label": "One hides a Troop..." },
+              { "op": "pause", "duration_ms": 300 },
+              { "op": "flip", "target": "t2", "revealed": true, "duration_ms": 600, "label": "...the other, a Leader" }
             ]
           }
         }
