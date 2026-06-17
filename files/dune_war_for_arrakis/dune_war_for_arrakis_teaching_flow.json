@@ -1,0 +1,113 @@
+{
+  "game_id": "dune_war_for_arrakis",
+  "start_node": "intro",
+  "nodes": [
+    {
+      "id": "intro",
+      "title": "How It Plays",
+      "content": [
+        { "description": "Dune: War for Arrakis is an area-control war game. Your forces are Legions -- groups of units led by leaders -- that move between areas, fight battles, and contest spice. These short animations use plain colored blocks (Atreides green, Harkonnen red) to show the core moves." }
+      ],
+      "options": [
+        { "label": "Show me", "next_node": "movement" }
+      ]
+    },
+    {
+      "id": "movement",
+      "title": "Moving a Legion",
+      "content": [
+        {
+          "description": "A Legion moves between connected areas of the board -- advance to threaten spice, reinforce, or attack.",
+          "action": {
+            "type": "block_animation",
+            "caption": "A Legion moves to an adjacent area",
+            "hint": { "description": "An Atreides Legion advances one area." },
+            "area": {
+              "sections": [
+                { "id": "a", "name": "Area A", "x": 0.0, "y": 0.0, "width": 0.5, "height": 1.0 },
+                { "id": "b", "name": "Area B", "x": 0.5, "y": 0.0, "width": 0.5, "height": 1.0 }
+              ]
+            },
+            "blocks": [
+              { "id": "at", "label": "AT", "color": "#2E7D32", "revealed": true, "x": 0.12, "y": 0.5 }
+            ],
+            "beats": [
+              { "op": "pause", "duration_ms": 600, "label": "Two connected areas" },
+              { "op": "move", "target": "at", "to_x": 0.62, "to_y": 0.5, "duration_ms": 900, "label": "The Legion advances" }
+            ]
+          }
+        }
+      ],
+      "options": [
+        { "label": "Next", "next_node": "combat" }
+      ]
+    },
+    {
+      "id": "combat",
+      "title": "Battle",
+      "content": [
+        {
+          "description": "When a Legion moves into an area held by the enemy, a battle begins and is fought over a series of combat rounds until one side is destroyed or retreats.",
+          "action": {
+            "type": "block_animation",
+            "caption": "Moving into an enemy area starts a battle",
+            "hint": { "description": "An Atreides Legion attacks a Harkonnen-held area." },
+            "area": {
+              "sections": [
+                { "id": "home", "name": "", "x": 0.0, "y": 0.0, "width": 0.5, "height": 1.0 },
+                { "id": "enemy", "name": "Enemy area", "x": 0.5, "y": 0.0, "width": 0.5, "height": 1.0 }
+              ]
+            },
+            "blocks": [
+              { "id": "hk", "label": "HK", "color": "#B33A3A", "revealed": true, "x": 0.8, "y": 0.5 },
+              { "id": "at", "label": "AT", "color": "#2E7D32", "revealed": true, "x": 0.12, "y": 0.5 }
+            ],
+            "beats": [
+              { "op": "pause", "duration_ms": 500, "label": "Harkonnen hold the area" },
+              { "op": "move", "target": "at", "to_x": 0.6, "to_y": 0.42, "duration_ms": 800, "label": "Atreides attack" },
+              { "op": "pause", "duration_ms": 500, "label": "Battle!" },
+              { "op": "fade", "target": "hk", "opacity": 0.15, "duration_ms": 700, "label": "Harkonnen Legion destroyed" }
+            ]
+          }
+        }
+      ],
+      "options": [
+        { "label": "Next", "next_node": "hidden" }
+      ]
+    },
+    {
+      "id": "hidden",
+      "title": "Hidden Deployment",
+      "content": [
+        {
+          "description": "Atreides deployment tokens stand hidden -- your opponent cannot tell what they are until they are revealed in battle or scouted. This concealment is the heart of Atreides guerrilla play.",
+          "action": {
+            "type": "block_animation",
+            "caption": "A hidden Atreides token is revealed",
+            "hint": { "description": "A face-down deployment token flips to reveal a Legion." },
+            "blocks": [
+              { "id": "tok", "label": "AT", "color": "#2E7D32", "revealed": false, "x": 0.5, "y": 0.5 }
+            ],
+            "beats": [
+              { "op": "pause", "duration_ms": 700, "label": "Face-down: a hidden unit" },
+              { "op": "flip", "target": "tok", "revealed": true, "duration_ms": 700, "label": "Revealed in battle" }
+            ]
+          }
+        }
+      ],
+      "options": [
+        { "label": "Done", "next_node": "wrap" }
+      ]
+    },
+    {
+      "id": "wrap",
+      "title": "That Is the Core",
+      "content": [
+        { "description": "Move Legions between areas, attack into enemy areas to fight, and use hidden deployment tokens to keep your foe guessing. The full game layers on spice harvesting, the Spice Must Flow track, faction powers, and leader abilities -- keep the rulebook handy for the complete sequence of play." }
+      ],
+      "options": [
+        { "label": "Finish", "next_node": null }
+      ]
+    }
+  ]
+}
