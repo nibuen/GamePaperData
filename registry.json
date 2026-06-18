@@ -7,133 +7,152 @@
             "game_name": "Arydia: The Paths We Dare Tread",
             "designer": "Cody Miller",
             "publisher": "Far Off Games",
-            "added_date": "2026-03-10"
+            "added_date": "2026-03-10",
+            "genre": "adventure"
         },
         {
             "id": "agricola",
             "game_name": "Agricola",
             "designer": "Uwe Rosenberg",
             "publisher": "Lookout Games",
-            "added_date": "2026-02-15"
+            "added_date": "2026-02-15",
+            "genre": "worker_placement"
         },
         {
             "id": "castles_of_burgundy",
             "game_name": "The Castles of Burgundy",
             "designer": "Stefan Feld",
             "publisher": "alea / Ravensburger",
-            "added_date": "2026-02-24"
+            "added_date": "2026-02-24",
+            "genre": "dice"
         },
         {
             "id": "grand_austria_hotel",
             "game_name": "Grand Austria Hotel",
             "designer": "Virginio Gigli, Simone Luciani",
             "publisher": "Lookout Games",
-            "added_date": "2026-02-20"
+            "added_date": "2026-02-20",
+            "genre": "dice"
         },
         {
             "id": "faiyum",
             "game_name": "Faiyum",
             "designer": "Friedemann Friese",
             "publisher": "2F-Spiele",
-            "added_date": "2026-03-09"
+            "added_date": "2026-03-09",
+            "genre": "card"
         },
         {
             "id": "food_chain_magnate",
             "game_name": "Food Chain Magnate",
             "designer": "Jeroen Doumen, Joris Wiersinga",
             "publisher": "Lucky Duck Games, Splotter Spellen",
-            "added_date": "2026-02-16"
+            "added_date": "2026-02-16",
+            "genre": "economic"
         },
         {
             "id": "lords_of_waterdeep",
             "game_name": "Lords of Waterdeep",
             "designer": "Peter Lee, Rodney Thompson",
             "publisher": "Wizards of the Coast",
-            "added_date": "2026-02-13"
+            "added_date": "2026-02-13",
+            "genre": "worker_placement"
         },
         {
             "id": "twilight_struggle",
             "game_name": "Twilight Struggle",
             "designer": "Ananda Gupta, Jason Matthews",
             "publisher": "GMT Games",
-            "added_date": "2026-02-18"
+            "added_date": "2026-02-18",
+            "genre": "wargame"
         },
         {
             "id": "santa_monica",
             "game_name": "Santa Monica",
             "designer": "Josh Wood",
             "publisher": "Alderac Entertainment Group (AEG)",
-            "added_date": "2026-02-19"
+            "added_date": "2026-02-19",
+            "genre": "card"
         },
         {
             "id": "orloj",
             "game_name": "Orloj: The Prague Astronomical Clock",
             "designer": "Paloma J. Pascual, Abraham SÃ¡nchez Hermida",
             "publisher": "Perro Loko Games",
-            "added_date": "2026-02-22"
+            "added_date": "2026-02-22",
+            "genre": "dice"
         },
         {
             "id": "ticket_to_ride",
             "game_name": "Ticket to Ride",
             "designer": "Alan R. Moon",
             "publisher": "Days of Wonder",
-            "added_date": "2026-02-25"
+            "added_date": "2026-02-25",
+            "genre": "card"
         },
         {
             "id": "plains_indian_wars",
             "game_name": "Plains Indian Wars",
             "designer": "John Poniske",
             "publisher": "GMT Games",
-            "added_date": "2026-02-27"
+            "added_date": "2026-02-27",
+            "genre": "wargame"
         },
         {
             "id": "amun_re",
             "game_name": "Amun-Re",
             "designer": "Reiner Knizia",
             "publisher": "Hans im Glück",
-            "added_date": "2026-03-09"
+            "added_date": "2026-03-09",
+            "genre": "economic"
         },
         {
             "id": "dune_imperium",
             "game_name": "Dune: Imperium",
             "designer": "Paul Dennen",
             "publisher": "Dire Wolf Digital",
-            "added_date": "2026-02-19"
+            "added_date": "2026-02-19",
+            "genre": "deck_building"
         },
         {
             "id": "dune_war_for_arrakis",
             "game_name": "Dune: War for Arrakis",
             "designer": "Marco Maggi, Francesco Nepitello",
             "publisher": "CMON",
-            "added_date": "2026-02-19"
+            "added_date": "2026-02-19",
+            "genre": "wargame"
         },
         {
             "id": "fox_in_the_forest",
             "game_name": "The Fox in the Forest",
             "designer": "Joshua Buergel",
             "publisher": "Renegade Game Studios",
-            "added_date": "2026-02-19"
+            "added_date": "2026-02-19",
+            "genre": "card"
         },
         {
             "id": "ra",
             "game_name": "Ra",
             "designer": "Reiner Knizia",
             "publisher": "alea / Ravensburger",
-            "added_date": "2026-02-19"
+            "added_date": "2026-02-19",
+            "genre": "economic"
         },
         {
             "id": "space_alert",
             "game_name": "Space Alert",
             "designer": "Vladimír Chvátil",
             "publisher": "Czech Games Edition",
-            "added_date": "2026-02-19"
+            "added_date": "2026-02-19",
+            "genre": "cooperative"
         },
         {
             "id": "hammer_of_the_scots",
             "game_name": "Hammer of the Scots",
             "designer": "Tom Dalgliesh, Jerry Taylor",
             "publisher": "Columbia Games",
-            "added_date": "2026-05-18"
+            "added_date": "2026-05-18",
+            "genre": "wargame"
         }
     ]
 }
