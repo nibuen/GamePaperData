@@ -24,7 +24,8 @@
       "count": 4,
       "description": "Double-sided starting boards, one per player. The front of each board is identical; the back has a unique arrangement of tree spaces and icons.",
       "icon": "StructureFarm",
-      "tint": "#388E3C"
+      "tint": "#388E3C",
+      "image": "images/property_boards.webp"
     },
     {
       "name": "Expansion Boards",
@@ -67,7 +68,8 @@
       ],
       "description": "Double-sided ride tiles, each matching an attraction card: 5 Souvenir, 6 Old West, 6 Sci-Fi, 6 Undersea, 6 Fantasy and 6 Prehistoric.",
       "icon": "StructureTower",
-      "tint": "#0288D1"
+      "tint": "#0288D1",
+      "image": "images/attraction_tiles.webp"
     },
     {
       "name": "Attraction Cards",
@@ -96,7 +98,8 @@
       "action": {
         "name": "CardList",
         "value": "tenpenny_parks_goal_cards.json"
-      }
+      },
+      "image": "images/goal_cards.webp"
     },
     {
       "name": "Reference Cards",
@@ -104,7 +107,8 @@
       "count": 4,
       "description": "One reference card in each player color, listing the five steps of a month.",
       "icon": "BookOpen",
-      "tint": "#455A64"
+      "tint": "#455A64",
+      "image": "images/reference_card.webp"
     },
     {
       "name": "Workers",
@@ -121,7 +125,8 @@
       "count": 12,
       "description": "Three discs in each player color, one for each of the Thrill, Awe and Joy tracks.",
       "icon": "Token",
-      "tint": "#EF6C00"
+      "tint": "#EF6C00",
+      "image": "images/emotion_discs.webp"
     },
     {
       "name": "Tree Markers",
@@ -129,7 +134,8 @@
       "count": 50,
       "description": "Green trees that block spaces on player properties until removed with the Arborist action.",
       "icon": "ResourceWood",
-      "tint": "#2E7D32"
+      "tint": "#2E7D32",
+      "image": "images/tree_markers.webp"
     },
     {
       "name": "Month Marker",
@@ -137,7 +143,8 @@
       "count": 1,
       "description": "Tracks the current month on the game board's five-space month track.",
       "icon": "Hourglass",
-      "tint": "#37474F"
+      "tint": "#37474F",
+      "image": "images/month_marker.webp"
     },
     {
       "name": "Shovel Token",
@@ -145,7 +152,8 @@
       "count": 1,
       "description": "The start player marker. Its holder starts the Actions step and rotates the carousel ring during Cleanup.",
       "icon": "CrownA",
-      "tint": "#7B1FA2"
+      "tint": "#7B1FA2",
+      "image": "images/shovel_token.webp"
     },
     {
       "name": "VP Tokens",
@@ -153,7 +161,8 @@
       "count": 70,
       "description": "Visiting People tokens: 27 five-VP tokens and 43 one-VP tokens.",
       "icon": "Pawns",
-      "tint": "#FFB300"
+      "tint": "#FFB300",
+      "image": "images/vp_tokens.webp"
     },
     {
       "name": "Money Tokens",

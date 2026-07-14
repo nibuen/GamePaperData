@@ -35,7 +35,8 @@
     "definition": "A round marker in your player color. Each player has three, one on each emotion track. Discs stack: a disc moved onto an occupied space goes on top of the discs already there, and the disc on top counts as farthest along when players share a space. Discs left behind keep their existing order.",
     "context": "Emotions",
     "icon": "Token",
-    "tint": "#EF6C00"
+    "tint": "#EF6C00",
+    "image": "images/emotion_discs.webp"
   },
   "property": {
     "term": "Property",
@@ -49,7 +50,8 @@
     "definition": "The double-sided board each player takes during setup, placed with either side face up. It is covered in a grid of spaces, some showing tree spaces (which start with a tree marker) and some showing emotion, money or wild icons that are triggered when a tile covers them. The front of each board is identical; the back has a unique arrangement of tree spaces and icons.",
     "context": "Player Area",
     "icon": "StructureFarm",
-    "tint": "#388E3C"
+    "tint": "#388E3C",
+    "image": "images/property_boards.webp"
   },
   "expansion_board": {
     "term": "Expansion Board",
@@ -65,21 +67,23 @@
     "context": "Tiles",
     "icon": "HexagonTile",
     "tint": "#795548",
-    "image": "images/concession_hot_dog.webp"
+    "image": "images/concession_tiles.webp"
   },
   "attraction_tile": {
     "term": "Attraction Tile",
     "definition": "The physical tile matching an attraction card. When you take the Builder action you place the matching attraction tile on your property following the tile placement rules. Tiles are double-sided and may be rotated to any orientation and placed with either side up.",
     "context": "Tiles",
     "icon": "StructureTower",
-    "tint": "#0288D1"
+    "tint": "#0288D1",
+    "image": "images/attraction_tiles.webp"
   },
   "attraction_card": {
     "term": "Attraction Card",
     "definition": "A card bought with the Builder action. It shows the build cost, the emotion icons gained when its tile is built, an advertising cost, VP for advertising, sometimes income, and the VP it is worth at game end. Once bought, the card is flipped face down in front of you; it still pays income and can still be advertised.",
     "context": "Cards",
     "icon": "Card",
-    "tint": "#EF6C00"
+    "tint": "#EF6C00",
+    "image": "images/attraction_wild_gulch.webp"
   },
   "attraction_type": {
     "term": "Attraction Type",
@@ -101,7 +105,8 @@
     "definition": "The ring the carousel sits in. Each of its segments shows a cost modifier that applies to the attraction card stack it is aligned with, raising or lowering the Builder cost. It starts with +$2 aligned to the Souvenir stack, and the player with the shovel token rotates it during every Cleanup step; the position must change.",
     "context": "Board",
     "icon": "ArrowClockwise",
-    "tint": "#EF6C00"
+    "tint": "#EF6C00",
+    "image": "images/carousel.webp"
   },
   "worker": {
     "term": "Worker",
@@ -116,28 +121,32 @@
     "definition": "The single tan worker kept on its designated space on the game board. The player farthest along the Thrill track may take it during the Bonuses step (by moving their Thrill disc back one space) to place a fourth worker during the next month's Actions step. Taking the 1 VP option on the Thrill track instead returns it to the board.",
     "context": "Actions",
     "icon": "PawnUp",
-    "tint": "#A1887F"
+    "tint": "#A1887F",
+    "image": "images/workers.webp"
   },
   "shovel_token": {
     "term": "Shovel Token",
     "definition": "The start player marker. It is given at setup to the player who most recently rode a roller coaster. Its holder starts the Actions step and rotates the carousel ring during Cleanup. It changes hands via the Awe track bonus in the Bonuses step.",
     "context": "Actions",
     "icon": "CrownA",
-    "tint": "#7B1FA2"
+    "tint": "#7B1FA2",
+    "image": "images/shovel_token.webp"
   },
   "tree_marker": {
     "term": "Tree Marker",
     "definition": "A green tree that blocks a space on your property. Trees start on the indicated tree spaces of your property board and are added to each indicated tree space of any expansion board you take. Tiles may not overlap a tree marker (though they may share a side with one). The Arborist action removes up to two trees from your property.",
     "context": "Player Area",
     "icon": "ResourceWood",
-    "tint": "#2E7D32"
+    "tint": "#2E7D32",
+    "image": "images/tree_markers.webp"
   },
   "wild_icon": {
     "term": "Wild Icon",
     "definition": "An icon on a property or expansion board space. For each wild icon a newly placed tile covers, advance one space on any emotion track of your choice.",
     "context": "Tiles",
     "icon": "HexagonQuestion",
-    "tint": "#8E24AA"
+    "tint": "#8E24AA",
+    "image": "images/icon_wild.webp"
   },
   "money": {
     "term": "Money",
@@ -152,7 +161,8 @@
     "definition": "The recurring money shown on some built concession tiles and attraction cards. During the Income step each player takes $3 from the supply plus the income shown on all of their built concessions and attractions.",
     "context": "Economy",
     "icon": "Pouch",
-    "tint": "#00897B"
+    "tint": "#00897B",
+    "image": "images/concession_hot_dog.webp"
   },
   "advertising": {
     "term": "Advertising",
@@ -166,14 +176,16 @@
     "definition": "The victory point tokens, in 1-VP and 5-VP denominations. VP are gained from emotion track bonuses, advertising, goal cards, attraction card values, emotion discs finishing above the eighth space, and the attraction count bonus. The player with the most VP at the end of the fifth month wins.",
     "context": "Scoring",
     "icon": "Pawns",
-    "tint": "#FFB300"
+    "tint": "#FFB300",
+    "image": "images/vp_tokens.webp"
   },
   "goal_card": {
     "term": "Goal Card",
     "definition": "A secret end-game objective. Each player is dealt three during setup, keeps two, and returns the third to the box. Each goal satisfied at the end of the game is worth 3 VP.",
     "context": "Scoring",
     "icon": "CardTarget",
-    "tint": "#C62828"
+    "tint": "#C62828",
+    "image": "images/goal_cards.webp"
   },
   "month": {
     "term": "Month",
@@ -181,7 +193,7 @@
     "context": "Structure",
     "icon": "Hourglass",
     "tint": "#5D4037",
-    "image": "images/golden_key_contest.webp"
+    "image": "images/reference_card.webp"
   },
   "becky": {
     "term": "Becky",
@@ -189,6 +201,9 @@
     "context": "Solo",
     "icon": "Character",
     "tint": "#C2185B",
-    "condition": {"max_count_variant": 1}
+    "condition": {
+      "max_count_variant": 1
+    },
+    "image": "images/solo_marker.webp"
   }
 }

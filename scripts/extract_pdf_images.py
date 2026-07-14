@@ -36,8 +36,10 @@ from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-# A sprite smaller than this is a rule, a bullet, or a compression artifact.
-MIN_PIXELS = 2500  # 50x50
+# A sprite smaller than this is a rule, a bullet, or a compression artifact. Keep this
+# low: real components hide down here. A VP token is 32x32 and a tree marker 34x47, and
+# a 50x50 floor silently swallowed every one of them.
+MIN_PIXELS = 900  # 30x30
 # Anything this large covering the page is the page background, not a component.
 PAGE_BG_MIN_WIDTH = 500
 PAGE_BG_MIN_HEIGHT = 700
@@ -155,19 +157,53 @@ def extract(pdf_path, out_dir):
     return written
 
 
+def compose(paths, out_path, gap=10):
+    """Lay several sprites side by side on one transparent canvas.
+
+    A component is often a *set* -- 1-VP and 5-VP tokens, a handful of tile shapes,
+    three tree markers. Extracting one sprite of the set and calling it "VP Tokens"
+    undersells it, but a card can only show one image. So group the set into a single
+    image and let that be the component's art.
+
+    Sprites keep their natural relative sizes (a 5-VP token really is the same size as
+    a 1-VP token) and are centred on a common baseline.
+    """
+    images = [Image.open(p).convert("RGBA") for p in paths]
+    width = sum(i.width for i in images) + gap * (len(images) - 1)
+    height = max(i.height for i in images)
+
+    canvas = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    x = 0
+    for image in images:
+        canvas.alpha_composite(image, (x, (height - image.height) // 2))
+        x += image.width + gap
+
+    canvas.save(out_path, "WEBP", lossless=True)
+    return canvas.size
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--probe", metavar="PDF", help="report whether a PDF's art is extractable")
     parser.add_argument("--extract", metavar="PDF", help="extract a PDF's art")
+    parser.add_argument("--compose", nargs="+", metavar="SPRITE",
+                        help="group several sprites into one image (see --out)")
     parser.add_argument("--game-id", help="game id; art goes to files/<game-id>/images/")
-    parser.add_argument("--out", help="output directory (overrides --game-id)")
+    parser.add_argument("--out", help="output directory, or output file for --compose")
     args = parser.parse_args()
 
     if args.probe:
         return 0 if probe(args.probe) else 1
 
+    if args.compose:
+        if not args.out:
+            parser.error("--compose needs --out <file.webp>")
+        size = compose(args.compose, Path(args.out))
+        print(f"composed {len(args.compose)} sprites -> {args.out} {size[0]}x{size[1]}")
+        return 0
+
     if not args.extract:
-        parser.error("pass --probe or --extract")
+        parser.error("pass --probe, --extract or --compose")
     if not args.out and not args.game_id:
         parser.error("--extract needs --game-id (or --out)")
 
