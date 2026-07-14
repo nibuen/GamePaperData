@@ -397,12 +397,7 @@
         "items": [
           {
             "description": "Move your disc 1 space to the right on that track.",
-            "style": "bullet",
-            "action": {
-              "type": "image",
-              "src": "images/emotion_thrill.webp",
-              "max_height_dp": 44
-            }
+            "style": "bullet"
           },
           {
             "description": "Entering an occupied space: place your disc on top of the discs already there.",
@@ -416,7 +411,12 @@
             "description": "Past the end of the track: move on top of all discs on the final space instead.",
             "style": "bullet"
           }
-        ]
+        ],
+        "action": {
+          "type": "image",
+          "src": "images/emotions.webp",
+          "max_height_dp": 60
+        }
       },
       {
         "name": "Carousel Ring Modifiers",
