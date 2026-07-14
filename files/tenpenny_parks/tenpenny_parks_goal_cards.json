@@ -1,0 +1,32 @@
+{
+  "most_drenched": {
+    "id": "most_drenched",
+    "name": "Most Drenched",
+    "body": "End the game with at least 3 Undersea attractions.",
+    "summary": "At least 3 Undersea attractions.",
+    "details": "Undersea is one of the six attraction types (Souvenir, Old West, Sci-Fi, Undersea, Fantasy, Prehistoric). Count the attraction cards you have taken with the Builder action.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_drenched.webp"
+  },
+  "most_variety": {
+    "id": "most_variety",
+    "name": "Most Variety",
+    "body": "End the game with at least 5 different types of attractions.",
+    "summary": "At least 5 of the 6 attraction types.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric. Only one attraction of a type is needed for that type to count.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_variety.webp"
+  },
+  "best_souvenirs": {
+    "id": "best_souvenirs",
+    "name": "Best Souvenirs",
+    "body": "End the game with at least 3 different types of concessions on your property board.",
+    "summary": "At least 3 different concession types built.",
+    "details": "Concession tiles are taken with the Contractor action and must be built on your property to count.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_best_souvenirs.webp"
+  }
+}
