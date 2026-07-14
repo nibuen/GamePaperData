@@ -279,6 +279,7 @@ Describes a physical game component (cards, tokens, boards, etc.).
 | `subTypes` | array of strings | No | Component subtypes |
 | `detailed_description` | string | No | Extended description |
 | `icon` | string | No | Icon name from `icons/` (without `.svg`). See [icons/README.md](icons/README.md) |
+| `image` | string | No | Real photo/art of the component. See [Component Images](#component-images) |
 | `count` | integer | No | How many of this component exist |
 | `action` | [TriggerAction](#trigger-action-object) | No | Link to a card data file |
 | `condition` | [Condition](#condition-object) | No | Player count / expansion filter |
@@ -587,6 +588,80 @@ Declared at the top level of the rules file under `variants`:
 
 Then tag variant-specific items with `condition.variants` (see [Condition Object](#condition-object)).
 Items with no `variants` condition are shared across every variant.
+
+---
+
+## Component Images
+
+A game can ship real artwork -- the actual board, tiles, worker cards and player-aid
+iconography -- instead of only an approximating vector `icon`. This is what lets a rule show
+the icon row players are looking at on the table.
+
+Images live in `files/<game_id>/images/` and are referenced by a **game-relative path**:
+
+```json
+{
+  "name": "Carousel",
+  "type": "Board",
+  "description": "The assembled carousel sits inside the carousel ring.",
+  "icon": "ArrowRotate",
+  "image": "images/carousel.webp"
+}
+```
+
+The `image` field is accepted on **components, gameplay actions, cards and glossary entries**.
+It is always optional: with no `image`, the entry renders with its `icon` exactly as before, so
+adding art to one component never affects the rest.
+
+To put art next to a *rule* rather than a component, any [Phrase](#phrase-object) can carry an
+image action -- so a setup step, a scoring row or a key concept can show the real thing:
+
+```json
+{
+  "description": "Wild icon -- advance 1 space on any emotion track you choose.",
+  "style": "bullet",
+  "action": { "type": "image", "src": "images/icon_wild.webp", "max_height_dp": 56 }
+}
+```
+
+`max_height_dp` (default 120) caps the display height. Rulebook art is usually only 72 DPI, so
+keep it modest -- 44-140 is the sane range. `caption` is optional and renders centred underneath.
+
+### Rules for image files
+
+- **Format**: lossless `.webp` (`.png`, `.jpg` also accepted). WebP is typically 5-10x smaller than
+  a transparent PNG at identical quality -- and every byte committed here lives in git history
+  forever, so it matters.
+- **Filenames**: lowercase `[a-z0-9._/-]` only. No spaces, parentheses or capitals -- the CDN is
+  **case-sensitive** and does not URL-encode, so `My Image (1).png` simply 404s.
+- **Size**: keep the longest edge at ~512px for tiles and tokens, ~1024px for boards. Budget about
+  **1 MB of images per game**.
+- **Transparency** is preserved and looks best -- cut-outs sit on the card background cleanly.
+- Not language-scoped: images live in `images/` only, never duplicated into `de/`, `fr/` etc.
+- An absolute `https://` URL is accepted in place of a path, if art must be hosted elsewhere.
+
+Hosting is free: images are served from this repo through the same CDN as the JSON.
+
+### Extracting art from a rulebook PDF
+
+Most born-digital rulebooks store their component art as separate embedded images, often with
+transparency, and `scripts/extract_pdf_images.py` pulls them out. **Probe first** -- a scanned or
+flattened rulebook has nothing to extract, and the probe says so instead of wasting your time:
+
+```bash
+python3 scripts/extract_pdf_images.py --probe rulebook.pdf
+python3 scripts/extract_pdf_images.py --extract rulebook.pdf --game-id my_game
+```
+
+Extraction writes machine-named sprites (`x1234.webp`). **Curate them**: keep the ones you will
+reference, rename them semantically (`carousel.webp`, `action_banker.webp`), and delete the rest.
+
+When a component is really a *set* -- 1-VP and 5-VP tokens, several tile shapes, a deck of goal
+cards -- group it into one image, since a card shows a single image:
+
+```bash
+python3 scripts/extract_pdf_images.py --compose x1462.webp x1466.webp --out files/my_game/images/vp_tokens.webp
+```
 
 ---
 

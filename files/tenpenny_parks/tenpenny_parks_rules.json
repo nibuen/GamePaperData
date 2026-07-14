@@ -92,7 +92,7 @@
       "name": "Goal Cards",
       "type": "Card",
       "count": 14,
-      "description": "Secret end-game objectives. Each player keeps two; each one satisfied at game end is worth 3 VP.",
+      "description": "Secret end-game objectives from the Fairview Golden Key Contest. Each player keeps two; each one satisfied at game end is worth 3 VP.",
       "icon": "CardTarget",
       "tint": "#C62828",
       "action": {
