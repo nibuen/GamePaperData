@@ -292,6 +292,125 @@ def validate_cover(cover_path, game_id):
     return warnings
 
 
+def generate_default_og(cover_paths: list):
+    """Generate the homepage / default share card (og-default.png).
+
+    Left column: GamersPaper wordmark + headline + value prop + feature chips.
+    Right side: a fanned montage of real game covers so a shared link instantly
+    reads as 'lots of board games, with setup/cards/scoring at your fingertips'.
+    """
+    img = Image.new("RGB", (WIDTH, HEIGHT))
+    draw_gradient(img)
+    draw = ImageDraw.Draw(img)
+    draw_accent_bar(draw)
+    draw_accent_side(draw)
+
+    # ── Cover montage on the right (drawn first so text/footer sit on top) ──
+    # Fan a handful of covers diagonally, slightly rotated and overlapping.
+    montage = [c for c in cover_paths][:5]
+    if montage:
+        target_h = 380
+        # Right-anchored fan; later covers sit further right and lower.
+        base_x = WIDTH - 250
+        base_y = (HEIGHT - target_h) // 2 - 10
+        angles = [-14, -7, 0, 7, 14]
+        for i, cover_path in enumerate(montage):
+            try:
+                cover = Image.open(cover_path).convert("RGBA")
+                ratio = target_h / cover.height
+                cover = cover.resize(
+                    (max(1, int(cover.width * ratio)), target_h), Image.LANCZOS
+                )
+                # Rounded frame border on an opaque card.
+                framed = Image.new("RGBA", cover.size, (0, 0, 0, 0))
+                framed.paste(cover, (0, 0))
+                fd = ImageDraw.Draw(framed)
+                fd.rounded_rectangle(
+                    [(0, 0), (cover.width - 1, cover.height - 1)],
+                    radius=8, outline=(90, 92, 130, 255), width=3,
+                )
+                angle = angles[i % len(angles)]
+                rotated = framed.rotate(angle, expand=True, resample=Image.BICUBIC)
+                x = base_x + (i - len(montage) + 1) * 118
+                y = base_y + abs(i - len(montage) // 2) * 14 - (rotated.height - target_h) // 2
+                img.paste(rotated, (x, y), rotated)
+            except Exception:
+                continue  # Skip any cover that fails to load.
+
+    # Re-draw a left-side scrim so text stays legible over any montage overlap.
+    scrim = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    sdraw = ImageDraw.Draw(scrim)
+    for x in range(620):
+        alpha = int(150 * (1 - x / 620))
+        sdraw.line([(x, 0), (x, HEIGHT)], fill=(16, 16, 32, alpha))
+    img.paste(Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB"), (0, 0))
+    draw = ImageDraw.Draw(img)
+    draw_accent_bar(draw)
+    draw_accent_side(draw)
+
+    # Fonts
+    font_brand = load_font(64, bold=True)
+    font_head = load_font(30, bold=True)
+    font_prop = load_font(22)
+    font_chip = load_font(20)
+    font_foot = load_font(16, bold=True)
+
+    content_x = 60
+
+    # ── Wordmark ──
+    y = 120
+    draw.text((content_x, y), "GamersPaper", fill=TEXT_WHITE, font=font_brand)
+    bbox = font_brand.getbbox("GamersPaper")
+    y += bbox[3] - bbox[1] + 18
+
+    # ── Accent underline ──
+    draw.rectangle([(content_x, y), (content_x + 110, y + 4)], fill=ACCENT)
+    y += 26
+
+    # ── Headline ──
+    draw.text((content_x, y), "Board Game Rules Reference", fill=TEXT_LIGHT, font=font_head)
+    bbox = font_head.getbbox("Board Game Rules Reference")
+    y += bbox[3] - bbox[1] + 18
+
+    # ── Value prop ──
+    prop = "Quick setup guides, card references, and scoring tools for your favourite board games."
+    for line in wrap_text(prop, font_prop, 540)[:3]:
+        draw.text((content_x, y), line, fill=TEXT_MID, font=font_prop)
+        bbox = font_prop.getbbox(line)
+        y += bbox[3] - bbox[1] + 6
+    y += 22
+
+    # ── Feature chips ──
+    chips = ["Setup guides", "Card references", "Scoring tools", "Filter by player count"]
+    chip_x = content_x
+    chip_y = y
+    for chip in chips:
+        bbox = font_chip.getbbox(chip)
+        chip_w = (bbox[2] - bbox[0]) + 28
+        if chip_x + chip_w > 580:  # wrap to next row
+            chip_x = content_x
+            chip_y += 44
+        w = draw_chip(draw, chip_x, chip_y, chip, font_chip)
+        chip_x += w + 10
+
+    # ── Brand footer ──
+    brand_y = HEIGHT - 55
+    draw.rectangle([(0, brand_y - 15), (WIDTH, HEIGHT)], fill=(16, 16, 28))
+    draw.rectangle([(0, brand_y - 15), (WIDTH, brand_y - 14)], fill=(40, 40, 60))
+    draw.text((content_x, brand_y), BRAND_TEXT, fill=ACCENT, font=font_foot)
+    bbox = font_foot.getbbox(BRAND_TEXT)
+    brand_w = bbox[2] - bbox[0]
+    draw.text(
+        (content_x + brand_w + 12, brand_y + 3),
+        "gamerspaper.com",
+        fill=TEXT_DIM, font=load_font(14),
+    )
+
+    out_path = REPO_ROOT / "og-default.png"
+    img.save(str(out_path), "PNG", optimize=True)
+    print(f"  Generated: {out_path}")
+
+
 def main():
     # Load all games: bundled files + registry
     games = {}
@@ -316,6 +435,7 @@ def main():
 
     print(f"Generating OG images for {len(games)} games...")
     all_warnings = []
+    cover_paths = []
     for game_id, rules in sorted(games.items()):
         # Check for optional cover image (prefer PNG with transparency)
         cover = FILES_DIR / game_id / "cover.png"
@@ -327,8 +447,13 @@ def main():
         # Validate cover before generating
         if cover and cover.exists():
             all_warnings.extend(validate_cover(cover, game_id))
+            cover_paths.append(cover)
 
         generate_og_image(game_id, rules, cover)
+
+    # Homepage / default share card with a montage of real covers.
+    print("Generating default homepage OG card...")
+    generate_default_og(cover_paths)
 
     if all_warnings:
         print("\n*** COVER IMAGE ISSUES ***")
