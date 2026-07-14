@@ -1,0 +1,3 @@
+# Python bytecode from scripts/ (generate_og_images.py, extract_pdf_images.py)
+__pycache__/
+*.pyc
