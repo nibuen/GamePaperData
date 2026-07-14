@@ -159,7 +159,8 @@
             "game_name": "Tenpenny Parks",
             "designer": "Nate Linhart",
             "publisher": "Thunderworks Games",
-            "genre": "worker_placement"
+            "genre": "worker_placement",
+            "added_date": "2026-07-14"
         }
     ]
 }
