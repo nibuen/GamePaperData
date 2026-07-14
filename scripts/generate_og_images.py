@@ -67,6 +67,24 @@ def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default()
 
 
+def fit_font(text: str, max_width: int, size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
+    """Largest font <= `size` that renders `text` within `max_width`.
+
+    load_font() resolves to whatever the machine has, and the candidates are not
+    metrically compatible: DejaVu (what the CI runner picks) is ~15% wider than Arial
+    (what a Windows machine picks). A layout tuned by eye against one of them silently
+    overflows under the other -- which is how the headline ended up running underneath
+    the cover montage on every CI-generated card. Fitting to the column makes the
+    layout hold whichever font is actually installed.
+    """
+    for candidate in range(size, 11, -1):
+        font = load_font(candidate, bold=bold)
+        bbox = font.getbbox(text)
+        if bbox[2] - bbox[0] <= max_width:
+            return font
+    return load_font(12, bold=bold)
+
+
 def draw_gradient(img: Image.Image):
     """Draw a vertical gradient background."""
     draw = ImageDraw.Draw(img)
@@ -348,14 +366,18 @@ def generate_default_og(cover_paths: list):
     draw_accent_bar(draw)
     draw_accent_side(draw)
 
-    # Fonts
-    font_brand = load_font(64, bold=True)
-    font_head = load_font(30, bold=True)
+    content_x = 60
+    # The leftmost cover in the fan lands near x=500, so this is the clear space the text
+    # column actually has. Every run of text below is fitted or wrapped to it -- nothing is
+    # drawn at an unconstrained width, or it will collide with the montage under a wide font.
+    column_w = 440
+
+    headline = "Board Game Rules Reference"
+    font_brand = fit_font("GamersPaper", column_w, 64, bold=True)
+    font_head = fit_font(headline, column_w, 30, bold=True)
     font_prop = load_font(22)
     font_chip = load_font(20)
     font_foot = load_font(16, bold=True)
-
-    content_x = 60
 
     # ── Wordmark ──
     y = 120
@@ -368,13 +390,13 @@ def generate_default_og(cover_paths: list):
     y += 26
 
     # ── Headline ──
-    draw.text((content_x, y), "Board Game Rules Reference", fill=TEXT_LIGHT, font=font_head)
-    bbox = font_head.getbbox("Board Game Rules Reference")
+    draw.text((content_x, y), headline, fill=TEXT_LIGHT, font=font_head)
+    bbox = font_head.getbbox(headline)
     y += bbox[3] - bbox[1] + 18
 
     # ── Value prop ──
     prop = "Quick setup guides, card references, and scoring tools for your favourite board games."
-    for line in wrap_text(prop, font_prop, 540)[:3]:
+    for line in wrap_text(prop, font_prop, column_w)[:3]:
         draw.text((content_x, y), line, fill=TEXT_MID, font=font_prop)
         bbox = font_prop.getbbox(line)
         y += bbox[3] - bbox[1] + 6
@@ -387,7 +409,7 @@ def generate_default_og(cover_paths: list):
     for chip in chips:
         bbox = font_chip.getbbox(chip)
         chip_w = (bbox[2] - bbox[0]) + 28
-        if chip_x + chip_w > 580:  # wrap to next row
+        if chip_x > content_x and chip_x + chip_w > content_x + column_w:  # wrap to next row
             chip_x = content_x
             chip_y += 44
         w = draw_chip(draw, chip_x, chip_y, chip, font_chip)
