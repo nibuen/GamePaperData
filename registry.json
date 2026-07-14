@@ -153,6 +153,13 @@
             "publisher": "Columbia Games",
             "added_date": "2026-05-18",
             "genre": "wargame"
+        },
+        {
+            "id": "tenpenny_parks",
+            "game_name": "Tenpenny Parks",
+            "designer": "Nate Linhart",
+            "publisher": "Thunderworks Games",
+            "genre": "worker_placement"
         }
     ]
 }

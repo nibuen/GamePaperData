@@ -1,0 +1,142 @@
+{
+  "most_thrilling": {
+    "id": "most_thrilling",
+    "name": "Most Thrilling",
+    "body": "End the game farthest along the Thrill track.",
+    "summary": "Lead the Thrill track.",
+    "details": "Ties are broken as they are during the Bonuses step: the player whose emotion disc is on top is considered farthest along.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_thrilling.webp"
+  },
+  "most_awesome": {
+    "id": "most_awesome",
+    "name": "Most Awesome",
+    "body": "End the game farthest along the Awe track.",
+    "summary": "Lead the Awe track.",
+    "details": "Ties are broken as they are during the Bonuses step: the player whose emotion disc is on top is considered farthest along.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_awesome.webp"
+  },
+  "most_joyful": {
+    "id": "most_joyful",
+    "name": "Most Joyful",
+    "body": "End the game farthest along the Joy track.",
+    "summary": "Lead the Joy track.",
+    "details": "Ties are broken as they are during the Bonuses step: the player whose emotion disc is on top is considered farthest along.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_joyful.webp"
+  },
+  "out_of_this_world": {
+    "id": "out_of_this_world",
+    "name": "Out of This World",
+    "body": "End the game with at least 3 Sci-Fi attractions.",
+    "summary": "At least 3 Sci-Fi attractions.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_out_of_this_world.webp"
+  },
+  "primitive": {
+    "id": "primitive",
+    "name": "Primitive",
+    "body": "End the game with at least 3 Prehistoric attractions.",
+    "summary": "At least 3 Prehistoric attractions.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_primitive.webp"
+  },
+  "fantastic": {
+    "id": "fantastic",
+    "name": "Fantastic",
+    "body": "End the game with at least 2 Fantasy attractions.",
+    "summary": "At least 2 Fantasy attractions.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_fantastic.webp"
+  },
+  "rough_and_wild": {
+    "id": "rough_and_wild",
+    "name": "Rough and Wild",
+    "body": "End the game with at least 2 Old West attractions.",
+    "summary": "At least 2 Old West attractions.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_rough_and_wild.webp"
+  },
+  "most_drenched": {
+    "id": "most_drenched",
+    "name": "Most Drenched",
+    "body": "End the game with at least 3 Undersea attractions.",
+    "summary": "At least 3 Undersea attractions.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_drenched.webp"
+  },
+  "most_variety": {
+    "id": "most_variety",
+    "name": "Most Variety",
+    "body": "End the game with at least 5 different attraction types.",
+    "summary": "At least 5 of the 6 attraction types.",
+    "details": "The six attraction types are Souvenir, Old West, Sci-Fi, Undersea, Fantasy and Prehistoric. Only one attraction of a type is needed for that type to count.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_variety.webp"
+  },
+  "most_ecological": {
+    "id": "most_ecological",
+    "name": "Most Ecological",
+    "body": "End the game with 4 or fewer removed trees.",
+    "summary": "Remove 4 or fewer trees.",
+    "details": "Counts the tree markers you removed from your property over the game, mostly with the Arborist action -- not the trees still standing.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_ecological.webp"
+  },
+  "best_space_planning": {
+    "id": "best_space_planning",
+    "name": "Best Space Planning",
+    "body": "End the game with 6 or more removed trees.",
+    "summary": "Remove 6 or more trees.",
+    "details": "Counts the tree markers you removed from your property over the game, mostly with the Arborist action. The direct opposite of Most Ecological.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_best_space_planning.webp"
+  },
+  "best_souvenirs": {
+    "id": "best_souvenirs",
+    "name": "Best Souvenirs",
+    "body": "End the game with at least 5 different concessions.",
+    "summary": "At least 5 different concessions.",
+    "details": "Concession tiles are the small tiles taken with the Contractor action. Different kinds count, not the total number of tiles.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_best_souvenirs.webp"
+  },
+  "best_designed": {
+    "id": "best_designed",
+    "name": "Best Designed",
+    "body": "End the game with at least 6 covered icons.",
+    "summary": "Cover at least 6 icons.",
+    "details": "Counts the icons on your property boards that your placed tiles cover -- emotion icons, money icons and wild icons alike.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_best_designed.webp"
+  },
+  "most_expensive": {
+    "id": "most_expensive",
+    "name": "Most Expensive",
+    "body": "End the game with at least 3 attractions on expansion boards.",
+    "summary": "At least 3 attractions on expansions.",
+    "details": "Expansion boards are the boards bought with the Realtor action and added to the far-left or far-right of your property.",
+    "extra": "3 VP if satisfied at the end of the game.",
+    "count": 1,
+    "image": "images/goal_most_expensive.webp"
+  }
+}

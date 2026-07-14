@@ -1,0 +1,128 @@
+{
+  "most_thrilling": {
+    "id": "most_thrilling",
+    "name": "Am Aufregendsten",
+    "body": "Beende das Spiel am weitesten vorne in der Nervenkitzel-Spur.",
+    "summary": "Fuehre die Nervenkitzel-Spur an.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_thrilling.webp"
+  },
+  "most_awesome": {
+    "id": "most_awesome",
+    "name": "Am Tollsten",
+    "body": "Beende das Spiel am weitesten vorne in der Bewunderung-Spur.",
+    "summary": "Fuehre die Bewunderung-Spur an.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_awesome.webp"
+  },
+  "most_joyful": {
+    "id": "most_joyful",
+    "name": "Am Gluecklichsten",
+    "body": "Beende das Spiel am weitesten vorne in der Freude-Spur.",
+    "summary": "Fuehre die Freude-Spur an.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_joyful.webp"
+  },
+  "out_of_this_world": {
+    "id": "out_of_this_world",
+    "name": "Nicht von dieser Welt",
+    "body": "Beende das Spiel mit mindestens 3 Sci-Fi-Attraktionen.",
+    "summary": "Mindestens 3 Sci-Fi-Attraktionen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_out_of_this_world.webp"
+  },
+  "primitive": {
+    "id": "primitive",
+    "name": "Primitiv",
+    "body": "Beende das Spiel mit mindestens 3 praehistorischen Attraktionen.",
+    "summary": "Mindestens 3 praehistorische Attraktionen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_primitive.webp"
+  },
+  "fantastic": {
+    "id": "fantastic",
+    "name": "Fantastisch",
+    "body": "Beende das Spiel mit mindestens 2 Fantasy-Attraktionen.",
+    "summary": "Mindestens 2 Fantasy-Attraktionen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_fantastic.webp"
+  },
+  "rough_and_wild": {
+    "id": "rough_and_wild",
+    "name": "Rau und Wild",
+    "body": "Beende das Spiel mit mindestens 2 Wild-West-Attraktionen.",
+    "summary": "Mindestens 2 Wild-West-Attraktionen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_rough_and_wild.webp"
+  },
+  "most_drenched": {
+    "id": "most_drenched",
+    "name": "Durchnaesst",
+    "body": "Beende das Spiel mit mindestens 3 Tiefsee-Attraktionen.",
+    "summary": "Mindestens 3 Tiefsee-Attraktionen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_drenched.webp"
+  },
+  "most_variety": {
+    "id": "most_variety",
+    "name": "Groesste Vielfalt",
+    "body": "Beende das Spiel mit mind. 5 verschiedenen Attraktionstypen.",
+    "summary": "Mindestens 5 verschiedene Attraktionstypen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_variety.webp"
+  },
+  "most_ecological": {
+    "id": "most_ecological",
+    "name": "Am Oekologischsten",
+    "body": "Beende das Spiel mit 4 oder weniger entfernten Baeumen.",
+    "summary": "Hoechstens 4 entfernte Baeume.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_ecological.webp"
+  },
+  "best_space_planning": {
+    "id": "best_space_planning",
+    "name": "Beste Raumplanung",
+    "body": "Beende das Spiel mit 6 oder mehr entfernten Baeumen.",
+    "summary": "Mindestens 6 entfernte Baeume.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_best_space_planning.webp"
+  },
+  "best_souvenirs": {
+    "id": "best_souvenirs",
+    "name": "Tollste Souvenire",
+    "body": "Beende das Spiel mit mind. 5 verschiedenen Kiosken.",
+    "summary": "Mindestens 5 verschiedene Kioske.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_best_souvenirs.webp"
+  },
+  "best_designed": {
+    "id": "best_designed",
+    "name": "Am Besten Designt",
+    "body": "Beende das Spiel mit mind. 6 ueberbauten Icons.",
+    "summary": "Mindestens 6 ueberbaute Icons.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_best_designed.webp"
+  },
+  "most_expensive": {
+    "id": "most_expensive",
+    "name": "Am Teuersten",
+    "body": "Beende das Spiel mit mind. 3 Attraktionen auf Erweiterungen.",
+    "summary": "Mindestens 3 Attraktionen auf Erweiterungen.",
+    "extra": "3 SP, wenn am Spielende erfuellt.",
+    "count": 1,
+    "image": "images/goal_most_expensive.webp"
+  }
+}

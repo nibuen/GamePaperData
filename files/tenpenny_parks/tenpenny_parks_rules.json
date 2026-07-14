@@ -1,0 +1,878 @@
+{
+  "game_name": "Tenpenny Parks",
+  "designer": "Nate Linhart",
+  "publisher": "Thunderworks Games",
+  "bgg_link": "https://boardgamegeek.com/boardgame/294702/tenpenny-parks",
+  "play_time_minutes": 75,
+  "min_players": 1,
+  "max_players": 4,
+  "game_overview": "Tenpenny Parks is a worker placement and tile laying game in which each player has five months to turn the town of Fairview into the world's greatest theme park. Clear trees off your property, buy more land, build concessions and themed attractions, and inspire Thrill, Awe and Joy in your guests. Every tile you place fills your park, covers bonus icons and pushes your emotion discs along the three emotion tracks, where leading a track each month earns extra workers, money, the shovel token or Visiting People.",
+  "objective": "Attract the most Visiting People (VP tokens) by the end of the fifth month by building attractions, advertising them, leading the emotion tracks, and satisfying your secret goal cards.",
+  "components_overview": [
+    {
+      "name": "Game Board",
+      "type": "Board",
+      "count": 1,
+      "description": "Shows the action spaces (Builder locations, Banker, Arborist, Contractor, Realtor), the three emotion tracks, the month track, the extra action worker space, and the central opening for the carousel with the six attraction card stacks around it.",
+      "icon": "Hexagon",
+      "tint": "#5D4037",
+      "image": "images/game_board.webp"
+    },
+    {
+      "name": "Property Boards",
+      "type": "Board",
+      "count": 4,
+      "description": "Double-sided starting boards, one per player. The front of each board is identical; the back has a unique arrangement of tree spaces and icons.",
+      "icon": "StructureFarm",
+      "tint": "#388E3C",
+      "image": "images/property_boards.webp"
+    },
+    {
+      "name": "Expansion Boards",
+      "type": "Board",
+      "count": 12,
+      "description": "Double-sided boards bought with the Realtor action and added to the far-left or far-right edge of your property.",
+      "icon": "StructureGate",
+      "tint": "#2E7D32",
+      "image": "images/expansion_boards.webp"
+    },
+    {
+      "name": "Carousel and Carousel Ring",
+      "type": "Board",
+      "count": 1,
+      "description": "The assembled carousel sits inside the carousel ring in the central opening of the game board. The ring's segments show the cost modifiers applied to the attraction stack each one is aligned with.",
+      "icon": "ArrowRotate",
+      "tint": "#FBC02D",
+      "image": "images/carousel.webp"
+    },
+    {
+      "name": "Concession Tiles",
+      "type": "Token",
+      "count": 40,
+      "description": "Small tiles taken with the Contractor action. They show emotion icons and sometimes income. Tiles equal to twice the number of players are revealed face up each month.",
+      "icon": "HexagonTile",
+      "tint": "#795548",
+      "image": "images/concession_tiles.webp"
+    },
+    {
+      "name": "Attraction Tiles",
+      "type": "Token",
+      "count": 35,
+      "subTypes": [
+        "Souvenir",
+        "Old West",
+        "Sci-Fi",
+        "Undersea",
+        "Fantasy",
+        "Prehistoric"
+      ],
+      "description": "Double-sided ride tiles, each matching an attraction card: 5 Souvenir, 6 Old West, 6 Sci-Fi, 6 Undersea, 6 Fantasy and 6 Prehistoric.",
+      "icon": "StructureTower",
+      "tint": "#0288D1",
+      "image": "images/attraction_tiles.webp"
+    },
+    {
+      "name": "Attraction Cards",
+      "type": "Card",
+      "count": 35,
+      "subTypes": [
+        "Souvenir",
+        "Old West",
+        "Sci-Fi",
+        "Undersea",
+        "Fantasy",
+        "Prehistoric"
+      ],
+      "description": "One card per attraction tile, in six types identified by banner color and icon. Each card shows its build cost, the emotion icons gained, an advertising cost and its VP reward, sometimes income, and the VP it is worth at game end.",
+      "icon": "Card",
+      "tint": "#EF6C00",
+      "image": "images/attraction_wild_gulch.webp"
+    },
+    {
+      "name": "Goal Cards",
+      "type": "Card",
+      "count": 14,
+      "description": "Secret end-game objectives from the Fairview Golden Key Contest. Each player keeps two; each one satisfied at game end is worth 3 VP.",
+      "icon": "CardTarget",
+      "tint": "#C62828",
+      "action": {
+        "name": "CardList",
+        "value": "tenpenny_parks_goal_cards.json"
+      },
+      "image": "images/goal_cards.webp"
+    },
+    {
+      "name": "Reference Cards",
+      "type": "Card",
+      "count": 4,
+      "description": "One reference card in each player color, listing the five steps of a month.",
+      "icon": "BookOpen",
+      "tint": "#455A64",
+      "image": "images/reference_card.webp"
+    },
+    {
+      "name": "Workers",
+      "type": "Meeple",
+      "count": 13,
+      "description": "Three workers in each of the four player colors, plus one tan extra action worker that starts on its designated space on the game board.",
+      "icon": "Pawn",
+      "tint": "#78909C",
+      "image": "images/workers.webp"
+    },
+    {
+      "name": "Emotion Discs",
+      "type": "Marker",
+      "count": 12,
+      "description": "Three discs in each player color, one for each of the Thrill, Awe and Joy tracks.",
+      "icon": "Token",
+      "tint": "#EF6C00",
+      "image": "images/emotion_discs.webp"
+    },
+    {
+      "name": "Tree Markers",
+      "type": "Token",
+      "count": 50,
+      "description": "Green trees that block spaces on player properties until removed with the Arborist action.",
+      "icon": "ResourceWood",
+      "tint": "#2E7D32",
+      "image": "images/tree_markers.webp"
+    },
+    {
+      "name": "Month Marker",
+      "type": "Marker",
+      "count": 1,
+      "description": "Tracks the current month on the game board's five-space month track.",
+      "icon": "Hourglass",
+      "tint": "#37474F",
+      "image": "images/month_marker.webp"
+    },
+    {
+      "name": "Shovel Token",
+      "type": "Token",
+      "count": 1,
+      "description": "The start player marker. Its holder starts the Actions step and rotates the carousel ring during Cleanup.",
+      "icon": "CrownA",
+      "tint": "#7B1FA2",
+      "image": "images/shovel_token.webp"
+    },
+    {
+      "name": "VP Tokens",
+      "type": "Token",
+      "count": 70,
+      "description": "Visiting People tokens: 27 five-VP tokens and 43 one-VP tokens.",
+      "icon": "Pawns",
+      "tint": "#FFB300",
+      "image": "images/vp_tokens.webp"
+    },
+    {
+      "name": "Money Tokens",
+      "type": "Money",
+      "count": 56,
+      "description": "16 three-dollar tokens and 40 one-dollar tokens.",
+      "icon": "Dollar",
+      "tint": "#2E7D32",
+      "image": "images/money.webp"
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place the game board within reach of all players.",
+      "short_description": "Game board"
+    },
+    {
+      "description": "Place the month marker on the 1 space of the game board, and place the extra action worker on its designated place on the game board.",
+      "short_description": "Month marker and extra action worker"
+    },
+    {
+      "description": "Place all attraction tiles and Visiting People tokens (VP tokens) within reach of all players.",
+      "short_description": "Attraction tiles and VP"
+    },
+    {
+      "description": "Divide and shuffle each of the six types of attraction cards (as indicated by their banner color and icon), then place each stack face up on each attraction space around the central opening of the game board.",
+      "short_description": "Attraction card stacks"
+    },
+    {
+      "description": "Place the carousel and carousel ring inside the round opening of the game board. Align the carousel ring so that +$2 is oriented toward the stack of Souvenir attraction cards.",
+      "short_description": "Carousel",
+      "action": {
+        "type": "image",
+        "src": "images/carousel.webp",
+        "caption": "Carousel in its ring",
+        "max_height_dp": 130
+      }
+    },
+    {
+      "description": "Form piles of supplies near the outside corners of the game board.",
+      "short_description": "Supply piles",
+      "items": [
+        {
+          "description": "All money tokens near the Banker area.",
+          "style": "bullet"
+        },
+        {
+          "description": "All expansion boards, shuffled, in two roughly equal piles near the Realtor area.",
+          "style": "bullet"
+        },
+        {
+          "description": "All concession tiles shuffled and face down near the Contractor area.",
+          "style": "bullet"
+        },
+        {
+          "description": "All tree markers near the Arborist area.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "description": "Reveal face-up concession tiles equal to two times the number of players.",
+      "short_description": "Reveal concessions",
+      "condition": {
+        "min_count_variant": 2
+      }
+    },
+    {
+      "description": "Reveal four face-up concession tiles, as Becky counts as a player for this.",
+      "short_description": "Reveal concessions",
+      "condition": {
+        "max_count_variant": 1
+      }
+    },
+    {
+      "description": "Give the shovel token to the player who most recently rode a roller coaster.",
+      "short_description": "Shovel token",
+      "condition": {
+        "min_count_variant": 2
+      }
+    },
+    {
+      "description": "Shuffle and deal three goal cards to each player. Each player chooses two and returns the remaining card to the box. Keep the chosen cards secret; they are revealed at the end of the game.",
+      "short_description": "Goal cards"
+    },
+    {
+      "description": "Starting with the player who has the shovel token and proceeding clockwise, each player takes their starting components.",
+      "short_description": "Player setup",
+      "items": [
+        {
+          "description": "Choose and take a property board and place it with either side face up, then place a tree marker from the supply on each of the indicated tree spaces.",
+          "style": "numbered"
+        },
+        {
+          "description": "Choose a player color and take the matching reference card and three workers.",
+          "style": "numbered"
+        },
+        {
+          "description": "Place a matching emotion disc of your player color on the far-left space of each of the three emotion tracks, on top of any discs already placed there.",
+          "style": "numbered"
+        },
+        {
+          "description": "Take $7 worth of money tokens.",
+          "style": "numbered"
+        }
+      ]
+    },
+    {
+      "description": "Set up as for a two-player game, with the changes below.",
+      "short_description": "Solo setup",
+      "condition": {
+        "max_count_variant": 1
+      }
+    },
+    {
+      "description": "Give Becky three workers and the emotion discs of the same color. Becky does not start with, gain, or use a property board, any goal cards, or any money tokens.",
+      "short_description": "Becky's components",
+      "condition": {
+        "max_count_variant": 1
+      }
+    },
+    {
+      "description": "You start with the shovel token.",
+      "short_description": "Shovel token",
+      "condition": {
+        "max_count_variant": 1
+      }
+    },
+    {
+      "description": "Place Becky's emotion discs on top of your discs on the emotion tracks.",
+      "short_description": "Becky's discs",
+      "condition": {
+        "max_count_variant": 1
+      }
+    },
+    {
+      "description": "Return all other unused components to the game box.",
+      "short_description": "Clear the table"
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "The game lasts five months. Each month runs through five steps: Income, Actions, Bonuses, Advertising and Cleanup. During the Actions step players take turns clockwise placing one worker at a time on an action space and immediately taking that action.",
+    "turn_steps": [
+      "Income Step: take $3 plus the income shown on your built concessions and attractions.",
+      "Actions Step: starting with the shovel token holder, take turns placing one worker on an action space and immediately taking that action, until all workers are placed.",
+      "Bonuses Step: evaluate the Thrill, Awe and Joy tracks from top to bottom; the leader on each track chooses one of its two bonuses.",
+      "Advertising Step: pay the advertising cost on any of your attraction cards to take the VP shown, once per attraction.",
+      "Cleanup Step: refresh the concessions, return all workers, rotate the carousel ring, then advance the month marker."
+    ],
+    "key_concepts": [
+      {
+        "name": "No Overlap",
+        "description": "A newly placed tile must not overlap an existing tile or a tree marker.",
+        "action": {
+          "type": "image",
+          "src": "images/placement_no_overlap.webp",
+          "max_height_dp": 120
+        }
+      },
+      {
+        "name": "No Overhang",
+        "description": "A newly placed tile must not be placed so that any part of it extends past the edges of your property.",
+        "action": {
+          "type": "image",
+          "src": "images/placement_no_overhang.webp",
+          "max_height_dp": 120
+        }
+      },
+      {
+        "name": "No Adjacency",
+        "description": "A newly placed tile must not be placed so that any of its sides touch another tile.",
+        "action": {
+          "type": "image",
+          "src": "images/placement_no_adjacency.webp",
+          "max_height_dp": 120
+        }
+      },
+      {
+        "name": "Legal Placements",
+        "description": "Tiles may touch diagonally and may share a side with adjacent tree markers. Tiles may be rotated to any orientation before placement and may be placed with either side up. Once placed, tiles may not be moved.",
+        "action": {
+          "type": "image",
+          "src": "images/placement_valid.webp",
+          "max_height_dp": 140
+        }
+      },
+      {
+        "name": "Covering Icons",
+        "description": "A placed tile covers icons printed on your property. Each covered icon pays out immediately:",
+        "items": [
+          {
+            "description": "Single emotion icon -- advance 1 space on that emotion track.",
+            "style": "bullet",
+            "action": {
+              "type": "image",
+              "src": "images/icon_emotion_single.webp",
+              "max_height_dp": 56
+            }
+          },
+          {
+            "description": "Double emotion icon -- advance 2 spaces on that emotion track.",
+            "style": "bullet",
+            "action": {
+              "type": "image",
+              "src": "images/icon_emotion_double.webp",
+              "max_height_dp": 56
+            }
+          },
+          {
+            "description": "$2 or $4 icon -- take that much money from the supply.",
+            "style": "bullet",
+            "action": {
+              "type": "image",
+              "src": "images/icon_money.webp",
+              "max_height_dp": 56
+            }
+          },
+          {
+            "description": "Wild icon -- advance 1 space on any emotion track you choose.",
+            "style": "bullet",
+            "action": {
+              "type": "image",
+              "src": "images/icon_wild.webp",
+              "max_height_dp": 56
+            }
+          }
+        ]
+      },
+      {
+        "name": "Moving on Emotion Tracks",
+        "description": "Every emotion icon you earn is one forward move of your disc on the matching track.",
+        "items": [
+          {
+            "description": "Move your disc 1 space to the right on that track.",
+            "style": "bullet"
+          },
+          {
+            "description": "Entering an occupied space: place your disc on top of the discs already there.",
+            "style": "bullet"
+          },
+          {
+            "description": "Leaving a space: the discs left behind keep their order.",
+            "style": "bullet"
+          },
+          {
+            "description": "Past the end of the track: move on top of all discs on the final space instead.",
+            "style": "bullet"
+          }
+        ],
+        "action": {
+          "type": "image",
+          "src": "images/emotions.webp",
+          "max_height_dp": 60
+        }
+      },
+      {
+        "name": "Carousel Ring Modifiers",
+        "description": "The carousel ring segment aligned with an attraction stack changes that stack's Builder cost.",
+        "items": [
+          {
+            "description": "The ring starts with +$2 aligned to the Souvenir stack.",
+            "style": "bullet"
+          },
+          {
+            "description": "Whoever holds the shovel token rotates the ring during Cleanup, so costs change every month.",
+            "style": "bullet"
+          }
+        ],
+        "action": {
+          "type": "image",
+          "src": "images/carousel.webp",
+          "max_height_dp": 120
+        }
+      },
+      {
+        "name": "Worker Limits on Action Spaces",
+        "description": "An action space holds any number of workers, from any players -- with one exception.",
+        "items": [
+          {
+            "description": "Builder spaces: only one worker may be placed on each Builder location per month.",
+            "style": "bullet"
+          }
+        ],
+        "action": {
+          "type": "image",
+          "src": "images/action_builder.webp",
+          "max_height_dp": 120
+        }
+      }
+    ],
+    "actions": [
+      {
+        "name": "Income Step",
+        "description": "Each player takes $3 from the supply plus any income shown on any of their built concession tiles or attraction cards.",
+        "icon": "Dollar",
+        "steps": [
+          {
+            "description": "Take $3 from the supply."
+          },
+          {
+            "description": "Add any income shown on your built concession tiles and attraction cards.",
+            "action": {
+              "type": "image",
+              "src": "images/attraction_armor_shoppe.webp",
+              "caption": "An attraction card showing income",
+              "max_height_dp": 100
+            }
+          }
+        ],
+        "notes": [
+          {
+            "description": "In the first month, players will only gain $3, as no concessions nor attractions have been built."
+          },
+          {
+            "description": "This step can be performed simultaneously."
+          },
+          {
+            "description": "Becky does not collect income.",
+            "condition": {
+              "max_count_variant": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Builder",
+        "description": "Buy an attraction: pay its cost, build its tile on your property, advance your emotions, and keep the card for income, advertising and end-game VP.",
+        "icon": "StructureTower",
+        "image": "images/action_builder.webp",
+        "steps": [
+          {
+            "description": "Place a worker on a Builder location, then pay the cost shown on the associated attraction card by returning money tokens to the supply, plus or minus the modifier shown on the aligned carousel ring."
+          },
+          {
+            "description": "Find the matching attraction tile and place it on your property following the tile placement rules."
+          },
+          {
+            "description": "Advance on the indicated emotion tracks, if applicable."
+          },
+          {
+            "description": "Take the attraction card, flip it face down, and place it in front of you."
+          }
+        ],
+        "details": [
+          {
+            "description": "Only one worker can be placed on each Builder location each month. Every other action space can hold any number of workers from any players.",
+            "short_description": "One worker per Builder location"
+          },
+          {
+            "description": "The cost you pay is the printed card cost modified by the carousel ring segment aligned with that stack, so the same attraction costs different amounts in different months.",
+            "short_description": "Carousel ring modifier"
+          },
+          {
+            "description": "Emotion, money and wild icons covered by the newly placed attraction tile are triggered on top of the emotion icons shown on the card itself.",
+            "short_description": "Covered icons still count"
+          },
+          {
+            "description": "For her first action Becky places a worker on the Builder location whose associated attraction costs the most (including any modifier on the carousel ring); for her second action, the one whose attraction costs the least. She takes the attraction card and advances her emotion discs, but pays nothing. Ties are broken by the attraction that gives her the most movement on the emotion tracks, then the most VP tokens at the end of the game, then the player chooses.",
+            "short_description": "Becky's Builder actions",
+            "condition": {
+              "max_count_variant": 1
+            }
+          },
+          {
+            "description": "Keep track of which attraction card Becky most recently collected -- she advertises it during the Advertising step. For a harder game, swap Becky's first and second actions so she builds the cheapest attraction first and the most expensive second.",
+            "short_description": "Becky reminders",
+            "condition": {
+              "max_count_variant": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Banker",
+        "description": "The simplest way to fill your purse.",
+        "icon": "Pouch",
+        "image": "images/action_banker.webp",
+        "steps": [
+          {
+            "description": "Place a worker on the Banker location."
+          },
+          {
+            "description": "Take $2 from the supply."
+          }
+        ]
+      },
+      {
+        "name": "Arborist",
+        "description": "Clear trees to open up space on your property.",
+        "icon": "ResourceWood",
+        "image": "images/action_arborist.webp",
+        "steps": [
+          {
+            "description": "Place a worker on the Arborist location."
+          },
+          {
+            "description": "Remove up to two tree markers from your property and return them to the supply."
+          }
+        ]
+      },
+      {
+        "name": "Contractor",
+        "description": "Take one of the face-up concession tiles and build it on your property.",
+        "icon": "HexagonTile",
+        "image": "images/action_contractor.webp",
+        "steps": [
+          {
+            "description": "Place a worker on the Contractor location."
+          },
+          {
+            "description": "Take one concession tile from the available face-up tiles and place it on your property following the tile placement rules."
+          },
+          {
+            "description": "Advance on the indicated emotion tracks, following the rules for moving on emotion tracks."
+          }
+        ],
+        "details": [
+          {
+            "description": "Concession tiles are small, so they are the easiest way to cover the emotion, money and wild icons printed on your property.",
+            "short_description": "Small tiles, cheap icons"
+          },
+          {
+            "description": "Many concession tiles also show income, which pays out during every following Income step.",
+            "short_description": "Concessions can pay income"
+          },
+          {
+            "description": "The face-up concession tiles left over at the end of a month are returned to the box during Cleanup and a fresh set is revealed.",
+            "short_description": "Tiles refresh every month"
+          },
+          {
+            "description": "For her third action, Becky places a worker on the Contractor location. Reveal a random face-down concession tile and advance Becky's emotion discs as indicated on it. If the revealed tile shows income, Becky takes VP tokens equal to the income shown. Return the revealed tile to the game box.",
+            "short_description": "Becky's Contractor action",
+            "condition": {
+              "max_count_variant": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Realtor",
+        "description": "Buy an expansion board to enlarge your property.",
+        "icon": "StructureGate",
+        "image": "images/action_realtor.webp",
+        "steps": [
+          {
+            "description": "Place a worker on the Realtor location and return $3 to the supply."
+          },
+          {
+            "description": "Take one board from the top of either stack of expansion boards and place it aligned to the far-right or far-left side of your existing property, with either side facing up."
+          },
+          {
+            "description": "Place a tree marker from the supply onto each indicated tree space on the newly placed expansion board."
+          }
+        ],
+        "details": [
+          {
+            "description": "The expansion board is considered part of your property, so its icons can be covered by tiles and its trees can be cleared by the Arborist.",
+            "short_description": "It becomes your property"
+          },
+          {
+            "description": "Players may add any number of expansion boards to their property over the course of the game.",
+            "short_description": "No limit on expansions"
+          },
+          {
+            "description": "Expansion boards may only be added to the far-left or far-right edge of the property, never above, below or between existing boards.",
+            "short_description": "Left or right edge only"
+          }
+        ]
+      },
+      {
+        "name": "Bonuses Step",
+        "description": "Evaluate each of the emotion tracks in order from top to bottom, starting with the Thrill track. The player farthest forward along each track chooses which of that track's two bonuses to accept.",
+        "icon": "Award",
+        "steps": [
+          {
+            "description": "Thrill: the player farthest along the track may either move their disc backward one space and take the extra action worker for use during the next month's Actions step, or take 1 VP token and return the extra action worker to its designated place on the game board.",
+            "short_description": "Thrill bonus",
+            "action": {
+              "type": "image",
+              "src": "images/bonus_thrill.webp",
+              "caption": "Thrill: extra action worker, or 1 VP",
+              "max_height_dp": 70
+            }
+          },
+          {
+            "description": "Awe: the player farthest along the track may either move their disc backward one space and take the shovel token (they will rotate the carousel ring during the Cleanup step of the current month), or take 1 VP token and give the shovel token to the player on their right.",
+            "short_description": "Awe bonus",
+            "action": {
+              "type": "image",
+              "src": "images/bonus_awe.webp",
+              "caption": "Awe: shovel token, or 1 VP",
+              "max_height_dp": 80
+            }
+          },
+          {
+            "description": "Joy: the player farthest along the track may either move their disc backward one space and take $3, or take 1 VP token.",
+            "short_description": "Joy bonus",
+            "action": {
+              "type": "image",
+              "src": "images/bonus_joy.webp",
+              "caption": "Joy: $3, or 1 VP",
+              "max_height_dp": 70
+            }
+          },
+          {
+            "description": "In addition to the bonuses above, the player whose disc is second-farthest along each emotion track takes 1 VP token.",
+            "short_description": "Second-farthest bonus",
+            "condition": {
+              "min_count_variant": 3
+            },
+            "action": {
+              "type": "image",
+              "src": "images/bonus_second_place.webp",
+              "caption": "Second-farthest disc: 1 VP",
+              "max_height_dp": 60
+            }
+          }
+        ],
+        "details": [
+          {
+            "description": "If multiple players are in the same space farthest along a track, the player with their emotion disc on top is considered farthest along.",
+            "short_description": "Ties: the disc on top wins"
+          },
+          {
+            "description": "The second-farthest bonus is evaluated before any emotion discs are moved during this step.",
+            "short_description": "Second place is checked first",
+            "condition": {
+              "min_count_variant": 3
+            }
+          },
+          {
+            "description": "Moving your disc backward one space is the price of the stronger bonus -- taking the 1 VP token instead always leaves your disc where it is.",
+            "short_description": "Why you would take 1 VP"
+          },
+          {
+            "description": "Whenever one of Becky's emotion discs is ahead of your disc on a track, Becky takes the 1 VP token bonus, so her emotion discs do not move during this step. If Becky is ahead on the Awe track, she also gains or keeps the shovel token for the next month.",
+            "short_description": "Becky's bonuses",
+            "condition": {
+              "max_count_variant": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Advertising Step",
+        "description": "Each player decides if they would like to spend money tokens to advertise any or all of their attractions.",
+        "icon": "HandCard",
+        "steps": [
+          {
+            "description": "To advertise an attraction, pay the advertising cost shown on the associated attraction card by returning money tokens to the supply.",
+            "action": {
+              "type": "image",
+              "src": "images/attraction_sabek_keep.webp",
+              "caption": "Advertising cost and VP reward",
+              "max_height_dp": 100
+            }
+          },
+          {
+            "description": "Take the indicated number of VP tokens."
+          },
+          {
+            "description": "Repeat for any other attractions you wish to advertise."
+          }
+        ],
+        "details": [
+          {
+            "description": "Advertising can be done once per attraction per month, so an attraction built early can be advertised in every remaining month.",
+            "short_description": "Once per attraction per month"
+          },
+          {
+            "description": "This step can be performed simultaneously, but upon a player's request, advertising decisions should be made in player order, starting with the player with the shovel token.",
+            "short_description": "Simultaneous, unless asked"
+          },
+          {
+            "description": "Becky always advertises her most recently gained attraction. She does not spend money tokens when doing this, but still gains the VP tokens for advertising.",
+            "short_description": "Becky's advertising",
+            "condition": {
+              "max_count_variant": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Cleanup Step",
+        "description": "Reset the board for the next month.",
+        "icon": "ArrowClockwise",
+        "steps": [
+          {
+            "description": "Refresh the concessions: return any remaining face-up concession tiles to the box, then reveal tiles equal to two times the number of players from the remaining face-down tiles."
+          },
+          {
+            "description": "Return all workers: return all workers from action spaces to each player's area."
+          },
+          {
+            "description": "Rotate the carousel: the player with the shovel token rotates the carousel ring, choosing a new position by turning it any number of spaces. The position must change as a result of the rotation."
+          },
+          {
+            "description": "Advance the month: if the month marker is already on the fifth space, proceed to the game end. Otherwise, move it to the next space and begin the next month starting with the Income step."
+          }
+        ],
+        "details": [
+          {
+            "description": "Rotating the carousel ring is not optional and it may not be left where it was -- the position must change.",
+            "short_description": "The ring must move"
+          },
+          {
+            "description": "Discarded face-up concession tiles go back to the box, not to the bottom of the face-down supply, so the pool of available concessions shrinks over the game.",
+            "short_description": "Discarded concessions leave the game"
+          },
+          {
+            "description": "If Becky has the shovel token, she rotates the carousel ring exactly one space clockwise.",
+            "short_description": "Becky rotates the ring",
+            "condition": {
+              "max_count_variant": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends once the fifth month is complete -- when the month marker is already on the fifth space at the end of the Cleanup step.",
+    "procedure": [
+      {
+        "description": "Each player reveals their two goal cards."
+      },
+      {
+        "description": "Each player takes VP tokens for goals, attraction card values, emotion bonuses, and the attraction count bonus."
+      },
+      {
+        "description": "Count all VP tokens each player has collected during and after the game."
+      }
+    ],
+    "intermediate_scoring": [
+      {
+        "source": "Emotion Track Bonus",
+        "when": "Bonuses step of each month",
+        "description": {
+          "description": "The player farthest along each emotion track may take 1 VP token instead of that track's other bonus (extra action worker, shovel token, or $3)."
+        }
+      },
+      {
+        "source": "Second-Farthest Disc",
+        "when": "Bonuses step of each month",
+        "description": {
+          "description": "The player whose disc is second-farthest along each emotion track takes 1 VP token, evaluated before any discs are moved.",
+          "condition": {
+            "min_count_variant": 3
+          }
+        }
+      },
+      {
+        "source": "Advertising",
+        "when": "Advertising step of each month",
+        "description": {
+          "description": "Pay the advertising cost on an attraction card to take the number of VP tokens shown. Each attraction may be advertised once per month."
+        }
+      }
+    ],
+    "final_scoring": [
+      {
+        "source": "Goals",
+        "description": "Take 3 VP tokens for each of your two revealed goal cards that you have successfully satisfied."
+      },
+      {
+        "source": "Attractions",
+        "description": "Take VP tokens equal to the total VP shown on all of your attraction cards."
+      },
+      {
+        "source": "Emotions Bonuses",
+        "description": "Take 5 VP tokens for each of your emotion discs that ended above the eighth space of the emotion tracks."
+      },
+      {
+        "source": "Attraction Count Bonus",
+        "description": "Take 5 VP tokens for having six or seven attraction cards, or 10 VP tokens for having eight or more."
+      },
+      {
+        "source": "Becky's Score",
+        "description": "Becky scores the VP tokens shown on all of her attractions, any emotion bonuses she earned, and the attraction count bonus (which will always be 10 VP tokens). She does not score goal cards.",
+        "condition": {
+          "max_count_variant": 1
+        }
+      }
+    ]
+  },
+  "winning_condition": "The player with the most total Visiting People (VP tokens) wins. In the case of a tie, the tied player with the most money wins. In case of a further tie, the tied player closest (clockwise) to the player with the shovel token wins. In a solo game, you win if you have accumulated more VP tokens than Becky.",
+  "tips_for_new_players": [
+    {
+      "tip": "Concessions are the cheapest emotions",
+      "description": "Concession tiles are free to take and are small enough to slot over the emotion, money and wild icons printed on your property. Covering icons is often worth more than the tile itself."
+    },
+    {
+      "tip": "Watch the carousel before you build",
+      "description": "The ring modifier can swing an attraction's cost by several dollars, and the shovel token holder rotates it every Cleanup. A pricey attraction this month may be a bargain next month."
+    },
+    {
+      "tip": "Builder spaces are contested",
+      "description": "Only one worker fits on each Builder location per month. If you want a specific attraction type, spend an early worker on it rather than saving the action for later."
+    },
+    {
+      "tip": "Advertise early, advertise often",
+      "description": "Advertising can be done once per attraction every month, so an attraction bought in month one can pay VP four more times. An early cheap attraction with a low advertising cost is a VP engine."
+    },
+    {
+      "tip": "Trees are not just clutter",
+      "description": "A tree marker blocks a whole space and tiles may not overlap it. Clearing two trees with the Arborist can open the room you need for a large attraction tile."
+    },
+    {
+      "tip": "Getting past the eighth space is worth 5 VP",
+      "description": "Each emotion disc that ends the game above the eighth space of its track is worth 5 VP, so think twice before moving a disc backward for a bonus late in the game."
+    }
+  ]
+}
