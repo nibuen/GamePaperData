@@ -1,0 +1,107 @@
+{
+  "beach_card": {
+    "term": "Beach Card",
+    "definition": "A feature card with ocean access. Placed in the TOP row of your city.",
+    "context": "Card Types",
+    "tint": "#159B8D",
+    "image": "images/wave.webp"
+  },
+  "street_card": {
+    "term": "Street Card",
+    "definition": "A feature card with a boardwalk. Placed in the BOTTOM row of your city.",
+    "context": "Card Types",
+    "tint": "#C58B3A",
+    "image": "images/tag_business.webp"
+  },
+  "food_truck": {
+    "term": "Food Truck",
+    "definition": "Token beneath the display. Select a card above it to gain a sand dollar; then it advances one space to the right.",
+    "context": "Tokens",
+    "tint": "#22C7B6",
+    "image": "images/food_truck.webp"
+  },
+  "foodie": {
+    "term": "Foodie",
+    "definition": "Token beneath the display. Select a card above it to move one person one space; then it advances one space.",
+    "context": "Tokens",
+    "tint": "#E8C15A",
+    "image": "images/foodie.webp"
+  },
+  "sand_dollar": {
+    "term": "Sand Dollar",
+    "definition": "Currency gained from placement actions; spent to use Sand Dollar Action tiles.",
+    "context": "Tokens",
+    "tint": "#E8C15A",
+    "image": "images/sand_dollar.webp"
+  },
+  "local": {
+    "term": "Local",
+    "definition": "Blue visitor meeple. In final movement each local may move up to 3 spaces.",
+    "context": "Visitors",
+    "tint": "#2196F3",
+    "image": "images/meeple_local.webp"
+  },
+  "tourist": {
+    "term": "Tourist",
+    "definition": "Orange visitor meeple. In final movement each tourist moves 1 space.",
+    "context": "Visitors",
+    "tint": "#FF9800",
+    "image": "images/meeple_tourist.webp"
+  },
+  "vip": {
+    "term": "VIP",
+    "definition": "Green Very Important Person. Leaves a footprint on cards matching your starting tile's attributes.",
+    "context": "Visitors",
+    "tint": "#4CAF50",
+    "image": "images/meeple_vip.webp"
+  },
+  "footprint": {
+    "term": "Footprint",
+    "definition": "Marker left when a VIP moves to/through a matching card; scores per matching attribute at game end.",
+    "context": "Tokens",
+    "tint": "#795548",
+    "image": "images/footprint.webp"
+  },
+  "waves": {
+    "term": "Waves",
+    "definition": "Location tag for ocean access.",
+    "context": "Location Tags",
+    "tint": "#159B8D",
+    "image": "images/wave.webp"
+  },
+  "nature": {
+    "term": "Nature",
+    "definition": "Location tag for natural beauty.",
+    "context": "Location Tags",
+    "tint": "#4CAF50",
+    "image": "images/tag_nature.webp"
+  },
+  "local_spot": {
+    "term": "Local Spot",
+    "definition": "Location tag for places locals like.",
+    "context": "Location Tags",
+    "tint": "#2196F3",
+    "image": "images/tag_local_spot.webp"
+  },
+  "tourist_spot": {
+    "term": "Tourist Spot",
+    "definition": "Location tag for tourist destinations.",
+    "context": "Location Tags",
+    "tint": "#FF9800",
+    "image": "images/tag_tourist_spot.webp"
+  },
+  "business": {
+    "term": "Business",
+    "definition": "Location tag for shops and restaurants.",
+    "context": "Location Tags",
+    "tint": "#C58B3A",
+    "image": "images/tag_business.webp"
+  },
+  "sports": {
+    "term": "Sports",
+    "definition": "Location tag for athletic locations.",
+    "context": "Location Tags",
+    "tint": "#9C27B0",
+    "image": "images/tag_sports.webp"
+  }
+}
