@@ -622,6 +622,65 @@
           "label": "The Food Truck advances one space along the display"
         }
       ]
+    },
+    "chain": {
+      "height_dp": 160,
+      "sections": [
+        {
+          "id": "row",
+          "name": "Beach row",
+          "x": 0.06,
+          "y": 0.28,
+          "width": 0.88,
+          "height": 0.44,
+          "rows": 1,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush"
+        }
+      ],
+      "tokens": [
+        {
+          "id": "a",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "row.r1.c1"
+        },
+        {
+          "id": "b",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "row.r1.c2"
+        },
+        {
+          "id": "c",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "row.r1.c3"
+        },
+        {
+          "id": "d",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_business.webp",
+          "at": "row.r1.c4"
+        }
+      ],
+      "beats": [
+        {
+          "op": "highlight",
+          "targets": [
+            "a",
+            "b",
+            "c"
+          ],
+          "duration_ms": 1700,
+          "label": "Three adjacent cards share the Waves tag -- together they form a chain and score"
+        }
+      ]
     }
   }
 }
