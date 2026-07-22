@@ -721,7 +721,19 @@
             "r2c3"
           ],
           "duration_ms": 1900,
-          "label": "Same-tag cards that touch -- including up/down between rows -- form a chain. These four Nature cards score together."
+          "label": "Same-tag cards that touch -- including up/down between rows -- form a chain. These four Nature cards connect."
+        },
+        {
+          "op": "tally",
+          "targets": [
+            "r1c2",
+            "r1c3",
+            "r2c2",
+            "r2c3"
+          ],
+          "count": 6,
+          "duration_ms": 1300,
+          "label": "A chain of four Nature cards scores points at game end."
         }
       ]
     }
