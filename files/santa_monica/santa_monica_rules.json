@@ -518,24 +518,28 @@
           "id": "d1",
           "kind": "card",
           "variant": "beach",
+          "icon": "images/wave.webp",
           "at": "draft.r2.c1"
         },
         {
           "id": "d2",
           "kind": "card",
           "variant": "street",
+          "icon": "images/tag_business.webp",
           "at": "draft.r2.c2"
         },
         {
           "id": "d4",
           "kind": "card",
           "variant": "street",
+          "icon": "images/tag_sports.webp",
           "at": "draft.r2.c4"
         },
         {
           "id": "b1",
           "kind": "card",
           "variant": "beach",
+          "icon": "images/tag_nature.webp",
           "at": "draft.r1.c1",
           "opacity": 0.4
         },
@@ -543,6 +547,7 @@
           "id": "b2",
           "kind": "card",
           "variant": "street",
+          "icon": "images/tag_local_spot.webp",
           "at": "draft.r1.c2",
           "opacity": 0.4
         },
@@ -550,6 +555,7 @@
           "id": "b3",
           "kind": "card",
           "variant": "beach",
+          "icon": "images/wave.webp",
           "at": "draft.r1.c3",
           "opacity": 0.4
         },
@@ -557,6 +563,7 @@
           "id": "b4",
           "kind": "card",
           "variant": "street",
+          "icon": "images/tag_tourist_spot.webp",
           "at": "draft.r1.c4",
           "opacity": 0.4
         },
@@ -569,18 +576,21 @@
           "id": "p1",
           "kind": "card",
           "variant": "beach",
+          "icon": "images/tag_nature.webp",
           "at": "player.beach_right.r1.c1"
         },
         {
           "id": "p2",
           "kind": "card",
           "variant": "street",
+          "icon": "images/tag_business.webp",
           "at": "player.street_right.r1.c1"
         },
         {
           "id": "card",
           "kind": "card",
           "variant": "beach",
+          "icon": "images/wave.webp",
           "at": "draft.r2.c3"
         },
         {
