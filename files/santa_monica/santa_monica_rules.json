@@ -597,13 +597,13 @@
           "id": "truck",
           "kind": "token",
           "label": "TRUCK",
-          "at": "track.r1.c1"
+          "at": "track.r1.c3"
         },
         {
           "id": "foodie",
           "kind": "token",
           "label": "FOODIE",
-          "at": "track.r1.c3"
+          "at": "track.r1.c1"
         }
       ],
       "beats": [
@@ -612,28 +612,28 @@
           "token": "card",
           "to": "player.beach_left.r1.c5",
           "duration_ms": 1100,
-          "label": "Your turn: take a Beach card from the front row and place it in your city"
+          "label": "Take a card from the front row -- it's above the Food Truck -- and place it in your city"
         },
         {
           "op": "move",
           "token": "truck",
-          "to": "track.r1.c2",
+          "to": "track.r1.c4",
           "duration_ms": 650,
-          "label": "The Food Truck advances one space along the display"
+          "label": "You gain a sand dollar, and the Food Truck advances one space to the right"
         }
       ]
     },
     "chain": {
-      "height_dp": 160,
+      "height_dp": 200,
       "sections": [
         {
-          "id": "row",
-          "name": "Beach row",
-          "x": 0.06,
-          "y": 0.28,
-          "width": 0.88,
-          "height": 0.44,
-          "rows": 1,
+          "id": "city",
+          "name": "Your city",
+          "x": 0.05,
+          "y": 0.08,
+          "width": 0.9,
+          "height": 0.84,
+          "rows": 2,
           "cols": 5,
           "scope": "player",
           "arrangement": "flush"
@@ -641,44 +641,87 @@
       ],
       "tokens": [
         {
-          "id": "a",
+          "id": "r1c1",
           "kind": "card",
           "variant": "beach",
           "icon": "images/wave.webp",
-          "at": "row.r1.c1"
+          "at": "city.r1.c1"
         },
         {
-          "id": "b",
+          "id": "r1c2",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r1.c2"
+        },
+        {
+          "id": "r1c3",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r1.c3"
+        },
+        {
+          "id": "r1c4",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_sports.webp",
+          "at": "city.r1.c4"
+        },
+        {
+          "id": "r1c5",
           "kind": "card",
           "variant": "beach",
           "icon": "images/wave.webp",
-          "at": "row.r1.c2"
+          "at": "city.r1.c5"
         },
         {
-          "id": "c",
-          "kind": "card",
-          "variant": "beach",
-          "icon": "images/wave.webp",
-          "at": "row.r1.c3"
-        },
-        {
-          "id": "d",
+          "id": "r2c1",
           "kind": "card",
           "variant": "street",
           "icon": "images/tag_business.webp",
-          "at": "row.r1.c4"
+          "at": "city.r2.c1"
+        },
+        {
+          "id": "r2c2",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r2.c2"
+        },
+        {
+          "id": "r2c3",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r2.c3"
+        },
+        {
+          "id": "r2c4",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_tourist_spot.webp",
+          "at": "city.r2.c4"
+        },
+        {
+          "id": "r2c5",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_local_spot.webp",
+          "at": "city.r2.c5"
         }
       ],
       "beats": [
         {
           "op": "highlight",
           "targets": [
-            "a",
-            "b",
-            "c"
+            "r1c2",
+            "r1c3",
+            "r2c2",
+            "r2c3"
           ],
-          "duration_ms": 1700,
-          "label": "Three adjacent cards share the Waves tag -- together they form a chain and score"
+          "duration_ms": 1900,
+          "label": "Same-tag cards that touch -- including up/down between rows -- form a chain. These four Nature cards score together."
         }
       ]
     }
