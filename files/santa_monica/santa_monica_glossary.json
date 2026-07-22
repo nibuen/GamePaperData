@@ -1,7 +1,7 @@
 {
   "beach_card": {
     "term": "Beach Card",
-    "definition": "A feature card with ocean access. Placed in the TOP row of your city.",
+    "definition": "A card to play in your city, only placed in the TOP row of your city.",
     "context": "Card Types",
     "tint": "#159B8D",
     "image": "images/wave.webp"
@@ -15,14 +15,14 @@
   },
   "food_truck": {
     "term": "Food Truck",
-    "definition": "Token beneath the display. Select a card above it to gain a sand dollar; then it advances one space to the right.",
+    "definition": "Select a card above it to gain a sand dollar; then it advances one space to the right.  If in same column as foodie will award double bonus.",
     "context": "Tokens",
     "tint": "#22C7B6",
     "image": "images/food_truck.webp"
   },
   "foodie": {
     "term": "Foodie",
-    "definition": "Token beneath the display. Select a card above it to move one person one space; then it advances one space.",
+    "definition": "Select a card above it to move one person one space; then it advances one space.  If in same column as food truck will award double bonus.",
     "context": "Tokens",
     "tint": "#E8C15A",
     "image": "images/foodie.webp"
