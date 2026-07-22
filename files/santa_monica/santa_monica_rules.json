@@ -515,6 +515,69 @@
       ],
       "tokens": [
         {
+          "id": "d1",
+          "kind": "card",
+          "variant": "beach",
+          "at": "draft.r2.c1"
+        },
+        {
+          "id": "d2",
+          "kind": "card",
+          "variant": "street",
+          "at": "draft.r2.c2"
+        },
+        {
+          "id": "d4",
+          "kind": "card",
+          "variant": "street",
+          "at": "draft.r2.c4"
+        },
+        {
+          "id": "b1",
+          "kind": "card",
+          "variant": "beach",
+          "at": "draft.r1.c1",
+          "opacity": 0.4
+        },
+        {
+          "id": "b2",
+          "kind": "card",
+          "variant": "street",
+          "at": "draft.r1.c2",
+          "opacity": 0.4
+        },
+        {
+          "id": "b3",
+          "kind": "card",
+          "variant": "beach",
+          "at": "draft.r1.c3",
+          "opacity": 0.4
+        },
+        {
+          "id": "b4",
+          "kind": "card",
+          "variant": "street",
+          "at": "draft.r1.c4",
+          "opacity": 0.4
+        },
+        {
+          "id": "start",
+          "kind": "tile",
+          "at": "start"
+        },
+        {
+          "id": "p1",
+          "kind": "card",
+          "variant": "beach",
+          "at": "player.beach_right.r1.c1"
+        },
+        {
+          "id": "p2",
+          "kind": "card",
+          "variant": "street",
+          "at": "player.street_right.r1.c1"
+        },
+        {
           "id": "card",
           "kind": "card",
           "variant": "beach",
@@ -531,11 +594,6 @@
           "kind": "token",
           "label": "FOODIE",
           "at": "track.r1.c3"
-        },
-        {
-          "id": "start",
-          "kind": "tile",
-          "at": "start"
         }
       ],
       "beats": [
@@ -543,15 +601,15 @@
           "op": "move",
           "token": "card",
           "to": "player.beach_left.r1.c5",
-          "duration_ms": 950,
-          "label": "Draft a card from the front row and place it in your city"
+          "duration_ms": 1100,
+          "label": "Your turn: take a Beach card from the front row and place it in your city"
         },
         {
           "op": "move",
           "token": "truck",
           "to": "track.r1.c2",
           "duration_ms": 650,
-          "label": "The Food Truck advances one space"
+          "label": "The Food Truck advances one space along the display"
         }
       ]
     }
