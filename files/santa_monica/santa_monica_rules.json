@@ -416,5 +416,326 @@
       "tip": "Understand Placement Action Symbols",
       "description": "For adjacency scoring based on sand dollars or people symbols, the trigger is the placement action symbol on the adjacent card, not the actual physical pieces that may move later."
     }
-  ]
+  ],
+  "animation_stages": {
+    "main": {
+      "height_dp": 180,
+      "sections": [
+        {
+          "id": "draft",
+          "name": "Draft display",
+          "x": 0.08,
+          "y": 0.05,
+          "width": 0.84,
+          "height": 0.3,
+          "rows": 2,
+          "cols": 4,
+          "scope": "shared",
+          "arrangement": "free",
+          "role": "draft-source"
+        },
+        {
+          "id": "track",
+          "name": "Truck / Foodie track",
+          "x": 0.08,
+          "y": 0.38,
+          "width": 0.84,
+          "height": 0.08,
+          "rows": 1,
+          "cols": 4,
+          "scope": "shared",
+          "arrangement": "free",
+          "role": "track"
+        },
+        {
+          "id": "start",
+          "name": "Start tile",
+          "x": 0.42,
+          "y": 0.54,
+          "width": 0.08,
+          "height": 0.34,
+          "rows": 1,
+          "cols": 1,
+          "scope": "player",
+          "arrangement": "free",
+          "role": "origin"
+        },
+        {
+          "id": "beach_right",
+          "name": "Beach (right)",
+          "x": 0.5,
+          "y": 0.54,
+          "width": 0.39,
+          "height": 0.15,
+          "rows": 1,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush",
+          "role": "tableau"
+        },
+        {
+          "id": "street_right",
+          "name": "Street (right)",
+          "x": 0.5,
+          "y": 0.72,
+          "width": 0.39,
+          "height": 0.16,
+          "rows": 1,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush",
+          "role": "tableau"
+        },
+        {
+          "id": "beach_left",
+          "name": "Beach (left)",
+          "x": 0.12,
+          "y": 0.54,
+          "width": 0.3,
+          "height": 0.15,
+          "rows": 1,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush",
+          "role": "tableau"
+        },
+        {
+          "id": "street_left",
+          "name": "Street (left)",
+          "x": 0.12,
+          "y": 0.73,
+          "width": 0.3,
+          "height": 0.15,
+          "rows": 1,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush",
+          "role": "tableau"
+        }
+      ],
+      "tokens": [
+        {
+          "id": "front1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "draft.r2.c1"
+        },
+        {
+          "id": "front2",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_business.webp",
+          "at": "draft.r2.c2"
+        },
+        {
+          "id": "front4",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_sports.webp",
+          "at": "draft.r2.c4"
+        },
+        {
+          "id": "back1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "draft.r1.c1",
+          "opacity": 0.4
+        },
+        {
+          "id": "back2",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_local_spot.webp",
+          "at": "draft.r1.c2",
+          "opacity": 0.4
+        },
+        {
+          "id": "back3",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "draft.r1.c3",
+          "opacity": 0.4
+        },
+        {
+          "id": "back4",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_tourist_spot.webp",
+          "at": "draft.r1.c4",
+          "opacity": 0.4
+        },
+        {
+          "id": "start",
+          "kind": "tile",
+          "at": "start"
+        },
+        {
+          "id": "city_beach",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "player.beach_right.r1.c1"
+        },
+        {
+          "id": "city_street",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_business.webp",
+          "at": "player.street_right.r1.c1"
+        },
+        {
+          "id": "drafted_card",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "draft.r2.c3"
+        },
+        {
+          "id": "truck",
+          "kind": "token",
+          "label": "TRUCK",
+          "at": "track.r1.c3"
+        },
+        {
+          "id": "foodie",
+          "kind": "token",
+          "label": "FOODIE",
+          "at": "track.r1.c1"
+        }
+      ],
+      "beats": [
+        {
+          "op": "move",
+          "token": "drafted_card",
+          "to": "player.beach_left.r1.c5",
+          "duration_ms": 1100,
+          "label": "Take a card from the front row -- it's above the Food Truck -- and place it in your city"
+        },
+        {
+          "op": "move",
+          "token": "truck",
+          "to": "track.r1.c4",
+          "duration_ms": 650,
+          "label": "You gain a sand dollar, and the Food Truck advances one space to the right"
+        }
+      ]
+    },
+    "chain": {
+      "height_dp": 200,
+      "sections": [
+        {
+          "id": "city",
+          "name": "Your city",
+          "x": 0.05,
+          "y": 0.08,
+          "width": 0.9,
+          "height": 0.84,
+          "rows": 2,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush"
+        }
+      ],
+      "tokens": [
+        {
+          "id": "waves_1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "city.r1.c1"
+        },
+        {
+          "id": "nature_1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r1.c2"
+        },
+        {
+          "id": "nature_2",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r1.c3"
+        },
+        {
+          "id": "sports_1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_sports.webp",
+          "at": "city.r1.c4"
+        },
+        {
+          "id": "waves_2",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "city.r1.c5"
+        },
+        {
+          "id": "business_1",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_business.webp",
+          "at": "city.r2.c1"
+        },
+        {
+          "id": "nature_3",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r2.c2"
+        },
+        {
+          "id": "nature_4",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r2.c3"
+        },
+        {
+          "id": "tourist_1",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_tourist_spot.webp",
+          "at": "city.r2.c4"
+        },
+        {
+          "id": "local_1",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_local_spot.webp",
+          "at": "city.r2.c5"
+        }
+      ],
+      "beats": [
+        {
+          "op": "highlight",
+          "targets": [
+            "nature_1",
+            "nature_2",
+            "nature_3",
+            "nature_4"
+          ],
+          "duration_ms": 1900,
+          "label": "Same-tag cards that touch -- including up/down between rows -- form a chain. These four Nature cards connect."
+        },
+        {
+          "op": "tally",
+          "targets": [
+            "nature_1",
+            "nature_2",
+            "nature_3",
+            "nature_4"
+          ],
+          "count": 6,
+          "duration_ms": 1300,
+          "label": "A chain of four Nature cards scores points at game end."
+        }
+      ]
+    }
+  }
 }
