@@ -38,7 +38,8 @@
       ],
       "description": "Cardboard tokens used to mark places that VIPs have visited",
       "detailed_description": "When a VIP moves to or through a feature card with desired attributes, a footprint token is placed on that card. Each card can only have one footprint token, but scores for each matching attribute on the card.",
-      "count": 28
+      "count": 28,
+      "image": "images/footprint.webp"
     },
     {
       "name": "Food Truck Token",
@@ -48,7 +49,8 @@
       ],
       "description": "Token that moves beneath the display and provides bonuses for choosing cards",
       "detailed_description": "When a player selects a card above the Food Truck token, they gain one sand dollar. The token then moves one space to the right (wrapping around to the left edge if needed).",
-      "count": 1
+      "count": 1,
+      "image": "images/food_truck.webp"
     },
     {
       "name": "Foodie Token",
@@ -58,7 +60,8 @@
       ],
       "description": "Token that moves beneath the display and provides bonuses for choosing cards",
       "detailed_description": "When a player selects a card above the Foodie token, they may move any one person one space. The token then moves one space to the right. When the Foodie catches up with the Food Truck, the player gets enhanced rewards.",
-      "count": 1
+      "count": 1,
+      "image": "images/foodie.webp"
     },
     {
       "name": "Scoring Objective Tiles",
@@ -89,7 +92,8 @@
       "description": "Blue meeples representing the local residents of the city",
       "detailed_description": "Local meeples can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each local can move up to 3 spaces.",
       "tint": "#2196F3",
-      "count": 30
+      "count": 30,
+      "image": "images/meeple_local.webp"
     },
     {
       "name": "Tourists",
@@ -100,7 +104,8 @@
       "description": "Orange meeples representing visitors that come to Santa Monica",
       "detailed_description": "Tourist meeples can be placed on feature cards and moved around the city. They can fill activity rings and contribute to scoring. During final movement, each tourist can move 1 space.",
       "tint": "#FF9800",
-      "count": 30
+      "count": 30,
+      "image": "images/meeple_tourist.webp"
     },
     {
       "name": "VIPs",
@@ -111,7 +116,8 @@
       "description": "Green meeples representing Very Important Persons who want to visit certain types of locations",
       "detailed_description": "VIP meeples have unique scoring objectives based on the starting feature tile. When moved to or through cards with desired attributes, they leave footprint tokens. During final movement, each VIP can move 1 space.",
       "tint": "#4CAF50",
-      "count": 8
+      "count": 8,
+      "image": "images/meeple_vip.webp"
     },
     {
       "name": "Starting Feature Tiles",
@@ -131,7 +137,8 @@
       ],
       "description": "Wooden tokens earned throughout the game that can be spent to carry out sand dollar actions",
       "detailed_description": "Players gain sand dollars through placement actions and can spend them to activate sand dollar tiles. Unspent sand dollars can convert to victory points at game end through certain card abilities.",
-      "count": 25
+      "count": 25,
+      "image": "images/sand_dollar.webp"
     },
     {
       "name": "Start Player Token",
