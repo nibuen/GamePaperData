@@ -254,7 +254,7 @@
         "description": "After assigning (or reassigning) an Agent, you may complete 1 Quest if you have the required Adventurers and Gold.",
         "steps": [
           {"description": "Choose an active Quest card from in front of you."},
-          {"description": "Remove the required Adventurer cubes and Gold from your Tavern and return them to the supply.", "action": {"type": "micro_animation", "motif": "spend", "icon": "Token", "tint": "#9AA0A6"}},
+          {"description": "Remove the required Adventurer cubes and Gold from your Tavern and return them to the supply.", "action": {"type": "micro_animation", "motif": "spend", "icon": "Character", "tint": "#9AA0A6"}},
           {"description": "Collect the reward shown on the Quest card (VP, resources, cards, etc.)."},
           {"description": "Place the completed Quest face-down on the Completed Quests area of your player mat."},
           {"description": "If it is a Plot Quest, place it face-up near your player mat as a reminder of its ongoing effect."}
@@ -293,7 +293,7 @@
         "name": "Blackstaff Tower",
         "description": "Take 1 Wizard from the supply and place it in your Tavern.",
         "steps": [
-          {"description": "Take 1 Wizard (purple) from the supply and place it in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Token", "tint": "#8E44AD"}}
+          {"description": "Take 1 Wizard (purple) from the supply and place it in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Character", "tint": "#8E44AD"}}
         ],
         "notes": []
       },
@@ -301,7 +301,7 @@
         "name": "The Plinth",
         "description": "Take 1 Cleric from the supply and place it in your Tavern.",
         "steps": [
-          {"description": "Take 1 Cleric (white) from the supply and place it in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Token", "tint": "#FFFFFF"}}
+          {"description": "Take 1 Cleric (white) from the supply and place it in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Character", "tint": "#FFFFFF"}}
         ],
         "notes": []
       },
@@ -309,7 +309,7 @@
         "name": "The Grinning Lion Tavern",
         "description": "Take 2 Rogues from the supply and place them in your Tavern.",
         "steps": [
-          {"description": "Take 2 Rogues (black) from the supply and place them in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Token", "count": 2, "tint": "#2B2B2B"}}
+          {"description": "Take 2 Rogues (black) from the supply and place them in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Character", "count": 2, "tint": "#2B2B2B"}}
         ],
         "notes": []
       },
@@ -317,7 +317,7 @@
         "name": "Field of Triumph",
         "description": "Take 2 Fighters from the supply and place them in your Tavern.",
         "steps": [
-          {"description": "Take 2 Fighters (orange) from the supply and place them in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Token", "count": 2, "tint": "#E8833A"}}
+          {"description": "Take 2 Fighters (orange) from the supply and place them in your Tavern.", "action": {"type": "micro_animation", "motif": "gain", "icon": "Character", "count": 2, "tint": "#E8833A"}}
         ],
         "notes": []
       },
@@ -337,7 +337,7 @@
           {"description": "Choose 1 of the face-up Building tiles available for purchase."},
           {"description": "Pay its Gold cost to the supply.", "action": {"type": "micro_animation", "motif": "spend", "icon": "Dollar", "tint": "#E6A817"}},
           {"description": "Immediately score any VP shown on the Building tile."},
-          {"description": "Place the tile on one of the open Building spaces on the game board.", "action": {"type": "micro_animation", "motif": "place", "icon": "Token", "tint": "#6D8299"}},
+          {"description": "Place the tile on one of the open Building spaces on the game board.", "action": {"type": "micro_animation", "motif": "place", "icon": "StructureHouse", "tint": "#6D8299"}},
           {"description": "Place one of your Building control markers on the tile to show you are the owner."},
           {"description": "Draw the top tile of the Building stack and place it face-up in the vacated space in Builder's Hall."}
         ],
