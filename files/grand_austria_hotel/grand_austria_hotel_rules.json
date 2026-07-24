@@ -186,11 +186,24 @@
     "actions": [
       {
         "name": "Die 1 — Strudel / Cake",
+        "animation": "main",
         "description": "For each die on the 1-space, take 1 strudel OR 1 cake. You cannot take more cake than strudel in total.",
         "steps": [
           { "description": "Count the number of dice on the 1-space — this is your action strength." },
-          { "description": "For each point of strength, take 1 strudel OR 1 cake. Any combination is allowed, but you cannot end up with more cake than strudel total." },
-          { "description": "Whenever you receive dishes, you may immediately place them on a Guest's order. Store any excess in your Kitchen." },
+          {
+            "description": "For each point of strength, take 1 strudel OR 1 cake.",
+            "items": [
+              { "description": "Any combination of strudel and cake is allowed.", "style": "bullet" },
+              { "description": "You cannot end up with more cake than strudel in total.", "style": "bullet" }
+            ]
+          },
+          {
+            "description": "Whenever you receive dishes, you may immediately place them.",
+            "items": [
+              { "description": "Place them directly on a Guest's order to fill it.", "style": "bullet" },
+              { "description": "Store any excess in your Kitchen for later.", "style": "bullet" }
+            ]
+          },
           { "description": "Remove one die from the 1-space and place it on the lowest visible number of your Turn Order tile." }
         ]
       },
@@ -199,8 +212,20 @@
         "description": "For each die on the 2-space, take 1 wine OR 1 coffee. You cannot take more coffee than wine in total.",
         "steps": [
           { "description": "Count the number of dice on the 2-space — this is your action strength." },
-          { "description": "For each point of strength, take 1 wine OR 1 coffee. Any combination is allowed, but you cannot end up with more coffee than wine total." },
-          { "description": "Whenever you receive drinks, you may immediately place them on a Guest's order. Store any excess in your Kitchen." },
+          {
+            "description": "For each point of strength, take 1 wine OR 1 coffee.",
+            "items": [
+              { "description": "Any combination of wine and coffee is allowed.", "style": "bullet" },
+              { "description": "You cannot end up with more coffee than wine in total.", "style": "bullet" }
+            ]
+          },
+          {
+            "description": "Whenever you receive drinks, you may immediately place them.",
+            "items": [
+              { "description": "Place them directly on a Guest's order to fill it.", "style": "bullet" },
+              { "description": "Store any excess in your Kitchen for later.", "style": "bullet" }
+            ]
+          },
           { "description": "Remove one die from the 2-space and place it on the lowest visible number of your Turn Order tile." }
         ]
       },
@@ -209,9 +234,22 @@
         "description": "For each die on the 3-space, you may prepare one room on your Hotel board.",
         "steps": [
           { "description": "Count the number of dice on the 3-space — this is the number of rooms you may prepare." },
-          { "description": "For each room: take a Room tile of your choice and place it on a valid space on your Hotel board. It must be adjacent to an already placed room tile. The front (bellhop opening door) side must be visible. The color must match the room space. Pay the cost shown for that row of your Hotel board." },
-          { "description": "If you place a room in the top right of your Hotel board, immediately receive the printed VP." },
-          { "description": "If you flip the last room in a group, immediately receive the Occupancy bonus shown at the top of your Hotel board (based on the size and color of the group)." },
+          {
+            "description": "For each room you prepare, take a Room tile of your choice and place it on your Hotel board. A valid placement must satisfy ALL of the following:",
+            "items": [
+              { "description": "It must be orthogonally adjacent to an already placed room tile.", "style": "bullet" },
+              { "description": "The front (bellhop opening the door) side must be face up.", "style": "bullet" },
+              { "description": "Its color must match the color of the room space.", "style": "bullet" },
+              { "description": "Pay the cost shown for that row of your Hotel board.", "style": "bullet" }
+            ]
+          },
+          {
+            "description": "Immediately collect any bonuses triggered by the placement:",
+            "items": [
+              { "description": "Placing a room in the top right of your Hotel board: receive the printed VP.", "style": "bullet" },
+              { "description": "Flipping the last room in a group: receive the Occupancy bonus shown at the top of your Hotel board, based on the size and color of the group.", "style": "bullet" }
+            ]
+          },
           { "description": "Remove one die from the 3-space and place it on the lowest visible number of your Turn Order tile." }
         ]
       },
@@ -220,7 +258,13 @@
         "description": "For each die on the 4-space, advance 1 space on the Emperor track OR your Money track. You can freely split advances between the two tracks.",
         "steps": [
           { "description": "Count the number of dice on the 4-space — this is your action strength." },
-          { "description": "For each point of strength, advance 1 space on the Emperor track OR 1 space on your Money track. You may split the total freely between both tracks." },
+          {
+            "description": "For each point of strength, advance 1 space on a track of your choice:",
+            "items": [
+              { "description": "Advance 1 space on the Emperor track, OR advance 1 space on your Money track.", "style": "bullet" },
+              { "description": "You may split the total freely between the two tracks.", "style": "bullet" }
+            ]
+          },
           { "description": "Remove one die from the 4-space and place it on the lowest visible number of your Turn Order tile." }
         ]
       },
@@ -275,7 +319,15 @@
       },
       {
         "name": "Additional Actions",
-        "description": "After your mandatory die action, you may take the following additional actions:\n\n- ONCE PER TURN: Pay 1 krone to add 1 to the number of dice on your chosen action space. Only this action is limited to once per turn.\n- Pay 1 krone to move up to 3 dishes/drinks from your Kitchen to Guest orders.\n- Place a wooden disk on a Politics card if you meet its requirement (see Politics Cards).\n- Use a 'once per round' Staff card effect, then turn it face-down so you don't accidentally use it again.\n- Move a Guest whose order is fully complete to a free room of matching color — immediately receive the printed VP and the Guest's reward, then turn the room tile face-down.\n\nAll additional actions other than the first may be done any number of times on your turn."
+        "description": "After your mandatory die action, you may also take any of the following additional actions:",
+        "items": [
+          { "description": "ONCE PER TURN only: pay 1 krone to add 1 to the number of dice on your chosen action space.", "style": "bullet" },
+          { "description": "Pay 1 krone to move up to 3 dishes/drinks from your Kitchen onto Guest orders.", "style": "bullet" },
+          { "description": "Place a wooden disk on a Politics card if you meet its requirement (see Politics Cards).", "style": "bullet" },
+          { "description": "Use a 'once per round' Staff card effect, then turn it face-down so you don't use it again this round.", "style": "bullet" },
+          { "description": "Move a Guest whose order is fully complete to a free room of matching color: receive the printed VP and the Guest's reward, then turn the room tile face-down.", "style": "bullet" },
+          { "description": "Except for the die-boost above, these additional actions may each be taken any number of times on your turn.", "style": "bullet" }
+        ]
       },
       {
         "name": "Passing",
@@ -287,11 +339,24 @@
       },
       {
         "name": "End of Round",
-        "description": "At the end of each round: turn your Staff cards face-up; pass your Turn Order tile to the next player in clockwise order; the new start player takes the dice and moves the Round marker forward one space."
+        "description": "At the end of each round, in order:",
+        "items": [
+          { "description": "Turn all of your Staff cards face-up again.", "style": "numbered" },
+          { "description": "Pass your Turn Order tile to the next player clockwise.", "style": "numbered" },
+          { "description": "The new start player takes the dice and moves the Round marker forward one space.", "style": "numbered" }
+        ]
       },
       {
         "name": "Emperor Scoring",
-        "description": "At the end of rounds 3, 5, and 7, there is an Emperor Scoring. Each player receives VP equal to the value at the BOTTOM of their current Emperor track space. Then each player moves their disk BACK 3 / 5 / 7 spaces after the 1st / 2nd / 3rd Emperor Scoring respectively. If your disk ends in the yellow area (space 3 or higher), receive the Emperor Tile bonus. If it ends in the black area (space 0), suffer the Emperor Tile penalty. If it ends in the gray area (spaces 1–2), you get neither."
+        "description": "At the end of rounds 3, 5, and 7 an Emperor Scoring takes place. Each player resolves it in order:",
+        "items": [
+          { "description": "Receive VP equal to the value at the BOTTOM of your current Emperor track space.", "style": "numbered" },
+          { "description": "Move your disk BACK 3 / 5 / 7 spaces (after the 1st / 2nd / 3rd Emperor Scoring respectively).", "style": "numbered" },
+          { "description": "Apply the Emperor Tile result for where your disk ends up:", "style": "numbered" },
+          { "description": "Yellow area (space 3 or higher): receive the Emperor Tile bonus.", "style": "bullet" },
+          { "description": "Black area (space 0): suffer the Emperor Tile penalty.", "style": "bullet" },
+          { "description": "Gray area (spaces 1-2): neither bonus nor penalty.", "style": "bullet" }
+        ]
       }
     ]
   },
@@ -338,5 +403,34 @@
       }
     ]
   },
-  "winning_condition": "The player with the most VP wins. Ties are broken by the player with the most remaining dishes, drinks, and krone. If still tied, players share the victory."
+  "winning_condition": "The player with the most VP wins. Ties are broken by the player with the most remaining dishes, drinks, and krone. If still tied, players share the victory.",
+  "animation_stages": {
+    "main": {
+      "height_dp": 180,
+      "sections": [
+        { "id": "board", "name": "Action Board (spaces 1-6)", "x": 0.04, "y": 0.05, "width": 0.92, "height": 0.28, "rows": 2, "cols": 6, "scope": "shared", "arrangement": "free", "dividers": "columns" },
+        { "id": "customer_cards", "name": "Customer Cards", "x": 0.24, "y": 0.6, "width": 0.46, "height": 0.4, "rows": 1, "cols": 3, "scope": "shared", "arrangement": "free" },
+        { "id": "kitchen", "name": "Your Kitchen", "x": 0.5, "y": 0.36, "width": 0.22, "height": 0.21, "rows": 1, "cols": 2, "scope": "player", "arrangement": "free" },
+        { "id": "turn", "name": "Turn Order tile -- place die here", "x": 0.18, "y": 0.36, "width": 0.3, "height": 0.21, "rows": 1, "cols": 2, "scope": "player", "arrangement": "free" }
+      ],
+      "tokens": [
+        { "id": "s1a", "kind": "die", "label": "1", "at": "board.r1.c1" },
+        { "id": "s1b", "kind": "die", "label": "1", "at": "board.r2.c1" },
+        { "id": "s2", "kind": "die", "label": "2", "at": "board.r1.c2" },
+        { "id": "s3a", "kind": "die", "label": "3", "at": "board.r1.c3" },
+        { "id": "s3b", "kind": "die", "label": "3", "at": "board.r2.c3" },
+        { "id": "s4", "kind": "die", "label": "4", "at": "board.r1.c4" },
+        { "id": "s5", "kind": "die", "label": "5", "at": "board.r1.c5" },
+        { "id": "s6", "kind": "die", "label": "6", "at": "board.r1.c6" },
+        { "id": "dish1", "kind": "cube", "tint": "#ECE3D0", "at": "board.r1.c1" },
+        { "id": "dish2", "kind": "cube", "tint": "#8B5A2B", "at": "board.r1.c1" }
+      ],
+      "beats": [
+        { "op": "highlight", "targets": ["s1a", "s1b"], "duration_ms": 2200, "label": "It is your turn. Dice are sorted onto the board by face value -- the dice showing 1 sit on the 1-space. Each die adds 1 strength, so with 2 dice the 1-space has strength 2." },
+        { "op": "move", "token": "dish1", "to": "player.kitchen.r1.c1", "duration_ms": 1500, "label": "Resolve it: gain 1 dish per die. Strength 2 gives 2 dishes -- here a strudel (light)..." },
+        { "op": "move", "token": "dish2", "to": "player.kitchen.r1.c2", "duration_ms": 1400, "label": "...and a cake (brown). Store dishes in your Kitchen, or place them on a Guest's order in your Cafe." },
+        { "op": "move", "token": "s1a", "to": "player.turn.r1.c1", "duration_ms": 2000, "label": "Finally, move ONE die from the space onto the lowest number of your Turn Order tile. Only one die leaves per turn -- the rest stay." }
+      ]
+    }
+  }
 }
