@@ -223,6 +223,7 @@
     "actions": [
       {
         "name": "Select and Place Feature Cards",
+        "animation": "main",
         "description": "Players either select one feature card from the front row of the display, or spend sand dollars to use a sand dollar action to acquire cards differently. All acquired cards must be placed in the player's city following placement rules.",
         "steps": [
           {
@@ -259,6 +260,7 @@
       },
       {
         "name": "Take Placement Actions",
+        "animation": "move_people",
         "description": "After placing cards, execute the placement actions shown on the newly placed feature card(s). These may grant sand dollars, add people to the city, move existing people, or trigger VIP footprint placement.",
         "steps": [
           {
@@ -295,6 +297,7 @@
       },
       {
         "name": "Refresh the Display",
+        "animation": "refresh",
         "description": "After completing placement actions, refill any empty spaces in the display so the next player has a full selection.",
         "steps": [
           {
@@ -478,7 +481,7 @@
           "cols": 5,
           "scope": "player",
           "arrangement": "flush",
-          "role": "tableau"
+          "grow": "right"
         },
         {
           "id": "street_right",
@@ -491,7 +494,7 @@
           "cols": 5,
           "scope": "player",
           "arrangement": "flush",
-          "role": "tableau"
+          "grow": "right"
         },
         {
           "id": "beach_left",
@@ -504,7 +507,7 @@
           "cols": 5,
           "scope": "player",
           "arrangement": "flush",
-          "role": "tableau"
+          "grow": "left"
         },
         {
           "id": "street_left",
@@ -517,7 +520,7 @@
           "cols": 5,
           "scope": "player",
           "arrangement": "flush",
-          "role": "tableau"
+          "grow": "left"
         }
       ],
       "tokens": [
@@ -643,7 +646,8 @@
           "rows": 2,
           "cols": 5,
           "scope": "player",
-          "arrangement": "flush"
+          "arrangement": "flush",
+          "grow": "right"
         }
       ],
       "tokens": [
@@ -741,6 +745,196 @@
           "count": 6,
           "duration_ms": 1300,
           "label": "A chain of four Nature cards scores points at game end."
+        }
+      ]
+    },
+    "move_people": {
+      "height_dp": 200,
+      "sections": [
+        {
+          "id": "city",
+          "name": "Your city",
+          "x": 0.05,
+          "y": 0.1,
+          "width": 0.9,
+          "height": 0.8,
+          "rows": 2,
+          "cols": 5,
+          "scope": "player",
+          "arrangement": "flush",
+          "grow": "right"
+        }
+      ],
+      "tokens": [
+        {
+          "id": "b1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "city.r1.c1"
+        },
+        {
+          "id": "b2",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "city.r1.c2"
+        },
+        {
+          "id": "b3",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_local_spot.webp",
+          "at": "city.r1.c3"
+        },
+        {
+          "id": "s1",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_business.webp",
+          "at": "city.r2.c1"
+        },
+        {
+          "id": "s2",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_tourist_spot.webp",
+          "at": "city.r2.c2"
+        },
+        {
+          "id": "s3",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_sports.webp",
+          "at": "city.r2.c3"
+        },
+        {
+          "id": "local1",
+          "kind": "piece",
+          "icon": "images/meeple_local.webp",
+          "at": "city.r2.c2"
+        }
+      ],
+      "beats": [
+        {
+          "op": "move",
+          "token": "local1",
+          "to": "city.r2.c3",
+          "duration_ms": 1000,
+          "label": "After placing a card, you may move people. A person moves one space to an orthogonally adjacent card."
+        },
+        {
+          "op": "move",
+          "token": "local1",
+          "to": "city.r1.c3",
+          "duration_ms": 1000,
+          "label": "Movement is orthogonal -- including up between the street and beach rows. People can only stand on placed cards."
+        }
+      ]
+    },
+    "refresh": {
+      "height_dp": 200,
+      "sections": [
+        {
+          "id": "deck",
+          "name": "Deck",
+          "x": 0.4,
+          "y": 0.03,
+          "width": 0.2,
+          "height": 0.14,
+          "rows": 1,
+          "cols": 1,
+          "scope": "shared",
+          "arrangement": "free"
+        },
+        {
+          "id": "draft",
+          "name": "Display",
+          "x": 0.08,
+          "y": 0.24,
+          "width": 0.84,
+          "height": 0.62,
+          "rows": 2,
+          "cols": 4,
+          "scope": "shared",
+          "arrangement": "free"
+        }
+      ],
+      "tokens": [
+        {
+          "id": "back1",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "draft.r1.c1",
+          "opacity": 0.55
+        },
+        {
+          "id": "back2",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_local_spot.webp",
+          "at": "draft.r1.c2",
+          "opacity": 0.55
+        },
+        {
+          "id": "back3",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "draft.r1.c3"
+        },
+        {
+          "id": "back4",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_tourist_spot.webp",
+          "at": "draft.r1.c4",
+          "opacity": 0.55
+        },
+        {
+          "id": "front1",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_business.webp",
+          "at": "draft.r2.c1"
+        },
+        {
+          "id": "front2",
+          "kind": "card",
+          "variant": "street",
+          "icon": "images/tag_sports.webp",
+          "at": "draft.r2.c2"
+        },
+        {
+          "id": "front4",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/wave.webp",
+          "at": "draft.r2.c4"
+        },
+        {
+          "id": "deck_card",
+          "kind": "card",
+          "variant": "beach",
+          "icon": "images/tag_nature.webp",
+          "at": "deck"
+        }
+      ],
+      "beats": [
+        {
+          "op": "move",
+          "token": "back3",
+          "to": "draft.r2.c3",
+          "duration_ms": 950,
+          "label": "Refill the front row: slide the back-row card straight down into the gap left by the card you took."
+        },
+        {
+          "op": "move",
+          "token": "deck_card",
+          "to": "draft.r1.c3",
+          "duration_ms": 950,
+          "label": "Then deal a new card from the deck into the empty back-row space. The display is full for the next player."
         }
       ]
     }
