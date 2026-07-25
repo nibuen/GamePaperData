@@ -254,7 +254,7 @@
         "description": "After assigning (or reassigning) an Agent, you may complete 1 Quest if you have the required Adventurers and Gold.",
         "steps": [
           {"description": "Choose an active Quest card from in front of you."},
-          {"description": "Remove the required Adventurer cubes and Gold from your Tavern and return them to the supply.", "action": {"type": "micro_animation", "motif": "spend", "icon": "Character", "tint": "#9AA0A6"}},
+          {"description": "Remove the required Adventurer cubes and Gold from your Tavern and return them to the supply.", "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Character", "tint": "#9AA0A6"}},
           {"description": "Collect the reward shown on the Quest card (VP, resources, cards, etc.)."},
           {"description": "Place the completed Quest face-down on the Completed Quests area of your player mat."},
           {"description": "If it is a Plot Quest, place it face-up near your player mat as a reminder of its ongoing effect."}
