@@ -64,13 +64,13 @@
     {
       "description": "Each player receives 4 sun tokens. Distribute suns as shown on the reference card.",
       "short_description": "Sun Tokens",
-      "action": {"type": "micro_animation", "motif": "gain", "icon": "Award", "count": 4, "tint": "#F2A900"},
+      "action": {"type": "micro_animation", "motif": "gain", "icon": "Sun", "count": 4, "tint": "#F2A900"},
       "condition": {"min_count_variant": 2, "max_count_variant": 4}
     },
     {
       "description": "Each player receives 3 sun tokens. Distribute suns as shown on the reference card.",
       "short_description": "Sun Tokens",
-      "action": {"type": "micro_animation", "motif": "gain", "icon": "Award", "count": 3, "tint": "#F2A900"},
+      "action": {"type": "micro_animation", "motif": "gain", "icon": "Sun", "count": 3, "tint": "#F2A900"},
       "condition": {"min_count_variant": 5, "max_count_variant": 5}
     },
     {
@@ -128,7 +128,7 @@
         "steps": [
           {"description": "Announce 'Ra!' to begin an auction."},
           {"description": "Bidding begins with the player to your left and proceeds clockwise."},
-          {"description": "Each player may bid one of their face-up sun tokens or pass.", "action": {"type": "micro_animation", "motif": "place", "icon": "Award", "tint": "#F2A900"}},
+          {"description": "Each player may bid one of their face-up sun tokens or pass.", "action": {"type": "micro_animation", "motif": "place", "icon": "Sun", "tint": "#F2A900"}},
           {"description": "You (the invoker) bid last."},
           {"description": "The highest sun token wins all tiles on the auction track."},
           {"description": "The winner takes the center sun (face-down) and places their winning sun in the center (face-up)."},
@@ -190,7 +190,7 @@
             "action": {"type": "value_grid", "columns": [["Types", "0", "1-2", "3", "4", "5"], ["VP", "-5", "0", "+5", "+10", "+15"]]}
           },
           {"description": "Keep: Pharaoh tiles, Nile tiles, Monument tiles, God tiles."},
-          {"description": "Flip all face-down suns face-up. These are your suns for the next epoch.", "action": {"type": "micro_animation", "motif": "flip", "icon": "Award", "tint": "#F2A900"}},
+          {"description": "Flip all face-down suns face-up. These are your suns for the next epoch.", "action": {"type": "micro_animation", "motif": "flip", "icon": "Sun", "tint": "#F2A900"}},
           {"description": "Clear the Ra track. Begin the next epoch."}
         ],
         "notes": [
