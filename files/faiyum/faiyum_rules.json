@@ -144,7 +144,7 @@
     {
       "description": "Place a crocodile on every wheat (yellow) space and grape (purple) space.",
       "short_description": "Place Initial Crocodiles",
-      "action": {"type": "micro_animation", "motif": "place", "icon": "Animals", "tint": "#4E8B4A"}
+      "action": {"type": "micro_animation", "motif": "place", "icon": "Skull", "tint": "#4E8B4A"}
     },
     {
       "description": "Remove 102, 104, 106 yellow cards.",
@@ -183,21 +183,20 @@
         "description": "Choose a card from your hand.",
         "steps": [
           {
-            "description": "Either pay the cards cost (the red section), to the bank or take $2 from the bank.",
-            "action": {"type": "micro_animation", "motif": "spend", "icon": "Money", "tint": "#E6A817"}
+            "description": "Either pay the cards cost (the red section), to the bank or take $2 from the bank."
           },
           {
             "description": "If action is paid for, perform the card's action (the green section)."
           },
           {
             "description": "Place the played card face-up on top of your discard pile.",
-            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "tint": "#C9A227"}
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "tint": "#C9A227", "area": "Discard"}
           }
         ],
         "notes": [
           {
             "description": "When placing a worker, the hex must be clear of crocodiles and workers",
-            "action": {"type": "micro_animation", "motif": "place", "icon": "Meeple", "tint": "#8D6E63"}
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Character", "tint": "#8D6E63"}
           },
           {
             "description": "Some cards don't require worker placement"
@@ -222,12 +221,11 @@
         "description": "Purchase one of the four cards from the market.",
         "steps": [
           {
-            "description": "Pay the cost indicated by the market slot to the bank.  If the -1 marker is on the card, pay 1 less and move the marker off the board.",
-            "action": {"type": "micro_animation", "motif": "spend", "icon": "Money", "tint": "#E6A817"}
+            "description": "Pay the cost indicated by the market slot to the bank.  If the -1 marker is on the card, pay 1 less and move the marker off the board."
           },
           {
             "description": "Take the card and place it into your hand.",
-            "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "tint": "#C9A227"}
+            "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "tint": "#C9A227", "area": "Hand"}
           },
           {
             "description": "Draw a new card and sort it between the 8 cards on the market, from lowest to highest."
@@ -248,15 +246,14 @@
           },
           {
             "description": "Remove 0 to 2 upright workers from any spaces on the game board and return them to the supply. Gain $1 for each removed worker.",
-            "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Meeple", "tint": "#8D6E63"}
+            "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Character", "tint": "#8D6E63"}
           },
           {
             "description": "Take the top 3 cards from your discard stack into your hand. If less than 3 cards are on your discard stack, take them all.",
-            "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "count": 3, "tint": "#C9A227"}
+            "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "count": 3, "tint": "#C9A227", "area": "Discard"}
           },
           {
-            "description": "Pay $1 per card you would like to buy back additionally from the top of your discard stack.",
-            "action": {"type": "micro_animation", "motif": "spend", "icon": "Money", "tint": "#E6A817"}
+            "description": "Pay $1 per card you would like to buy back additionally from the top of your discard stack."
           }
         ],
         "notes": [
