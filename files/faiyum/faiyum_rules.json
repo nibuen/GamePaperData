@@ -138,11 +138,13 @@
   "setup": [
     {
       "description": "Place a settlement on the red space and a road on the dam between the two peninsulas.",
-      "short_description": "Place Initial Settlement and Road"
+      "short_description": "Place Initial Settlement and Road",
+      "action": {"type": "micro_animation", "motif": "place", "icon": "StructureHouse", "tint": "#6D8299"}
     },
     {
       "description": "Place a crocodile on every wheat (yellow) space and grape (purple) space.",
-      "short_description": "Place Initial Crocodiles"
+      "short_description": "Place Initial Crocodiles",
+      "action": {"type": "micro_animation", "motif": "place", "icon": "Skull", "tint": "#4E8B4A"}
     },
     {
       "description": "Remove 102, 104, 106 yellow cards.",
@@ -187,12 +189,14 @@
             "description": "If action is paid for, perform the card's action (the green section)."
           },
           {
-            "description": "Place the played card face-up on top of your discard pile."
+            "description": "Place the played card face-up on top of your discard pile.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "tint": "#C9A227", "area": "Discard"}
           }
         ],
         "notes": [
           {
-            "description": "When placing a worker, the hex must be clear of crocodiles and workers"
+            "description": "When placing a worker, the hex must be clear of crocodiles and workers",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Character", "tint": "#8D6E63"}
           },
           {
             "description": "Some cards don't require worker placement"
@@ -201,7 +205,8 @@
             "description": "Developed Spaces can no longer be targeted for Harvest Action."
           },
           {
-            "description": "Score 1VP when first time connecting two settlements / building sites."
+            "description": "Score 1VP when first time connecting two settlements / building sites.",
+            "action": {"type": "micro_animation", "motif": "gain", "icon": "Award", "count": 1, "tint": "#8E44AD"}
           },
           {
             "description": "A card can be played as long as you can do at least part of it (e.g., pay the cost)."
@@ -219,7 +224,8 @@
             "description": "Pay the cost indicated by the market slot to the bank.  If the -1 marker is on the card, pay 1 less and move the marker off the board."
           },
           {
-            "description": "Take the card and place it into your hand."
+            "description": "Take the card and place it into your hand.",
+            "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "tint": "#C9A227", "area": "Hand"}
           },
           {
             "description": "Draw a new card and sort it between the 8 cards on the market, from lowest to highest."
@@ -239,10 +245,12 @@
             "description": "Gain $3 minus the number of cards in your hand. If the result is negative, do not pay any money."
           },
           {
-            "description": "Remove 0 to 2 upright workers from any spaces on the game board and return them to the supply. Gain $1 for each removed worker."
+            "description": "Remove 0 to 2 upright workers from any spaces on the game board and return them to the supply. Gain $1 for each removed worker.",
+            "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Character", "tint": "#8D6E63"}
           },
           {
-            "description": "Take the top 3 cards from your discard stack into your hand. If less than 3 cards are on your discard stack, take them all."
+            "description": "Take the top 3 cards from your discard stack into your hand. If less than 3 cards are on your discard stack, take them all.",
+            "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "count": 3, "tint": "#C9A227", "area": "Discard"}
           },
           {
             "description": "Pay $1 per card you would like to buy back additionally from the top of your discard stack."
