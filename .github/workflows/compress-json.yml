@@ -100,10 +100,21 @@ jobs:
           with open(path, 'r', encoding='utf-8') as f:
               data = json.load(f)
           data['base_url'] = f'https://cdn.jsdelivr.net/gh/nibuen/GamersPaperData@{tag}/files'
+          # Bump the data release version (patch) on every publish. Independent of
+          # the app version -- a monotonic counter of data releases.
+          parts = str(data.get('version', '1.0.0')).split('.')
+          while len(parts) < 3:
+              parts.append('0')
+          try:
+              parts[2] = str(int(parts[2]) + 1)
+          except ValueError:
+              parts = ['1', '0', '1']
+          newv = '.'.join(parts[:3])
+          data['version'] = newv
           with open(path, 'w', encoding='utf-8') as f:
               json.dump(data, f, indent=4, ensure_ascii=False)
               f.write('\n')
-          print(f'Updated base_url to @{tag}')
+          print(f'Updated base_url to @{tag}, data version {newv}')
           " "$TAG"
 
           # Commit and push the updated base_url (rebase-then-push with retries,
