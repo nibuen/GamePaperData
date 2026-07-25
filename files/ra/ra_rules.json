@@ -135,8 +135,7 @@
           {"description": "If nobody bids (including you), nothing happens. Tiles remain on the auction track."}
         ],
         "notes": [
-          {"description": "You can invoke Ra even if the auction track is empty (to waste other players' suns), but this is rarely useful."},
-          {"description": "Your face-down suns cannot be used again until the next epoch."}
+          {"description": "You can invoke Ra even if the auction track is empty (to waste other players' suns), but this is rarely useful."}
         ]
       },
       {
@@ -157,12 +156,10 @@
         "description": "When a Ra tile is drawn, an auction is triggered. It works the same as a voluntary auction with one key difference.",
         "steps": [
           {"description": "Place the Ra tile on the Ra track."},
-          {"description": "Bidding proceeds clockwise starting left of the drawer. The drawer bids last."},
-          {"description": "Highest sun wins the lot as normal."},
-          {"description": "If nobody bids, all tiles on the auction track are DISCARDED from the game."}
+          {"description": "Run the auction exactly as a voluntary Ra: bid clockwise from the drawer's left, the drawer bids last, and the highest sun wins the lot."},
+          {"description": "The key difference: if nobody bids, all tiles on the auction track are DISCARDED from the game (in a voluntary auction they would stay)."}
         ],
         "notes": [
-          {"description": "This is the key difference from voluntary auctions: no bid on an involuntary auction means all auction tiles are lost."},
           {"description": "If this Ra tile fills the Ra track, the epoch ends after this auction resolves."}
         ]
       },
@@ -171,10 +168,27 @@
         "description": "An epoch ends when the Ra track is full OR all players have used all their suns.",
         "steps": [
           {"description": "Discard any tiles remaining on the auction track."},
-          {"description": "Score Pharaohs: Player with most pharaohs gains +5 VP. Player with fewest loses -2 VP. Ties share."},
-          {"description": "Score Gold: +3 VP per Gold tile. Discard all Gold tiles."},
-          {"description": "Score Nile: If you have at least 1 Flood tile, score +1 VP per Nile tile AND +1 VP per Flood tile. Discard Flood tiles. Keep Nile tiles."},
-          {"description": "Score Civilizations: 0 types = -5 VP. 1-2 types = 0 VP. 3 types = +5 VP. 4 types = +10 VP. 5 types = +15 VP. Discard all Civilization tiles."},
+          {
+            "description": "Score Pharaohs (compare tile counts):",
+            "items": [
+              {"description": "Most pharaohs: +5 VP."},
+              {"description": "Fewest pharaohs: -2 VP."},
+              {"description": "If players tie, each tied player scores that amount."}
+            ]
+          },
+          {"description": "Score Gold: +3 VP per Gold tile, then discard all Gold tiles."},
+          {
+            "description": "Score Nile -- only if you have at least 1 Flood tile:",
+            "items": [
+              {"description": "+1 VP for each Nile tile."},
+              {"description": "+1 VP for each Flood tile."},
+              {"description": "Discard all Flood tiles; keep your Nile tiles."}
+            ]
+          },
+          {
+            "description": "Score Civilizations by number of distinct types, then discard all Civilization tiles:",
+            "action": {"type": "value_grid", "columns": [["Types", "0", "1-2", "3", "4", "5"], ["VP", "-5", "0", "+5", "+10", "+15"]]}
+          },
           {"description": "Keep: Pharaoh tiles, Nile tiles, Monument tiles, God tiles."},
           {"description": "Flip all face-down suns face-up. These are your suns for the next epoch.", "action": {"type": "micro_animation", "motif": "flip", "icon": "Award", "tint": "#F2A900"}},
           {"description": "Clear the Ra track. Begin the next epoch."}
