@@ -6,6 +6,13 @@ on:
     paths: ['**.json', 'files/**/cover.jpg', 'files/**/cover.png', 'scripts/**']
   workflow_dispatch:
 
+# Serialize runs so two data merges in quick succession can't race each other's
+# bot commit/push. (This alone is not enough -- a direct PR merge can still
+# advance main mid-run -- so the pushes below also rebase-then-retry.)
+concurrency:
+  group: compress-json
+  cancel-in-progress: false
+
 jobs:
   compress:
     runs-on: ubuntu-latest
@@ -63,8 +70,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add --all '*.json.gz' '*.png' 'registry.json'
-          git diff --cached --quiet || git commit -m "chore: sync compressed JSON & OG images [skip ci]"
-          git push
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "chore: sync compressed JSON & OG images [skip ci]"
+            # Rebase-then-push with retries: a game PR merged moments earlier can
+            # advance main between our checkout and push, which would otherwise
+            # reject this push ("fetch first") and drop the regenerated files.
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "push attempt $i rejected; rebased and retrying..." && sleep 5
+            done
+          fi
 
       - name: Create data tag and update registry base_url
         run: |
@@ -89,9 +106,13 @@ jobs:
           print(f'Updated base_url to @{tag}')
           " "$TAG"
 
-          # Commit and push the updated base_url
+          # Commit and push the updated base_url (rebase-then-push with retries,
+          # same reasoning as the sync step above).
           git add registry.json
-          git diff --cached --quiet || {
+          if ! git diff --cached --quiet; then
             git commit -m "chore: update base_url to @$TAG [skip ci]"
-            git push
-          }
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "push attempt $i rejected; rebased and retrying..." && sleep 5
+            done
+          fi
