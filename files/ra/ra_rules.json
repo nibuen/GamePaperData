@@ -54,7 +54,8 @@
     },
     {
       "description": "Place all tiles into the bag and mix them thoroughly.",
-      "short_description": "Fill Bag"
+      "short_description": "Fill Bag",
+      "action": {"type": "micro_animation", "motif": "return_to_bag", "icon": "HexagonTile", "tint": "#C9A227"}
     },
     {
       "description": "Place the starting sun token face-up in the center of the board.",
@@ -63,11 +64,13 @@
     {
       "description": "Each player receives 4 sun tokens. Distribute suns as shown on the reference card.",
       "short_description": "Sun Tokens",
+      "action": {"type": "micro_animation", "motif": "gain", "icon": "Award", "count": 4, "tint": "#F2A900"},
       "condition": {"min_count_variant": 2, "max_count_variant": 4}
     },
     {
       "description": "Each player receives 3 sun tokens. Distribute suns as shown on the reference card.",
       "short_description": "Sun Tokens",
+      "action": {"type": "micro_animation", "motif": "gain", "icon": "Award", "count": 3, "tint": "#F2A900"},
       "condition": {"min_count_variant": 5, "max_count_variant": 5}
     },
     {
@@ -110,7 +113,7 @@
         "name": "1. Draw a Tile",
         "description": "Draw one tile from the bag and place it on the next empty space of the auction track.",
         "steps": [
-          {"description": "Draw one tile blindly from the bag."},
+          {"description": "Draw one tile blindly from the bag.", "action": {"type": "micro_animation", "motif": "draw_from_bag", "icon": "HexagonQuestion", "tint": "#C9A227"}},
           {"description": "If it is a normal tile, place it on the next empty auction track space."},
           {"description": "If it is a Ra tile, place it on the Ra track instead, then an auction is immediately triggered (involuntary auction)."},
           {"description": "If the auction track is completely full (8 tiles), an auction is triggered automatically before placing the tile."}
@@ -125,7 +128,7 @@
         "steps": [
           {"description": "Announce 'Ra!' to begin an auction."},
           {"description": "Bidding begins with the player to your left and proceeds clockwise."},
-          {"description": "Each player may bid one of their face-up sun tokens or pass."},
+          {"description": "Each player may bid one of their face-up sun tokens or pass.", "action": {"type": "micro_animation", "motif": "place", "icon": "Award", "tint": "#F2A900"}},
           {"description": "You (the invoker) bid last."},
           {"description": "The highest sun token wins all tiles on the auction track."},
           {"description": "The winner takes the center sun (face-down) and places their winning sun in the center (face-up)."},
@@ -140,8 +143,8 @@
         "name": "3. Use a God Tile",
         "description": "Spend one of your God tiles to take any single tile from the auction track.",
         "steps": [
-          {"description": "Discard one God tile from your collection."},
-          {"description": "Take any one tile of your choice from the auction track and add it to your collection."},
+          {"description": "Discard one God tile from your collection.", "action": {"type": "micro_animation", "motif": "spend", "icon": "HexagonTile", "tint": "#7E57C2"}},
+          {"description": "Take any one tile of your choice from the auction track and add it to your collection.", "action": {"type": "micro_animation", "motif": "take", "icon": "HexagonTile", "tint": "#C9A227"}},
           {"description": "Resolve disaster tiles immediately if taken."}
         ],
         "notes": [
@@ -173,7 +176,7 @@
           {"description": "Score Nile: If you have at least 1 Flood tile, score +1 VP per Nile tile AND +1 VP per Flood tile. Discard Flood tiles. Keep Nile tiles."},
           {"description": "Score Civilizations: 0 types = -5 VP. 1-2 types = 0 VP. 3 types = +5 VP. 4 types = +10 VP. 5 types = +15 VP. Discard all Civilization tiles."},
           {"description": "Keep: Pharaoh tiles, Nile tiles, Monument tiles, God tiles."},
-          {"description": "Flip all face-down suns face-up. These are your suns for the next epoch."},
+          {"description": "Flip all face-down suns face-up. These are your suns for the next epoch.", "action": {"type": "micro_animation", "motif": "flip", "icon": "Award", "tint": "#F2A900"}},
           {"description": "Clear the Ra track. Begin the next epoch."}
         ],
         "notes": [
