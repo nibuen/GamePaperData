@@ -228,11 +228,14 @@
         "steps": [
           {
             "description": "Select one card from the front row of the display and place it in your city. If the card is above the Foodie or Food Truck token, gain the corresponding bonus.",
-            "short_description": "Standard card selection"
-          },
-          {
-            "description": "Pay the cost shown on a Sand Dollar Tile and follow its action to acquire cards in a different way. You do not gain Foodie or Food Truck bonuses when using sand dollar actions.",
-            "short_description": "Sand dollar action (alternative)"
+            "short_description": "Standard card selection",
+            "action": {
+              "type": "micro_animation",
+              "motif": "place",
+              "icon": "Card",
+              "area": "City",
+              "label": "Place a card in your city"
+            }
           },
           {
             "description": "Beach cards must be placed in the top row of your city. Street cards must be placed in the bottom row of your city.",
@@ -246,7 +249,15 @@
         "notes": [
           {
             "description": "When selecting a card above the Food Truck token, take one sand dollar from the supply. The Food Truck then moves one space to the right.",
-            "short_description": "Food Truck bonus"
+            "short_description": "Food Truck bonus",
+            "action": {
+              "type": "micro_animation",
+              "motif": "gain",
+              "icon": "Dollar",
+              "count": 1,
+              "tint": "#E8C15A",
+              "label": "Gain a sand dollar"
+            }
           },
           {
             "description": "When selecting a card above the Foodie token, move any one person (local, tourist, or VIP) by one space. The Foodie then moves one space to the right.",
@@ -269,7 +280,13 @@
           },
           {
             "description": "If the placed card shows a people symbol with a color and number, take that many people of that color from the supply and place them on the card. This is mandatory.",
-            "short_description": "Add people"
+            "short_description": "Add people",
+            "action": {
+              "type": "micro_animation",
+              "motif": "take_from_supply",
+              "icon": "Character",
+              "label": "Take people from the supply"
+            }
           },
           {
             "description": "If the placed card shows a movement symbol with a color and numbers, you may move up to that many people of that color the indicated distance. People move orthogonally (not diagonally) and can only move onto placed feature cards.",
@@ -277,7 +294,14 @@
           },
           {
             "description": "If you moved a VIP to or through a feature card that matches an attribute shown on your starting tile, place a footprint token on that card. Only one footprint per card maximum.",
-            "short_description": "Place footprints"
+            "short_description": "Place footprints",
+            "action": {
+              "type": "micro_animation",
+              "motif": "place",
+              "icon": "Token",
+              "tint": "#4CAF50",
+              "label": "Place a footprint"
+            }
           }
         ],
         "notes": [
@@ -314,6 +338,45 @@
           }
         ],
         "notes": []
+      },
+      {
+        "name": "Sand Dollar Actions",
+        "description": "A separate, optional way to take your turn. Instead of the normal Select and Place Feature Cards action, you may spend sand dollars to use one of the two Sand Dollar Action tiles available this game. They give you alternative ways to acquire and arrange cards and to manage people. You never gain Foodie or Food Truck bonuses when using a Sand Dollar Action.",
+        "steps": [
+          {
+            "description": "Choose one of the two Sand Dollar Action tiles available this game. Which two are in play is decided randomly during setup and stays the same for the whole game.",
+            "short_description": "Choose an action tile"
+          },
+          {
+            "description": "Pay the sand dollar cost shown on that tile back to the supply.",
+            "short_description": "Pay the cost",
+            "action": {
+              "type": "micro_animation",
+              "motif": "return_to_supply",
+              "icon": "Dollar",
+              "tint": "#E8C15A",
+              "label": "Pay sand dollars"
+            }
+          },
+          {
+            "description": "Carry out the tile's action. Place any cards you acquire in your city following the normal placement rules: beach cards on top, street cards on the bottom, each aligned to an existing feature.",
+            "short_description": "Carry out the action"
+          }
+        ],
+        "notes": [
+          {
+            "description": "The specific tiles vary from game to game, but Sand Dollar Actions generally let you acquire cards in a way other than taking the front-row card, swap the positions of cards in the display, or remove people from a city.",
+            "short_description": "What the tiles can do"
+          },
+          {
+            "description": "You never gain Foodie or Food Truck bonuses from a Sand Dollar Action, even if a card you take sits above those tokens.",
+            "short_description": "No Foodie / Food Truck bonus"
+          },
+          {
+            "description": "Sand dollars come mainly from the placement actions on your feature cards. Unspent sand dollars can also convert to victory points at game end through certain card abilities.",
+            "short_description": "Where sand dollars come from"
+          }
+        ]
       }
     ],
     "key_concepts": [
@@ -336,10 +399,6 @@
       {
         "name": "VIP Footprints",
         "description": "Each starting tile designates which location attributes attract VIPs. When a VIP moves to or through a card with matching attributes, place a footprint token. At game end, score points for each matching attribute on cards with footprints."
-      },
-      {
-        "name": "Sand Dollar Actions",
-        "description": "Instead of normal card selection, players may spend sand dollars to activate one of the two available sand dollar action tiles. These provide alternative ways to acquire and place cards, swap card positions, or remove people. When using sand dollar actions, Foodie and Food Truck bonuses are not gained."
       }
     ]
   },
