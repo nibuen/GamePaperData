@@ -1,0 +1,24 @@
+name: Check cover art
+
+# Guards against a game shipping with no cover art. Non-blocking: it emits
+# warning annotations + a job summary but never fails, so a legacy gap doesn't
+# hold up unrelated data PRs. Covers are sourced by the /add-game agent step;
+# this just makes a missing one impossible to miss.
+on:
+  push:
+    branches: [main]
+    paths: ['registry.json', 'files/**/cover.jpg', 'files/**/cover.webp']
+  pull_request:
+    paths: ['registry.json', 'files/**']
+  workflow_dispatch:
+
+jobs:
+  check-covers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Warn on games missing cover art
+        run: python3 scripts/check_covers.py
