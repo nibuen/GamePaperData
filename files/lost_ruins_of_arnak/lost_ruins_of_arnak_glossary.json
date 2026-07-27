@@ -1,0 +1,72 @@
+{
+  "coin": {
+    "term": "Coin",
+    "definition": "The basic currency, shown as a gold nugget. Spend coins to buy Item cards from the card row and to pay coin costs on cards and the research track.",
+    "context": "Resources",
+    "icon": "Coin",
+    "tint": "#E0A100"
+  },
+  "compass": {
+    "term": "Compass",
+    "definition": "A green currency token. Spend compasses to buy Artifact cards, to advance on the research track, and to pay compass costs on cards.",
+    "context": "Resources",
+    "icon": "Compass",
+    "tint": "#2E9E6B"
+  },
+  "arrowhead": {
+    "term": "Arrowhead",
+    "definition": "A tan flint resource, spent chiefly as a travel cost to send an archaeologist out to a dig site, and on various card and research costs.",
+    "context": "Resources",
+    "icon": "Arrowhead",
+    "tint": "#C79A5B"
+  },
+  "tablet": {
+    "term": "Tablet",
+    "definition": "A stone resource used mainly to research (advance up the temple track) and to pay tablet costs printed on cards.",
+    "context": "Resources",
+    "icon": "Tablet",
+    "tint": "#BCA77A"
+  },
+  "jewel": {
+    "term": "Jewel",
+    "definition": "The most valuable basic resource, a red gem. Accepted on many costs and especially useful for advancing high on the research track.",
+    "context": "Resources",
+    "icon": "Gem",
+    "tint": "#C62828"
+  },
+  "magnifying_glass": {
+    "term": "Magnifying Glass",
+    "definition": "One of your two research markers. The Research action advances it up the left column of the temple track; it may never pass your notebook marker.",
+    "context": "Research",
+    "icon": "Magnifier",
+    "tint": "#4E7CC4"
+  },
+  "notebook": {
+    "term": "Notebook",
+    "definition": "Your second research marker, advancing up the right column of the temple track. Reaching new rows unlocks rewards and end-game points.",
+    "context": "Research",
+    "icon": "Notepad",
+    "tint": "#4E7CC4"
+  },
+  "item_card": {
+    "term": "Item Card",
+    "definition": "Bought with coins. Played from hand for a one-time effect (resources, travel, card draw) and then goes to your play area for the round.",
+    "context": "Cards",
+    "icon": "Card",
+    "tint": "#6D4C41"
+  },
+  "artifact_card": {
+    "term": "Artifact Card",
+    "definition": "Bought with compasses. Its effect triggers immediately when played, and many carry a lasting benefit and end-game value.",
+    "context": "Cards",
+    "icon": "CardsCollection",
+    "tint": "#3F51B5"
+  },
+  "fear_card": {
+    "term": "Fear Card",
+    "definition": "A useless card that clogs your deck, gained from unresolved guardians. It has a travel value but no effect; exile it when a card lets you.",
+    "context": "Cards",
+    "icon": "CardsSkull",
+    "tint": "#7E57C2"
+  }
+}

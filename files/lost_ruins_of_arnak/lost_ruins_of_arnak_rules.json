@@ -1,0 +1,250 @@
+{
+  "game_name": "Lost Ruins of Arnak",
+  "designer": "Min, Elwen",
+  "publisher": "Czech Games Edition",
+  "game_overview": "Lost Ruins of Arnak combines deck-building, worker placement, and exploration. Leading an expedition to a newly discovered island, you send archaeologists to uncover ruins, gather resources, research ancient temples, and face the guardians that protect them. Each turn you take a single main action plus any number of free actions.",
+  "objective": "Score the most victory points over 5 rounds by exploring sites, researching the temple, acquiring artifacts, and defeating guardians.",
+  "min_players": 1,
+  "max_players": 4,
+  "bgg_link": "https://boardgamegeek.com/boardgame/312484/lost-ruins-of-arnak",
+  "play_time_minutes": 120,
+  "components_overview": [
+    {
+      "name": "Coins",
+      "type": "Resource",
+      "description": "27 coin tokens. The basic currency, spent to buy Item cards and pay coin costs.",
+      "icon": "Coin",
+      "tint": "#E0A100",
+      "count": 27
+    },
+    {
+      "name": "Compasses",
+      "type": "Resource",
+      "description": "27 compass tokens. Spent to buy Artifact cards and to advance on the research track.",
+      "icon": "Compass",
+      "tint": "#2E9E6B",
+      "count": 27
+    },
+    {
+      "name": "Arrowheads",
+      "type": "Resource",
+      "description": "12 arrowhead tokens. Spent chiefly as a travel cost to reach dig sites.",
+      "icon": "Arrowhead",
+      "tint": "#C79A5B",
+      "count": 12
+    },
+    {
+      "name": "Tablets",
+      "type": "Resource",
+      "description": "16 tablet tokens. Used mainly to research and to pay tablet costs on cards.",
+      "icon": "Tablet",
+      "tint": "#BCA77A",
+      "count": 16
+    },
+    {
+      "name": "Jewels",
+      "type": "Resource",
+      "description": "9 jewel tokens. The most valuable basic resource, accepted on many costs.",
+      "icon": "Gem",
+      "tint": "#C62828",
+      "count": 9
+    },
+    {
+      "name": "Research Markers",
+      "type": "Marker",
+      "description": "1 magnifying glass and 1 notebook token in each player color, advanced up the temple track by the Research action.",
+      "icon": "Magnifier",
+      "tint": "#4E7CC4"
+    },
+    {
+      "name": "Archaeologist Figures",
+      "type": "Workers",
+      "description": "2 archaeologist figures in each player color, placed at sites to dig and discover.",
+      "icon": "Pawn"
+    },
+    {
+      "name": "Item Cards",
+      "type": "Card",
+      "description": "40 Item cards, bought with coins and played for one-time effects.",
+      "icon": "Card",
+      "tint": "#6D4C41",
+      "count": 40
+    },
+    {
+      "name": "Artifact Cards",
+      "type": "Card",
+      "description": "35 Artifact cards, bought with compasses; their effect triggers immediately when played.",
+      "icon": "CardsCollection",
+      "tint": "#3F51B5",
+      "count": 35
+    },
+    {
+      "name": "Fear Cards",
+      "type": "Card",
+      "description": "19 Fear cards that clog your deck. Gained from unresolved guardians; worth negative points if kept.",
+      "icon": "CardsSkull",
+      "tint": "#7E57C2",
+      "count": 19
+    },
+    {
+      "name": "Guardian Tiles",
+      "type": "Token",
+      "description": "15 guardian tiles. A guardian protects the top space of each site stack until it is overcome by paying its cost.",
+      "icon": "Skull",
+      "tint": "#B0854A"
+    },
+    {
+      "name": "Idol Tiles",
+      "type": "Token",
+      "description": "16 idol tiles, gained from sites and placed into slots on the temple track for bonuses.",
+      "icon": "Token",
+      "tint": "#8E5BB5"
+    },
+    {
+      "name": "Boards and Tiles",
+      "type": "Board",
+      "description": "1 main board (Bird Temple / Snake Temple), 1 supply board, 4 player boards, plus site, temple, assistant, and research bonus tiles."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Place the main board (Bird Temple side for your first game) and the supply board in the center. Fill the supply spaces with coins, compasses, and cards as shown."
+    },
+    {
+      "description": "Build the card row: reveal the top Item cards and Artifact cards to form the market you buy from."
+    },
+    {
+      "description": "Shuffle the site tiles and place them in stacks on the board, then set a guardian tile face down on the top space of each stack."
+    },
+    {
+      "description": "Each player takes a player board, 2 archaeologist figures, 1 magnifying glass and 1 notebook marker, and the 4-card starting deck in their color."
+    },
+    {
+      "description": "Place your research markers at the bottom of the temple track."
+    },
+    {
+      "description": "Take your starting resources based on player order: later players start with an extra compass."
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "Play proceeds over 5 rounds. On your turn you take exactly ONE main action, plus any number of free actions before, during, or after it. When you have no archaeologists left to place, or choose to stop, you pass for the round.",
+    "actions": [
+      {
+        "name": "Dig at a Site or Discover a New Site",
+        "description": "Send an archaeologist out onto the island to an unoccupied site space.",
+        "steps": [
+          {
+            "description": "Pay the travel cost shown for that site, usually a mix of arrowheads and compasses.",
+            "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Arrowhead", "tint": "#C79A5B", "variable": true, "icon2": "Compass", "tint2": "#2E9E6B", "label": "Pay the travel cost"}
+          },
+          {
+            "description": "Place one of your archaeologist figures on the site space.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Pawn", "tint": "#5C6BC0", "label": "Place an archaeologist"}
+          },
+          {
+            "description": "Resolve the site's reward. Discovering a NEW site first flips its face-down tile and reveals a guardian to deal with.",
+            "action": {"type": "micro_animation", "motif": "flip", "icon": "Card", "tint": "#BCA77A", "label": "Reveal a new site"}
+          }
+        ]
+      },
+      {
+        "name": "Play a Card",
+        "description": "Play an Item or Artifact card from your hand.",
+        "steps": [
+          {
+            "description": "Resolve the card's effect, or use only its travel value to help pay a cost.",
+            "action": {"type": "micro_animation", "motif": "flip", "icon": "Card", "tint": "#6D4C41", "label": "Play a card"}
+          },
+          {
+            "description": "An Item stays in your play area for the round; an Artifact's effect fires immediately."
+          }
+        ]
+      },
+      {
+        "name": "Buy a Card",
+        "description": "Acquire a card from the card row: pay its cost, then take the card.",
+        "steps": [
+          {
+            "description": "Buy an Item card: pay its coin cost.",
+            "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Coin", "tint": "#E0A100", "variable": true, "label": "Pay coins"}
+          },
+          {
+            "description": "Take the Item; it goes to the BOTTOM of your deck, so you can draw and use it later this round (Arnak has no discard pile).",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "tint": "#6D4C41", "area": "Deck", "label": "Item to bottom of deck"}
+          },
+          {
+            "description": "Or buy an Artifact card: pay its compass cost.",
+            "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "Compass", "tint": "#2E9E6B", "variable": true, "label": "Pay compasses"}
+          },
+          {
+            "description": "Resolve the Artifact's effect immediately, then keep the card in your play area.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "tint": "#3F51B5", "area": "Play Area", "label": "Artifact to play area"}
+          }
+        ]
+      },
+      {
+        "name": "Research",
+        "description": "Advance up the temple track to unlock rewards and points.",
+        "steps": [
+          {
+            "description": "Pay the cost shown and move your magnifying glass and/or notebook marker up one row.",
+            "action": {"type": "micro_animation", "motif": "advance", "icon": "Magnifier", "count": 1, "tint": "#4E7CC4", "label": "Advance up the temple track"}
+          },
+          {
+            "description": "Gain the reward printed on the row you reach. Your magnifying glass may never pass your notebook.",
+            "action": {"type": "micro_animation", "motif": "take_from_supply", "icon": "Token", "tint": "#9AA0A6", "variable": true, "label": "Gain the row reward"}
+          }
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "One Main Action per Turn",
+        "description": "Each turn is a single main action plus free actions. Turns pass back and forth until every player has passed for the round."
+      },
+      {
+        "name": "Travel Cost",
+        "description": "Reaching a site costs the arrowheads and compasses shown next to it. Cards and effects can discount or cover part of a travel cost."
+      },
+      {
+        "name": "Guardians",
+        "description": "A guardian sits on the top space of each site. Overcome it by paying its cost; leave it, and at round end it inflicts a Fear card."
+      },
+      {
+        "name": "End of Round",
+        "description": "When all players have passed, take your archaeologists back, gain any Fear from guardians, then shuffle your play area into the bottom of your deck."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "The game ends after the 5th round is completed.",
+    "procedure": [
+      "Play 5 rounds. The final round is often the longest as players spend everything.",
+      "After round 5, proceed to final scoring.",
+      "Total each player's points from all sources below, then subtract points for Fear."
+    ],
+    "final_scoring": [
+      {
+        "source": "Research Track",
+        "description": "Score the value shown where each of your research markers ended on the temple track."
+      },
+      {
+        "source": "Idols",
+        "description": "Score the idol tiles you placed into slots on the temple track."
+      },
+      {
+        "source": "Defeated Guardians",
+        "description": "Score points for each guardian you overcame during the game."
+      },
+      {
+        "source": "Artifacts and Cards",
+        "description": "Score the victory points printed on Artifact cards and other scoring cards you acquired."
+      },
+      {
+        "source": "Fear",
+        "description": "Lose 1 point for each Fear card or fear tile remaining in your deck and play area."
+      }
+    ]
+  },
+  "winning_condition": "The player with the most victory points wins. If tied, the tied player whose research markers are higher on the temple track wins."
+}
