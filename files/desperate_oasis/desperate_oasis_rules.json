@@ -13,7 +13,15 @@
       "name": "Animal Cards",
       "type": "Card",
       "count": 28,
-      "subTypes": ["Deathstalker Scorpion", "Egyptian Jerboa", "Golden Jackal", "Arabian Camel", "Scimitar Oryx", "Desert Elephant", "Namaqua Chameleon"],
+      "subTypes": [
+        "Deathstalker Scorpion",
+        "Egyptian Jerboa",
+        "Golden Jackal",
+        "Arabian Camel",
+        "Scimitar Oryx",
+        "Desert Elephant",
+        "Namaqua Chameleon"
+      ],
       "description": "28 cards across 7 desert species. Each shows an animal, its strength number (0 to 5), and most have a special power.",
       "detailed_description": "Strength runs from the Deathstalker Scorpion (0) up to the Desert Elephant (5). Every species except the Scimitar Oryx has a special power that can change the outcome of a round.",
       "action": {
@@ -45,23 +53,53 @@
   "setup": [
     {
       "description": "Randomly draw 5 Oasis Cards and place them face up in a row between the players.",
-      "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "count": 5, "area": "Oasis Row", "tint": "#EF6C00"}
+      "action": {
+        "type": "micro_animation",
+        "motif": "place",
+        "icon": "Card",
+        "count": 5,
+        "area": "Oasis Row",
+        "tint": "#EF6C00"
+      }
     },
     {
       "description": "Shuffle the Animal Cards and deal 4 cards to each player.",
-      "action": {"type": "micro_animation", "motif": "gain", "icon": "Card", "count": 4, "tint": "#795548"}
+      "action": {
+        "type": "micro_animation",
+        "motif": "gain",
+        "icon": "Card",
+        "count": 4,
+        "tint": "#795548"
+      }
     },
     {
       "description": "Randomly remove one card from the deck and set it to the side, face down. This card remains out of the game for the entire round.",
-      "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "CardDown", "tint": "#37474F"}
+      "action": {
+        "type": "micro_animation",
+        "motif": "return_to_supply",
+        "icon": "CardDown",
+        "tint": "#37474F"
+      }
     },
     {
       "description": "Place the remaining Animal Cards as a draw deck accessible to both players.",
-      "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "area": "Draw", "tint": "#795548"}
+      "action": {
+        "type": "micro_animation",
+        "motif": "place",
+        "icon": "Card",
+        "area": "Draw",
+        "tint": "#795548"
+      }
     },
     {
       "description": "Give each player 3 Palm Trees.",
-      "action": {"type": "micro_animation", "motif": "gain", "icon": "Token", "count": 3, "tint": "#388E3C"}
+      "action": {
+        "type": "micro_animation",
+        "motif": "gain",
+        "icon": "Token",
+        "count": 3,
+        "tint": "#388E3C"
+      }
     },
     {
       "description": "Determine the first player randomly. Don't make a big deal about it. Just pick.",
@@ -89,7 +127,19 @@
         "steps": [
           {
             "description": "Play 2 Animal Cards from your hand, face up, anywhere on your side of the Oasis Row. They can be in the same or different columns.",
-            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "count": 2, "area": "Your Side", "tint": "#EF6C00"}
+            "action": {
+              "type": "micro_animation",
+              "motif": "place",
+              "icon": "Card",
+              "count": 2,
+              "tint": "#EF6C00",
+              "rows": [
+                "Their Side",
+                "The Oasis",
+                "Your Side"
+              ],
+              "row": 3
+            }
           }
         ],
         "notes": [
@@ -105,7 +155,18 @@
         "steps": [
           {
             "description": "Play 1 Animal Card from your hand, face up, on your opponent's side of any Oasis Card.",
-            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "area": "Opponent's Side", "tint": "#7B1FA2"}
+            "action": {
+              "type": "micro_animation",
+              "motif": "place",
+              "icon": "Card",
+              "tint": "#7B1FA2",
+              "rows": [
+                "Their Side",
+                "The Oasis",
+                "Your Side"
+              ],
+              "row": 1
+            }
           }
         ],
         "notes": [
@@ -121,7 +182,18 @@
         "steps": [
           {
             "description": "Play 1 Animal Card from your hand, face down, on your side of any Oasis Card.",
-            "action": {"type": "micro_animation", "motif": "place", "icon": "CardDown", "tint": "#37474F"}
+            "action": {
+              "type": "micro_animation",
+              "motif": "place",
+              "icon": "CardDown",
+              "tint": "#37474F",
+              "rows": [
+                "Their Side",
+                "The Oasis",
+                "Your Side"
+              ],
+              "row": 3
+            }
           }
         ],
         "notes": [
@@ -140,7 +212,12 @@
         "steps": [
           {
             "description": "Place the Palm Tree on any Oasis Card in the row, increasing that Oasis Card's value by 1 for end-of-round scoring.",
-            "action": {"type": "micro_animation", "motif": "place", "icon": "Token", "tint": "#388E3C"}
+            "action": {
+              "type": "micro_animation",
+              "motif": "place",
+              "icon": "Token",
+              "tint": "#388E3C"
+            }
           },
           {
             "description": "Place it on the side of the Oasis Card nearer to you, to help keep track of which is yours."
@@ -214,7 +291,12 @@
       },
       {
         "description": "Flip all face-down cards. Newly revealed cards are treated as if they were just played, triggering any applicable pulling effects.",
-        "action": {"type": "micro_animation", "motif": "flip", "icon": "Card", "tint": "#37474F"}
+        "action": {
+          "type": "micro_animation",
+          "motif": "flip",
+          "icon": "Card",
+          "tint": "#37474F"
+        }
       },
       {
         "description": "Resolve flipped cards left to right from the first player's perspective, in order of strength from high to low. If both players flip the same animal on a Portal Oasis, the first player resolves their side first."
@@ -227,7 +309,18 @@
       },
       {
         "description": "The player with the greatest combined strength on each side of an Oasis Card takes that card, and any Palm Trees on it, into their scoring pile.",
-        "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "tint": "#EF6C00"}
+        "action": {
+          "type": "micro_animation",
+          "motif": "take",
+          "icon": "Card",
+          "tint": "#EF6C00",
+          "rows": [
+            "Their Side",
+            "The Oasis",
+            "Your Side"
+          ],
+          "row": 2
+        }
       },
       {
         "description": "Any Oasis Cards on which players tie in strength are discarded."
