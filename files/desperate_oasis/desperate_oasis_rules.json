@@ -1,0 +1,282 @@
+{
+  "game_name": "Desperate Oasis",
+  "designer": "Dan Cassaro",
+  "publisher": "Weast Coast Games",
+  "game_overview": "In Desperate Oasis, two players battle for control over the lush, life-sustaining sanctuaries of the desert. By playing and grouping animal cards, players can show their strength, unlock special powers, and use palm trees to alter card values. A tactical lane-battling card game in a tiny box: animals magnetically attract their own kind, dragging cards between columns, while hidden face-down cards and one-per-round palm trees swing the final count.",
+  "objective": "Claim the most points of Oasis Cards and Palm Trees over 3 rounds by having the highest combined animal strength on your side of each Oasis Card.",
+  "min_players": 2,
+  "max_players": 2,
+  "bgg_link": "https://boardgamegeek.com/boardgame/428904/desperate-oasis",
+  "play_time_minutes": 15,
+  "components_overview": [
+    {
+      "name": "Animal Cards",
+      "type": "Card",
+      "count": 28,
+      "subTypes": ["Deathstalker Scorpion", "Egyptian Jerboa", "Golden Jackal", "Arabian Camel", "Scimitar Oryx", "Desert Elephant", "Namaqua Chameleon"],
+      "description": "28 cards across 7 desert species. Each shows an animal, its strength number (0 to 5), and most have a special power.",
+      "detailed_description": "Strength runs from the Deathstalker Scorpion (0) up to the Desert Elephant (5). Every species except the Scimitar Oryx has a special power that can change the outcome of a round.",
+      "action": {
+        "name": "CardList",
+        "value": "desperate_oasis_cards.json"
+      }
+    },
+    {
+      "name": "Oasis Cards",
+      "type": "Card",
+      "count": 15,
+      "description": "The prizes. Each shows a point value, which can be positive or negative. Orange Portal Oasis cards let animals be pulled through to the other side of the row.",
+      "image": "images/oasis_card.webp"
+    },
+    {
+      "name": "Palm Trees",
+      "type": "Token",
+      "count": 6,
+      "description": "Wooden tokens (3 per player). Deployed by making a group of three of the same animal in one column; placed on an Oasis Card to raise its value by 1.",
+      "image": "images/palm_token.webp"
+    },
+    {
+      "name": "Reference Cards",
+      "type": "Card",
+      "count": 2,
+      "description": "One per player, summarizing the turn options and animal powers."
+    }
+  ],
+  "setup": [
+    {
+      "description": "Randomly draw 5 Oasis Cards and place them face up in a row between the players.",
+      "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "count": 5, "area": "Oasis Row", "tint": "#EF6C00"}
+    },
+    {
+      "description": "Shuffle the Animal Cards and deal 4 cards to each player.",
+      "action": {"type": "micro_animation", "motif": "gain", "icon": "Card", "count": 4, "tint": "#795548"}
+    },
+    {
+      "description": "Randomly remove one card from the deck and set it to the side, face down. This card remains out of the game for the entire round.",
+      "action": {"type": "micro_animation", "motif": "return_to_supply", "icon": "CardDown", "tint": "#37474F"}
+    },
+    {
+      "description": "Place the remaining Animal Cards as a draw deck accessible to both players.",
+      "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "area": "Draw", "tint": "#795548"}
+    },
+    {
+      "description": "Give each player 3 Palm Trees.",
+      "action": {"type": "micro_animation", "motif": "gain", "icon": "Token", "count": 3, "tint": "#388E3C"}
+    },
+    {
+      "description": "Determine the first player randomly. Don't make a big deal about it. Just pick.",
+      "items": [
+        {
+          "description": "In future rounds, the player who scored the most points in the previous round is the first player.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "gameplay": {
+    "turn_structure": "On their turn, players must play cards from their hand onto the play area, choosing one of three options, then resolve effects and draw back up.",
+    "turn_steps": [
+      "Choose ONE action: play 2 cards on your side, 1 card on your opponent's side, or 1 card face down on your side",
+      "After playing each card, FIRST resolve any movement effects triggered (Rules of Attraction)",
+      "THEN resolve any animal power effects",
+      "Complete your turn by drawing back up to 4 cards"
+    ],
+    "actions": [
+      {
+        "name": "A. Play 2 Cards on Your Side",
+        "description": "Play 2 Animal Cards face up anywhere on your side of the Oasis Row.",
+        "icon": "CardsFan",
+        "steps": [
+          {
+            "description": "Play 2 Animal Cards from your hand, face up, anywhere on your side of the Oasis Row. They can be in the same or different columns.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "count": 2, "area": "Your Side", "tint": "#EF6C00"}
+          }
+        ],
+        "notes": [
+          {
+            "description": "A maximum of 3 cards may be played on each individual Oasis on each player's side, unless you use your Jackal powers."
+          }
+        ]
+      },
+      {
+        "name": "B. Play 1 Card on Opponent's Side",
+        "description": "Play 1 Animal Card face up on your opponent's side of an Oasis Card.",
+        "icon": "CardDiagonal",
+        "steps": [
+          {
+            "description": "Play 1 Animal Card from your hand, face up, on your opponent's side of any Oasis Card.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Card", "area": "Opponent's Side", "tint": "#7B1FA2"}
+          }
+        ],
+        "notes": [
+          {
+            "description": "If all available spaces on a player's side of the Oasis Row are full before the round ends, they must play on their opponent's side on their turn."
+          }
+        ]
+      },
+      {
+        "name": "C. Play 1 Card Face Down",
+        "description": "Play 1 Animal Card face down on your side of an Oasis Card.",
+        "icon": "CardDown",
+        "steps": [
+          {
+            "description": "Play 1 Animal Card from your hand, face down, on your side of any Oasis Card.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "CardDown", "tint": "#37474F"}
+          }
+        ],
+        "notes": [
+          {
+            "description": "Powers and movement effects of face-down cards are not used until the end of the round."
+          },
+          {
+            "description": "Only one face-down card MORE than your opponent is allowed at a time."
+          }
+        ]
+      },
+      {
+        "name": "Deploy a Palm Tree",
+        "description": "When you create a group of three of the same animal in the same column on your side of an Oasis Card, you may deploy a Palm Tree.",
+        "icon": "Token",
+        "steps": [
+          {
+            "description": "Place the Palm Tree on any Oasis Card in the row, increasing that Oasis Card's value by 1 for end-of-round scoring.",
+            "action": {"type": "micro_animation", "motif": "place", "icon": "Token", "tint": "#388E3C"}
+          },
+          {
+            "description": "Place it on the side of the Oasis Card nearer to you, to help keep track of which is yours."
+          }
+        ],
+        "notes": [
+          {
+            "description": "Each player may use only ONE Palm Tree per round. Use it or lose it!"
+          },
+          {
+            "description": "You may move your own Palm Tree to another location if you create another line of 3 animals on a later turn, but you can never move an opponent's Palm Tree."
+          },
+          {
+            "description": "Palm Trees are only positive: if one is added to a -1 value Oasis, the value changes to 0."
+          }
+        ]
+      }
+    ],
+    "key_concepts": [
+      {
+        "name": "Placement in a Column",
+        "description": "When playing Animal Cards, the card must be placed as close to the Oasis as possible within its column. You cannot leave an empty hole in the column."
+      },
+      {
+        "name": "Rules of Attraction",
+        "description": "Animals attract their own kind. When a card is played into a column, it pulls any same-type cards in adjacent columns into its own column (like a magnet), provided there is space.",
+        "items": [
+          {
+            "description": "The pulled cards do NOT need to be directly adjacent to the card pulling them, just in an adjacent column.",
+            "style": "bullet"
+          },
+          {
+            "description": "This magnetic effect occurs immediately after each card is played and is mandatory.",
+            "style": "bullet"
+          },
+          {
+            "description": "Holes created from this effect are immediately filled by sliding any remaining cards in that column toward the Oasis Row.",
+            "style": "bullet"
+          },
+          {
+            "description": "If cards can be pulled from multiple adjacent columns in excess of the available space, the person who played the card chooses which card will be pulled.",
+            "style": "bullet"
+          },
+          {
+            "description": "Chameleons can pull other Chameleons, but are not pulled based on their mimicked animal.",
+            "style": "bullet"
+          }
+        ]
+      },
+      {
+        "name": "Portal Oasis Cards",
+        "description": "Orange Oasis Cards with portal iconography allow cards to be pulled THROUGH the Oasis Row to the other side in the same column, using the same Rules of Attraction. There is no limit to the number of times animals can cross a Portal Oasis, provided there is space in the column on the other side.",
+        "items": [
+          {
+            "description": "The same type of Animal Card can be pulled through the Portal Oasis and from adjacent columns on the same play.",
+            "style": "bullet"
+          }
+        ]
+      },
+      {
+        "name": "Special Animal Powers",
+        "description": "Some animal cards have a special power that can improve strength at the end of each round. Don't let their cuteness fool you, these guys are absolute freaks. See the card list under Components for every animal's power."
+      }
+    ]
+  },
+  "end_game": {
+    "trigger": "Each round ends when the draw deck is empty and one player runs out of cards. The game ends after 3 rounds.",
+    "procedure": [
+      {
+        "description": "If the player who went first runs out of cards first, the player who went second gets one more turn."
+      },
+      {
+        "description": "Flip all face-down cards. Newly revealed cards are treated as if they were just played, triggering any applicable pulling effects.",
+        "action": {"type": "micro_animation", "motif": "flip", "icon": "Card", "tint": "#37474F"}
+      },
+      {
+        "description": "Resolve flipped cards left to right from the first player's perspective, in order of strength from high to low. If both players flip the same animal on a Portal Oasis, the first player resolves their side first."
+      },
+      {
+        "description": "Resolve the power of any flipped Scorpions in the same order."
+      },
+      {
+        "description": "Add up the total strength on each side of each Oasis Card."
+      },
+      {
+        "description": "The player with the greatest combined strength on each side of an Oasis Card takes that card, and any Palm Trees on it, into their scoring pile.",
+        "action": {"type": "micro_animation", "motif": "take", "icon": "Card", "tint": "#EF6C00"}
+      },
+      {
+        "description": "Any Oasis Cards on which players tie in strength are discarded."
+      },
+      {
+        "description": "After 3 rounds, tally all Oasis Cards and Palm Trees you have won."
+      }
+    ],
+    "intermediate_scoring": [
+      {
+        "source": "Oasis Cards + Palm Trees",
+        "when": "End of each round",
+        "description": {
+          "description": "The player with the highest combined strength on their side of each Oasis Card claims that card, plus any Palm Trees on it, into their scoring pile."
+        }
+      }
+    ],
+    "final_scoring": [
+      {
+        "source": "Oasis Cards",
+        "description": "Each Oasis Card is worth the number written on it. Values can be positive or negative."
+      },
+      {
+        "source": "Palm Trees",
+        "description": "Each Palm Tree you claimed is worth 1 point."
+      }
+    ]
+  },
+  "winning_condition": "The player with the highest score after 3 rounds wins. In case of a tie, both players share the victory. Maybe they share a hug too?",
+  "tips_for_new_players": [
+    {
+      "tip": "Watch the negative Oases",
+      "description": "Oasis values can be negative. Sometimes 'losing' a column on a -1 Oasis is winning: do not fight hard for a prize that hurts you."
+    },
+    {
+      "tip": "Plan around the attraction",
+      "description": "Every card you play can drag same-type animals out of neighboring columns, and through Portal Oases from the other side. Check the whole row before you commit a card."
+    },
+    {
+      "tip": "Face-down cards are round-end bombs",
+      "description": "A face-down card hides its power until the end of the round. A hidden Scorpion or Jerboa can flip the result of a close Oasis after all the cards are out."
+    },
+    {
+      "tip": "Use your Palm Tree every round",
+      "description": "You may deploy only one Palm Tree per round and unused ones do not carry over. Make a line of 3 when you can, and remember you may move your own Palm later in the round if you form another line."
+    },
+    {
+      "tip": "Keep a spare card for forced plays",
+      "description": "If every space on your side fills up before the round ends, you MUST play on your opponent's side. Holding a weak card (or a Jerboa) for that moment turns a forced play into a weapon."
+    }
+  ]
+}

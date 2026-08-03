@@ -1,0 +1,61 @@
+{
+  "deathstalker_scorpion": {
+    "id": "deathstalker_scorpion",
+    "name": "Deathstalker Scorpion",
+    "summary": "Strength 0. Destroys the weakest face-up card on both sides of its Oasis.",
+    "body": "When played, destroys the weakest face-up card on both sides of the Oasis it is played on, immediately removing them from their column. Baby's gotta eat!",
+    "extra": "Strength: 0",
+    "details": "A Scorpion can never destroy itself, or a card when it is face-down. A face-down Scorpion resolves its power when flipped at the end of the round.",
+    "image": "images/scorpion.webp"
+  },
+  "egyptian_jerboa": {
+    "id": "egyptian_jerboa",
+    "name": "Egyptian Jerboa",
+    "summary": "Strength 1. Makes Elephants in its Oasis column worth 0.",
+    "body": "Has 1 strength but scares Elephants. Any column on either side of an Oasis with a Jerboa will cause Elephant cards in that Oasis column to be worth 0 strength.",
+    "extra": "Strength: 1",
+    "image": "images/jerboa.webp"
+  },
+  "golden_jackal": {
+    "id": "golden_jackal",
+    "name": "Golden Jackal",
+    "summary": "Strength 2. Three Jackals in a column create a 4th space.",
+    "body": "If 3 Jackals are in the same column of one player's side of an Oasis, a fourth space is immediately created in that column. The extra space can be occupied by any animal card.",
+    "extra": "Strength: 2",
+    "details": "The 3 Jackals do not need to be consecutive in the column.",
+    "image": "images/jackal.webp"
+  },
+  "arabian_camel": {
+    "id": "arabian_camel",
+    "name": "Arabian Camel",
+    "summary": "Strength 3. Three Camels in a column are worth 10 instead of 9.",
+    "body": "If 3 Camels are in the same column on one player's side of an Oasis, they provide an extra point of strength to that column (10 instead of 9). For those who are asking, the extra point is in the hump.",
+    "extra": "Strength: 3",
+    "image": "images/camel.webp"
+  },
+  "scimitar_oryx": {
+    "id": "scimitar_oryx",
+    "name": "Scimitar Oryx",
+    "summary": "Strength 4. No special powers.",
+    "body": "No special powers. But look at those horns. So cool.",
+    "extra": "Strength: 4",
+    "image": "images/oryx.webp"
+  },
+  "desert_elephant": {
+    "id": "desert_elephant",
+    "name": "Desert Elephant",
+    "summary": "Strength 5, but worth 0 if a Jerboa is in its Oasis column.",
+    "body": "Has 5 strength but is scared of mice. Any column on either side of an Oasis with a Jerboa will cause Elephant cards in that Oasis column to be worth 0 strength.",
+    "extra": "Strength: 5",
+    "image": "images/elephant.webp"
+  },
+  "namaqua_chameleon": {
+    "id": "namaqua_chameleon",
+    "name": "Namaqua Chameleon",
+    "summary": "Strength ?. Mimics the strength of the card it points at.",
+    "body": "The Chameleon mimics the strength value of the card it is directly pointing at, but not its power. You may orient the Chameleon to face left or right when placing it, but not up and down. After placement, the orientation will stay the same, regardless of future movement.",
+    "extra": "Strength: mimics its target",
+    "details": "A Chameleon pointed at a face-down card is considered 0 strength until the card is flipped. Chameleons can pull other Chameleons via the Rules of Attraction, but are not pulled based on their mimicked animal.",
+    "image": "images/chameleon.webp"
+  }
+}
