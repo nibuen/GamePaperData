@@ -169,6 +169,13 @@
             "publisher": "Czech Games Edition",
             "added_date": "2026-07-26",
             "genre": "adventure"
+        },
+        {
+            "id": "desperate_oasis",
+            "game_name": "Desperate Oasis",
+            "designer": "Dan Cassaro",
+            "publisher": "Weast Coast Games",
+            "genre": "card"
         }
     ]
 }

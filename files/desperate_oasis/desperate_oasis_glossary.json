@@ -1,0 +1,145 @@
+{
+  "oasis_card": {
+    "term": "Oasis Card",
+    "definition": "A prize card placed in the Oasis Row. Each shows a point value (positive or negative). At the end of a round, the player with the highest combined animal strength on their side of an Oasis Card claims it, along with any Palm Trees on it.",
+    "context": "Cards",
+    "icon": "CardTarget",
+    "tint": "#EF6C00",
+    "image": "images/oasis_card.webp"
+  },
+  "portal_oasis": {
+    "term": "Portal Oasis",
+    "definition": "An orange Oasis Card with portal iconography. Animal cards can be pulled through it to the other side of the Oasis Row in the same column, using the normal Rules of Attraction. There is no limit to how many times animals can cross, provided there is space in the column on the other side.",
+    "context": "Cards",
+    "icon": "Bullseye",
+    "tint": "#EF6C00",
+    "image": "images/portal_card.webp"
+  },
+  "animal_card": {
+    "term": "Animal Card",
+    "definition": "The cards you play from your hand onto the play area. Each shows a desert animal, its strength number, and most have a special power that can change the outcome of a round.",
+    "context": "Cards",
+    "icon": "Card",
+    "tint": "#795548"
+  },
+  "oasis_row": {
+    "term": "Oasis Row",
+    "definition": "The row of 5 face-up Oasis Cards placed between the players at the start of each round. Players play Animal Cards into columns on their side of each Oasis.",
+    "context": "Table Layout",
+    "icon": "CardsOrder",
+    "tint": "#EF6C00"
+  },
+  "column": {
+    "term": "Column",
+    "definition": "The space extending from each Oasis Card toward a player. Each player can have a maximum of 3 Animal Cards in each column (unless Jackal powers add a 4th space). Cards must be placed as close to the Oasis as possible: you cannot leave an empty hole in the column.",
+    "context": "Table Layout",
+    "icon": "CardsStack",
+    "tint": "#78909C"
+  },
+  "strength": {
+    "term": "Strength",
+    "definition": "The number printed on an Animal Card (0 to 5). At the end of a round, each player adds up the total strength on their side of each Oasis Card; the higher total claims the Oasis. Ties discard the Oasis.",
+    "context": "Concepts",
+    "icon": "Sword",
+    "tint": "#D32F2F"
+  },
+  "rules_of_attraction": {
+    "term": "Rules of Attraction",
+    "definition": "Animals attract their own kind. When a card is played into a column, it pulls any same-type cards in adjacent columns into its own column (like a magnet) provided there is space. The pulled cards do not need to be directly adjacent to the card pulling them, just in an adjacent column. This effect is immediate and mandatory. Holes created by the pull are filled by sliding remaining cards toward the Oasis Row.",
+    "context": "Concepts",
+    "icon": "CardsShift",
+    "tint": "#7B1FA2"
+  },
+  "face_down_card": {
+    "term": "Face-Down Card",
+    "definition": "An Animal Card played face down on your side of an Oasis. Its power and movement effects do not apply until it is flipped at the end of the round. You may only have one face-down card more than your opponent at any time.",
+    "context": "Concepts",
+    "icon": "CardDown",
+    "tint": "#37474F"
+  },
+  "palm_tree": {
+    "term": "Palm Tree",
+    "definition": "A token deployed when you create a group of three of the same animal in one column on your side. Place it on any Oasis Card in the row to increase that card's value by 1 for end-of-round scoring. Palm Trees are only positive: on a -1 value Oasis the value becomes 0. You may use only one Palm Tree per round: use it or lose it.",
+    "context": "Tokens",
+    "icon": "Token",
+    "tint": "#388E3C",
+    "image": "images/palm_token.webp"
+  },
+  "draw_deck": {
+    "term": "Draw Deck",
+    "definition": "The shuffled Animal Cards placed accessible to both players. Players draw back up to 4 cards at the end of their turn. The round ends when the deck is empty and one player runs out of cards.",
+    "context": "Table Layout",
+    "icon": "CardsStackHigh",
+    "tint": "#795548"
+  },
+  "scoring_pile": {
+    "term": "Scoring Pile",
+    "definition": "Where you keep the Oasis Cards and Palm Trees you have claimed. After 3 rounds, Oasis Cards score their printed value and each Palm Tree scores 1 point.",
+    "context": "Table Layout",
+    "icon": "CardsCollection",
+    "tint": "#FFD54F"
+  },
+  "first_player": {
+    "term": "First Player",
+    "definition": "Chosen randomly in round 1. In later rounds, the player who scored the most points in the previous round goes first. At the end of a round, flipped cards are resolved left to right from the first player's perspective.",
+    "context": "Concepts",
+    "icon": "Pawn",
+    "tint": "#1565C0"
+  },
+  "deathstalker_scorpion": {
+    "term": "Deathstalker Scorpion",
+    "definition": "Strength 0. When played face up, destroys the weakest face-up card on both sides of the Oasis it is played on, immediately removing them from their column. A Scorpion can never destroy itself, or a card when it is face-down.",
+    "context": "Animals",
+    "icon": "Skull",
+    "tint": "#37474F",
+    "image": "images/scorpion.webp"
+  },
+  "egyptian_jerboa": {
+    "term": "Egyptian Jerboa",
+    "definition": "Strength 1, but scares Elephants. Any column on either side of an Oasis with a Jerboa will cause Elephant cards in that Oasis column to be worth 0 strength.",
+    "context": "Animals",
+    "icon": "Tag1",
+    "tint": "#EF6C00",
+    "image": "images/jerboa.webp"
+  },
+  "golden_jackal": {
+    "term": "Golden Jackal",
+    "definition": "Strength 2. If 3 Jackals are in the same column of one player's side of an Oasis, a fourth space is immediately created in that column. The extra space can be occupied by any animal card. The 3 Jackals do not need to be consecutive in the column.",
+    "context": "Animals",
+    "icon": "Tag2",
+    "tint": "#FFD54F",
+    "image": "images/jackal.webp"
+  },
+  "arabian_camel": {
+    "term": "Arabian Camel",
+    "definition": "Strength 3. If 3 Camels are in the same column on one player's side of an Oasis, they provide an extra point of strength to that column (10 instead of 9). The extra point is in the hump.",
+    "context": "Animals",
+    "icon": "Tag3",
+    "tint": "#795548",
+    "image": "images/camel.webp"
+  },
+  "scimitar_oryx": {
+    "term": "Scimitar Oryx",
+    "definition": "Strength 4. No special powers. But look at those horns. So cool.",
+    "context": "Animals",
+    "icon": "Tag4",
+    "tint": "#B0BEC5",
+    "image": "images/oryx.webp"
+  },
+  "desert_elephant": {
+    "term": "Desert Elephant",
+    "definition": "Strength 5, but scared of mice. Any column on either side of an Oasis with a Jerboa will cause Elephant cards in that Oasis column to be worth 0 strength.",
+    "context": "Animals",
+    "icon": "Tag5",
+    "tint": "#78909C",
+    "image": "images/elephant.webp"
+  },
+  "namaqua_chameleon": {
+    "term": "Namaqua Chameleon",
+    "definition": "Mimics the strength value of the card it is directly pointing at, but not its power. You may orient the Chameleon to face left or right when placing it, but not up and down. After placement, the orientation stays the same, regardless of future movement. A Chameleon pointed at a face-down card is considered 0 strength until that card is flipped.",
+    "context": "Animals",
+    "icon": "HexagonQuestion",
+    "tint": "#388E3C",
+    "image": "images/chameleon.webp"
+  }
+}
