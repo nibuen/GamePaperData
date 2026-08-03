@@ -138,7 +138,12 @@
                 "The Oasis",
                 "Your Side"
               ],
-              "row": 3
+              "row": 3,
+              "row_counts": [
+                1,
+                5,
+                1
+              ]
             }
           }
         ],
@@ -165,7 +170,12 @@
                 "The Oasis",
                 "Your Side"
               ],
-              "row": 1
+              "row": 1,
+              "row_counts": [
+                1,
+                5,
+                1
+              ]
             }
           }
         ],
@@ -192,7 +202,12 @@
                 "The Oasis",
                 "Your Side"
               ],
-              "row": 3
+              "row": 3,
+              "row_counts": [
+                1,
+                5,
+                1
+              ]
             }
           }
         ],
@@ -319,7 +334,12 @@
             "The Oasis",
             "Your Side"
           ],
-          "row": 2
+          "row": 2,
+          "row_counts": [
+            1,
+            5,
+            1
+          ]
         }
       },
       {
