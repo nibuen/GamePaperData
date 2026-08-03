@@ -1,6 +1,6 @@
 {
-    "version": "1.0.7",
-    "base_url": "https://cdn.jsdelivr.net/gh/nibuen/GamersPaperData@data-20260803-195508/files",
+    "version": "1.0.8",
+    "base_url": "https://cdn.jsdelivr.net/gh/nibuen/GamersPaperData@data-20260803-221824/files",
     "games": [
         {
             "id": "arydia",
